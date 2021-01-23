@@ -1,0 +1,14 @@
+{
+    "login": {
+       "welcome": "NutriKad Online",
+       "subtitle": "Enter your credentials to login",
+       "email": "Email",
+       "yourEmail": "your@email.com",
+       "password": "Password",
+       "enter": "Enter",
+       "dontHaveAnAccount": "¿Don´t have an account?",
+       "requestAccount": "Get Account",
+       "forgotYourPassword": "¿Forgot your password?",
+       "chanceLanguaje": "Change Languaje"
+    }
+ }
