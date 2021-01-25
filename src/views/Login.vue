@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import LoginCard from '../components/LoginCard'
+import LoginCard from '../components/login/LoginCard'
 export default {
   name: 'Login',
   components: {

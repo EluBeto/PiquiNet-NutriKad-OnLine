@@ -14,11 +14,7 @@
             </v-card-text>
         </v-col>
         <v-col cols="12" md="4" class="yellow lighten-4">
-            <v-img
-                src="@/assets/img/logo-nutrikad.png"
-                style="width: 4rem; background-color: #FFF9C4"
-                class="ma-auto my-2"
-            ></v-img>
+            <page-logo :background="`#FFF9C4`"></page-logo>
             <v-card-text class="white--text mt-12">
                 <h1 class="text-center display-1">
 
@@ -29,13 +25,15 @@
 </template>
 
 <script>
-import SocialMediaButtons from './SocialMediaButtons'
-import LoginForm from './LoginForm'
+import SocialMediaButtons from '../SocialMediaButtons'
+import LoginForm from '../login/LoginForm'
+import PageLogo from '../PageLogo'
 export default {
-  name: 'LoginWindow',
+  name: 'PartialLoginWindow',
   components: {
     LoginForm,
-    SocialMediaButtons
+    SocialMediaButtons,
+    PageLogo
   },
   props: {
     source: String

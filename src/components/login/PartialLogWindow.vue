@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'LogWindow'
+  name: 'PartialLogWindow'
 }
 </script>

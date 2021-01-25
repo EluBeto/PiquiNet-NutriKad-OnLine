@@ -1,6 +1,6 @@
-const defaultSettings = require('./src/settings.js')
-const pageTitle = defaultSettings.title 
-module.exports = {
+import { title } from './src/settings.js'
+const pageTitle = title 
+export default {
   "transpileDependencies": [
     "vuetify"
   ],

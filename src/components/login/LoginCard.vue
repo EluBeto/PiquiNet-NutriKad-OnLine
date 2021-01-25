@@ -2,23 +2,23 @@
   <v-card class="elevation-12">
     <v-window v-model="step">
       <v-window-item :value="1">
-        <login-window></login-window>
+        <partial-login-window></partial-login-window>
       </v-window-item>
       <v-window-item :value="2">
-        <log-window></log-window>
+        <partial-log-window></partial-log-window>
       </v-window-item>
     </v-window>
   </v-card>
 </template>
 
 <script>
-import LoginWindow from './LoginWindow'
-import LogWindow from './LogWindow'
+import PartialLoginWindow from '../login/PartialLoginWindow'
+import PartialLogWindow from '../login/PartialLogWindow'
 export default {
 name: 'LoginCard',
   components: {
-    LoginWindow,
-    LogWindow
+    PartialLoginWindow,
+    PartialLogWindow
   },
   data: () => ({
     step: 1
