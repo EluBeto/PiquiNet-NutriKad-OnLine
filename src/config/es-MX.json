@@ -1,6 +1,7 @@
 {
     "login": {
-      "welcome": "NutriKad Online",
+      "partialTitle": "NutriKad Online",
+      "welcome": "A la mejor plataforma de nutricion.",
       "subtitle": "Ingrese sus credenciales para iniciar sesión",
       "email" : "Correo electrónico",
       "yourEmail": "tu@email.com",

@@ -3,7 +3,7 @@
         <v-col cols="12" md="8">
             <v-card-text class="mt-12">
                 <h1 class="text-center display-2 primary--text">
-                    {{ $t('login.welcome') }}
+                    {{ $t('login.partialTitle') }}
                 </h1>
                 <social-media-buttons></social-media-buttons>
                 <h4 class="text-center mlt-4">
@@ -13,12 +13,15 @@
                 <h4 class="text-center mt-3">{{ $t('login.forgotYourPassword') }}</h4>
             </v-card-text>
         </v-col>
-        <v-col cols="12" md="4" class="yellow lighten-4">
+        <v-col cols="12" md="4" class="yellow lighten-4 my-1">
             <page-logo :background="`#FFF9C4`"></page-logo>
-            <v-card-text class="white--text mt-12">
-                <h1 class="text-center display-1">
-
+            <v-card-text class="primary--text mt-3">
+                <h1 class="primary--text text-center display-1">
+                    Bienvenid@
                 </h1>
+                <h5 class="text-center mt-1">
+                    {{ $t('login.welcome') }}
+                </h5>
             </v-card-text>
         </v-col>
     </v-row>
