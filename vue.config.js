@@ -1,6 +1,4 @@
-import { title } from './src/settings.js'
-const pageTitle = title 
-export default {
+module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
