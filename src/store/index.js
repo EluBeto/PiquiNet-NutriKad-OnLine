@@ -5,11 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  },
-  mutations: {
+    step: 1
   },
   actions: {
+    setStep({ commit }, payload) {
+      commit('SET_STEP', payload)
+    }
   },
-  modules: {
+  mutations: {
+    SET_STEP(state, payload) {
+      state.step = payload
+    }
+  },
+  modules: {},
+  getters: {
+    getStep(state) {
+      return state.step
+    }
   }
 })

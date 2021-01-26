@@ -14,15 +14,18 @@
             </v-card-text>
         </v-col>
         <v-col cols="12" md="4" class="yellow lighten-4 my-1">
-            <page-logo :background="`#FFF9C4`"></page-logo>
+            <page-logo></page-logo>
             <v-card-text class="primary--text mt-3">
-                <h1 class="primary--text text-center display-1">
-                    Bienvenid@
-                </h1>
-                <h5 class="text-center mt-1">
+                <h3 class="text-center mt-1">
                     {{ $t('login.welcome') }}
+                </h3>
+                <h5 class="text-center mt-1">
+                    {{ $t('login.dontHaveAnAccount') }}
                 </h5>
             </v-card-text>
+            <div class="text-center">
+                <ButtonAction :step="2"></ButtonAction>
+            </div>
         </v-col>
     </v-row>
 </template>
@@ -30,16 +33,16 @@
 <script>
 import SocialMediaButtons from '../SocialMediaButtons'
 import LoginForm from '../login/LoginForm'
+import ButtonAction from '../login/ButtonAction'
 import PageLogo from '../PageLogo'
 export default {
   name: 'PartialLoginWindow',
   components: {
     LoginForm,
     SocialMediaButtons,
+    ButtonAction,
     PageLogo
   },
-  props: {
-    source: String
-  }
+  data: () => ({})
 }
 </script>

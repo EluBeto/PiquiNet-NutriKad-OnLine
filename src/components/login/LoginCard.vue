@@ -1,6 +1,6 @@
 <template>
   <v-card class="elevation-12">
-    <v-window v-model="step">
+    <v-window v-model="getStep">
       <v-window-item :value="1">
         <partial-login-window></partial-login-window>
       </v-window-item>
@@ -20,8 +20,11 @@ name: 'LoginCard',
     PartialLoginWindow,
     PartialLogWindow
   },
-  data: () => ({
-    step: 1
-  })
+  data: () => ({}),
+  computed: {
+    getStep() {
+      return this.$store.getters['getStep']
+    }
+  }
 }
 </script>
