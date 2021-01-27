@@ -4,9 +4,12 @@
          dark
          color="black"
          class="my-2"
-         @click="setStep()"
+         @click="setStep"
   >
-    {{ $t('login.requestAccount') }}
+    {{ 
+      step === 2 ? $t('login.requestAccount')
+                 : $t('log.enter')
+    }}
   </v-btn>
 </template>
 
@@ -21,6 +24,7 @@ export default {
     setStep() {
       this.$store.dispatch('setStep', this.step)
     }
-  }
+  },
+  computed: {}
 }
 </script>

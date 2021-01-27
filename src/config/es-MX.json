@@ -1,6 +1,6 @@
 {
     "login": {
-      "partialTitle": "NutriKad Online",
+      "title": "NutriKad Online",
       "welcome": "Bienvenidos a NutriKad",
       "subtitle": "Ingrese sus credenciales para iniciar sesión",
       "email" : "Correo electrónico",
@@ -11,5 +11,15 @@
       "requestAccount": "Registrate",
       "forgotYourPassword": "¿Olvidaste tu contraseña?",
       "chanceLanguaje": "Cambiar de Idioma"
+    },
+    "log": {
+      "title": "Creación de Cuenta",
+      "welcome": "Bienvenido de nuevo",
+      "subtitle": "Si ya tiene una cuenta, por favor inicia sesión.",
+      "enter": "Iniciar sesión",
+      "email" : "Correo electrónico",
+      "yourEmail": "tu@email.com",
+      "password": "Contraseña",
+      "confirmPassword": "Confirme Contraseña"
     }
   }

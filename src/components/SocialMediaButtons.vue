@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center my-2" mt-4>
+  <div class="text-center my-2 mt-4">
     <v-btn v-for="button in socialMediaButtons" 
           :key="button.name"
           class="mx-1" fab 

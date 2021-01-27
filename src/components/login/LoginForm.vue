@@ -19,7 +19,7 @@
         required
       ></v-text-field>
 
-      <div class="text-center mt-3 my-3">
+      <div class="text-center mt-3 my-5">
         <v-btn rounded color="primary" dark>
             {{ $t('login.enter') }}
         </v-btn>
