@@ -24,7 +24,7 @@
         <div class="text-center mt-4">
           <social-media-buttons></social-media-buttons>
         </div>
-        <h4 class="text-center mt-4">
+        <h4 v-if="!this.$store.state.isFormErrors" class="text-center mt-4">
           Ingrese su correo para registrarse
         </h4>
 

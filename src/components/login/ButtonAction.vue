@@ -8,7 +8,7 @@
   >
     {{ 
       step === 2 ? $t('login.requestAccount')
-                 : $t('log.enter')
+                 : $t('log.enterPartial')
     }}
   </v-btn>
 </template>
