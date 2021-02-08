@@ -1,5 +1,6 @@
 <template>
-  <v-stepper
+  <div>
+      <v-stepper
     v-model="numberOfSteps"
     vertical
     v-if="!isRegisteredUser"
@@ -166,6 +167,7 @@
       step="3"
     >
       Historia clínica básica:
+      <small :style="this.$store.state.font">Todos los campos son obligatorios</small>
     </v-stepper-step>
 
     <v-stepper-content step="3">
@@ -285,7 +287,7 @@
                 v-model="clinicHistory.measurements.hip"
                 type="text"
                 prepend-icon="mdi-ruler"
-                label="Cabeza"
+                label="Cadera"
                 color="primary"
                 required
               ></v-text-field>
@@ -302,18 +304,14 @@
                   label="¿Estás embarazada?"
                 ></v-switch>
               </v-col>
-              <v-col cols="12" sm="6" md="4"
-                v-if="clinicHistory.measurements.isPregnant"
-              >
+              <v-col cols="12" sm="6" md="4">
                 <v-switch
                   key="isBreastfeeding"
                   v-model="clinicHistory.measurements.isBreastfeeding"
                   label="¿Estas en periodo de lactancia materna?"
                 ></v-switch>
               </v-col>
-              <v-col cols="12" sm="6" md="4"
-                v-if="clinicHistory.measurements.isBreastfeeding"
-              >
+              <v-col cols="12" sm="6" md="4">
                 <v-text-field
                   key="monthsPostpartum"
                   v-model="clinicHistory.measurements.monthsPostpartum"
@@ -427,6 +425,7 @@
                 ></v-text-field>
               </v-col>
             </v-row>
+            <v-divider></v-divider>
             <v-row>
               <v-col cols="12" sm="12" md="12">
                 <p style="text-align: center;">
@@ -542,11 +541,13 @@
       </v-card>
       <v-btn
           color="primary"
-          @click="dialog = true"
+          @click="aceptConditions"
       >
             Enviar Registro
           </v-btn>
-      <v-btn text>
+      <v-btn text
+        @click="cancelRegistration"
+      >
         Cancelar
       </v-btn>
     </v-stepper-content>
@@ -559,13 +560,19 @@
 
         <v-card>
           <v-card-title class="headline grey lighten-2">
-            Consentimiento
+            {{ !isCancel ? 'Consentimiento' : 'Cancelar Registro' }}
           </v-card-title>
 
           <v-card-text>
-            Por este acto se permite informar que el/la persona hace constar en este documento que la información 
+            {{
+              !isCancel ? 
+              `Por este acto se permite informar que el/la persona hace constar en este documento que la información 
             proporcionada por la Nutrióloga tratante, le es suficiente para tomar su decisión sobre el consentimiento solicitado y 
-            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar este plan nutricional, como también lo es de su salud.
+            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar este plan nutricional, como también lo es de su salud.`
+            :
+            `¿Estas segu@ de que quieres cancera tu registro?, perderás todo lo que ingresaste en todas las secciones.`
+            }}
+            
           </v-card-text>
 
           <v-divider></v-divider>
@@ -577,13 +584,17 @@
               text
               @click="finishRegistration"
             >
-              Acepto
+              {{ !isCancel ? 'Acepto' : 'Salir' }}
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
     </div>
   </v-stepper>
+  <template v-if="isRegisteredUser">
+    <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
+  </template>
+  </div>
 </template>
 <script>
 export default {
@@ -649,11 +660,12 @@ export default {
         }
       },
       dialog: false,
+      isCancel: false
     }
   },
   methods: {
     validateIdentificationCard() {
-      if (!this.$refs.formIdentificationCard.validate()) {
+      if (this.$refs.formIdentificationCard.validate()) {
         this.numberOfSteps = 3
         this.validCard_2 = false
       } else {
@@ -661,7 +673,7 @@ export default {
       }
     },
     validateClinicHistory() {
-      if (!this.$refs.formClinicHistory.validate()) {
+      if (this.$refs.formClinicHistory.validate()) {
         this.numberOfSteps = 4
         this.validCard_2 = false
       } else {
@@ -673,17 +685,33 @@ export default {
       this.validCard_4 = false
     },
     finishRegistration() {
-      this.dialog = false
-      this.isRegisteredUser = true
+      if (!this.isCancel) {
+        this.dialog = false
+        this.isRegisteredUser = true
+      } else {
+        this.dialog = false
+        this.resetRegistration()
+      }
+    },
+    aceptConditions() {
+      this.dialog = true
+      this.isCancel = false
     },
     cancelRegistration() {
+      this.dialog = true
+      this.isCancel = true
+    },
+    resetRegistration() {
+      this.numberOfSteps = 1
+      this.isCancel = false
+      this.dialog = false
       this.$refs.formClinicHistory.reset()
       this.$refs.formIdentificationCard.reset()
+      this.$refs.formAllergiesIntolerances.reset()
       this.validCard_2 = false
       this.validCard_3 = false
       this.validCard_4 = false
       this.validCard_5 = false
-      this.numberOfSteps = 1
     }
   }
 }
