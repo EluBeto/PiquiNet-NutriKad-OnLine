@@ -5,6 +5,7 @@
          color="black"
          class="my-2"
          @click="setStep"
+         :style="this.$store.state.font"
   >
     {{ 
       step === 2 ? $t('login.requestAccount')

@@ -1,22 +1,25 @@
 <template>
     <div id="app">
         <v-app>
-            <nav-bar></nav-bar>
+            <NavBar></NavBar>
             <v-main :style="`${SwitchColor}`">
                 <v-container class="pt-0 ml-lg-16 pr-lg-10">
                     <router-view :key="$router.fullPath"></router-view>
                 </v-container>
             </v-main>
+            <Footer></Footer>
         </v-app>
     </div>
 </template>
 
 <script>
 import NavBar from '../NavBar'
+import Footer from '../Footer'
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    Footer
   },
   computed: {
     GetAppVersion() {
@@ -45,7 +48,7 @@ p,
 div,
 table,
 .v-application {
-  font-family: 'GillSans' !important;
+  font-family: 'Calibri' !important;
 }
 
 h1 {

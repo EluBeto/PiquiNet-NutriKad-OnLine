@@ -1,13 +1,13 @@
 <template>
   <div>
      <v-navigation-drawer
-      id="core-navigation-drawer"
+      id="navigation-drawer"
       v-model="drawer"
       :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
       :expand-on-hover="expandOnHover"
       :right="$vuetify.rtl"
       :src="barImage"
-      mobile-break-point="960"
+      mobile-breakpoint="960"
       app
       width="260"
       v-bind="$attrs"
@@ -44,6 +44,27 @@
       </v-list>
 
       <v-divider class="mb-2" />
+
+      <v-list>
+        <v-list-item
+          v-for="(item, i) in items.filter(m => m.visible === true)"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+        >
+          <v-list-item-action style="margin-right: 0px; height: 20px;">
+            <v-icon>
+              {{ item.icon }}
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title class="display-1">
+              {{ item.title }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
     <app-bar></app-bar>
   </div>
@@ -55,7 +76,7 @@
   import PageLogo from './PageLogo'
   import AppBar from './AppBar'
   export default {
-    name: 'NavBAr',
+    name: 'NavBar',
     components: {
       PageLogo,
       AppBar
@@ -64,17 +85,18 @@
       expandOnHover: {
         type: Boolean,
         default: false,
-      },
+      }
     },
 
     data: () => ({
       items: [
         {
           icon: 'mdi-view-dashboard',
-          title: 'dashboard',
-          to: '/',
+          title: 'Registro',
+          to: 'dashboard',
+          visible: true
         }
-      ],
+      ]
     }),
     computed: {
       ...mapState(['barColor', 'barImage']),
@@ -101,9 +123,9 @@
         return {
           ...item,
           children: item.children ? item.children.map(this.mapItem) : undefined,
-          title: this.$t(item.title),
+          title: this.$t(item.title)
         }
-      },
+      }
     }
   }
 </script>

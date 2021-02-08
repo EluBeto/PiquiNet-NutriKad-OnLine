@@ -30,7 +30,7 @@ p,
 div,
 table,
 .v-application {
-  font-family: 'Rubik' !important;
+  font-family: 'Calibri' !important;
 }
 
 h1 {

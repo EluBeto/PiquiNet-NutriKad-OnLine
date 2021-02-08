@@ -5,6 +5,7 @@
       border="bottom"
       color="pink darken-1"
       dark
+      :style="this.$store.state.font"
     >
       {{ error }}
     </v-alert>
@@ -18,6 +19,7 @@
         type="text"
         color="primary"
         required
+        :style="this.$store.state.font"
     >
     </v-text-field>
     <v-text-field
@@ -32,6 +34,7 @@
         @click:append="showPass = !showPass"
         color="primary"
         required
+        :style="this.$store.state.font"
     >
     </v-text-field>
     <v-text-field
@@ -47,6 +50,7 @@
       color="primary"
       required
       @keydown.enter="sendRegistration"
+      :style="this.$store.state.font"
     >
     </v-text-field>
     <div class="text-center mt-3">
@@ -55,6 +59,7 @@
           :disabled="!valid"
           :loading="loading"
           @click="sendRegistration"
+          :style="this.$store.state.font"
         >
             {{ $t('log.enter') }}
         </v-btn>
@@ -78,7 +83,7 @@ export default {
   }),
   computed: {
     rules() {
-      return this.$store.getters['getLoginRules']
+      return this.$store.getters['getrules']
     }
   },
   methods: {

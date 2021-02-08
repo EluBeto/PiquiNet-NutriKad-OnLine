@@ -5,10 +5,14 @@
       <page-logo></page-logo>
 
       <v-card-text class="primary--text mt-3">
-        <h2 class="text-center display-0">
+        <h2 class="text-center display-0"
+          :style="this.$store.state.font"
+        >
           {{ $t('log.welcome') }}
         </h2>
-        <h5 class="text-center">
+        <h5 class="text-center"
+          :style="this.$store.state.font"
+        >
           {{ $t('log.subtitle') }}
         </h5>
       </v-card-text>
@@ -18,13 +22,17 @@
     </v-col>
     <v-col cols="12" md="8">
       <v-card-text class="mt-12">
-        <h1 class="text-center display-2 teal--text primary--text">
+        <h1 class="text-center display-5 teal--text primary--text"
+          :style="this.$store.state.font"
+        >
           {{ $t('log.title') }}
         </h1>
         <div class="text-center mt-4">
           <social-media-buttons></social-media-buttons>
         </div>
-        <h4 v-if="!this.$store.state.isFormErrors" class="text-center mt-4">
+        <h4 v-if="!this.$store.state.isFormErrors" class="text-center mt-4"
+          :style="this.$store.state.font"
+        >
           Ingrese su correo para registrarse
         </h4>
 

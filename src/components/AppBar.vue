@@ -52,15 +52,8 @@
     </v-text-field> -->
 
     <div class="mx-3" />
-
-    <v-btn
-      class="ml-2"
-      min-width="0"
-      text
-      @click="exit"
-    >
-      <v-icon>mdi-location-exit</v-icon>
-    </v-btn>
+    
+    <BottonSheet></BottonSheet>
 
     <v-menu
       bottom
@@ -122,6 +115,7 @@
 
   // Utilities
   import { mapState, mapMutations } from 'vuex'
+  import BottonSheet from './forms/BottomSheet'
 
   export default {
     name: 'AppBar',
@@ -150,6 +144,7 @@
           })
         },
       },
+      BottonSheet
     },
 
     props: {
@@ -160,7 +155,7 @@
     },
 
     data: () => ({
-      notifications: [],
+      notifications: []
     }),
 
     computed: {
@@ -171,9 +166,9 @@
       ...mapMutations({
         setDrawer: 'SET_DRAWER',
       }),
-    exit() {
-      alert('adios')
-    }
+      exit() {
+        this.showAlert = true
+      }
     }
   }
 </script>

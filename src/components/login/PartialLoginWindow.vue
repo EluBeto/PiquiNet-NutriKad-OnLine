@@ -2,19 +2,25 @@
     <v-row>
         <v-col cols="12" md="8">
             <v-card-text class="mt-12">
-                <h1 class="text-center display-2 teal--text primary--text">
+                <h1 class="text-center display-5 primary--text"
+                    :style="this.$store.state.font"
+                >
                     {{ $t('login.title') }}
                 </h1>
 
                 <social-media-buttons></social-media-buttons>
                 
-                <h4 class="text-center mlt-4 my-3">
+                <h4 class="text-center mlt-4 my-3"
+                    :style="this.$store.state.font"
+                >
                     {{ $t('login.subtitle') }}
                 </h4>
                 
                 <login-form></login-form>
                 
-                <h4 class="text-center mt-3 my-3">
+                <h4 class="text-center mt-3 my-3"
+                    :style="this.$store.state.font"
+                >
                     {{ $t('login.forgotYourPassword') }}
                 </h4>
             </v-card-text>
@@ -24,10 +30,14 @@
             <page-logo></page-logo>
             
             <v-card-text class="primary--text mt-3">
-                <h2 class="text-center mt-1">
+                <h2 class="text-center mt-1"
+                    :style="this.$store.state.font"
+                >
                     {{ $t('login.welcome') }}
                 </h2>
-                <h5 class="text-center mt-1">
+                <h5 class="text-center mt-1"
+                    :style="this.$store.state.font"
+                >
                     {{ $t('login.dontHaveAnAccount') }}
                 </h5>
             </v-card-text>

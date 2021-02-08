@@ -12,7 +12,7 @@ export default new Vuex.Store({
     signUp: 'accounts:signUp?key=AIzaSyDRLE8mG1a5THtSb48HOAbzl7p8fAfHJxc',
     signIn: 'accounts:signInWithPassword?key=AIzaSyDRLE8mG1a5THtSb48HOAbzl7p8fAfHJxc',
     step: 1,
-    loginRules: {
+    rules: {
       emailRules: [
         v => !!v || 'E-mail es obligarorio',
         v => /.+@.+\...+/.test(v) || 'E-mail no es válido'
@@ -21,6 +21,33 @@ export default new Vuex.Store({
         v =>
           /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,20}$/.test(v) ||
           'Introduce al menos 8 caracteres, 1 Mayúscula, 1 Minúscula y 1 Número'
+      ],
+      textRules: [
+        v => !!v || 'Campo obligarorio',
+        v =>
+          /^(?=.*[a-zA-Z]).{3,100}$/.test(v) ||
+          'Al parecer tienes un nombre muy corto'
+      ],
+      dateRules: [
+        v => !!v || 'Campo obligarorio'
+      ],
+      numberRules: [
+        v => !!v || 'Campo obligarorio',
+        v =>
+          /^(?=.*[0-9]).{1,2}$/.test(v) ||
+          'Tu edad es incorrecta'
+      ],
+      phoneRules: [
+        v => !!v || 'Campo obligarorio',
+        v =>
+          /^(?=.*[0-9]).{10,10}$/.test(v) ||
+          'Tu número celular es incorrecto'
+      ],
+      weightRules: [
+        v => !!v || 'Campo obligarorio',
+        v =>
+          /^(0|[1-9]\d*)(.\d+)?$/.test(v) ||
+          "El valor que ingresaste es incorrecto, solo se permiten números"
       ]
     },
     isFormErrors: false,
@@ -28,6 +55,7 @@ export default new Vuex.Store({
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
     barImage: '/img/dashboard.jpg',
     drawer: null,
+    font: "font-family: 'Calibri' !important;"
   },
   actions: {
     SetLayout({ commit }, layout) {
@@ -105,8 +133,8 @@ export default new Vuex.Store({
     getStep(state) {
       return state.step
     },
-    getLoginRules(state) {
-      return state.loginRules
+    getrules(state) {
+      return state.rules
     }
   }
 })

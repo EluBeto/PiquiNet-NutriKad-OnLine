@@ -6,21 +6,21 @@ const serviceResponse = {
         case 'EMAIL_EXISTS':
             return 'Hey, ya tenemos registrada una cuenta con este correo'
         case 'TOO_MANY_ATTEMPTS_TRY_LATER':
-            return 'Hemos bloqueado todas las solicitudes de este dispositivo debido a una actividad inusual. Inténtelo de nuevo más tarde.'
+            return 'Ups! Hemos bloqueado todas las solicitudes de este dispositivo debido a una actividad inusual. Inténtelo de nuevo más tarde.'
         default:
-            break
+            return 'Ups! Tenemos problemas, intenta más tarde.'
     }
   },
   messageLoginResponse(payload) {
     switch (payload.message) {
-        case 'MISSING_EMAIL':
-            return 'Ups! El correo no existe.'
+        case 'EMAIL_NOT_FOUND':
+            return 'Ups! La contraseña no es válida o el usuario no existe.'
         case 'INVALID_PASSWORD':
-            return 'Ups! la contraseña no es válida o el usuario no tiene contraseña.'
+            return 'Ups! La contraseña no es válida o el usuario no existe.'
         case 'USER_DISABLED':
-            return 'la cuenta de usuario ha sido inhabilitada por un administrador.'
+            return 'Ups! La cuenta de usuario ha sido inhabilitada por un administrador.'
       default:
-          return 'Opus! Tenemos problemas, intenta más tarde.'
+          return 'Ups! Tenemos problemas, intenta más tarde.'
     }
   }
 }
