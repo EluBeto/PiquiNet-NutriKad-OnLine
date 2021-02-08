@@ -24,7 +24,10 @@ export default new Vuex.Store({
       ]
     },
     isFormErrors: false,
-    userAuth: {}
+    userAuth: {},
+    barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
+    barImage: '/img/dashboard.jpg',
+    drawer: null,
   },
   actions: {
     SetLayout({ commit }, layout) {
@@ -89,6 +92,12 @@ export default new Vuex.Store({
         }
       }
       state.userAuth = payload
+    },
+    SET_BAR_IMAGE (state, payload) {
+      state.barImage = payload
+    },
+    SET_DRAWER (state, payload) {
+      state.drawer = payload
     }
   },
   modules: {},
