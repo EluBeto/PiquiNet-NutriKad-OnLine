@@ -100,8 +100,8 @@ export default new Vuex.Store({
     },
     async register({ state }, payload) {
       try {
-        let url = state.nutrikadDB + 'patient-register/' + state.userAuth.localId + '/' +
-                  payload.id + '.json?auth=' + state.userAuth.idToken
+        let url = state.nutrikadDB + 'patient-register/' + state.userAuth.localId +
+                  '.json?auth=' + state.userAuth.idToken
         let parameters = JSON.stringify({
           dataIdentificationCard: payload.dataIdentificationCard,
           clinicHistory: payload.clinicHistory,
@@ -116,6 +116,16 @@ export default new Vuex.Store({
       try {
         const url = state.nutrikadDB + 'patient-register/' +
                     payload.localId + '.json?auth=' + payload.idToken
+        return await HttpServices.getRequest(url)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getDataUser({ state }, payload) {
+      try {
+        const url = state.nutrikadDB + 'patient-register/' +
+                    payload.localId + '/' +
+                    payload.id + '.json?auth=' + payload.idToken
         return await HttpServices.getRequest(url)
       } catch (error) {
         console.error(error)

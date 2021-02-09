@@ -595,11 +595,17 @@
   </v-stepper>
   <v-row>
     <v-col cols="12" sm="12" md="12">
+      <v-divider></v-divider>
+      <h1 class="text-center">
+        {{
+          fullName
+        }}
+      </h1>
       <template v-if="isRegisteredUser" class="text-center">
         <v-img
           :aspect-ratio="16/9"
           width="auto"
-          src="/img/registro.jpg"
+          :src="showImage"
         ></v-img>
       </template>
     </v-col>
@@ -691,7 +697,17 @@ export default {
       isCancel: false,
       loading: false,
       errorRegister: false,
-      multiLine: true
+      multiLine: true,
+      fullName: ''
+    }
+  },
+  computed: {
+    showImage() {
+      if (this.dataIdentificationCard.gender) {
+        return '/img/registro.jpg'
+      } else {
+        return '/img/registro-h.jpg'
+      }
     }
   },
   methods: {
@@ -759,6 +775,22 @@ export default {
       this.validCard_3 = false
       this.validCard_4 = false
       this.validCard_5 = false
+    },
+    async getDataUser(dataLocalStg) {
+      this.$store.dispatch('getDataUser', {
+         localId: dataLocalStg.localId,
+         idToken: dataLocalStg.idToken,
+         id: dataLocalStg.id
+      })
+      .then(response => {
+        if (!response.error) {
+          this.dataIdentificationCard.gender = response.dataIdentificationCard.gender
+          this.isRegisteredUser = response.isRegisteredUser
+          this.fullName = `${response.dataIdentificationCard.name} 
+                          ${response.dataIdentificationCard.lastName} 
+                          ${response.dataIdentificationCard.motherLastName}`
+        }
+      })
     }
   },
   created(){
@@ -775,13 +807,29 @@ export default {
       })
       .then(response => {
         if (!response.error) {
-          for(let id in response) {
-            if (id != null) {
-              this.isRegisteredUser = true
+          if (response.isRegisteredUser) {
+            this.dataIdentificationCard.gender = response.dataIdentificationCard.gender
+            this.isRegisteredUser = response.isRegisteredUser
+            this.fullName = `${response.dataIdentificationCard.name} 
+                          ${response.dataIdentificationCard.lastName} 
+                          ${response.dataIdentificationCard.motherLastName}`
+          } else {
+            for(let id in response) {
+              if (id != null) {
+                this.getDataUser({
+                  localId: user.localId,
+                  idToken: user.idToken,
+                  id: id
+                })
+              }
             }
           }
+        } else {
+          this.$router.push('/')
         }
       })
+    } else {
+      this.$router.push('/')
     }
   }
 }
