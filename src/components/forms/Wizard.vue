@@ -1,12 +1,12 @@
 <template>
   <div>
-      <v-stepper
-    v-model="numberOfSteps"
-    vertical
-    v-if="!isRegisteredUser"
-  >
-
-    <v-stepper-step
+    <v-stepper
+     v-model="numberOfSteps"
+     vertical
+     v-if="!isRegisteredUser"
+    >
+ 
+     <v-stepper-step
       :complete="numberOfSteps > 1"
       step="1"
       :style="this.$store.state.font"
@@ -14,9 +14,9 @@
     >
       ¿Estas lista(o)?
       <small :style="this.$store.state.font">Comencemos..</small>
-    </v-stepper-step>
-
-    <v-stepper-content step="1">
+     </v-stepper-step>
+ 
+     <v-stepper-content step="1">
       <div class="my-3 text-center">
         <v-card
           min-width="100%"
@@ -40,17 +40,17 @@
       >
         Siguiente
       </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step
+     </v-stepper-content>
+ 
+     <v-stepper-step
       :complete="numberOfSteps > 2"
       step="2"
     >
       Ficha de identificación:
       <small :style="this.$store.state.font">Todos los campos son obligatorios</small>
-    </v-stepper-step>
-
-    <v-stepper-content step="2">
+     </v-stepper-step>
+ 
+     <v-stepper-content step="2">
       <v-card
         min-width="100%"
         color="#fafafa lighten-1"
@@ -160,17 +160,17 @@
       >
         Regresar
       </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step
+     </v-stepper-content>
+ 
+     <v-stepper-step
       :complete="numberOfSteps > 3"
       step="3"
     >
       Historia clínica básica:
       <small :style="this.$store.state.font">Todos los campos son obligatorios</small>
-    </v-stepper-step>
-
-    <v-stepper-content step="3">
+     </v-stepper-step>
+ 
+     <v-stepper-content step="3">
       <v-card
         min-width="100%"
         color="#fafafa lighten-1"
@@ -337,16 +337,16 @@
       >
         Regresar
       </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step
+     </v-stepper-content>
+ 
+     <v-stepper-step
       :complete="numberOfSteps > 4"
       step="4"
     >
       Alergias o Intolerancias:
-    </v-stepper-step>
-
-    <v-stepper-content step="4">
+     </v-stepper-step>
+ 
+     <v-stepper-content step="4">
       <v-card
         min-width="100%"
         color="#fafafa lighten-1"
@@ -450,12 +450,12 @@
       <v-btn text>
         Cancelar
       </v-btn>
-    </v-stepper-content>
-
-    <v-stepper-step step="5">
+     </v-stepper-content>
+ 
+     <v-stepper-step step="5">
       Importante:
-    </v-stepper-step>
-    <v-stepper-content step="5">
+     </v-stepper-step>
+     <v-stepper-content step="5">
       <v-card
         min-width="100%"
         color="#fafafa lighten-1"
@@ -542,6 +542,8 @@
       <v-btn
           color="primary"
           @click="aceptConditions"
+          :disabled="loading"
+          :loading="loading"
       >
             Enviar Registro
           </v-btn>
@@ -550,9 +552,9 @@
       >
         Cancelar
       </v-btn>
-    </v-stepper-content>
-
-    <div class="text-center">
+     </v-stepper-content>
+ 
+     <div class="text-center">
       <v-dialog
         v-model="dialog"
         width="500"
@@ -589,14 +591,40 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-    </div>
+     </div>
   </v-stepper>
-  <template v-if="isRegisteredUser">
-    <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
-  </template>
+  <v-row>
+    <v-col cols="12" sm="12" md="12">
+      <template v-if="isRegisteredUser" class="text-center">
+        <v-img
+          :aspect-ratio="16/9"
+          width="auto"
+          src="/img/registro.jpg"
+        ></v-img>
+      </template>
+    </v-col>
+  </v-row>
+
+  <v-snackbar
+      v-model="errorRegister"
+      :multi-line="multiLine"
+    >
+      Ups! Algo salio mal, intenta nuevamente.
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="red"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Cerrrar
+        </v-btn>
+      </template>
+  </v-snackbar>
   </div>
 </template>
 <script>
+const shortid = require('shortid')
 export default {
   name: 'Wizard',
   data () {
@@ -660,7 +688,10 @@ export default {
         }
       },
       dialog: false,
-      isCancel: false
+      isCancel: false,
+      loading: false,
+      errorRegister: false,
+      multiLine: true
     }
   },
   methods: {
@@ -684,10 +715,26 @@ export default {
       this.numberOfSteps = 5
       this.validCard_4 = false
     },
-    finishRegistration() {
+    async finishRegistration() {
       if (!this.isCancel) {
         this.dialog = false
-        this.isRegisteredUser = true
+        this.loading = true
+        this.$store.dispatch('register', {
+          id: shortid.generate(),
+          dataIdentificationCard: this.dataIdentificationCard,
+          clinicHistory: this.clinicHistory,
+          isRegisteredUser: true
+        })
+        .then(response => {
+          if (response.error) {
+            this.errorRegister = true
+            this.isRegisteredUser = false
+          } else {
+            window.localStorage.setItem('isRegister', true)
+            this.isRegisteredUser = true
+          }
+          this.loading = false
+        })
       } else {
         this.dialog = false
         this.resetRegistration()
@@ -712,6 +759,29 @@ export default {
       this.validCard_3 = false
       this.validCard_4 = false
       this.validCard_5 = false
+    }
+  },
+  created(){
+    if (window.localStorage.getItem("isRegister") != null) {
+      let register = JSON.parse(localStorage.getItem('isRegister'))
+      this.isRegisteredUser = register
+    }
+
+    if (window.localStorage.getItem("user") != null) {
+      const user = JSON.parse(window.localStorage.getItem("user"))
+      this.$store.dispatch('getRegister', {
+         localId: user.localId,
+         idToken: user.idToken
+      })
+      .then(response => {
+        if (!response.error) {
+          for(let id in response) {
+            if (id != null) {
+              this.isRegisteredUser = true
+            }
+          }
+        }
+      })
     }
   }
 }

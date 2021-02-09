@@ -7,7 +7,7 @@
                     <router-view :key="$router.fullPath"></router-view>
                 </v-container>
             </v-main>
-            <Footer></Footer>
+            <Footer class="my-4"></Footer>
         </v-app>
     </div>
 </template>

@@ -9,8 +9,9 @@ export default new Vuex.Store({
     version: 'Versión: 1.0.0',
     layout: 'login-layout',
     urlApi: 'https://identitytoolkit.googleapis.com/v1/',
-    signUp: 'accounts:signUp?key=AIzaSyDRLE8mG1a5THtSb48HOAbzl7p8fAfHJxc',
-    signIn: 'accounts:signInWithPassword?key=AIzaSyDRLE8mG1a5THtSb48HOAbzl7p8fAfHJxc',
+    signUp: 'accounts:signUp?key=AIzaSyA81YBBwmpt4F8HngOk9CH3HzgvCWbCqhU',
+    signIn: 'accounts:signInWithPassword?key=AIzaSyA81YBBwmpt4F8HngOk9CH3HzgvCWbCqhU',
+    nutrikadDB: 'https://nutrikad-online-94-default-rtdb.firebaseio.com/',
     step: 1,
     rules: {
       emailRules: [
@@ -80,7 +81,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    async login({ state }, payload){
+    async login({ state, commit }, payload) {
       try {
         let url = state.urlApi + state.signIn
         let parameters = JSON.stringify({
@@ -88,7 +89,34 @@ export default new Vuex.Store({
           password: payload.password,
           returnSecureToken: true
         })
-        return await HttpServices.postRequest(url, parameters)
+        const response = await HttpServices.postRequest(url, parameters)
+        if (!response.error) {
+          commit('SET_USER_AUTH', response)
+        }
+        return response
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async register({ state }, payload) {
+      try {
+        let url = state.nutrikadDB + 'patient-register/' + state.userAuth.localId + '/' +
+                  payload.id + '.json?auth=' + state.userAuth.idToken
+        let parameters = JSON.stringify({
+          dataIdentificationCard: payload.dataIdentificationCard,
+          clinicHistory: payload.clinicHistory,
+          isRegisteredUser: payload.isRegisteredUser
+        })
+        return await HttpServices.putRequest(url, parameters)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getRegister({ state }, payload) {
+      try {
+        const url = state.nutrikadDB + 'patient-register/' +
+                    payload.localId + '.json?auth=' + payload.idToken
+        return await HttpServices.getRequest(url)
       } catch (error) {
         console.error(error)
       }
@@ -107,19 +135,26 @@ export default new Vuex.Store({
     SET_FORM_HAS_AN_ERROR(state, payload) {
       state.isFormErrors = payload
     },
-    LOCALSTORAGE_PROCESSES(state, payload) {
+    SET_USER_AUTH(state, payload) {
+      state.userAuth = payload
+    },
+    LOCALSTORAGE_PROCESSES(payload) {
       if (payload.localStorageObject) {
-        let convertObjetctToJson = JSON.stringify(payload.localStorageObject)
+        console.log('estructLocalstorage', payload);
         switch (payload.action) {
           case 'setItem':
-            window.localStorage.setItem(payload.name, convertObjetctToJson)
+            window.localStorage.setItem(payload.name, JSON.stringify(payload.localStorageObject))
             break
-        
+          case 'getItem':
+            window.localStorage.removeItem(payload.name)
+            break
+          case 'removeItem':
+            window.localStorage.removeItem(payload.name, JSON.stringify(payload.localStorageObject))
+            break
           default:
             break
         }
       }
-      state.userAuth = payload
     },
     SET_BAR_IMAGE (state, payload) {
       state.barImage = payload

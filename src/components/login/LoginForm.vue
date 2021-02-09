@@ -84,6 +84,7 @@ export default {
             this.isErrorLogin = true
             this.error = ServicesResponseHandling.messageLoginResponse(response.error)
           } else {
+            window.localStorage.setItem('user', JSON.stringify(response))
             this.isErrorLogin = false
             this.$router.push('dashboard')
           }

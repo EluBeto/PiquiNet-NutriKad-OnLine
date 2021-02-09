@@ -101,12 +101,6 @@ export default {
               this.$store.dispatch('setFormHasAnError', true)
               this.error = ServicesResponseHandling.messageLogResponse(response.error)
             } else {
-              const estructLocalstorage = {
-                action: 'setItem',
-                name: 'user',
-                localStorageObject: response
-              }
-              this.$store.dispatch('setLoacalStorage', estructLocalstorage)
               this.$store.dispatch('setStep', 1)
               this.resetForm()
             }
