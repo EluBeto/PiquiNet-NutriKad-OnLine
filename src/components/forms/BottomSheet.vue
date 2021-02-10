@@ -50,6 +50,9 @@
     }),
     methods: {
       exit() {
+        window.localStorage.removeItem('user')
+        this.$store.dispatch('MessageAlerts/clearAlert', false)
+        this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
         this.sheet = true
         this.$router.push('/')
       }

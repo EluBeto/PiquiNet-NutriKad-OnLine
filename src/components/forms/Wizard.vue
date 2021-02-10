@@ -9,11 +9,10 @@
      <v-stepper-step
       :complete="numberOfSteps > 1"
       step="1"
-      :style="this.$store.state.font"
       class="display-5"
     >
       ¿Estas lista(o)?
-      <small :style="this.$store.state.font">Comencemos..</small>
+      <small  >Comencemos..</small>
      </v-stepper-step>
  
      <v-stepper-content step="1">
@@ -36,7 +35,7 @@
       <v-btn
         color="primary"
         @click="numberOfSteps = 2"
-        :style="this.$store.state.font"
+         
       >
         Siguiente
       </v-btn>
@@ -47,7 +46,7 @@
       step="2"
     >
       Ficha de identificación:
-      <small :style="this.$store.state.font">Todos los campos son obligatorios</small>
+      <small  >Todos los campos son obligatorios</small>
      </v-stepper-step>
  
      <v-stepper-content step="2">
@@ -167,7 +166,7 @@
       step="3"
     >
       Historia clínica básica:
-      <small :style="this.$store.state.font">Todos los campos son obligatorios</small>
+      <small  >Todos los campos son obligatorios</small>
      </v-stepper-step>
  
      <v-stepper-content step="3">
@@ -630,7 +629,6 @@
   </div>
 </template>
 <script>
-const shortid = require('shortid')
 export default {
   name: 'Wizard',
   data () {
@@ -736,7 +734,6 @@ export default {
         this.dialog = false
         this.loading = true
         this.$store.dispatch('register', {
-          id: shortid.generate(),
           dataIdentificationCard: this.dataIdentificationCard,
           clinicHistory: this.clinicHistory,
           isRegisteredUser: true

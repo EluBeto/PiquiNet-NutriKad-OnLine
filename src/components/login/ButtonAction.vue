@@ -5,7 +5,7 @@
          color="black"
          class="my-2"
          @click="setStep"
-         :style="this.$store.state.font"
+          
   >
     {{ 
       step === 2 ? $t('login.requestAccount')
@@ -23,6 +23,8 @@ export default {
   data: () => ({}),
   methods: {
     setStep() {
+      this.$store.dispatch('MessageAlerts/clearAlert', false)
+      this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
       this.$store.dispatch('setStep', this.step)
     }
   },
