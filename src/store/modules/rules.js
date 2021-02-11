@@ -37,5 +37,10 @@ export default {
             /^(0|[1-9]\d*)(.\d+)?$/.test(v) ||
             "El valor que ingresaste es incorrecto, solo se permiten números"
         ]
+    },
+    getters: {
+      getRules(state) {
+        return state
+      }
     }
 }

@@ -65,7 +65,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="name"
-                :rules="this.$store.state.rules.textRules"
+                :rules="rules.textRules"
                 v-model="dataIdentificationCard.name"
                 type="text"
                 prepend-icon="mdi-account"
@@ -77,7 +77,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="lastName"
-                :rules="this.$store.state.rules.textRules"
+                :rules="rules.textRules"
                 v-model="dataIdentificationCard.lastName"
                 type="text"
                 prepend-icon="mdi-account"
@@ -89,7 +89,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="motherLastName"
-                :rules="this.$store.state.rules.textRules"
+                :rules="rules.textRules"
                 v-model="dataIdentificationCard.motherLastName"
                 type="text"
                 prepend-icon="mdi-account"
@@ -101,7 +101,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="dateOfBirth"
-                :rules="this.$store.state.rules.dateRules"
+                :rules="rules.dateRules"
                 v-model="dataIdentificationCard.dateOfBirth"
                 prepend-icon="mdi-calendar"
                 type="date"
@@ -115,7 +115,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="age"
-                :rules="this.$store.state.rules.numberRules"
+                :rules="rules.numberRules"
                 v-model="dataIdentificationCard.age"
                 prepend-icon="mdi-account"
                 type="number"
@@ -127,7 +127,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="phoneNumber"
-                :rules="this.$store.state.rules.phoneRules"
+                :rules="rules.phoneRules"
                 v-model="dataIdentificationCard.phoneNumber"
                 prepend-icon="mdi-phone"
                 type="number"
@@ -209,7 +209,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="actualWeight"
-                :rules="this.$store.state.rules.weightRules"
+                :rules="rules.weightRules"
                 v-model="clinicHistory.actualWeight"
                 type="text"
                 prepend-icon="mdi-account"
@@ -242,7 +242,7 @@
             <v-col cols="12" sm="6" md="3">
               <v-text-field
                 key="height"
-                :rules="this.$store.state.rules.weightRules"
+                :rules="rules.weightRules"
                 v-model="clinicHistory.height"
                 type="text"
                 prepend-icon="mdi-ruler"
@@ -258,7 +258,7 @@
              <v-col cols="12" sm="6" md="4">
               <v-text-field
                 key="waist"
-                :rules="this.$store.state.rules.weightRules"
+                :rules="rules.weightRules"
                 v-model="clinicHistory.measurements.waist"
                 type="text"
                 prepend-icon="mdi-ruler"
@@ -270,7 +270,7 @@
             <v-col cols="12" sm="6" md="4">
               <v-text-field
                 key="chest"
-                :rules="this.$store.state.rules.weightRules"
+                :rules="rules.weightRules"
                 v-model="clinicHistory.measurements.chest"
                 type="text"
                 prepend-icon="mdi-ruler"
@@ -282,7 +282,7 @@
             <v-col cols="12" sm="6" md="4">
               <v-text-field
                 key="hip"
-                :rules="this.$store.state.rules.weightRules"
+                :rules="rules.weightRules"
                 v-model="clinicHistory.measurements.hip"
                 type="text"
                 prepend-icon="mdi-ruler"
@@ -706,6 +706,9 @@ export default {
       } else {
         return '/img/registro-h.jpg'
       }
+    },
+    rules() {
+      return this.$store.getters['Rules/getRules']
     }
   },
   methods: {
