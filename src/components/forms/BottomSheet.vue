@@ -11,8 +11,10 @@
           text
           v-bind="attrs"
           v-on="on"
+          depressed
+          rounded
         >
-          <v-icon>mdi-location-exit</v-icon>
+          Salir
         </v-btn>
       </template>
       <v-sheet

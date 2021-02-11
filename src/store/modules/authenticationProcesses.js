@@ -23,7 +23,8 @@ export default {
     actions: {
         async userRegistration({ rootState }, payload) {
             let url = rootState.DataBaseConnectionPaths.urlApi +
-                      rootState.DataBaseConnectionPaths.signUp
+                      rootState.DataBaseConnectionPaths.signUp +
+                      rootState.DataBaseConnectionPaths.key
             let parameters = JSON.stringify({
                 email: payload.email,
                 password: payload.password,
@@ -33,7 +34,8 @@ export default {
         },
         async login({ rootState, commit }, payload) {
             let url = rootState.DataBaseConnectionPaths.urlApi +
-                      rootState.DataBaseConnectionPaths.signIn
+                      rootState.DataBaseConnectionPaths.signIn +
+                      rootState.DataBaseConnectionPaths.key
             let parameters = JSON.stringify({
                 email: payload.email,
                 password: payload.password,
