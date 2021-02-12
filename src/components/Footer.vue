@@ -15,10 +15,8 @@
         >
           <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
             &copy; 2021,
-            <v-icon size="18">
-              NutriKad Online
-            </v-icon>
-            by <a href="https://nutri-dental.com/nutrikad/">Nutrikad</a> Nutrición - Estilo de vida - Salud.
+             NutriKad Online
+            by <a href="javascript:window.open('https://nutri-dental.com/nutrikad/','','toolbar=yes');void 0">Nutrikad</a> Nutrición - Estilo de vida - Salud.
           </div>
         </v-col>
       </v-row>

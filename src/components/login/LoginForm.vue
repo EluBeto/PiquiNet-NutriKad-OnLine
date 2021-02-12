@@ -1,17 +1,11 @@
 <template>
-  <v-form ref="loginForm" v-model="valid" lazy-validation>
-      <v-alert v-if="isErrorLogin"
-        icon="mdi-account-question"
-        border="bottom"
-        color="pink darken-1"
-        dark
-        :style="this.$store.state.font"
-      >
-        {{ error }}
-      </v-alert>
+  <v-form ref="loginForm" v-model="loginParameters.validForm" lazy-validation>
+      <MessageAlerts class="mt-3"
+        v-if="this.$store.state.MessageAlerts.alert.isShow"
+      ></MessageAlerts>
       <v-text-field
         key="user-name"
-        v-model.trim="email"
+        v-model.trim="loginParameters.login.email"
         :rules="rules.emailRules"
         :label="$t('login.email')"
         :name="$t('login.email')"
@@ -19,31 +13,35 @@
         type="text"
         color="primary"
         required
-        :style="this.$store.state.font"
       ></v-text-field>
       <v-text-field
         key="password"
-        v-model.trim="password"
+        v-model.trim="loginParameters.login.password"
         :rules="rules.passwordRules"
         :label="$t('login.password')"
         :name="$t('login.password')"
         prepend-icon="mdi-lock"
-        :type="showPass ? 'text' : 'password'"
-              :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
-        @click:append="showPass = !showPass"
+        :type="loginParameters.login.showPassword ? 'text' : 'password'"
+              :append-icon="loginParameters.login.showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+        @click:append="loginParameters.login.showPassword = !loginParameters.login.showPassword"
         color="primary"
         required
         @keydown.enter="login"
-        :style="this.$store.state.font"
+         
       ></v-text-field>
-
+      <div class="text-center mt-3 my-3">
+        <v-checkbox
+          v-model="loginParameters.login.rememberCredentials"
+          label="Recordar credenciales"
+        ></v-checkbox>
+      </div>
       <div class="text-center mt-3 my-5">
         <v-btn rounded 
                color="primary"
-               :disabled="!valid"
-               :loading="loading"
-               @click="login"
-               :style="this.$store.state.font"
+               :disabled="!loginParameters.validForm"
+               :loading="loginParameters.loading"
+               @click.prevent="login"
+                
         >
             {{ $t('login.enter') }}
         </v-btn>
@@ -53,48 +51,127 @@
 
 <script>
 import ServicesResponseHandling from '@/services/serviceResponseHandling'
+import MessageAlerts from '../forms/MessageAlerts'
 export default {
   name: 'LoginForm',
-  data: () => ({
-    valid: false,
-    error: null,
-    email: '',
-    password: '',
-    showPass: false,
-    loading: false,
-    isErrorLogin: false
-  }),
+  components: {
+    MessageAlerts
+  },
+  data: () => ({}),
   computed: {
+    loginParameters() {
+      return this.$store.getters['AuthenticationProcesses/getloginParameters']
+    },
     rules() {
-      return this.$store.getters['getrules']
+      return this.$store.getters['Rules/getRules']
+    },
+    alertParameters() {
+      return this.$store.getters['MessageAlerts/getAlerts']
     }
   },
   methods: {
     async login() {
-      this.loading = true
+      this.$store.state.AuthenticationProcesses.loading = true
+      let credentials ={
+        rememberCredentials: this.loginParameters.login.rememberCredentials,
+        email: this.loginParameters.login.email,
+        password: this.loginParameters.login.password
+      }
+      this.setRememberParameters(credentials)
+      this.cleanAlert
+      
       if (this.$refs.loginForm.validate()) {
-        this.error = null
-        this.loading = true
-        this.$store.dispatch('login', {
-          email: this.email,
-          password: this.password
+        this.loginParameters.errorMessage = null
+
+        this.$store.dispatch('AuthenticationProcesses/login', {
+          email: this.loginParameters.login.email,
+          password: this.loginParameters.login.password
         })
         .then(response => {
+
           if (response.error) {
-            this.isErrorLogin = true
-            this.error = ServicesResponseHandling.messageLoginResponse(response.error)
+
+            this.showMessage(response.error)
+
           } else {
-            window.localStorage.setItem('user', JSON.stringify(response))
-            this.isErrorLogin = false
-            this.$router.push('dashboard')
+
+            this.$store.state.AuthenticationProcesses.isErrorAuth = false
+            window.localStorage.setItem('userAuth', JSON.stringify(response))
+
+            this.getUserInfo(response)
           }
         })
       }
-      this.loading = false
+      this.$store.state.AuthenticationProcesses.loading = false
+    },
+    getUserInfo(response) {
+      this.$store.dispatch('AuthenticationProcesses/getUserInformation', {
+        email: response.email,
+        localId: response.localId,
+        idToken: response.idToken
+      }).then(userResponse => {
+        if (userResponse.error) {
+          console.log('1', userResponse);
+          this.showMessage(userResponse.error)
+          this.$router.push('/')
+          
+        } else {
+          if (userResponse === true) {
+            console.log('2', userResponse);
+            this.$router.push('dashboard') 
+          } else {
+            console.log('3', userResponse);
+            window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
+            this.$router.push('dashboard') 
+          }
+          this.resetForm
+        }
+      })
+    },
+    setRememberParameters: function(credentials) {
+      if (credentials.rememberCredentials) {
+        window.localStorage.setItem('rememberCredentials', JSON.stringify(credentials))
+      } else {
+        window.localStorage.removeItem('rememberCredentials')
+      }
+    },
+    showMessage(message) {
+      this.$store.state.AuthenticationProcesses.isErrorAuth = true
+      this.loginParameters.errorMessage = ServicesResponseHandling.messageLoginResponse(message)
+
+      this.$store.state.MessageAlerts = {
+        type: 'alert',
+        alert: {
+          isShow: this.$store.state.AuthenticationProcesses.isErrorAuth,
+          message: this.loginParameters.errorMessage
+        }
+      }
     },
     resetForm() {
       this.$refs.loginForm.reset()
+      this.$store.dispatch('MessageAlerts/clearAlert', false)
+      this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
+    },
+    cleanAlert() {
+      this.$store.state.AuthenticationProcesses.isErrorAuth = false
+      this.loginParameters.errorMessage = ''
+      this.$store.dispatch('MessageAlerts/clearAlert', false)
     }
+  },
+  created() {
+    if (this.$nextTick) {
+      if (localStorage.getItem('rememberCredentials') != null) {
+          const {
+            rememberCredentials,
+            email,
+            password
+          } = JSON.parse(localStorage.getItem('rememberCredentials'))
+          this.loginParameters.login.rememberCredentials = rememberCredentials
+          this.loginParameters.login.email = email
+          this.loginParameters.login.password = password
+      }
+    }
+    this.$store.dispatch('SetLayout', 'login-layout')
   }
 }
 </script>

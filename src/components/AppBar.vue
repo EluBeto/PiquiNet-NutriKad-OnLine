@@ -3,13 +3,12 @@
     id="app-bar"
     absolute
     app
-    color="transparent"
-    flat
-    height="75"
+    color="lime lighten-4"
+    height="80"
   >
     <v-btn
-      class="mr-3"
-      elevation="1"
+      class="mr-5"
+      elevation="10"
       fab
       small
       @click="setDrawer(!drawer)"
@@ -30,30 +29,7 @@
 
     <v-spacer />
 
-    <!-- <v-text-field
-      :label="$t('search')"
-      color="secondary"
-      hide-details
-      style="max-width: 165px;"
-    >
-      <template
-        v-if="$vuetify.breakpoint.mdAndUp"
-        v-slot:append-outer
-      >
-        <v-btn
-          class="mt-n2"
-          elevation="1"
-          fab
-          small
-        >
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-      </template>
-    </v-text-field> -->
-
-    <div class="mx-3" />
-    
-    <BottonSheet></BottonSheet>
+    <div class="mx-10" />
 
     <v-menu
       bottom
@@ -98,24 +74,15 @@
         </div>
       </v-list>
     </v-menu>
-
-    <v-btn
-      class="ml-2"
-      min-width="0"
-      text
-    >
-      <v-icon>mdi-account</v-icon>
-    </v-btn>
+    
+    <Avatar class="px-5"></Avatar>
   </v-app-bar>
 </template>
 
 <script>
-  // Components
   import { VHover, VListItem } from 'vuetify/lib'
-
-  // Utilities
   import { mapState, mapMutations } from 'vuex'
-  import BottonSheet from './forms/BottomSheet'
+  import Avatar from './Avatar'
 
   export default {
     name: 'AppBar',
@@ -130,28 +97,28 @@
                   attrs: this.$attrs,
                   class: {
                     'black--text': !hover,
-                    'white--text secondary elevation-12': hover,
+                    'white--text secondary elevation-12': hover
                   },
                   props: {
                     activeClass: '',
                     dark: hover,
                     link: true,
-                    ...this.$attrs,
-                  },
+                    ...this.$attrs
+                  }
                 }, this.$slots.default)
-              },
-            },
+              }
+            }
           })
-        },
+        }
       },
-      BottonSheet
+      Avatar
     },
 
     props: {
       value: {
         type: Boolean,
         default: false,
-      },
+      }
     },
 
     data: () => ({
@@ -159,12 +126,12 @@
     }),
 
     computed: {
-      ...mapState(['drawer']),
+      ...mapState(['drawer'])
     },
 
     methods: {
       ...mapMutations({
-        setDrawer: 'SET_DRAWER',
+        setDrawer: 'SET_DRAWER'
       }),
       exit() {
         this.showAlert = true

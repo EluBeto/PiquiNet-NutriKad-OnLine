@@ -11,8 +11,10 @@
           text
           v-bind="attrs"
           v-on="on"
+          depressed
+          rounded
         >
-          <v-icon>mdi-location-exit</v-icon>
+          Salir
         </v-btn>
       </template>
       <v-sheet
@@ -50,6 +52,11 @@
     }),
     methods: {
       exit() {
+        window.localStorage.removeItem('userAuth')
+        window.localStorage.removeItem('userInfo')
+        window.localStorage.removeItem('registeredUser')
+        this.$store.dispatch('MessageAlerts/clearAlert', false)
+        this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
         this.sheet = true
         this.$router.push('/')
       }

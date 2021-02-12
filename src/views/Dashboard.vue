@@ -4,7 +4,7 @@
     <v-row>
       <v-col md="11" class="pb-0">
         <h1 class="text-center font-weight-regular pt-sm-6 pt-xs-4"
-          :style="this.$store.state.font"
+           
         >
           ¡Aquí inicia el cambio que tanto has buscado!
         </h1>
