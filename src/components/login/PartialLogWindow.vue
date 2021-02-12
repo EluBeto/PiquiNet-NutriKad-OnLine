@@ -28,7 +28,7 @@
           {{ $t('log.title') }}
         </h1>
         <div class="text-center mt-4">
-          <social-media-buttons></social-media-buttons>
+          <social-media-buttons v-if="false"></social-media-buttons>
         </div>
         <h4 v-if="!this.$store.state.AuthenticationProcesses.isErrorAuth" class="text-center mt-4"
            

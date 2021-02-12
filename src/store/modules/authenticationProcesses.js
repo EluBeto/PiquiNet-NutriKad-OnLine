@@ -1,4 +1,5 @@
 import HttpServices from '@/services/httpServices'
+
 export default {
     namespaced: true,
     state: {
@@ -7,6 +8,7 @@ export default {
         userAuth: {},
         validForm: false,
         loading: false,
+        rememberCredentials: false,
         login: {
             email: '',
             password: '',
@@ -18,6 +20,14 @@ export default {
             confirmPassword: '',
             showPassword: false,
             showConfirmPassword: false
+        },
+        userInformation: {
+            initials: '',
+            userName: '',
+            email: '',
+            age: '',
+            gender: false,
+            isRegisteredUser: false
         }
     },
     actions: {
@@ -47,6 +57,34 @@ export default {
             }
             return response
         },
+        async getUserInformation({ rootState, commit }, payload) {
+            const {
+                localId,
+                idToken
+            } = payload
+            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
+            const response = await HttpServices.getRequest(url)
+            console.log('RESPONSE', response);
+            if (response === null) { return true }
+            if (response.error) return { response: response }
+            
+            const {
+                name,
+                lastName,
+                motherLastName,
+                gender
+            } = response.dataIdentificationCard
+            
+            const newPayload = {
+                gender: gender,
+                name: name,
+                lastName: lastName,
+                motherLastName: motherLastName,
+                isRegistered: response.isRegisteredUser
+            }
+            commit('SET_USER_INFORMATION', newPayload)
+            return newPayload
+        },
         setFormHasAnError({ commit }, payload) {
             commit('SET_FORM_HAS_AN_ERROR', payload)
         },
@@ -68,6 +106,14 @@ export default {
                 showPassword: payload,
                 showConfirmPassword: payload
             }
+            state.userInformation = {
+                initials: '',
+                userName: '',
+                email: '',
+                age: '',
+                gender: false,
+                isRegisteredUser: false
+            }
         }
     },
     mutations: {
@@ -76,7 +122,27 @@ export default {
         },
         SET_FORM_HAS_AN_ERROR(state, payload) {
           state.isErrorAuth = payload
+        },
+        SET_USER_INFORMATION(state, payload) {
+            state.userInformation = {
+                initials: payload.initials,
+                userName: payload.userName,
+                email: payload.email,
+                age: payload.age,
+                gender: payload.gender,
+                isRegisteredUser: payload.isRegisteredUser
+            }
         }
     },
-    getters: {}
+    getters: {
+        getloginParameters(state) {
+            return state
+        },
+        getUserInformation(state) {
+            return state.userInformation
+        },
+        getIsRegisteredUser(state) {
+            return state.userInformation.isRegisteredUser
+        }
+    }
 }

@@ -15,5 +15,9 @@ export default {
     },
     actions: {},
     mutatios: {},
-    getters: {}
+    getters: {
+        getDialog(state) {
+            return state
+        }
+    }
 }

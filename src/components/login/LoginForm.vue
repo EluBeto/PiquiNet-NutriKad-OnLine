@@ -1,6 +1,6 @@
 <template>
   <v-form ref="loginForm" v-model="loginParameters.validForm" lazy-validation>
-      <MessageAlerts 
+      <MessageAlerts class="mt-3"
         v-if="this.$store.state.MessageAlerts.alert.isShow"
       ></MessageAlerts>
       <v-text-field
@@ -29,13 +29,18 @@
         @keydown.enter="login"
          
       ></v-text-field>
-
+      <div class="text-center mt-3 my-3">
+        <v-checkbox
+          v-model="loginParameters.login.rememberCredentials"
+          label="Recordar credenciales"
+        ></v-checkbox>
+      </div>
       <div class="text-center mt-3 my-5">
         <v-btn rounded 
                color="primary"
                :disabled="!loginParameters.validForm"
                :loading="loginParameters.loading"
-               @click="login"
+               @click.prevent="login"
                 
         >
             {{ $t('login.enter') }}
@@ -52,15 +57,27 @@ export default {
   components: {
     MessageAlerts
   },
-  data: () => ({
-    loginParameters: {},
-    rules: {},
-    alertParameters: {}
-  }),
-  computed: {},
+  data: () => ({}),
+  computed: {
+    loginParameters() {
+      return this.$store.getters['AuthenticationProcesses/getloginParameters']
+    },
+    rules() {
+      return this.$store.getters['Rules/getRules']
+    },
+    alertParameters() {
+      return this.$store.getters['MessageAlerts/getAlerts']
+    }
+  },
   methods: {
     async login() {
       this.$store.state.AuthenticationProcesses.loading = true
+      let credentials ={
+        rememberCredentials: this.loginParameters.login.rememberCredentials,
+        email: this.loginParameters.login.email,
+        password: this.loginParameters.login.password
+      }
+      this.setRememberParameters(credentials)
       this.cleanAlert
       
       if (this.$refs.loginForm.validate()) {
@@ -71,27 +88,64 @@ export default {
           password: this.loginParameters.login.password
         })
         .then(response => {
+
           if (response.error) {
 
-            this.$store.state.AuthenticationProcesses.isErrorAuth = true
-            this.loginParameters.errorMessage = ServicesResponseHandling.messageLoginResponse(response.error)
+            this.showMessage(response.error)
 
-            this.$store.state.MessageAlerts = {
-              type: 'alert',
-              alert: {
-                isShow: this.$store.state.AuthenticationProcesses.isErrorAuth,
-                message: this.loginParameters.errorMessage
-              }
-            }
           } else {
-            this.resetForm
-            window.localStorage.setItem('user', JSON.stringify(response))
+
             this.$store.state.AuthenticationProcesses.isErrorAuth = false
-            this.$router.push('dashboard')
+            window.localStorage.setItem('userAuth', JSON.stringify(response))
+
+            this.getUserInfo(response)
           }
         })
       }
       this.$store.state.AuthenticationProcesses.loading = false
+    },
+    getUserInfo(response) {
+      this.$store.dispatch('AuthenticationProcesses/getUserInformation', {
+        email: response.email,
+        localId: response.localId,
+        idToken: response.idToken
+      }).then(userResponse => {
+        if (userResponse.error) {
+          console.log('1', userResponse);
+          this.showMessage(userResponse.error)
+          this.$router.push('/')
+          
+        } else {
+          if (userResponse === true) {
+            console.log('2', userResponse);
+            this.$router.push('dashboard') 
+          } else {
+            console.log('3', userResponse);
+            window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
+            this.$router.push('dashboard') 
+          }
+          this.resetForm
+        }
+      })
+    },
+    setRememberParameters: function(credentials) {
+      if (credentials.rememberCredentials) {
+        window.localStorage.setItem('rememberCredentials', JSON.stringify(credentials))
+      } else {
+        window.localStorage.removeItem('rememberCredentials')
+      }
+    },
+    showMessage(message) {
+      this.$store.state.AuthenticationProcesses.isErrorAuth = true
+      this.loginParameters.errorMessage = ServicesResponseHandling.messageLoginResponse(message)
+
+      this.$store.state.MessageAlerts = {
+        type: 'alert',
+        alert: {
+          isShow: this.$store.state.AuthenticationProcesses.isErrorAuth,
+          message: this.loginParameters.errorMessage
+        }
+      }
     },
     resetForm() {
       this.$refs.loginForm.reset()
@@ -106,10 +160,18 @@ export default {
   },
   created() {
     if (this.$nextTick) {
-      this.loginParameters = this.$store.state.AuthenticationProcesses
-      this.rules = this.$store.state.Rules
-      this.alertParameters = this.$store.state.MessageAlerts
+      if (localStorage.getItem('rememberCredentials') != null) {
+          const {
+            rememberCredentials,
+            email,
+            password
+          } = JSON.parse(localStorage.getItem('rememberCredentials'))
+          this.loginParameters.login.rememberCredentials = rememberCredentials
+          this.loginParameters.login.email = email
+          this.loginParameters.login.password = password
+      }
     }
+    this.$store.dispatch('SetLayout', 'login-layout')
   }
 }
 </script>

@@ -2,13 +2,13 @@
     <v-row>
         <v-col cols="12" md="8">
             <v-card-text class="mt-12">
-                <h1 class="text-center display-5 primary--text"
+                <h1 class="text-center primary--text"
                      
                 >
                     {{ $t('login.title') }}
                 </h1>
 
-                <social-media-buttons></social-media-buttons>
+                <social-media-buttons v-if="false"></social-media-buttons>
                 
                 <h4 class="text-center mlt-4 my-3"
                      v-if="!this.$store.state.AuthenticationProcesses.isErrorAuth"

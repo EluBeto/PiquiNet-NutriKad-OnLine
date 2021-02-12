@@ -3,12 +3,12 @@ export default {
     state: {
         type: '',
         snackbar: {
-            isShow: false,
-            modelMessage: '',
+            modelMessage: false,
             multiLine: true,
             message: '',
             snackbar: false,
             btnTitle: '',
+            btnColor: '',
             color: ''
         },
         alert: {
@@ -20,12 +20,12 @@ export default {
         clearAlert({ state }, payload) {
             state.type = ''
             state.snackbar = {
-                isShow: payload,
                 modelMessage: payload,
                 multiLine: true,
                 message: '',
                 snackbar: payload,
                 btnTitle: '',
+                btnColor: '',
                 color: ''
             }
             state.alert = {
@@ -35,5 +35,9 @@ export default {
         }
     },
     mutations: {},
-    getters: {}
+    getters: {
+        getAlerts(state) {
+            return state
+        }
+    }
 }

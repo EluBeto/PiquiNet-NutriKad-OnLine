@@ -13,6 +13,8 @@ const serviceResponse = {
   },
   messageLoginResponse(payload) {
     switch (payload.message) {
+        case 'INVALID_EMAIL':
+            return 'Ups! La contraseña no es válida o el usuario no existe.'
         case 'EMAIL_NOT_FOUND':
             return 'Ups! La contraseña no es válida o el usuario no existe.'
         case 'INVALID_PASSWORD':

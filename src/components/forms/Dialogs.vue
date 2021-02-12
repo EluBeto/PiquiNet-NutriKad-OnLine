@@ -33,19 +33,17 @@
 export default {
   name: 'Dialogs',
   props: {},
-  data: () => ({
-      dialogs: {}
-  }),
-  methods: {
-    sendActions(pathAction) {
-        this.$store.state.dialogs.isShowDialog = false
-        this.$store.dispatch(pathAction)
+  data: () => ({}),
+  computed: {
+    dialogs() {
+      return this.$store.getters['Dialogs/getDialog']
     }
   },
-  created() {
-      if (this.$nextTick) {
-        this.dialogs = this.$store.state.dialogs
-      }
+  methods: {
+    sendActions(pathAction) {
+        this.$store.state.Dialogs.isShowDialog = false
+        this.$store.dispatch(pathAction)
+    }
   }
 }
 </script>

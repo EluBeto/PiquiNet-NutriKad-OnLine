@@ -1,6 +1,6 @@
 <template>
   <v-form ref="logForm" v-model="logParameters.validForm" lazy-validation>
-      <MessageAlerts 
+      <MessageAlerts class="mt-3"
         v-if="this.$store.state.MessageAlerts.alert.isShow"
       ></MessageAlerts>
     <v-text-field

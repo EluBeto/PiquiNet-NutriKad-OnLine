@@ -2,20 +2,23 @@
   <div>
     <div v-if="alertParameters.type === 'snackbar'">
       <v-snackbar
-          :multi-line="alertParameters.multiLine"
+          v-model="alertParameters.snackbar.modelMessage"
+          :multi-line="multiLine"
+          :color="alertParameters.snackbar.color"
+          class="font-weight-medium"
         >
           {{
             alertParameters.snackbar.message
           }}
           <template v-slot:action="{ attrs }">
             <v-btn
-              :color="alertParameters.color"
-              text
+              :color="alertParameters.snackbar.btnColor"
               v-bind="attrs"
-              @click="alertParameters.snackbar"
+              text
+              @click="alertParameters.snackbar = false"
             >
               {{
-                alertParameters.btnTitle
+                alertParameters.snackbar.btnTitle
               }}
             </v-btn>
           </template>
@@ -39,11 +42,18 @@
 export default {
   name: 'MessageAlerts',
   data: () => ({
-    alertParameters: {}
+      multiLine: true,
+      snackbar: false
   }),
-  created() {
-    if (this.$nextTick) {
-      this.alertParameters = this.$store.state.MessageAlerts
+  computed: {
+    alertParameters() {
+      return this.$store.getters['MessageAlerts/getAlerts']
+    }
+  },
+  methods: {
+    closeSnack() {
+      this.snackbar = false
+      this.alertParameters.snackbar = false
     }
   }
 }
