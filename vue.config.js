@@ -1,5 +1,10 @@
+const defaultSettings = require('./src/settings.js')
+const pageTitle = defaultSettings.title
 module.exports = {
-  "transpileDependencies": [
-    "vuetify"
-  ]
+  transpileDependencies: [
+    'vuetify'
+  ],
+  configureWebpack: {
+    name: pageTitle
+  }
 }
