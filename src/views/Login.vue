@@ -16,6 +16,17 @@ export default {
     LoginCard
   },
   created() {
+    if (this.$nextTick) {
+        if (window.localStorage.getItem('userAuth') != null) {
+          window.localStorage.removeItem('userAuth')
+        }
+        if (window.localStorage.getItem('registeredUser') != null) {
+          window.localStorage.removeItem('registeredUser')
+        }
+        if (window.localStorage.getItem('userInfo') != null) {
+          window.localStorage.removeItem('userInfo')
+        } 
+    }
     this.$store.dispatch('SetLayout', 'login-layout')
   }
 }
