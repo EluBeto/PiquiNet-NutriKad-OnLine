@@ -1,41 +1,38 @@
 <template>
-  <div>
-    <!-- <v-breadcrumbs :items="menus" class="pb-0 pl-0 pt-7"></v-breadcrumbs> -->
+  <v-container>
     <v-row>
-      <v-col md="12" class="pb-0 mt-5">
+      <v-col class="text-center">
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
-        <wizard class="mt-4"></wizard>
       </v-col>
     </v-row>
-  </div>
+    <v-row>
+      <v-col class="text-center" v-if="isRegistered">
+        <PDFLoader></PDFLoader>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
-import Wizard from '../components/forms/Wizard'
-
+import PDFLoader from '../components/PDFLoader'
 export default {
-  name: 'Dashboard',
-  components: { 
-    Wizard,
-    SectionTitle
-  },
-  data: () => ({
-    menus: [{
-      text: 'Inicio',
-      disabled: true,
-      href: '/dashboard'
-    }],
-    model: 0,
-    colors: [
-      'primary',
-      'secondary',
-      'yellow darken-2',
-      'red',
-      'orange',
-    ]
-  }),
-   computed: {
+    name: 'EatingPlan',
+    components: {
+      PDFLoader,
+      SectionTitle
+    },
+    computed: {
+      isRegistered() {
+        if (window.localStorage.getItem('registeredUser') === null) {
+          return false
+        } else {
+          const {
+            isRegistered
+          } = JSON.parse(window.localStorage.getItem('registeredUser'))
+          return isRegistered
+        }
+      },
       userName() {
         if (window.localStorage.getItem('registeredUser') === null) {
           return ''
@@ -59,13 +56,13 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud con Nutrikad"`
+          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}a tu plan de alimentación`
         }
         return mssage
       }
     },
-  created() {
-    this.$store.dispatch('SetLayout', 'default-layout')
-  }
+    created() {
+      this.$store.dispatch('SetLayout', 'default-layout')
+    }
 }
 </script>

@@ -1,25 +1,26 @@
 <template>
-    <div id="app">
-        <v-app>
-            <NavBar></NavBar>
-            <v-main :style="`${SwitchColor}`">
-                <v-container class="pt-0 ml-lg-16 pr-lg-10">
-                    <router-view :key="$router.fullPath"></router-view>
-                </v-container>
-            </v-main>
-            <Footer class="my-4"></Footer>
-        </v-app>
-    </div>
+    <v-app>
+      <v-main :style="`${SwitchColor}`">
+        <AppBar></AppBar>
+        <NavBar></NavBar>
+          <v-container>
+              <router-view :key="$router.fullPath"></router-view>
+          </v-container>
+        <Footer class="my-4"></Footer>
+      </v-main>
+    </v-app>
 </template>
 
 <script>
 import NavBar from '../NavBar'
 import Footer from '../Footer'
+import AppBar from '../AppBar'
 export default {
   name: 'App',
   components: {
     NavBar,
-    Footer
+    Footer,
+    AppBar
   },
   computed: {
     GetAppVersion() {

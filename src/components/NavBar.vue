@@ -5,7 +5,6 @@
       v-model="drawer"
       :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
       :expand-on-hover="expandOnHover"
-      :right="$vuetify.rtl"
       :src="barImage"
       mobile-breakpoint="960"
       app
@@ -50,10 +49,9 @@
           v-for="(item, i) in items.filter(m => m.visible === true)"
           :key="i"
           :to="item.to"
-          router
-          exact
+          :active-class="`lime lighten-3 ${!isDark ? 'black' : 'white'}--text`"
         >
-          <v-list-item-action style="margin-right: 0px; height: 20px;">
+          <v-list-item-action>
             <v-icon>
               {{ item.icon }}
             </v-icon>
@@ -65,8 +63,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
-    <app-bar></app-bar>
+     </v-navigation-drawer>
   </div>
 </template>
 
@@ -74,13 +71,13 @@
   // Utilities
   import { mapState } from 'vuex'
   import PageLogo from './PageLogo'
-  import AppBar from './AppBar'
+  import Themeable from 'vuetify/lib/mixins/themeable'
   export default {
     name: 'NavBar',
     components: {
-      PageLogo,
-      AppBar
+      PageLogo
     },
+    mixins: [Themeable],
     props: {
       expandOnHover: {
         type: Boolean,
@@ -92,13 +89,35 @@
       items: [
         {
           icon: 'mdi-view-dashboard',
-          title: 'Registro',
+          title: 'Inicio',
           to: 'dashboard',
+          visible: true
+        },
+        {
+          icon: 'mdi-clipboard-outline',
+          title: 'Plan de Alimentación',
+          to: 'eatingPlan',
+          visible: true
+        },
+        {
+          icon: 'mdi-human-handsup',
+          title: 'Ponte en forma',
+          to: 'traning',
           visible: true
         }
       ]
     }),
     computed: {
+      isRegistered() {
+        if (window.localStorage.getItem('registeredUser') === null) {
+          return false
+        } else {
+          const {
+            isRegistered
+          } = JSON.parse(window.localStorage.getItem('registeredUser'))
+          return isRegistered
+        }
+      },
       ...mapState(['barColor', 'barImage']),
       drawer: {
         get () {

@@ -1,7 +1,6 @@
 <template>
   <v-app-bar
-    id="app-bar"
-    absolute
+    dense
     app
     color="lime lighten-4"
     height="80"
@@ -97,7 +96,7 @@
                   attrs: this.$attrs,
                   class: {
                     'black--text': !hover,
-                    'white--text secondary elevation-12': hover
+                    'white--text secondary elevation-1': hover
                   },
                   props: {
                     activeClass: '',

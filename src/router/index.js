@@ -12,8 +12,18 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'Dashboard',
+    name: 'Inicio',
     component: () => import('../views/Dashboard.vue')
+  },
+  {
+    path: '/eatingPlan',
+    name: 'Plan de Alimentación',
+    component: () => import('../views/EatingPlan.vue')
+  },
+  {
+    path: '/traning',
+    name: 'Ponte en forma',
+    component: () => import('../views/Traning.vue')
   }
 ]
 

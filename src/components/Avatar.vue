@@ -1,6 +1,5 @@
 <template>
-<v-row>
-      <v-menu
+  <v-menu
         bottom
         min-width="200px"
         rounded
@@ -55,7 +54,6 @@
           </v-list-item-content>
         </v-card>
       </v-menu>
-    </v-row>
 </template>
 
 <script>
