@@ -3,7 +3,7 @@
         <v-row>
             <v-col md="12">
                 <v-card
-                    elevation="4"
+                    elevation="0"
                     height="150px"
                     class="scroll pa-5"
                     style="background-color: #f5f5f5;"
@@ -17,7 +17,7 @@
         <v-row>
             <v-col md="12">
                 <v-card
-                    elevation="4"
+                    elevation="0"
                     height="600"
                     class="scroll pa-5"
                     style="background-color: #f5f5f5;"

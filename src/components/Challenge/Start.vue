@@ -1,6 +1,6 @@
 <template>
   <v-card
-    elevation="4"
+    elevation="0"
     height="250px"
     class="scroll pa-5"
     style="background-color: #f5f5f5;"

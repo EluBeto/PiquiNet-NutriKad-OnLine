@@ -30,6 +30,13 @@
                 <div class="my-2 text-justify">
                    <span v-html="food.instructions"></span>
                 </div>
+                <br>
+            <v-divider></v-divider>
+                <br>
+            <h5 class="my-2 text-justify">
+              Nota: las colaciones y las entradas seran las mismas para los 21 días, 
+              lo unico que cambiará cada semana sera desayunos o cenas y comidas.
+            </h5>
             </v-card-text>
             <v-card-actions class="justify-end">
               <v-btn

@@ -12,7 +12,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    version: 'Versión: 1.0.0',
+    version: 'Versión: 1.0.2',
     layout: 'login-layout',
     step: 1,
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',

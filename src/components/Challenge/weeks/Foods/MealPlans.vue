@@ -11,6 +11,7 @@
           :loading="loading"
           class="mx-auto my-12"
           max-width="374"
+          elevation="2"
         >
           <template slot="progress">
             <v-progress-linear
@@ -23,7 +24,7 @@
             height="250"
             :src="food.image"
           ></v-img>
-          <v-card-title class="text-center display-2 black--text font-weight-medium">
+          <v-card-title class="text-center display-1 black--text font-weight-medium">
             {{food.title}}
           </v-card-title>
               <v-card-text>
@@ -34,12 +35,10 @@
                 </v-row>
 
                 <div class="my-4">
-                   {{
-                     food.smallDescription
-                   }}
+                  
                 </div>
                  <div class="mt-2 my-2 text-justify">
-                   <span v-html="food.ingredients"></span>
+                   <span v-html="food.smallDescription"></span>
                 </div>
               </v-card-text>
           <v-divider class="mx-4"></v-divider>
@@ -81,6 +80,16 @@ export default {
         this.loading = true
         setTimeout(() => (this.loading = false), 5000)
       }
+    },
+    filters: {
+      // food.ingredients | truncate(30, '...')
+      truncate: function (text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
+        }
     },
     mounted() {
     setTimeout(() => {

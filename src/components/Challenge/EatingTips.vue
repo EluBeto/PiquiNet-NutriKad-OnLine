@@ -7,7 +7,7 @@
         fill-dot
         :right="tip.isRight"
     >
-      <v-card>
+      <v-card elevation="1">
         <v-card-title :class="tip.classCardTitle">
           <v-icon
             dark
@@ -30,7 +30,7 @@
               cols="12"
               md="10"
             >
-                <span class="my-2 text-justify"
+                <span class="my- text-justify"
                     v-html="tip.description"
                 ></span>
             </v-col>

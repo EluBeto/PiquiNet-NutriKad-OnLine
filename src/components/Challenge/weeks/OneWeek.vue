@@ -1,7 +1,10 @@
 <template>
-  <v-card>
+  <v-card
+    elevation="0"
+  >
     <v-tabs
-      color="deep-purple accent-4"
+    fixed-tabs
+      color="lime darken-4"
       left
     >
       <v-tab v-for="food in typesOfFood" 
@@ -21,7 +24,6 @@
                 <SectionTitle
                     :titleParameters="titleParameters(food.id)"
                 ></SectionTitle>
-                <!-- Seccion WOMEN -->
                 <MealPlans
                   :breakfastDiner="breakfastDiner"
                 ></MealPlans>

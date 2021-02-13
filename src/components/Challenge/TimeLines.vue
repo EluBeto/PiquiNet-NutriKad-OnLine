@@ -1,8 +1,8 @@
 <template>
   <v-card
-    elevation="4"
+    elevation="0"
     height="400px"
-    class="scroll pa-5"
+    class="scroll pa-0"
     >
     <v-timeline
       :reverse="reverse"
@@ -12,14 +12,13 @@
         v-for="question in questions"
         :key="question.id"
       >
-        <span slot="opposite">Tus eu perfecto</span>
-        <v-card class="elevation-2">
+        <v-card class="elevation-1">
           <v-card-title class="headline">
             {{
                 question.title
             }}
           </v-card-title>
-          <v-card-text class="my-5 text-justify">
+          <v-card-text class="my-9 text-justify">
               <span v-html="question.description"></span>
           </v-card-text>
         </v-card>

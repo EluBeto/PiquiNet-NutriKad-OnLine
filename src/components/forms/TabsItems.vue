@@ -1,15 +1,18 @@
 <template>
-   <v-card>
+   <v-card
+    elevation="1"
+   >
         <v-card-title class="text-center justify-center py-6">
-            <h3 class="font-weight-bold display-2 basil--text">
-                Reto Ponte fit y gana salud con NutriKad
+            <h3 class="font-weight-bold display-1">
+                Ponte fit y gana salud con NutriKad
             </h3>
         </v-card-title>
     <v-tabs
       v-model="tab"
       fixed-tabs
-      background-color="green lighten-4"
-      slider-color="white"
+      background-color="lime lighten-3"
+      slider-color="yellow darken-3"
+      color="orange darken-4"
       black
     >
       <v-tab
@@ -29,6 +32,9 @@
         <v-card flat>
           <v-card-text v-if="item.content === 1">
               <Start></Start>
+              <br>
+              <v-divider></v-divider>
+              <br>
               <SectionTitle :titleParameters="titleParameters"></SectionTitle>
               <v-divider class="mt-7"></v-divider>
               <TimesLines class="mt-7"></TimesLines>

@@ -4,6 +4,7 @@
     app
     color="lime lighten-4"
     height="80"
+    hide-on-scroll
   >
     <v-btn
       class="mr-5"
