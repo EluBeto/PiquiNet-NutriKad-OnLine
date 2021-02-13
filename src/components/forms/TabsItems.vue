@@ -2,8 +2,8 @@
    <v-card
     elevation="1"
    >
-        <v-card-title class="text-center justify-center py-6">
-            <h3 class="font-weight-bold display-1">
+        <v-card-title class="text-center justify-center py-5">
+            <h3 class="font-weight-bold display-1 mt-0 my-0">
                 Ponte fit y gana salud con NutriKad
             </h3>
         </v-card-title>

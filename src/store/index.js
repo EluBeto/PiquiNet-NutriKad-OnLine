@@ -8,6 +8,7 @@ import DataBaseConnectionPaths from './modules/dataBaseConnectionPaths'
 import MessageAlerts from './modules/messageAlerts'
 import Steps from './modules/steps'
 import Foods from './modules/foods'
+import ShoppingList from './modules/shoppingList'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -72,6 +73,7 @@ export default new Vuex.Store({
     DataBaseConnectionPaths,
     MessageAlerts,
     Steps,
-    Foods
+    Foods,
+    ShoppingList
   },
 })

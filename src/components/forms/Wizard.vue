@@ -3,20 +3,18 @@
     <Steps  v-if="!isRegistered && !getIsRegisteredUser"></Steps>
 
     <template v-if="isRegistered" class="text-center">
-        <v-img
-          :aspect-ratio="16/9"
-          width="auto"
-          :src="showImage"
-        ></v-img>
+        <Carrusel></Carrusel>
       </template>
   </div>
 </template>
 <script>
 import Steps from './Steps'
+import Carrusel from '../layouts/Carrusel'
 export default {
   name: 'Wizard',
   components: {
-    Steps
+    Steps,
+    Carrusel
   },
   data: () => ({}),
   computed: {

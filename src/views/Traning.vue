@@ -77,13 +77,13 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: 'Es momento de ponernos en acción'
+          subtitle: 'Esta sección se habilitara a partir del día 15 de febrero'
         }
         return mssage
       },
       infoVideo() {
           let infoVideo = {
-              url: 'https://youtu.be/0YRX4pEP6pY',
+              url: '',
               title: 'Un poco de cardio',
               subtitle: '',
               moreInfo: 'Importante',

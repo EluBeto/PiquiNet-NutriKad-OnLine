@@ -104,6 +104,12 @@
           title: 'Ponte en forma',
           to: 'traning',
           visible: true
+        },
+        {
+          icon: 'mdi-cart-minus',
+          title: 'Lista de compras',
+          to: 'shoppingList',
+          visible: true
         }
       ]
     }),

@@ -3,7 +3,7 @@
     elevation="0"
   >
     <v-tabs
-    fixed-tabs
+      fixed-tabs
       color="lime darken-4"
       left
     >
@@ -24,6 +24,7 @@
                 <SectionTitle
                     :titleParameters="titleParameters(food.id)"
                 ></SectionTitle>
+                
                 <MealPlans
                   :breakfastDiner="breakfastDiner"
                 ></MealPlans>

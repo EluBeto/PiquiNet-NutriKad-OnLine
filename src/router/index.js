@@ -24,6 +24,11 @@ const routes = [
     path: '/traning',
     name: 'Ponte en forma',
     component: () => import('../views/Traning.vue')
+  },
+  {
+    path: '/shoppingList',
+    name: 'Lista de compras',
+    component: () => import('../views/ShoppingList.vue')
   }
 ]
 

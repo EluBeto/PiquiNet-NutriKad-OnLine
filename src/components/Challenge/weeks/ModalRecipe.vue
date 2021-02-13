@@ -1,5 +1,10 @@
 <template>
   <v-row justify="space-around">
+      <v-progress-linear
+        color="lime"
+        indeterminate
+        reverse
+      ></v-progress-linear>
     <v-col cols="auto">
       <v-dialog
         transition="dialog-top-transition"
@@ -13,6 +18,7 @@
             v-on="on"
           >Ver receta</v-btn>
         </template>
+        
         <template v-slot:default="dialog">
           <v-card>
             <v-toolbar
