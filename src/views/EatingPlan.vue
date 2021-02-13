@@ -5,23 +5,40 @@
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col class="text-center" v-if="isRegistered">
-        <PDFLoader></PDFLoader>
+    <v-divider></v-divider>
+    <v-row v-if="!loading">
+      <v-col class="text-center mt-5" v-if="isRegistered">
+        <keep-alive>
+          <TabsItems></TabsItems>
+        </keep-alive>
       </v-col>
     </v-row>
+    <v-skeleton-loader
+          ref="skeleton"
+          :boilerplate="boilerplate"
+          :type="type"
+          :tile="tile"
+          class="mt-5 mx-auto"
+          v-else
+    ></v-skeleton-loader>
   </v-container>
 </template>
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
-import PDFLoader from '../components/PDFLoader'
+import TabsItems from '../components/forms/TabsItems'
 export default {
     name: 'EatingPlan',
     components: {
-      PDFLoader,
-      SectionTitle
+      SectionTitle,
+      TabsItems
     },
+    data:() => ({
+      boilerplate: false,
+      tile: false,
+      type: 'table',
+      loading: true
+    }),
     computed: {
       isRegistered() {
         if (window.localStorage.getItem('registeredUser') === null) {
@@ -55,14 +72,19 @@ export default {
       },
       titleParameters() {
         let mssage = {
-          title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}a tu plan de alimentación`
+          title: `${this.isGender ? '¡ Bienvenida ! ' : '¡ Bienvenido ! '}`,
+          subtitle: ''
         }
         return mssage
       }
     },
     created() {
       this.$store.dispatch('SetLayout', 'default-layout')
-    }
+    },
+    mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 1500)
+  }
 }
 </script>

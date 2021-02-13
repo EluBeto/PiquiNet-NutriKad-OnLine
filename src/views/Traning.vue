@@ -5,7 +5,8 @@
               <SectionTitle :titleParameters="titleParameters"></SectionTitle>
           </v-col>
       </v-row>
-      <div v-if="isRegistered">
+      <v-divider></v-divider>
+      <div v-if="isRegistered" class="mt-5">
         <v-row>
           <v-col class="text-center" md="4">
                 <VideoCard :infoVideo="infoVideo"></VideoCard>
@@ -17,7 +18,7 @@
                 <VideoCard :infoVideo="infoVideo"></VideoCard>
           </v-col>
       </v-row>
-
+      
       <v-row>
           <v-col class="text-center" md="4">
                 <VideoCard :infoVideo="infoVideo"></VideoCard>

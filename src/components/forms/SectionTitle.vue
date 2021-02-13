@@ -1,7 +1,7 @@
 <template>
     <section class="mb-1 text-center mt-3">
     <h1
-      class="mb-1 headline"
+      class="font-weight-black mb-1 headline"
       v-text="`${titleParameters.title}`"
     />
 
@@ -26,7 +26,7 @@ export default {
   .v-application .headline {
     font-size: 2.0625rem !important;
     font-weight: 400;
-    line-height: 2rem;
+    line-height: 3rem;
     letter-spacing: normal !important;
     font-family: "Roboto", sans-serif !important;
   }

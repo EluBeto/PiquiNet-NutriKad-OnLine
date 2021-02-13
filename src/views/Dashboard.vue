@@ -1,9 +1,10 @@
 <template>
   <div>
-    <!-- <v-breadcrumbs :items="menus" class="pb-0 pl-0 pt-7"></v-breadcrumbs> -->
+    <Progress></Progress>
     <v-row>
       <v-col md="12" class="pb-0 mt-5">
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
+        <v-divider></v-divider>
         <wizard class="mt-4"></wizard>
       </v-col>
     </v-row>
@@ -13,27 +14,21 @@
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
+import Progress from '../components/layouts/Progress'
 
 export default {
   name: 'Dashboard',
   components: { 
     Wizard,
-    SectionTitle
+    SectionTitle,
+    Progress
   },
   data: () => ({
     menus: [{
       text: 'Inicio',
       disabled: true,
       href: '/dashboard'
-    }],
-    model: 0,
-    colors: [
-      'primary',
-      'secondary',
-      'yellow darken-2',
-      'red',
-      'orange',
-    ]
+    }]
   }),
    computed: {
       userName() {
@@ -65,6 +60,7 @@ export default {
       }
     },
   created() {
+    this.overlay = true
     this.$store.dispatch('SetLayout', 'default-layout')
   }
 }

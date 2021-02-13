@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style>
+.scroll {
+  overflow-y: scroll !important
+}
 .v-data-table td {
   font-size: 0.75rem !important;
   height: 35px;
@@ -49,7 +52,7 @@ p,
 div,
 table,
 .v-application {
-  font-family: 'Calibri' !important;
+  font-family: 'Roboto' !important;
 }
 
 h1 {
