@@ -24,29 +24,14 @@
                       mdi-information
                     </v-icon>
                   </template>
-                  <span>Información</span>
+                  <span>Sugerencias</span>
                 </v-tooltip>
             </v-col>
         </v-row>
         <v-row class="mt-0" v-if="!loading">
             <v-col sm="12">
                 <v-card>
-                    <v-card-title>
-                    <v-spacer></v-spacer>
-                    <v-text-field
-                        v-model="search"
-                        append-icon="mdi-magnify"
-                        label="Buscar"
-                        single-line
-                        hide-details
-                    ></v-text-field>
-                    </v-card-title>
-                    <v-data-table
-                    :headers="headers"
-                    :items="shoppingList"
-                    :search="search"
-                    >
-                    </v-data-table>
+                  <ShoppingTable></ShoppingTable>
                 </v-card>
             </v-col>
         </v-row>
@@ -73,17 +58,6 @@
                 <span v-html="importantInformation"></span>
               </div>
             </v-card-text>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn
-                text
-                color="primary"
-                @click="dialog = false"
-              >
-                Cerrar
-              </v-btn>
-            </v-card-actions>
           </v-card>
         </v-dialog>
     </v-container>
@@ -91,28 +65,15 @@
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
+import ShoppingTable from '../components/shoppingTable'
   export default {
     name: 'ShoppingList',
     components: {
-        SectionTitle
+        SectionTitle,
+        ShoppingTable
     },
     data () {
       return {
-        search: '',
-        headers: [
-          {
-            text: 'Verduras',
-            align: 'start',
-            sortable: false,
-            value: 'verduras',
-          },
-          { text: 'Furtas', value: 'frutas' },
-          { text: 'Cereales', value: 'cereales' },
-          { text: 'Alimentos de origen animal', value: 'alimentos' },
-          { text: 'Grasas buenas', value: 'grasas' },
-          { text: 'Otros', value: 'otros' },
-        ],
-        shoppingList: [],
         dialog: false,
         importantInformation: ` <big><b>Sugerencias</b></big>
             </br></br>

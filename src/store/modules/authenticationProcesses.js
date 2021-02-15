@@ -64,8 +64,7 @@ export default {
             } = payload
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
             const response = await HttpServices.getRequest(url)
-            console.log('RESPONSE', response);
-            if (response === null) { return true }
+            if (response === null) return { response: 'sin registro' }
             if (response.error) return { response: response }
             
             const {

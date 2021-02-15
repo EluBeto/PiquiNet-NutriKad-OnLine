@@ -3,173 +3,212 @@ export default {
     state: {
         shoppingList: [
             {
-              verduras: 'Espinacas',
-              frutas: 'Manzana',
-              cereales: 'Tortilla de maíz',
-              alimentos: 'Pollo' ,
-              grasas: 'Almendras',
-              otros: 'Gelatina light'   
+              name: 'Verduras',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Espinaca'
+                },
+                {
+                  id: 2,
+                  name: 'Cebolla'
+                },
+                {
+                  id: 3,
+                  name: 'Chile serrano'
+                },
+                {
+                  id: 4,
+                  name: 'Apio'
+                },
+                {
+                  id: 5,
+                  name: 'Nopal'
+                },
+                {
+                  id: 6,
+                  name: 'Perejil'
+                },
+                {
+                  id: 7,
+                  name: 'Pepino'
+                },
+                {
+                  id: 8,
+                  name: 'Jitomate'
+                },
+                {
+                  id: 9,
+                  name: 'Zanahoria'
+                },
+                {
+                  id: 10,
+                  name: 'Limón'
+                },
+                {
+                  id: 11,
+                  name: 'Betabel'
+                },
+                {
+                  id: 12,
+                  name: 'Lechuga'
+                },
+                {
+                  id: 13,
+                  name: 'Brócoli'
+                },
+                {
+                  id: 14,
+                  name: 'Coliflor'
+                },
+                {
+                  id: 15,
+                  name: 'Chicharos'
+                },
+                {
+                  id: 16,
+                  name: 'Pimientos'
+                },
+                {
+                  id: 17,
+                  name: 'Ajo'
+                },
+                {
+                  id: 18,
+                  name: 'Calabaza'
+                },
+                {
+                  id: 19,
+                  name: 'Champiñones'
+                },
+                {
+                  id: 20,
+                  name: 'Pimienta'
+                },
+                {
+                  id: 21,
+                  name: 'Ejotes'
+                },
+                {
+                  id: 22,
+                  name: 'Nopales'
+                }
+              ] 
             },
             {
-                verduras: 'Cebolla',
-                frutas: 'Naranja',
-                cereales: 'Avena en hojuelas',
-                alimentos: 'Huevo' ,
-                grasas: 'Nueces',
-                otros: 'Polvo para hornear'   
-              },
-              {
-                verduras: 'Chile serrano',
-                frutas: 'Mandarinas',
-                cereales: 'Espagueti',
-                alimentos: 'Carne molida de res' ,
-                grasas: 'Cacahuates',
-                otros: 'Canela en polvo'   
-              },
-              {
-                verduras: 'Apio',
-                frutas: 'Piña',
-                cereales: 'Pan bimbo cero cero',
-                alimentos: 'Queso Oaxaca bajo en grasa' ,
-                grasas: 'Aguacate',
-                otros: 'Cúrcuma'   
-              },
-              {
-                verduras: 'Nopal',
-                frutas: 'Fresas',
-                cereales: '',
-                alimentos: 'Filete de pescado' ,
-                grasas: 'Chocolate turín sin azúcar',
-                otros: 'Jengibre'   
-              },
-              {
-                verduras: 'Perejil',
-                frutas: 'Guayabas',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: 'Esencia de vainilla'   
-              },
-              {
-                verduras: 'Pepino',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: 'Sal '   
-              },
-              {
-                verduras: 'Jitomate',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: 'Pimienta'   
-              },
-              {
-                verduras: 'Ajo',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Zanahoria',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Limón',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Betabel',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Lechuga',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Brócoli',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Coliflor',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Chicharos',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Pimientos',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Calabaza',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Champiñones ',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Ejotes',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              },
-              {
-                verduras: 'Nopales',
-                frutas: '',
-                cereales: '',
-                alimentos: '' ,
-                grasas: '',
-                otros: ''   
-              }           
+              name: 'Frutas',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Naranja'
+                },
+                {
+                  id: 2,
+                  name: 'Mandarinas'
+                },
+                {
+                  id: 3,
+                  name: 'Piña'
+                },
+                {
+                  id: 4,
+                  name: 'Fresas'
+                },
+                {
+                  id: 5,
+                  name: 'Guayabas'
+                }
+              ]
+            },
+            {
+              name: 'Cereales',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Avena en hojuelas'
+                },
+                {
+                  id: 2,
+                  name: 'Espagueti'
+                },
+                {
+                  id: 3,
+                  name: 'Pan bimbo cero cero'
+                }
+              ]
+            },
+            {
+              name: 'Alimentos de origen animal',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Huevo'
+                },
+                {
+                  id: 2,
+                  name: 'Carne molida de res'
+                },
+                {
+                  id: 3,
+                  name: 'Queso Oaxaca bajo en grasa'
+                },
+                {
+                  id: 4,
+                  name: 'Filete de pescado'
+                }
+              ]
+            },
+            {
+              name: 'Grasas buenas',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Nueces'
+                },
+                {
+                  id: 2,
+                  name: 'Cacahuates'
+                },
+                {
+                  id: 3,
+                  name: 'Aguacate'
+                },
+                {
+                  id: 4,
+                  name: 'Chocolate turín sin azúcar'
+                }
+              ]
+            }
+            ,
+            {
+              name: 'Otros',
+              categorias: [
+                {
+                  id: 1,
+                  name: 'Polvo para hornear'
+                },
+                {
+                  id: 2,
+                  name: 'Canela en polvo'
+                },
+                {
+                  id: 3,
+                  name: 'Cúrcuma'
+                },
+                {
+                  id: 4,
+                  name: 'Jengibre'
+                },
+                {
+                  id: 5,
+                  name: 'Esencia de vainilla'
+                },
+                {
+                  id: 6,
+                  name: 'Sal'
+                }
+              ]
+            }     
           ]
     },
     actions: {

@@ -22,6 +22,10 @@ export default {
     Footer,
     AppBar
   },
+  data: () => ({
+    newlocalId:'',
+    newidToken:''
+  }),
   computed: {
     GetAppVersion() {
       return this.$store.state.version
@@ -29,6 +33,38 @@ export default {
     SwitchColor() {
       return !this.$vuetify.theme.dark ? 'background-color:#F5F5F5' : ''
     }
+  },
+  methods: {
+      exit() {
+          window.localStorage.removeItem('userAuth')
+          window.localStorage.removeItem('userInfo')
+          window.localStorage.removeItem('registeredUser')
+          this.$store.dispatch('MessageAlerts/clearAlert', false)
+          this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
+          this.sheet = true
+          this.$router.push('/')
+      }
+  },
+  created() {
+    if (localStorage.getItem('userAuth') != null) {
+        const {
+            localId,
+            idToken
+        } = JSON.parse(localStorage.getItem('userAuth'))
+        this.newlocalId = localId
+        this.newidToken = idToken
+    }
+
+    this.$store.dispatch('AuthenticationProcesses/getUserInformation', {
+      localId: this.newlocalId,
+      idToken: this.newidToken
+    }).then(response => {
+        let converJson = JSON.stringify(response)
+        let parseError = JSON.parse(converJson)
+        if (parseError.response.error || parseError.response.error === null) {
+            this.exit()
+        }
+    })
   }
 }
 </script>

@@ -116,11 +116,9 @@ export default {
           this.$router.push('/')
           
         } else {
-          if (userResponse === true) {
-            console.log('2', userResponse);
+          if (userResponse.response === 'sin registro') {
             this.$router.push('dashboard') 
           } else {
-            console.log('3', userResponse);
             window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
             this.$router.push('dashboard') 
           }

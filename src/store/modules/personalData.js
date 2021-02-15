@@ -82,14 +82,16 @@ export default {
                                 isShow: true,
                                 modelMessage: true,
                                 multiLine: true,
-                                message: 'Tu registro fue exitoso',
+                                message: 'Tu registro fue éxitoso',
                                 snackbar: false,
                                 btnTitle: 'Cerrar',
                                 btnColor: 'white',
                                 color: 'green darken-3'
                             }
                         }
-                        setTimeout(location.reload(), 2000);
+
+                        setTimeout(location.reload(), 3000);
+
                         rootState.Steps.loading = false
                         rootState.Steps.numberOfSteps = 1
                         state.isRegisteredUser = false
