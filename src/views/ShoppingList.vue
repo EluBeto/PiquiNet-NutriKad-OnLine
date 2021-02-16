@@ -111,10 +111,10 @@ import ShoppingTable from '../components/shoppingTable'
         }
     },
     created() {
+        this.$store.dispatch('ShoppingList/getShoppingList').then(response => {
+          this.shoppingList = response
+         })
         setTimeout(() => {
-          this.$store.dispatch('ShoppingList/getShoppingList').then(response => {
-              this.shoppingList = response
-          })
           this.loading = false
         }, 1500)
       this.$store.dispatch('SetLayout', 'default-layout')

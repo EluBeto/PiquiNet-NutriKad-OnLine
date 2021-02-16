@@ -196,26 +196,33 @@ export default {
                         </br> </br>
                         <ol>
                             <li>
-                                En una sartén caliente cocina la cebolla, cuando esté suave, agrega el huevo, y revuelve.
+                            En una olla, cocina la zanahoria junto con las calabacitas.
                             </li>
                             <li>
-                                Al final añade las espinacas.
+                            Cuando estén suaves agrega el brócoli y el jitomate.
                             </li>
                             <li>
-                            Emplata.
-                                <ul>
-                                    <li>
-                                    Acompaña tu omelette con la tortilla.
-                                    </li>
-                                    <li>
-                                    Manzana amarilla 1 pieza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
-                                    </li>
-                                </ul>
+                            Añade la carne, y pimienta al gusto.
                             </li>
-                        </ol>                     
+                            <li>
+                            Mezcla muy bien, cuando esté cocido agrega el espagueti y mezcla.
+                            </li>
+                            <li>
+                            Sirve y decora con el aguacate.
+                            </li>
+                        </ol>  
+                        </br>      
+                        <ul>
+                            <li>
+                            Manzana- 1 pieza
+                            </li>
+                            <li>
+                            Almendras- 8 piezas                            
+                            </li>
+                            <li>
+                            Yogurt- 1 pieza
+                            </li>
+                        </ul>
                         `
                     },
                     {
@@ -1273,26 +1280,33 @@ export default {
                         </br> </br>
                         <ol>
                             <li>
-                                En una sartén caliente cocina la cebolla, cuando esté suave, agrega el huevo, y revuelve.
+                            En una olla, cocina la zanahoria junto con las calabacitas.
                             </li>
                             <li>
-                                Al final añade las espinacas.
+                            Cuando estén suaves agrega el brócoli y el jitomate.
                             </li>
                             <li>
-                            Emplata.
-                                <ul>
-                                    <li>
-                                    Acompaña tu omelette con la tortilla.
-                                    </li>
-                                    <li>
-                                    Manzana amarilla 1 pieza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
-                                    </li>
-                                </ul>
+                            Añade la carne, y pimienta al gusto.
                             </li>
-                        </ol>                     
+                            <li>
+                            Mezcla muy bien, cuando esté cocido agrega el espagueti y mezcla.
+                            </li>
+                            <li>
+                            Sirve y decora con el aguacate.
+                            </li>
+                        </ol>  
+                        </br>      
+                        <ul>
+                            <li>
+                            Manzana- 1 pieza
+                            </li>
+                            <li>
+                            Almendras- 8 piezas                            
+                            </li>
+                            <li>
+                            Yogurt- 1 pieza
+                            </li>
+                        </ul>                    
                         `
                     },
                     {

@@ -2,24 +2,30 @@
     <div>
         <v-card
           class="mx-auto"
-          max-width="344"
+          max-width="300px"
           elevation="4"
-          v-if="loading"
+          v-if="!loading"
         >
-          <v-img
-            :src="infoVideo.url"
-            height="200px"
-          ></v-img>
-
-          <v-card-title>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item my-1 px-0" 
+                  width="auto" 
+                  height="auto" 
+                  :src="video.url" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+          >
+          </iframe>
+        </div>
+          <v-card-title class="text-center display-1 black--text font-weight-medium">
             {{
-                infoVideo.title
+                video.title
             }}
           </v-card-title>
 
           <v-card-subtitle>
             {{
-                infoVideo.subtitle
+                video.subtitle
             }}
           </v-card-subtitle>
 
@@ -29,7 +35,7 @@
               text
             >
               {{
-                  infoVideo.moreInfo
+                  video.moreInfo
               }}
             </v-btn>
 
@@ -49,20 +55,20 @@
 
               <v-card-text>
                 {{
-                    infoVideo.description
+                    video.description
                 }}
               </v-card-text>
             </div>
           </v-expand-transition>
       </v-card>
-    <v-skeleton-loader
+              <v-skeleton-loader
                ref="skeleton"
                :boilerplate="boilerplate"
                :type="type"
                :tile="tile"
                class="mt-7 mx-auto"
                v-else
-    ></v-skeleton-loader>  
+    ></v-skeleton-loader> 
   </div>
 </template>
 
@@ -70,7 +76,7 @@
   export default {
     name: 'VideoCard',
     props: {
-        infoVideo: {}
+        video: {}
     },
     data: () => ({
       boilerplate: false,
@@ -78,9 +84,9 @@
       type: 'card',
       loading: true,
       selection: 1,
-      show: false,
+      show: false
     }),
-    created() {
+    mounted() {
       setTimeout(() => {
         this.loading = false
       }, 1500)
