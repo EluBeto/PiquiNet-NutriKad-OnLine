@@ -4,7 +4,7 @@
 
     <template v-if="isRegistered" class="text-center">
         <Carrusel></Carrusel>
-      </template>
+    </template>
   </div>
 </template>
 <script>

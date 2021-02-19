@@ -5,7 +5,6 @@ export default {
     state: {
         isErrorAuth: false,
         errorMessage: '',
-        userAuth: {},
         validForm: false,
         loading: false,
         rememberCredentials: false,
@@ -90,7 +89,6 @@ export default {
         clearAuthenticationProcesses({ state }, payload) {
             state.isErrorAuth = payload
             state.errorMessage= ''
-            state.userAuth= {}
             state.validForm= payload
             state.loading= payload
             state.login = {
@@ -116,8 +114,8 @@ export default {
         }
     },
     mutations: {
-        SET_USER_AUTH(state, payload) {
-          state.userAuth = payload
+        SET_USER_AUTH(rootState, payload) {
+            rootState.userAuth = payload
         },
         SET_FORM_HAS_AN_ERROR(state, payload) {
           state.isErrorAuth = payload

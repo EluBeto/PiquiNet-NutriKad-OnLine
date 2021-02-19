@@ -120,7 +120,11 @@ export default {
             this.$router.push('dashboard') 
           } else {
             window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
-            this.$router.push('dashboard') 
+            if (response.email === 'elubeto@gmail.com' || response.email === 'b.karina.delart.mcs@outlook.es') {
+              this.$router.push('dashboardAdmin')
+            } else {
+             this.$router.push('dashboard') 
+            } 
           }
           this.resetForm
         }

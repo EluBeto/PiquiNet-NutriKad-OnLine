@@ -129,6 +129,19 @@ export default {
                 })
             }
         },
+        async getRegisters({ rootState }) {
+            const {
+                idToken
+            } = JSON.parse(window.localStorage.getItem('userAuth'))
+            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register.json?auth=${idToken}`
+            
+            const response = await HttpServices.getRequest(url)
+            const patientesRegister = [] 
+            for (let id in response){
+                patientesRegister.push(response[id])
+            }
+            return patientesRegister
+        },
         cancelRegister() {
             this.cleanRegister
         },

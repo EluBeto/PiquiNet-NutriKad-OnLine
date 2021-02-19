@@ -13,6 +13,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    userAuth: {},
     version: 'Versión: 1.0.2',
     layout: 'login-layout',
     step: 1,
@@ -52,6 +53,9 @@ export default new Vuex.Store({
             break
         }
       }
+    },
+    SET_USER_AUTH(state, payload) {
+      state.userAuth = payload
     },
     SET_BAR_IMAGE (state, payload) {
       state.barImage = payload

@@ -46,7 +46,7 @@
 
       <v-list>
         <v-list-item
-          v-for="(item, i) in items.filter(m => m.visible === true)"
+          v-for="(item, i) in isUserAdmin.filter(m => m.visible === true)"
           :key="i"
           :to="item.to"
           :active-class="`lime lighten-3 ${!isDark ? 'black' : 'white'}--text`"
@@ -86,7 +86,40 @@
     },
 
     data: () => ({
+      user: '',
       items: [
+        {
+          icon: 'mdi-view-dashboard',
+          title: 'Inicio',
+          to: 'dashboard',
+          visible: true
+        },
+        {
+          icon: 'mdi-clipboard-outline',
+          title: 'Plan de Alimentación',
+          to: 'eatingPlan',
+          visible: true
+        },
+        {
+          icon: 'mdi-human-handsup',
+          title: 'Ponte en forma',
+          to: 'traning',
+          visible: true
+        },
+        {
+          icon: 'mdi-cart-minus',
+          title: 'Lista de compras',
+          to: 'shoppingList',
+          visible: true
+        }
+      ],
+      itemsAdmin: [
+        {
+          icon: 'mdi-solar-panel',
+          title: 'Nutri Panel',
+          to: 'dashboardAdmin',
+          visible: true
+        },
         {
           icon: 'mdi-view-dashboard',
           title: 'Inicio',
@@ -122,6 +155,20 @@
             isRegistered
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
           return isRegistered
+        }
+      },
+      isUserAdmin() {
+        if (window.localStorage.getItem('userAuth') === null) {
+          return []
+        } else {
+          const {
+            email
+          } = JSON.parse(window.localStorage.getItem('userAuth'))
+          if (email === 'elubeto@gmail.com' || email === 'b.karina.delart.mcs@outlook.es') {
+            return this.itemsAdmin
+          } else {
+            return this.items
+          }
         }
       },
       ...mapState(['barColor', 'barImage']),
