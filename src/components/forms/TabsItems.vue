@@ -48,17 +48,9 @@
             </keep-alive>
           </v-card-text>
           <v-card-text v-if="item.content === 4">
-              <div v-if="!loading">
-
-              </div>
-              <v-skeleton-loader
-                    ref="skeleton"
-                    :boilerplate="boilerplate"
-                    :type="type"
-                    :tile="tile"
-                    class="mx-auto"
-                    v-else
-              ></v-skeleton-loader>
+            <keep-alive>
+              <SecondWeek></SecondWeek>
+            </keep-alive>
           </v-card-text>
           <v-card-text v-if="item.content === 5">
               <div v-if="!loading">
@@ -85,6 +77,7 @@ import TimesLines from '../Challenge/TimeLines'
 import SectionTitle from '../forms/SectionTitle'
 import EatingChallenge from '../Challenge/EatingChallenge'
 import OneWeek from '../Challenge/weeks/OneWeek'
+import SecondWeek from '../Challenge/weeks/SecondWeek'
 export default {
     name: 'TabsItems',
     components: {
@@ -92,7 +85,8 @@ export default {
         TimesLines,
         SectionTitle,
         EatingChallenge,
-        OneWeek
+        OneWeek,
+        SecondWeek
     },
     data () {
       return {

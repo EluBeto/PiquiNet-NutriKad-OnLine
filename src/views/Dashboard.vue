@@ -2,10 +2,18 @@
   <div>
     <Progress></Progress>
     <v-row>
-      <v-col md="12" class="pb-0 mt-5">
+      <v-col md="12" class="pb-0 mt-2">
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
         <v-divider></v-divider>
         <wizard class="mt-4"></wizard>
+      </v-col>
+    </v-row>
+    <br> <br>
+    <v-divider></v-divider>
+    <br> <br>
+    <v-row>
+      <v-col md="12">
+        <ProgressGraph></ProgressGraph>
       </v-col>
     </v-row>
   </div>
@@ -15,13 +23,15 @@
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
 import Progress from '../components/layouts/Progress'
+import ProgressGraph from '../components/ProgressGraph'
 
 export default {
   name: 'Dashboard',
   components: { 
     Wizard,
     SectionTitle,
-    Progress
+    Progress,
+    ProgressGraph
   },
   data: () => ({
     menus: [{

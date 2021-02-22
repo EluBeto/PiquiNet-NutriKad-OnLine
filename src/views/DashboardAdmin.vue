@@ -46,7 +46,7 @@
                     <v-icon class="mr-1 black--text">
                         mdi-heart
                     </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">26</span>
+                    <span class="subheading mr-2 display-3 black--text">27</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -120,7 +120,7 @@
                     <v-icon class="mr-1 black--text">
                         mdi-heart
                     </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">22</span>
+                    <span class="subheading mr-2 display-3 black--text">23</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -180,7 +180,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud con Nutrikad"`
+          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}a tu panel de administración.`
         }
         return mssage
       }

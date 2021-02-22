@@ -1,4 +1,5 @@
 import HttpServices from '@/services/httpServices'
+import router from '../../router'
 
 export default {
     namespaced: true,
@@ -141,6 +142,40 @@ export default {
                 patientesRegister.push(response[id])
             }
             return patientesRegister
+        },
+        async getProgressWeith({ rootState }) {
+            if (localStorage.getItem('userAuth') != null) {
+                const {
+                    localId,
+                    idToken
+                } = JSON.parse(localStorage.getItem('userAuth'))
+                let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight/${localId}.json?auth=${idToken}`
+                const responseWeight = await HttpServices.getRequest(url)
+                return responseWeight
+            } else {
+                router.push('/')
+            }
+        },
+        async sendProgressWeigth({ rootState }, payload) {
+            if (localStorage.getItem('userAuth') != null) {
+                const {
+                    localId,
+                    idToken
+                } = JSON.parse(localStorage.getItem('userAuth'))
+                let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight/${localId}.json?auth=${idToken}`
+                let parameters = JSON.stringify({
+                    firstWeight: payload.firstWeight,
+                    secondWeight: payload.secondWeight,
+                    thirdWeight: 0
+                })
+                let responseWeight = ''
+                await HttpServices.putRequest(url, parameters).then(response => {
+                    responseWeight = response
+                })
+                return responseWeight
+            } else {
+                router.push('/')
+            }
         },
         cancelRegister() {
             this.cleanRegister
