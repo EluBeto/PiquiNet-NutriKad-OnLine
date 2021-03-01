@@ -49,7 +49,7 @@
                 <v-row>
                     <v-col md="12">
                         <v-text-field
-                          v-model="weigth"
+                          v-model.number="weigth"
                           :rules="rules.weightRules"
                           type="text"
                           prepend-icon="mdi-account"
@@ -92,6 +92,7 @@ import MessageAlerts from '../components/forms/MessageAlerts'
     },
     data: () => ({
       firstWeight: null,
+      thirdWeight: null,
       weigth: null,
       dialog: false,
       labels: [],
@@ -105,8 +106,8 @@ import MessageAlerts from '../components/forms/MessageAlerts'
     methods: {
         sendWeigth() {
             this.dialog = false
-            console.log('SEND: ', this.weigth);
             if (this.weigth <= 0) {
+                this.weigth = null
                 this.$store.state.MessageAlerts = {
                   type: 'snackbar',
                   snackbar: {
@@ -123,7 +124,8 @@ import MessageAlerts from '../components/forms/MessageAlerts'
             } else {
               this.$store.dispatch('PersonalData/sendProgressWeigth', {
                 firstWeight: this.firstWeight,
-                secondWeight: this.weigth
+                secondWeight: this.secondWeight,
+                thirdWeight: this.weigth
               }).then(response => {
                 this.firstWeight = null
                 if (!response.error) {
@@ -137,16 +139,18 @@ import MessageAlerts from '../components/forms/MessageAlerts'
         },
       getWeigth() {
         this.$store.dispatch('PersonalData/getProgressWeith').then(response => {
-                this.firstWeight = response.firstWeight 
-                this.labels.push(response.firstWeight + ' KG')
-                this.labels.push(response.secondWeight + ' KG')
-                //  this.labels.push(response.thirdWeight + ' KG')
+          this.firstWeight = response.firstWeight
+          this.secondWeight = response.secondWeight
+          this.thirdWeight = response.thirdWeight
+          
+          this.labels.push(response.firstWeight + ' KG')
+          this.labels.push(response.secondWeight + ' KG')
+          this.labels.push(response.thirdWeight + ' KG')
 
-                this.value.push(parseInt(response.firstWeight))
-                this.value.push(parseInt(response.secondWeight))
-                //  this.value.push(parseInt(response.thirdWeight))
-                
-            })
+          this.value.push(parseInt(response.firstWeight))
+          this.value.push(parseInt(response.secondWeight))
+          this.value.push(parseInt(response.thirdWeight))
+        })
       }
     },
     created() {

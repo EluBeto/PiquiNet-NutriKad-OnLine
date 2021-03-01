@@ -2421,6 +2421,1209 @@ Cebolla en bastones, ½ taza de champiñones picados
                         `
                     }
                 ]
+            },
+            thirdWeek: {
+                breakfastOrDinner: [
+                    {
+                        foodId: 1,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Omelette de vegetales mixtos!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+</li>
+                            <li>
+1 huevo + 1 clara
+</li>
+                            <li>
+1/5 de pieza de Aguacate
+</li>
+                            <li>
+½ cucharadita de aceite de oliva
+</li>
+                            <li>
+
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
+                            </li>
+                            <li>
+                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
+                            </li>
+                            <li>
+                                 Dobla a la mitad y sirve.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Tapas dulces!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+½ manzana picada
+</li>
+                            <li>
+5 galletas marías
+</li>
+                            <li>
+5 Cucharadas de queso cottage
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+½ manzana picada
+</li>
+                            <li>
+5 galletas marías
+</li>
+                            <li>
+5 Cucharadas de queso cottage
+</li>
+                            <li>
+½ barra de chocolate turin si n azúcar.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
+                            </li>
+                            <li>
+                                Coloca la mezcla anterior sobre las galletas.
+                            </li>
+                            <li>
+                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
+                                <ul>
+                                    <li>
+                                    Corona las galletas con el chocolate derretido.
+                                    </li>
+                                    <li>
+                                    ½ manzana picada, ½ taza de yogurt natural.
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Huevito ranchero!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+</li>
+                            <li>
+2 tortilla de maíz.
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+</li>
+                            <li>
+2 tortilla de maíz.
+</li>
+                            <li>
+1 huevos estrellado + 1 clara de huevo estrellda.
+</li>
+                            <li>
+Pimienta y sal al gusto.
+</li>
+                            <li>
+1/5 de pieza de aguacate
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
+                            </li>
+                            <li>
+                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
+                            </li>
+                            <li>
+                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
+                                <ul>
+                                    <li>
+                                    1 manzana picada y 1 cucharada de yogurt
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Crepa de mango!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+½  taza de jicama rallada
+</li>
+                            <li>
+¼ de pieza de plátano 
+</li>
+                            <li>
+3 cucharadas de harina de avena
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+½  taza de jicama rallada
+</li>
+                            <li>
+¼ de pieza de plátano 
+</li>
+                            <li>
+3 cucharadas de harina de avena
+</li>
+                            <li>
+1 huevo
+</li>
+                            <li>
+Un chorrito de leche
+</li>
+                            <li>
+Estracto de vainilla y canela en polvo al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
+                            </li>
+                            <li>
+                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
+                            </li>
+                            <li>
+                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
+                                <ul>
+                                    <li>
+                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Panquecitos de fresa!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+½ taza de zanahoria rallada cruda
+</li>
+                            <li>
+¼ de pieza de plátano
+</li>
+                            <li>
+3 cucharadas de harina de avena
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+½ taza de zanahoria rallada cruda
+</li>
+                            <li>
+¼ de pieza de plátano
+</li>
+                            <li>
+4 cucharadas de harina de avena
+</li>
+                            <li>
+1 huevo
+</li>
+                            <li>
+Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua todos los ingredientes hasta tener una mezcla homogénea.
+                            </li>
+                            <li>
+                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
+                            </li>
+                            <li>
+                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
+                                <ul>
+                                    <li>
+                                    Nol olvides acompañar con un jugo.
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                detoxJuice: [
+                    {
+                        foodId: 1,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo  green detóx basic!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de espinacas</li>
+                            <li>1/2 vara de apio</li>
+                            <li>1 nopal pequeño </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de espinacas</li>
+                            <li>1/2 vara de apio</li>
+                            <li>1 nopal pequeño </li>
+                            <li>3 ramitas de perejil (Libre) </li>
+                            <li>Jugo de 1 naranja  (Libre) </li>
+                            <li>1 taza de agua (Libre) </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo vitaminpower!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 zanahoria</li>
+                            <li>Jugo de 1 naranja </li>
+                            <li>1 nopal pequeño </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 zanahoria</li>
+                            <li>Jugo de 1 naranja </li>
+                            <li>1 nopal pequeño </li>
+                            <li>Jugo de 1 limón </li>
+                            <li>1 taza de agua </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo súper detóx !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½ tazade betabel </li>
+                            <li>½  pepino sin cascara y sin semillas </li>
+                            <li>Jugo de 1 naranja </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>½ tazade betabel </li>
+                        <li>½  pepino sin cascara y sin semillas </li>
+                        <li>Jugo de 1 naranja </li>
+                            <li>1 cm cucharadita de cúrcuma</li>
+                            <li>1cm de jengibre </li>
+                            <li>1 taza de agua </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo antioxidante!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½ taza betabel</li>
+                            <li>3 fresas </li>
+                            <li>½ pieza de pepino</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>½ taza betabel</li>
+                            <li>3 fresas </li>
+                            <li>½ pieza de pepino</li>
+                            <li>1 taza de agua</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/juice.jpg',
+                        title: '¡Mojito fit detóx!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1/2 pepino</li>
+                            <li>2 limones </li>
+                            <li>500 ml de agua </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>1/2 pepino</li>
+                            <li>2 limones </li>
+                            <li>500 ml de agua </li>
+                            <li>1 puño de hierbabuena</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pela el pepino, retira las semillas, y parte en rodajas. 
+                            </li>
+                            <li>
+                            Parte en rodajas los limones. 
+                            </li>
+                            <li>
+                            Pon el agua en una jarra, agrega las verduras  y deja reposar por varias horas. 
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                foodTickets: [
+                    {
+                        foodId: 1,
+                        image: '/img/tickets.jpg',
+                        title: '¡Arroz blanco falso!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de pedacitos de brócoli y coliflor </li>
+                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
+                        </ul> . . . 
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de pedacitos de brócoli y coliflor </li>
+                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
+                            <li>¼  taza de chícharos </li>
+                            <li>Pedacito de cebolla </li>
+                            <li>1/2 diente de ajo</li>
+                            <li>1 taza de agua </li>
+                            <li>Sal y pimienta</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Licua el agua con la cebolla y el ajo. 
+                            </li>
+                            <li>
+                            En un sartén caliente pasa lo licuado, los pedacitos de brócoli y colifor y las verduras. Condimenta al gusto. 
+                            </li>
+                            <li>
+                            Deja de cocinar por 10 minutos a fuego bajo o hasta que estén bien cocidos.
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/tickets.jpg',
+                        title: '¡Crema de verduras!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>3 floretes de brócoli  </li>
+                            <li>Pedacito de chayote </li>
+                            <li>Pedacito de zanahoria </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>3 floretes de brócoli  </li>
+                        <li>Pedacito de chayote </li>
+                        <li>Pedacito de zanahoria </li>
+                        <li>Pedacito de cebolla  </li>
+                            <li>3 varitas de cilantro </li>
+                            <li>Sal, pimienta y ajo en polvo</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Coloca las verduras, cebolla y cilantro en una cazuela, cubre con agua y agrega sal. Hierve hasta que se hayan ablandado por completo. 
+                            </li>
+                            <li>
+                            Licua las verduras con un poco del agua donde se cocieron. 
+                            </li>
+                            <li>
+                            1.	Pasa lo licuado a una cazuela, condimenta con ajo en polvo, sal y pimienta, ve agregando poco a poco agua hasta conseguir la textura deseada. 
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/tickets.jpg',
+                        title: '¡Ensalada de peinos!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>Puño de hojas de lechuga</li>
+                            <li>1/2 pepino</li>
+                            <li>Pedacito de cebolla morada rebanada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>Puño de hojas de lechuga</li>
+                        <li>1/2 pepino</li>
+                        <li>Pedacito de cebolla morada rebanada</li>
+                            <li>Jugo de medio limón </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pica el pepino y la lechuga y pasa a un bowl.  
+                            </li>
+                            <li>
+                            Agrega el resto de los ingredientes al bowl y revuelve para que todo se integre.
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/tickets.jpg',
+                        title: '¡Mix de vegetales al fuego!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>5 champiñones </li>
+                            <li>Pedacito de cebolla  </li>
+                            <li>1/2 pimiento mediano amarillo </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>5 champiñones </li>
+                        <li>Pedacito de cebolla  </li>
+                        <li>1/2 pimiento mediano amarillo </li>
+                            <li>1/2 pimiento mediano rojo </li>
+                            <li>1/2 taza germen de trigo </li>
+                            <li>1 cucharada de hojuelas de chile seco </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pica las verduras en cubos medianos. 
+                            </li>
+                            <li>
+                            Pasa a un sartén caliente junto con 2 cucharadas de agua, deja cocinar a fuego bajo por 7 minutos. 
+                            </li>
+                            <li>
+                            Decora con las hojuelas de chile seco. 
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/tickets.jpg',
+                        title: '¡Sopa de verduras!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>Recaudo
+                                <ul>
+                                    <li>1 jitomate, </li>
+                                    <li>pedacito de cebolla</li>
+                                </ul>
+                            </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>Recaudo
+                                <ul>
+                                    <li>1 jitomate, </li>
+                                    <li>pedacito de cebolla</li>
+                                    <li>1 diente de ajo pequeño</li>
+                                    <li>3 varitas de cilantro</li>
+                                </ul>
+                            </li>
+                            <li>1/2 taza de ejotes</li>
+                            <li>1/2 taza de zanahoria </li>
+                            <li>1/4 taza de calabacita  </li>
+                            <li>2 tazas de agua o 2 tazas de caldo de verdura</li>
+                            <li>Sal y pimienta</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Licua los ingredientes del recaudo con el agua/caldo.  
+                            </li>
+                            <li>
+                            Pasa el caldo a una cazuela junto con las verduras picadas. 
+                            </li>
+                            <li>
+                            Salpimienta al gusto y deja cocinar hasta que las verduras ablanden.
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                foods: [
+                    {
+                        foodId: 1,
+                        image: '/img/comida.jpg',
+                        title: '¡Taquitos de pollo com aguacate!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
+                            <li>
+2 tortillas de maíz
+</li>
+                            <li>
+70 gr de pechuga de pollo deshebrado
+</li>
+                            <li>
+1/5 de pieza de aguacate
+</li>
+                            <li>
+Pizca de sal y pimienta
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+                            </li>
+                            <li>
+                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                            </li>
+                            <li>
+                            Emplata.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con 1 taza de verduras al gusto.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/comida.jpg',
+                        title: '¡Mega taco de queso!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+60 gr de queso oaxaca light 
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+60 gr de queso oaxaca light 
+</li>
+                            <li>
+60 gr de pollo en trosos pequeños
+</li>
+                            <li>
+2 cucharadas de guacamole, sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
+                            </li>
+                            <li>
+                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
+                            </li>
+                            <li>
+                            Emplata y decora con el guacamole
+                                    </li>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/comida.jpg',
+                        title: '¡Arroz y carne!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+¼ de taza de arroz cocido
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+¼ de taza de arroz cocido
+</li>
+                            <li>
+60 gr de carne de res cocida
+</li>
+                            <li>
+1 cucharadita de aceite de oliva
+</li>
+                            <li>
+Pizca de sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
+                            </li>
+                            <li>
+                                Sirve la cerne, brólo y a un lado el arroz.
+                            </li>
+                            <li>
+                            Vierte el aceite de oliva sobre tu platillo.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/comida.jpg',
+                        title: '¡Tostadas de alambre!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+2 tostadas sanissimo
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+2 tostadas sanissimo
+</li>
+                            <li>
+60 gr de carne de res asada.
+</li>
+                            <li>
+1/5 de pieza de aguacate, sal y pimienta al gusto.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
+                            </li>
+                            <li>
+                                Agrega la carne de res al sartén anterior y mezcla.
+                            </li>
+                            <li>
+                            Monta el alambre sobre las tostadas,
+                                <ul>
+                                    <li>
+                                    Decora con el aguacate, agrega alguna entrada.
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/comida.jpg',
+                        title: '¡Brocoli salad!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+½ taza de pasta cocida
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+½ taza de pasta cocida
+</li>
+                            <li>
+70 gr de pechuga de pollo cocida
+</li>
+                            <li>
+½ cucharadita de aceite de oliva
+</li>
+                            <li>
+Sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Monta como base en un bowl el brócoli y la espinaca.
+                            </li>
+                            <li>
+                                Agrega encima la pechuga de pollo, la pasat y mezcla.
+                            </li>
+                            <li>
+                            Vierte el aceite de oliva. Salpimienta al gusto.
+                                <ul>
+                                    <li>
+                                    Acompaña una entrada.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                snacks: [
+                    {
+                        foodId: 1,
+                        image: '/img/colacion.jpg',
+                        title: '¡Picaditas enchiladas!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                            <li>14 piezas de cacahuates</li>
+                            <li>Una pizca de Tajín bajo en sodio (Tapa azúl)</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b> 
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/colacion.jpg',
+                        title: '¡Nutribufet!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½  betabel cocido picado</li>
+                            <li>½  taza de jícama picada</li>
+                            <li>½  limón (Libre)</li>
+                            <li>½  manzana rebanada </li>
+                            <li>14 piezas de cacahuates </li>
+                            <li>1 taza de gelatina light </li>
+                            <li>picada </li>
+                            <li>1Pizca de sal </li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>          
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/colacion.jpg',
+                        title: '¡Fácil y básica !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>2 mandarinas</li>
+                            <li>1 taza de gelatina light </li>
+                            <li>10 almendras</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>2 mandarinas</li>
+                            <li>1 taza de gelatina light </li>
+                            <li>10 almendras</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>              
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/colacion.jpg',
+                        title: '¡Piña a la canela!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 rebanada de piña </li>
+                            <li>Canela al gusto</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 rebanada de piña </li>
+                            <li>Canela al gusto</li>
+                            <li>1 cucharadita de esencia de vainilla</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        <ol>
+                            <ul>
+                            Mezcla la canela y la vainilla
+                            </ul>
+                            <ul>
+                            colócala la mezcla sobre la piña y colocola en un comal
+                            </ul>
+                            <ul>
+                            espera 2 minutos y voleteala pasados 2 minutos más disfruta.
+                            </ul>
+                        </ol>
+                        </br>
+                        10 piezas de almendras 
+                        1 taza de gelatina light
+
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/colacion.jpg',
+                        title: '¡Fresas con chocolate !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>18 fresas</li>
+                            <li>1 barra de 18 gr </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>18 fresas</li>
+                        <li>1 barra de 18 gr </li>
+                        <li>3 mitades de nuez troceada</li>
+                            <li>1 taza de gelatina light</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>        
+                        `
+                    }
+                ]
             }
         },
         foodsMen: {
@@ -4748,6 +5951,1209 @@ Cebolla en bastones, ½ taza de champiñones picados
                         `
                     }
                 ]
+            },
+            thirdWeek: {
+                breakfastOrDinner: [
+                    {
+                        foodId: 1,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Omelette de vegetales mixtos!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+</li>
+                            <li>
+2 huevo + 1 clara
+</li>
+                            <li>
+1/5 de pieza de Aguacate
+</li>
+                            <li>
+½ cucharadita de aceite de oliva
+</li>
+                            <li>
+
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
+                            </li>
+                            <li>
+                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
+                            </li>
+                            <li>
+                                 Dobla a la mitad y sirve.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Tapas dulces!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 manzana picada
+</li>
+                            <li>
+5 galletas marías
+</li>
+                            <li>
+8 Cucharadas de queso cottage
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 manzana picada
+</li>
+                            <li>
+5 galletas marías
+</li>
+                            <li>
+8 Cucharadas de queso cottage
+</li>
+                            <li>
+½ barra de chocolate turin si n azúcar.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
+                            </li>
+                            <li>
+                                Coloca la mezcla anterior sobre las galletas.
+                            </li>
+                            <li>
+                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
+                                <ul>
+                                    <li>
+                                    Corona las galletas con el chocolate derretido.
+                                    </li>
+                                    <li>
+                                    ½ manzana picada, ½ taza de yogurt natural.
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Huevito ranchero!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+</li>
+                            <li>
+2 tortilla de maíz.
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+</li>
+                            <li>
+2 tortilla de maíz.
+</li>
+                            <li>
+2 huevos estrellado + 1 clara de huevo estrellda.
+</li>
+                            <li>
+Pimienta y sal al gusto.
+</li>
+                            <li>
+1/5 de pieza de aguacate
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
+                            </li>
+                            <li>
+                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
+                            </li>
+                            <li>
+                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
+                                <ul>
+                                    <li>
+                                    1 manzana picada y 1 cucharada de yogurt
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Crepa de mango!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de jicama rallada
+</li>
+                            <li>
+½ de pieza de plátano 
+</li>
+                            <li>
+6 cucharadas de harina de avena
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de jicama rallada
+</li>
+                            <li>
+½ de pieza de plátano 
+</li>
+                            <li>
+6 cucharadas de harina de avena
+</li>
+                            <li>
+2 huevo
+</li>
+                            <li>
+Un chorrito de leche
+</li>
+                            <li>
+Estracto de vainilla y canela en polvo al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
+                            </li>
+                            <li>
+                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
+                            </li>
+                            <li>
+                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
+                                <ul>
+                                    <li>
+                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/desayuno.jpg',
+                        title: '¡Panquecitos de fresa!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de zanahoria rallada cruda
+</li>
+                            <li>
+½ de pieza de plátano
+</li>
+                            <li>
+6 cucharadas de harina de avena
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de zanahoria rallada cruda
+</li>
+                            <li>
+½ de pieza de plátano
+</li>
+                            <li>
+6 cucharadas de harina de avena
+</li>
+                            <li>
+1 huevo
+</li>
+                            <li>
+Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua todos los ingredientes hasta tener una mezcla homogénea.
+                            </li>
+                            <li>
+                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
+                            </li>
+                            <li>
+                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
+                                <ul>
+                                    <li>
+                                    Nol olvides acompañar con un jugo.
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                detoxJuice: [
+                    {
+                        foodId: 1,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo  green detóx basic!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de espinacas</li>
+                            <li>1/2 vara de apio</li>
+                            <li>1 nopal pequeño </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de espinacas</li>
+                            <li>1/2 vara de apio</li>
+                            <li>1 nopal pequeño </li>
+                            <li>3 ramitas de perejil (Libre) </li>
+                            <li>Jugo de 1 naranja  (Libre) </li>
+                            <li>1 taza de agua (Libre) </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo vitaminpower!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 zanahoria</li>
+                            <li>Jugo de 1 naranja </li>
+                            <li>1 nopal pequeño </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 zanahoria</li>
+                            <li>Jugo de 1 naranja </li>
+                            <li>1 nopal pequeño </li>
+                            <li>Jugo de 1 limón </li>
+                            <li>1 taza de agua </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo súper detóx !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½ tazade betabel </li>
+                            <li>½  pepino sin cascara y sin semillas </li>
+                            <li>Jugo de 1 naranja </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>½ tazade betabel </li>
+                        <li>½  pepino sin cascara y sin semillas </li>
+                        <li>Jugo de 1 naranja </li>
+                            <li>1 cm cucharadita de cúrcuma</li>
+                            <li>1cm de jengibre </li>
+                            <li>1 taza de agua </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/juice.jpg',
+                        title: '¡Jugo antioxidante!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½ taza betabel</li>
+                            <li>3 fresas </li>
+                            <li>½ pieza de pepino</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>½ taza betabel</li>
+                            <li>3 fresas </li>
+                            <li>½ pieza de pepino</li>
+                            <li>1 taza de agua</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                ¡Licua y disfruta!
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/juice.jpg',
+                        title: '¡Mojito fit detóx!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1/2 pepino</li>
+                            <li>2 limones </li>
+                            <li>500 ml de agua </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>1/2 pepino</li>
+                            <li>2 limones </li>
+                            <li>500 ml de agua </li>
+                            <li>1 puño de hierbabuena</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pela el pepino, retira las semillas, y parte en rodajas. 
+                            </li>
+                            <li>
+                            Parte en rodajas los limones. 
+                            </li>
+                            <li>
+                            Pon el agua en una jarra, agrega las verduras  y deja reposar por varias horas. 
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                foodTickets: [
+                    {
+                        foodId: 1,
+                        image: '/img/tickets.jpg',
+                        title: '¡Arroz blanco falso!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de pedacitos de brócoli y coliflor </li>
+                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
+                        </ul> . . . 
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 taza de pedacitos de brócoli y coliflor </li>
+                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
+                            <li>¼  taza de chícharos </li>
+                            <li>Pedacito de cebolla </li>
+                            <li>1/2 diente de ajo</li>
+                            <li>1 taza de agua </li>
+                            <li>Sal y pimienta</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Licua el agua con la cebolla y el ajo. 
+                            </li>
+                            <li>
+                            En un sartén caliente pasa lo licuado, los pedacitos de brócoli y colifor y las verduras. Condimenta al gusto. 
+                            </li>
+                            <li>
+                            Deja de cocinar por 10 minutos a fuego bajo o hasta que estén bien cocidos.
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/tickets.jpg',
+                        title: '¡Crema de verduras!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>3 floretes de brócoli  </li>
+                            <li>Pedacito de chayote </li>
+                            <li>Pedacito de zanahoria </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>3 floretes de brócoli  </li>
+                        <li>Pedacito de chayote </li>
+                        <li>Pedacito de zanahoria </li>
+                        <li>Pedacito de cebolla  </li>
+                            <li>3 varitas de cilantro </li>
+                            <li>Sal, pimienta y ajo en polvo</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Coloca las verduras, cebolla y cilantro en una cazuela, cubre con agua y agrega sal. Hierve hasta que se hayan ablandado por completo. 
+                            </li>
+                            <li>
+                            Licua las verduras con un poco del agua donde se cocieron. 
+                            </li>
+                            <li>
+                            1.	Pasa lo licuado a una cazuela, condimenta con ajo en polvo, sal y pimienta, ve agregando poco a poco agua hasta conseguir la textura deseada. 
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/tickets.jpg',
+                        title: '¡Ensalada de peinos!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>Puño de hojas de lechuga</li>
+                            <li>1/2 pepino</li>
+                            <li>Pedacito de cebolla morada rebanada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>Puño de hojas de lechuga</li>
+                        <li>1/2 pepino</li>
+                        <li>Pedacito de cebolla morada rebanada</li>
+                            <li>Jugo de medio limón </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pica el pepino y la lechuga y pasa a un bowl.  
+                            </li>
+                            <li>
+                            Agrega el resto de los ingredientes al bowl y revuelve para que todo se integre.
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/tickets.jpg',
+                        title: '¡Mix de vegetales al fuego!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>5 champiñones </li>
+                            <li>Pedacito de cebolla  </li>
+                            <li>1/2 pimiento mediano amarillo </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>5 champiñones </li>
+                        <li>Pedacito de cebolla  </li>
+                        <li>1/2 pimiento mediano amarillo </li>
+                            <li>1/2 pimiento mediano rojo </li>
+                            <li>1/2 taza germen de trigo </li>
+                            <li>1 cucharada de hojuelas de chile seco </li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Pica las verduras en cubos medianos. 
+                            </li>
+                            <li>
+                            Pasa a un sartén caliente junto con 2 cucharadas de agua, deja cocinar a fuego bajo por 7 minutos. 
+                            </li>
+                            <li>
+                            Decora con las hojuelas de chile seco. 
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/tickets.jpg',
+                        title: '¡Sopa de verduras!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>Recaudo
+                                <ul>
+                                    <li>1 jitomate, </li>
+                                    <li>pedacito de cebolla</li>
+                                </ul>
+                            </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>Recaudo
+                                <ul>
+                                    <li>1 jitomate, </li>
+                                    <li>pedacito de cebolla</li>
+                                    <li>1 diente de ajo pequeño</li>
+                                    <li>3 varitas de cilantro</li>
+                                </ul>
+                            </li>
+                            <li>1/2 taza de ejotes</li>
+                            <li>1/2 taza de zanahoria </li>
+                            <li>1/4 taza de calabacita  </li>
+                            <li>2 tazas de agua o 2 tazas de caldo de verdura</li>
+                            <li>Sal y pimienta</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                            Licua los ingredientes del recaudo con el agua/caldo.  
+                            </li>
+                            <li>
+                            Pasa el caldo a una cazuela junto con las verduras picadas. 
+                            </li>
+                            <li>
+                            Salpimienta al gusto y deja cocinar hasta que las verduras ablanden.
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                foods: [
+                    {
+                        foodId: 1,
+                        image: '/img/comida.jpg',
+                        title: '¡Taquitos de pollo com aguacate!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+2 nopales asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+2 nopales asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
+                            <li>
+2 tortillas de maíz
+</li>
+                            <li>
+120 gr de pechuga de pollo deshebrado
+</li>
+                            <li>
+1/5 de pieza de aguacate
+</li>
+                            <li>
+Pizca de sal y pimienta
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+                            </li>
+                            <li>
+                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                            </li>
+                            <li>
+                            Emplata.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con 1 taza de verduras al gusto.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/comida.jpg',
+                        title: '¡Mega taco de queso!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+80 gr de queso oaxaca light 
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+80 gr de queso oaxaca light 
+</li>
+                            <li>
+120 gr de pollo en trosos pequeños
+</li>
+                            <li>
+2 cucharadas de guacamole, sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
+                            </li>
+                            <li>
+                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
+                            </li>
+                            <li>
+                            Emplata y decora con el guacamole
+                                    </li>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/comida.jpg',
+                        title: '¡Arroz y carne!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+½ de taza de arroz cocido
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+½ de taza de arroz cocido
+</li>
+                            <li>
+120 gr de carne de res cocida
+</li>
+                            <li>
+1 cucharadita de aceite de oliva
+</li>
+                            <li>
+Pizca de sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
+                            </li>
+                            <li>
+                                Sirve la cerne, brólo y a un lado el arroz.
+                            </li>
+                            <li>
+                            Vierte el aceite de oliva sobre tu platillo.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/comida.jpg',
+                        title: '¡Tostadas de alambre!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+3 tostadas sanissimo
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+3 tostadas sanissimo
+</li>
+                            <li>
+120 gr de carne de res asada.
+</li>
+                            <li>
+1/5 de pieza de aguacate, sal y pimienta al gusto.
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
+                            </li>
+                            <li>
+                                Agrega la carne de res al sartén anterior y mezcla.
+                            </li>
+                            <li>
+                            Monta el alambre sobre las tostadas,
+                                <ul>
+                                    <li>
+                                    Decora con el aguacate, agrega alguna entrada.
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/comida.jpg',
+                        title: '¡Brocoli salad!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+1 taza de pasta cocida
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+1 taza de pasta cocida
+</li>
+                            <li>
+140 gr de pechuga de pollo cocida
+</li>
+                            <li>
+½ cucharadita de aceite de oliva
+</li>
+                            <li>
+Sal y pimienta al gusto
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Monta como base en un bowl el brócoli y la espinaca.
+                            </li>
+                            <li>
+                                Agrega encima la pechuga de pollo, la pasat y mezcla.
+                            </li>
+                            <li>
+                            Vierte el aceite de oliva. Salpimienta al gusto.
+                                <ul>
+                                    <li>
+                                    Acompaña una entrada.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    }
+                ],
+                snacks: [
+                    {
+                        foodId: 1,
+                        image: '/img/colacion.jpg',
+                        title: '¡Picaditas enchiladas!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                            <li>14 piezas de cacahuates</li>
+                            <li>Una pizca de Tajín bajo en sodio (Tapa azúl)</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b> 
+                        `
+                    },
+                    {
+                        foodId: 2,
+                        image: '/img/colacion.jpg',
+                        title: '¡Nutribufet!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
+                            <li>1 naranja en gajos picada</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>½  betabel cocido picado</li>
+                            <li>½  taza de jícama picada</li>
+                            <li>½  limón (Libre)</li>
+                            <li>½  manzana rebanada </li>
+                            <li>14 piezas de cacahuates </li>
+                            <li>1 taza de gelatina light </li>
+                            <li>picada </li>
+                            <li>1Pizca de sal </li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>          
+                        `
+                    },
+                    {
+                        foodId: 3,
+                        image: '/img/colacion.jpg',
+                        title: '¡Fácil y básica !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>2 mandarinas</li>
+                            <li>1 taza de gelatina light </li>
+                            <li>10 almendras</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>2 mandarinas</li>
+                            <li>1 taza de gelatina light </li>
+                            <li>10 almendras</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>              
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/colacion.jpg',
+                        title: '¡Piña a la canela!',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 rebanada de piña </li>
+                            <li>Canela al gusto</li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>1 rebanada de piña </li>
+                            <li>Canela al gusto</li>
+                            <li>1 cucharadita de esencia de vainilla</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        <ol>
+                            <ul>
+                            Mezcla la canela y la vainilla
+                            </ul>
+                            <ul>
+                            colócala la mezcla sobre la piña y colocola en un comal
+                            </ul>
+                            <ul>
+                            espera 2 minutos y voleteala pasados 2 minutos más disfruta.
+                            </ul>
+                        </ol>
+                        </br>
+                        10 piezas de almendras 
+                        1 taza de gelatina light
+
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/colacion.jpg',
+                        title: '¡Fresas con chocolate !',
+                        smallDescription: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                            <li>18 fresas</li>
+                            <li>1 barra de 18 gr </li>
+                        </ul> . . .
+                        `,
+                        ingredients: `
+                        <small><b>Ingredientes</b></small>
+                        <ul>
+                        <li>18 fresas</li>
+                        <li>1 barra de 18 gr </li>
+                        <li>3 mitades de nuez troceada</li>
+                            <li>1 taza de gelatina light</li>
+                        
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small><b>Instrucciones</b></small>
+                        </br>
+                        </br>
+                        <b>
+                        Simplemente disfruta
+                        </b>        
+                        `
+                    }
+                ]
             }
         }
     },
@@ -4836,6 +7242,50 @@ Cebolla en bastones, ½ taza de champiñones picados
                         return response
                     } else {
                         const response = state.foodsMen.secondWeek.snacks 
+                        return response
+                    }
+            }
+        },
+        getFoodsThirdWeek({ state }, payload) {
+            switch (payload.food) {
+                case 'breakfastOrDinner':
+                    if (payload.gender) {
+                        const response = state.foodsWomen.thirdWeek.breakfastOrDinner
+                        return response
+                    } else {
+                        const response = state.foodsMen.thirdWeek.breakfastOrDinner
+                        return response
+                    }
+                case 'detoxJuice':
+                    if (payload.gender) {
+                        const response = state.foodsWomen.thirdWeek.detoxJuice
+                        return response
+                    } else {
+                        const response = state.foodsMen.thirdWeek.detoxJuice
+                        return response
+                    }
+                case 'foodTickets':
+                    if (payload.gender) {
+                        const response = state.foodsWomen.thirdWeek.foodTickets
+                        return response
+                    } else {
+                        const response = state.foodsMen.thirdWeek.foodTickets
+                        return response
+                    }
+                case 'foods':
+                    if (payload.gender) {
+                        const response = state.foodsWomen.thirdWeek.foods
+                        return response
+                    } else {
+                        const response = state.foodsMen.thirdWeek.foods
+                        return response
+                    }
+                case 'snacks':
+                    if (payload.gender) {
+                        const response = state.foodsWomen.thirdWeek.snacks
+                        return response
+                    } else {
+                        const response = state.foodsMen.thirdWeek.snacks
                         return response
                     }
             }

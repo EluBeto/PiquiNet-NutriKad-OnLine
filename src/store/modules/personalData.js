@@ -166,7 +166,7 @@ export default {
                 let parameters = JSON.stringify({
                     firstWeight: payload.firstWeight,
                     secondWeight: payload.secondWeight,
-                    thirdWeight: 0
+                    thirdWeight: payload.thirdWeight
                 })
                 let responseWeight = ''
                 await HttpServices.putRequest(url, parameters).then(response => {
