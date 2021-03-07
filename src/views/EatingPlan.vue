@@ -1,16 +1,8 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col class="text-center">
-        <SectionTitle :titleParameters="titleParameters"></SectionTitle>
-      </v-col>
-    </v-row>
-    <v-divider></v-divider>
-    <v-row v-if="loading">
+    <v-row v-if="!loading && !!isRegistered && isShowPlan">
       <v-col class="text-center mt-5" v-if="!!isRegistered">
-        <keep-alive>
-          <TabsItems></TabsItems>
-        </keep-alive>
+        <PDFLoader></PDFLoader>
       </v-col>
     </v-row>
     <v-skeleton-loader
@@ -25,13 +17,11 @@
 </template>
 
 <script>
-import SectionTitle from '../components/forms/SectionTitle'
-import TabsItems from '../components/forms/TabsItems'
+import PDFLoader from "@/components/PDFLoader"
 export default {
     name: 'EatingPlan',
     components: {
-      SectionTitle,
-      TabsItems
+      PDFLoader
     },
     data:() => ({
       boilerplate: false,
@@ -70,12 +60,15 @@ export default {
           return null
         }
       },
-      titleParameters() {
-        let mssage = {
-          title: '¡Bienvenida!',
-          subtitle: ''
+      isShowPlan() {
+        if (window.localStorage.getItem('registeredUser') === null) {
+          return false
+        } else {
+          const {
+            isShowPlan
+          } = JSON.parse(window.localStorage.getItem('registeredUser'))
+          return isShowPlan
         }
-        return mssage
       }
     },
     created() {

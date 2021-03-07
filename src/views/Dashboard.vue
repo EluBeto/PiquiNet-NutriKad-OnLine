@@ -54,7 +54,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: 'Bienvenida a tu consulta Online'
+          subtitle: 'Bienvenida a tu consultorio Online'
         }
         return mssage
       }

@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="270px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -11,6 +11,7 @@
             lazy-validation>
       <v-container>
         <h3 class="text-center my-3 text-uppercase">antecedentes heredofamiliares</h3>
+        <h5 class="text-center my-3 text-uppercase">Alguno de tu familia padece las siguientes enfermedades, considerando padres, abuelos y hermanos.</h5>
         <v-divider></v-divider>
         <v-row>
           <v-col cols="12" sm="6" md="3">

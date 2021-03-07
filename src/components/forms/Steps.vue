@@ -110,6 +110,7 @@ export default {
             return this.$store.getters['Dialogs/getDialog']
         },
         validaDatosPersonales() {
+          console.log('DATA: ', this.datosPersonales)
             const {
               nombre,
               apellidoPaterno,
@@ -155,12 +156,12 @@ export default {
                     this.validationOfDataAndPropertiesToShowSeccion(validations)
                     break;
                 case 7:
-                  validations.id = id
-                  validations.isValid = isValid
-                  validations.isDataValid = this.validaAntropometria
-                  validations.message = '¡Hey! Faltan Datos de Antropometría, por completar.'
-                  this.sendRegister()
-                  break;
+                    validations.id = id
+                    validations.isValid = isValid
+                    validations.isDataValid = this.validaAntropometria
+                    validations.message = '¡Hey! Faltan Datos de Antropometría, por completar.'
+                    this.validationOfDataAndPropertiesToShowSeccion(validations)
+                    break;
                 default:
                     this.stepsProperties.arrayOfSteps[id].isValid = true
                     this.stepsProperties.numberOfSteps ++
@@ -169,8 +170,12 @@ export default {
         },
         validationOfDataAndPropertiesToShowSeccion(validations) {
             if (validations.isValid && validations.isDataValid) {
+              if (validations.id === 7) {
+                this.sendRegister()
+              } else {
                 this.stepsProperties.arrayOfSteps[validations.id].isValid = true
                 this.stepsProperties.numberOfSteps ++
+              }
             } else {
                 this.showAlert(validations.message)
             }

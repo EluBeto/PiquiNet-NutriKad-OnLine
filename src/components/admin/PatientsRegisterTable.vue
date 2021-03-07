@@ -12,7 +12,7 @@
       ></v-text-field>
     </v-card-title>
     <v-data-table
-        :headers="headers"
+        :headers="GetHeadersTable"
         :items="patientsRegister"
         :search="search"
         class="elevation-1"
@@ -21,37 +21,37 @@
         item-key="id"
         fixed-header
     >
-        <template v-slot:item.dataIdentificationCard="{ item }">
+        <template v-slot:item.datosPersonales="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-                {{ item.dataIdentificationCard.name }}
+                {{ item.datosPersonales.nombre }}
+            </div>
+        </template>
+        <template v-slot:item.datosPersonales="{ item }">
+            <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
+                {{ item.datosPersonales.apellidoPaterno }}
+            </div>
+        </template>
+        <template v-slot:item.datosPersonales="{ item }">
+            <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
+                {{ item.datosPersonales.apellidoMaterno }}
             </div>
         </template>
         <template v-slot:item.dataIdentificationCard="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-                {{ item.dataIdentificationCard.lastName }}
+                {{ item.datosPersonales.edad }}
             </div>
         </template>
-        <template v-slot:item.dataIdentificationCard="{ item }">
+        <template v-slot:item.datosPersonales="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-                {{ item.dataIdentificationCard.motherLastName }}
+                {{ item.datosPersonales.fechaNac }}
             </div>
         </template>
-        <template v-slot:item.dataIdentificationCard="{ item }">
-            <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-                {{ item.dataIdentificationCard.age }}
-            </div>
-        </template>
-        <template v-slot:item.dataIdentificationCard="{ item }">
-            <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-                {{ item.dataIdentificationCard.dateOfBirth }}
-            </div>
-        </template>
-        <template v-slot:item.dataIdentificationCard="{ item }">
+        <template v-slot:item.datosPersonales="{ item }">
             <v-chip
-                :color="getColor(item.dataIdentificationCard.gender)"
+                :color="getColor(item.datosPersonales.genero)"
                 dark
             >
-                {{ item.dataIdentificationCard.gender === true ? 'Mujer' : 'Hombre'}}
+                {{ item.datosPersonales.genero === true ? 'Mujer' : 'Hombre'}}
             </v-chip>
         </template>
     </v-data-table>
@@ -66,33 +66,37 @@
   },
     data () {
       return {
-        search: '',
-        headers: [
+        search: ''
+      }
+    },
+    computed: {
+      GetHeadersTable() {
+        return [
           {
             text: 'Nombre',
             align: 'start',
             sortable: false,
-            value: 'dataIdentificationCard.name',
+            value: 'datosPersonales.nombre',
           },
           {
             text: 'Apellido paterno',
-            value: 'dataIdentificationCard.lastName',
+            value: 'datosPersonales.apellidoPaterno',
           },
           {
             text: 'Apellido Materno',
-            value: 'dataIdentificationCard.motherLastName',
+            value: 'datosPersonales.apellidoMaterno',
           },
           {
             text: 'Edad',
-            value: 'dataIdentificationCard.age',
+            value: 'datosPersonales.edad',
           },
           {
             text: 'Fecha de Nacimiento',
-            value: 'dataIdentificationCard.dateOfBirth',
+            value: 'datosPersonales.fechaNac',
           },
           {
             text: 'Sexo',
-            value: 'dataIdentificationCard.gender',
+            value: 'datosPersonales.genero',
           }
         ]
       }

@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="350px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -14,35 +14,48 @@
         <v-divider></v-divider>
         <v-row>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
-                inset
+            <v-text-field
+                :disabled="!datosPersonales.genero"
+                :rules="rules.dateRules"
+                v-model="antecedentesGinecoObstetricos.fum"
+                label="Fecha de ultima menstruación"
+                prepend-icon="mdi-calendar"
+                type="date"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :disabled="!datosPersonales.genero"
+                :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.menarca"
                 label="¿Menarca?"
-            ></v-switch>
+                type="text"
+                prepend-icon="mdi-head-question-outline"
+                color="primary"
+                required
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-switch
-                inset
-                v-model="antecedentesGinecoObstetricos.fum"
-                label="¿Fum?"
-            ></v-switch>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-switch
+                :disabled="!datosPersonales.genero"
                 inset
                 v-model="antecedentesGinecoObstetricos.climaterio"
-                label="¿Climaterio?"
+                label="¿Climaterio? (menopausia)"
             ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-switch
+                :disabled="!datosPersonales.genero"
                 inset
                 v-model="antecedentesGinecoObstetricos.anticonceptivos"
-                label="¿Anticonceptivos?"
+                label="¿Anticonceptivos hormonales?"
             ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
+                :disabled="!datosPersonales.genero"
                 :rules="rules.numberRules"
                 v-model="antecedentesGinecoObstetricos.noGestas"
                 prepend-icon="mdi-account"
@@ -52,17 +65,16 @@
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-text-field
-                :rules="rules.numberRules"
+            <v-switch
+                :disabled="!datosPersonales.genero"
+                inset
                 v-model="antecedentesGinecoObstetricos.noPartos"
-                prepend-icon="mdi-account"
-                type="number"
-                label="No. de Partos"
-                color="primary"
-            ></v-text-field>
+                label="¿Partos?"
+            ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
+                :disabled="!datosPersonales.genero"
                 :rules="rules.numberRules"
                 v-model="antecedentesGinecoObstetricos.semanasGestacion"
                 prepend-icon="mdi-account"
@@ -73,6 +85,7 @@
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
+                :disabled="!datosPersonales.genero"
                 :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.caracteristicasCiclo"
                 type="text"
@@ -83,6 +96,7 @@
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-switch
+                :disabled="!datosPersonales.genero"
                 inset
                 v-model="antecedentesGinecoObstetricos.abortos"
                 label="¿Abortos?"
@@ -90,6 +104,7 @@
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
+                :disabled="!datosPersonales.genero"
                 v-if="antecedentesGinecoObstetricos.abortos"
                 :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.complicaciones"
@@ -119,6 +134,9 @@ export default {
     },
     antecedentesGinecoObstetricos() {
       return this.$store.getters['PersonalData/getAntecedentesGinecoObstetricos']
+    },
+    datosPersonales() {
+      return this.$store.getters['PersonalData/getDatosPersonales']
     }
   }
 }

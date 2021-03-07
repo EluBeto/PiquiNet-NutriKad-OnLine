@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="350px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -77,6 +77,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Qué desayunas?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" md="1">
@@ -95,6 +97,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Qué comes?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" md="1">
@@ -113,6 +117,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Qué cenas?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" md="1">
@@ -131,6 +137,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Qué comes a media mañana?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" md="1">
@@ -149,6 +157,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Qué comes a media tarde?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" md="1">
@@ -167,6 +177,8 @@
                 class="mx-2"
                 rows="1"
                 label="¿Comes algo adicional?"
+                :rules="rules.textRules"
+                required
             ></v-textarea>
           </v-col>
         </v-row>

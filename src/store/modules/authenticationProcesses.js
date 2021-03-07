@@ -67,17 +67,17 @@ export default {
             if (response.error) return { response: response }
 
             const newPayload = {
-                gender: true,
-                name: 'Merari',
-                lastName: 'Aguilar',
-                motherLastName: 'LLL',
-                isRegistered: true
+                gender: response.datosPersonales.genero,
+                name: response.datosPersonales.nombre,
+                lastName: response.datosPersonales.apellidoPaterno,
+                motherLastName: response.datosPersonales.apellidoMaterno,
+                isShowPlan: response.datosPersonales.isShowPlan,
+                isRegistered: response.isRegisteredUser
             }
+            console.log('REGIS', newPayload, response)
+            window.localStorage.setItem('registeredUser', JSON.stringify(newPayload))
             commit('SET_USER_INFORMATION', newPayload)
             return newPayload
-        },
-        setFormHasAnError({ commit }, payload) {
-            commit('SET_FORM_HAS_AN_ERROR', payload)
         },
         clearAuthenticationProcesses({ state }, payload) {
             state.isErrorAuth = payload

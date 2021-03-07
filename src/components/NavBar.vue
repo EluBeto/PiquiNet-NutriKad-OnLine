@@ -99,6 +99,18 @@
           title: 'Plan de Alimentación',
           to: 'eatingPlan',
           visible: true
+        },
+        {
+          icon: 'mdi-format-line-weight',
+          title: 'Equivalentes',
+          to: 'shoppingList',
+          visible: true
+        },
+        {
+          icon: 'mdi-human-handsup',
+          title: 'Ponte en forma',
+          to: 'traning',
+          visible: true
         }
       ],
       itemsAdmin: [
@@ -118,6 +130,18 @@
           icon: 'mdi-clipboard-outline',
           title: 'Plan de Alimentación',
           to: 'eatingPlan', //eatingPlan
+          visible: true
+        },
+        {
+          icon: 'mdi-format-line-weight',
+          title: 'Equivalentes',
+          to: 'shoppingList',
+          visible: true
+        },
+        {
+          icon: 'mdi-human-handsup',
+          title: 'Ponte en forma',
+          to: 'traning',
           visible: true
         }
       ]

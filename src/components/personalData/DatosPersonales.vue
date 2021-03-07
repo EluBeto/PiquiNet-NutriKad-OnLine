@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="350px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -102,6 +102,13 @@
                 color="primary"
                 required
             ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-switch
+                inset
+                v-model="datosPersonales.genero"
+                label="¿Es mujer?"
+            ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field

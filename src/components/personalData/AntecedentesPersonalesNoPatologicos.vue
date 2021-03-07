@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="450px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -14,18 +14,22 @@
         <v-divider></v-divider>
         <v-row>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
-                inset
+            <v-text-field
                 v-model="antecedentesPersonalesNoPatologicos.tabaquismo"
                 label="¿Tabaquismo?"
-            ></v-switch>
+                type="text"
+                prepend-icon="mdi-account"
+                color="primary"
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
-                inset
+            <v-text-field
                 v-model="antecedentesPersonalesNoPatologicos.alcoholismo"
                 label="¿Alcoholismo?"
-            ></v-switch>
+                type="text"
+                prepend-icon="mdi-account"
+                color="primary"
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
@@ -118,6 +122,16 @@
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.textRules"
+                v-model="antecedentesPersonalesNoPatologicos.motivoConsulta"
+                type="text"
+                prepend-icon="mdi-account"
+                label="Motivo de consulta"
+                color="primary"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
             <v-switch
                 inset
                 v-model="antecedentesPersonalesNoPatologicos.actividadFicica"
@@ -130,6 +144,7 @@
                 inset
                 v-model="antecedentesPersonalesNoPatologicos.moderado"
                 label="Moderado"
+                @change="antecedentesPersonalesNoPatologicos.activo = false"
             ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
@@ -138,6 +153,7 @@
                 inset
                 v-model="antecedentesPersonalesNoPatologicos.activo"
                 label="Activo"
+                @change="antecedentesPersonalesNoPatologicos.moderado = false"
             ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
@@ -165,9 +181,8 @@
           <v-col cols="12" sm="6" md="3">
             <v-text-field
                 v-if="antecedentesPersonalesNoPatologicos.actividadFicica"
-                :rules="rules.textRules"
                 v-model="antecedentesPersonalesNoPatologicos.duracion"
-                type="text"
+                type="time"
                 prepend-icon="mdi-account"
                 label="Duración"
                 color="primary"

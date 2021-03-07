@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="250px"
+      height="350px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -91,13 +91,11 @@
             ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-text-field
+            <v-switch
+                inset
                 v-model="antecedentesPersonalesPatologicos.otros"
-                type="text"
-                prepend-icon="mdi-account"
-                label="Otros"
-                color="primary"
-            ></v-text-field>
+                label="¿Problemas hormonales?"
+            ></v-switch>
           </v-col>
         </v-row>
       </v-container>

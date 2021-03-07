@@ -3,7 +3,7 @@
     <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="320px"
+      height="350px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
     >

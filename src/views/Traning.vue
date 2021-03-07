@@ -6,15 +6,23 @@
           </v-col>
       </v-row>
       <v-divider></v-divider>
-      <div v-if="isRegistered" class="mt-5">
-        <v-row>
+      <div class="mt-5">
+        <v-row v-if="!loading && !!isRegistered">
           <v-col md="4"
             v-for="video in infoVideo"
             :key="video.id"
           >
                 <VideoCard :video="video"></VideoCard>
           </v-col>
-        </v-row> 
+        </v-row>
+        <v-skeleton-loader
+            ref="skeleton"
+            :boilerplate="boilerplate"
+            :type="type"
+            :tile="tile"
+            class="mt-7 mx-auto"
+            v-else
+        ></v-skeleton-loader>
       </div>
   </v-container>
 </template>
@@ -29,6 +37,12 @@ export default {
         VideoCard
     },
     data: () => ({
+      boilerplate: false,
+      tile: false,
+      type: 'table',
+      selection: 1,
+      loading: true,
+      showInformation: true,
       infoVideo: [
             {
               id: 1,
@@ -126,6 +140,9 @@ export default {
       }
     },
     created() {
+      setTimeout(() => {
+        this.loading = false
+      }, 1500)
       this.$store.dispatch('SetLayout', 'default-layout')
     }
 }

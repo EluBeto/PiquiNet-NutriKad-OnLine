@@ -12,11 +12,12 @@ export default {
             apellidoMaterno: '',
             fechaNac: '',
             edad: '',
-            genero: true,
+            genero: false,
             telefono: '',
             estadoCivil: '',
             ocupacion: '',
-            padecimientoActual: ''
+            padecimientoActual: '',
+            isShowPlan: false
         },
         antecedentesHeredofamiliares: {
             diabetes: false,
@@ -40,14 +41,14 @@ export default {
             diverticulos: false,
             hipertencionArtereal: false,
             colitis: false,
-            otros: ''
+            otros: false
         },
         antecedentesGinecoObstetricos: {
-            menarca: false,
-            fum: false,
+            menarca: '',
+            fum: '',
             climaterio: false,
-            noGestas: 0,
-            noPartos: 0,
+            noGestas: '',
+            noPartos: false,
             abortos: false,
             complicaciones: '',
             semanasGestacion: 0,
@@ -55,8 +56,8 @@ export default {
             caracteristicasCiclo: ''
         },
         antecedentesPersonalesNoPatologicos: {
-            tabaquismo: false,
-            alcoholismo: false,
+            tabaquismo: '',
+            alcoholismo: '',
             alergias: '',
             intolerancias: '',
             averacionesAlimentarias: '',
@@ -72,7 +73,8 @@ export default {
             activo: false,
             ejercicio: '',
             frecuencia: '',
-            duracion: ''
+            duracion: '',
+            motivoConsulta: ''
         },
         comidas: {
             desayuno: {
@@ -101,10 +103,10 @@ export default {
             }
         },
         antropometria: {
-            cintura: 0,
-            cadera: 0,
-            estatura: 0,
-            peso: 0
+            cintura: '',
+            cadera: '',
+            estatura: '',
+            peso: ''
         }
     },
     actions: {
@@ -124,7 +126,7 @@ export default {
                     antecedentesPersonalesNoPatologicos: state.antecedentesPersonalesNoPatologicos,
                     comidas: state.comidas,
                     antropometria: state.antropometria,
-                    isRegisteredUser: state,
+                    isRegisteredUser: true,
                     createDate: state.createDate
                 })
 
@@ -146,11 +148,12 @@ export default {
                         rootState.Steps.loading = false
                     } else {
                         window.localStorage.setItem('registeredUser', JSON.stringify({
-                            isRegistered: true,
-                            gender: true,
-                            name: 'Merari',
-                            lastName: 'Aguilar',
-                            motherLastName: 'LLL'
+                            isRegistered: state.isRegisteredUser,
+                            gender: state.datosPersonales.genero,
+                            name: state.datosPersonales.nombre,
+                            lastName: state.datosPersonales.apellidoPaterno,
+                            motherLastName: state.datosPersonales.apellidoMaterno,
+                            isShowPanel: state.datosPersonales.isShowPlan
                         }))
                         rootState.MessageAlerts = {
                             type: 'snackbar',
@@ -171,36 +174,6 @@ export default {
                         rootState.Steps.loading = false
                         rootState.Steps.numberOfSteps = 1
                         state.isRegisteredUser = false
-                        state.identificationCard = {
-                            name: '',
-                            lastName: '',
-                            motherLastName: '',
-                            dateOfBirth: '',
-                            age: '',
-                            gender: false,
-                            phoneNumber: ''
-                        }
-                        state.clinicHistory = {
-                            actualWeight: '',
-                            height: null,
-                            measurements: {
-                              waist: null,
-                              chest: null,
-                              hip: null
-                            },
-                            isPregnant: '',
-                            isBreastfeeding: '',
-                            monthsPostpartum: 0,
-                            allergiesIntolerance: {
-                              isHeadach: false,
-                              isBadDigestion: false,
-                              isReflux: false,
-                              isActivePerson: false,
-                              responseActivePersonTime: '',
-                              responseActivePersonTypeExercise: '',
-                              isBeMedical: false
-                            }
-                        }
                     }
                 })
             }
@@ -210,12 +183,13 @@ export default {
                 idToken
             } = JSON.parse(window.localStorage.getItem('userAuth'))
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register.json?auth=${idToken}`
-
+            console.log('URL: ', url)
             const response = await HttpServices.getRequest(url)
             const patientesRegister = []
             for (let id in response){
                 patientesRegister.push(response[id])
             }
+            console.log('USERS: ', patientesRegister)
             return patientesRegister
         },
         async getProgressWeith({ rootState }) {
@@ -258,36 +232,6 @@ export default {
         cleanRegister({ state, rootState }) {
             rootState.Steps.numberOfSteps = 1
             state.isRegisteredUser = false
-            state.identificationCard = {
-                name: '',
-                lastName: '',
-                motherLastName: '',
-                dateOfBirth: '',
-                age: '',
-                gender: false,
-                phoneNumber: ''
-            }
-            state.clinicHistory = {
-                actualWeight: '',
-                height: null,
-                measurements: {
-                  waist: null,
-                  chest: null,
-                  hip: null
-                },
-                isPregnant: '',
-                isBreastfeeding: '',
-                monthsPostpartum: 0,
-                allergiesIntolerance: {
-                  isHeadach: false,
-                  isBadDigestion: false,
-                  isReflux: false,
-                  isActivePerson: false,
-                  responseActivePersonTime: '',
-                  responseActivePersonTypeExercise: '',
-                  isBeMedical: false
-                }
-            }
         }
     },
     mutatios: {},
