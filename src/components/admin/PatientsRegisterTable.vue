@@ -18,8 +18,10 @@
         class="elevation-1"
         locale="es-mx"
         multi-sort
-        item-key="id"
+        item-key="datosPersonales.nombre"
         fixed-header
+        :expanded.sync="expanded"
+        show-expand
     >
         <template v-slot:item.datosPersonales="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
@@ -36,7 +38,7 @@
                 {{ item.datosPersonales.apellidoMaterno }}
             </div>
         </template>
-        <template v-slot:item.dataIdentificationCard="{ item }">
+        <template v-slot:item.datosPersonales="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
                 {{ item.datosPersonales.edad }}
             </div>
@@ -46,14 +48,64 @@
                 {{ item.datosPersonales.fechaNac }}
             </div>
         </template>
-        <template v-slot:item.datosPersonales="{ item }">
-            <v-chip
-                :color="getColor(item.datosPersonales.genero)"
-                dark
-            >
-                {{ item.datosPersonales.genero === true ? 'Mujer' : 'Hombre'}}
-            </v-chip>
-        </template>
+      <template v-slot:item.datosPersonales="{ item }">
+        <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
+          {{ item.datosPersonales.genero }}
+        </div>
+      </template>
+      <template v-slot:expanded-item="{ headers, item }">
+        <td></td>
+        <td colspan="1">
+          <tr>
+            <th style="color: #4caf50">Medidas</th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Peso: {{ item.antropometria.peso }} KG
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Estatura: {{ item.antropometria.estatura }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Cintura: {{ item.antropometria.cintura }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Cadera: {{ item.antropometria.cadera }} CM
+            </th>
+          </tr>
+        </td>
+        <td colspan="1">
+          <tr>
+            <th style="color: #4caf50">Mas Datos</th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Telefono: {{ item.antropometria.telefono }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Estado Civil: {{ item.antropometria.estadoCivil }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Ocupación: {{ item.antropometria.ocupacion }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Padecimientos: {{ item.antropometria.padecimientoActual }} CM
+            </th>
+          </tr>
+        </td>
+      </template>
     </v-data-table>
   </v-card>
 </template>
@@ -66,6 +118,7 @@
   },
     data () {
       return {
+        expanded: [],
         search: ''
       }
     },
@@ -106,6 +159,9 @@
             console.log('Entro');
             return grade ? 'red' : 'green'
         }
+    },
+    mounted() {
+      console.log('MMM: ', this.patientsRegister)
     }
   }
 </script>
