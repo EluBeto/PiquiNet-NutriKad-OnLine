@@ -28,7 +28,7 @@
                 </v-tooltip>
             </v-col>
         </v-row>
-        <v-row class="mt-0" v-if="!loading">
+        <v-row class="mt-0" v-if="!loading && this.$store.getters['isShowPlan']">
             <v-col sm="12">
                 <v-card>
                   <ShoppingTable></ShoppingTable>
@@ -42,7 +42,7 @@
                :tile="tile"
                class="mt-7 mx-auto"
                v-else
-            ></v-skeleton-loader>  
+            ></v-skeleton-loader>
         <v-dialog
           v-model="dialog"
           max-width="500px"
@@ -82,13 +82,13 @@ import ShoppingTable from '../components/shoppingTable'
                     Elige los platillos de manera meticulosa para que puedas optimizar tus compras y solo compres lo que necesitas.
                 </li>
                 <li>
-                    La fruta y la verdura es necesario que se compre semanal, para que no se eche a perder. 
+                    La fruta y la verdura es necesario que se compre semanal, para que no se eche a perder.
                 </li>
                 <li>
                     Se recomienda comprar gran cantidad de verdura, ya que al ser la mayoría considerada libre, se podrá agregar en varios platillos.
                 </li>
                 <li>
-                    Los invito a que dupliquen las cantidades, y contagien a sus familiares con este movimiento de salud. 
+                    Los invito a que dupliquen las cantidades, y contagien a sus familiares con este movimiento de salud.
                 </li>
             </ul>
         `,

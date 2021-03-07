@@ -4,15 +4,15 @@
           class="mx-auto"
           max-width="300px"
           elevation="4"
-          v-if="!loading"
+          v-if="!loading && this.$store.getters['isShowPlan']"
         >
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item my-1 px-0" 
-                  width="auto" 
-                  height="auto" 
-                  :src="video.url" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          <iframe class="embed-responsive-item my-1 px-0"
+                  width="auto"
+                  height="auto"
+                  :src="video.url"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
           >
           </iframe>
@@ -68,7 +68,7 @@
                :tile="tile"
                class="mt-7 mx-auto"
                v-else
-    ></v-skeleton-loader> 
+    ></v-skeleton-loader>
   </div>
 </template>
 

@@ -6,8 +6,8 @@
         class="scroll section section_dark ma-3 pa-3"
         elevation="4"
       >
-        <v-form ref="formIdentificationCard" 
-                v-model="arraySteps.arrayOfSteps[1].isValid" 
+        <v-form ref="formIdentificationCard"
+                v-model="arraySteps.arrayOfSteps[1].isValid"
                 lazy-validation>
             <v-container>
               <h3 class="text-center my-3">Ficha de identificación</h3>
@@ -59,6 +59,7 @@
                     label="Fecha de nacimiento"
                     color="primary"
                     required
+                    @focusout="edad"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -73,6 +74,7 @@
                     label="Edad"
                     color="primary"
                     required
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
@@ -114,6 +116,21 @@ export default {
         },
         personalParameters() {
           return this.$store.getters['PersonalData/getPersonalData']
+        },
+        calculaEdad() {
+          let hoy = new Date();
+          let cumpleanos = new Date(this.personalParameters.dateOfBirth);
+          let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+          let m = hoy.getMonth() - cumpleanos.getMonth();
+          if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            edad--
+          }
+          return edad
+        }
+      },
+      methods: {
+        edad() {
+          this.personalParameters.age = this.calculaEdad
         }
     }
 }

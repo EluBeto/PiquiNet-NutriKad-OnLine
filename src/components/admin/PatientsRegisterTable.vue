@@ -18,8 +18,10 @@
         class="elevation-1"
         locale="es-mx"
         multi-sort
-        item-key="id"
+        item-key="dataIdentificationCard.phoneNumber"
         fixed-header
+        :expanded.sync="expanded"
+        show-expand
     >
         <template v-slot:item.dataIdentificationCard="{ item }">
             <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
@@ -54,6 +56,44 @@
                 {{ item.dataIdentificationCard.gender === true ? 'Mujer' : 'Hombre'}}
             </v-chip>
         </template>
+      <template v-slot:expanded-item="{ headers, item }">
+        <td></td>
+        <td>
+          <tr>
+            <th style="color: #4caf50">Medidas</th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Peso: {{ item.clinicHistory.actualWeight }} KG
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Estatura: {{ item.clinicHistory.height }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Cintura: {{ item.clinicHistory.measurements.waist }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Cadera: {{ item.clinicHistory.measurements.hip}} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Pecho: {{ item.clinicHistory.measurements.chest }} CM
+            </th>
+          </tr>
+          <tr>
+            <th class="text-left">
+              Telefono: {{ item.dataIdentificationCard.phoneNumber }}
+            </th>
+          </tr>
+        </td>
+      </template>
     </v-data-table>
   </v-card>
 </template>
@@ -66,6 +106,7 @@
   },
     data () {
       return {
+        expanded: [],
         search: '',
         headers: [
           {

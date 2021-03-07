@@ -623,7 +623,7 @@ Pizca de polvo para horner, estracto de vainilla y canela en polvo
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -1799,7 +1799,7 @@ Pizca de polvo para horner, estracto de vainilla y canela en polvo
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -3014,7 +3014,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -4153,7 +4153,7 @@ Sal y pimienta al gusto
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -5329,7 +5329,7 @@ Pizca de polvo para horner, estracto de vainilla y canela en polvo
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -6544,7 +6544,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     {
                         foodId: 3,
                         image: '/img/tickets.jpg',
-                        title: '¡Ensalada de peinos!',
+                        title: '¡Ensalada de pepinos!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
@@ -7165,7 +7165,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.oneWeek.breakfastOrDinner
                         return response
                     } else {
-                        const response = state.foodsMen.oneWeek.breakfastOrDinner 
+                        const response = state.foodsMen.oneWeek.breakfastOrDinner
                         return response
                     }
                 case 'detoxJuice':
@@ -7173,7 +7173,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.oneWeek.detoxJuice
                         return response
                     } else {
-                        const response = state.foodsMen.oneWeek.detoxJuice 
+                        const response = state.foodsMen.oneWeek.detoxJuice
                         return response
                     }
                 case 'foodTickets':
@@ -7181,7 +7181,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.oneWeek.foodTickets
                         return response
                     } else {
-                        const response = state.foodsMen.oneWeek.foodTickets 
+                        const response = state.foodsMen.oneWeek.foodTickets
                         return response
                     }
                 case 'foods':
@@ -7189,7 +7189,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.oneWeek.foods
                         return response
                     } else {
-                        const response = state.foodsMen.oneWeek.foods 
+                        const response = state.foodsMen.oneWeek.foods
                         return response
                     }
                 case 'snacks':
@@ -7197,7 +7197,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.oneWeek.snacks
                         return response
                     } else {
-                        const response = state.foodsMen.oneWeek.snacks 
+                        const response = state.foodsMen.oneWeek.snacks
                         return response
                     }
             }
@@ -7209,7 +7209,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.secondWeek.breakfastOrDinner
                         return response
                     } else {
-                        const response = state.foodsMen.secondWeek.breakfastOrDinner 
+                        const response = state.foodsMen.secondWeek.breakfastOrDinner
                         return response
                     }
                 case 'detoxJuice':
@@ -7217,7 +7217,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.secondWeek.detoxJuice
                         return response
                     } else {
-                        const response = state.foodsMen.secondWeek.detoxJuice 
+                        const response = state.foodsMen.secondWeek.detoxJuice
                         return response
                     }
                 case 'foodTickets':
@@ -7225,7 +7225,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.secondWeek.foodTickets
                         return response
                     } else {
-                        const response = state.foodsMen.secondWeek.foodTickets 
+                        const response = state.foodsMen.secondWeek.foodTickets
                         return response
                     }
                 case 'foods':
@@ -7233,7 +7233,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.secondWeek.foods
                         return response
                     } else {
-                        const response = state.foodsMen.secondWeek.foods 
+                        const response = state.foodsMen.secondWeek.foods
                         return response
                     }
                 case 'snacks':
@@ -7241,7 +7241,7 @@ Sal y pimienta al gusto
                         const response = state.foodsWomen.secondWeek.snacks
                         return response
                     } else {
-                        const response = state.foodsMen.secondWeek.snacks 
+                        const response = state.foodsMen.secondWeek.snacks
                         return response
                     }
             }

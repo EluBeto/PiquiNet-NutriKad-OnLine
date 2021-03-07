@@ -44,8 +44,8 @@ export default {
             },
             {
                 id: 5,
-                title: '¿Estas lista(o)?',
-                subTitle: 'Comencemos...',
+                title: 'Finalicemos',
+                subTitle: '...',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
                 secondaryBtnTitle: '',

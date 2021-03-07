@@ -6,7 +6,7 @@
       </v-col>
     </v-row>
     <v-divider></v-divider>
-    <v-row v-if="!loading">
+    <v-row v-if="!loading && this.$store.getters['isShowPlan']">
       <v-col class="text-center mt-5" v-if="isRegistered">
         <keep-alive>
           <TabsItems></TabsItems>

@@ -9,13 +9,13 @@
       </v-col>
     </v-row>
     <br> <br>
-    <v-divider></v-divider>
+<!--    <v-divider></v-divider>
     <br> <br>
     <v-row>
       <v-col md="12">
         <ProgressGraph></ProgressGraph>
       </v-col>
-    </v-row>
+    </v-row>-->
   </div>
 </template>
 
@@ -23,15 +23,14 @@
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
 import Progress from '../components/layouts/Progress'
-import ProgressGraph from '../components/ProgressGraph'
+// import ProgressGraph from '../components/ProgressGraph'
 
 export default {
   name: 'Dashboard',
-  components: { 
+  components: {
     Wizard,
     SectionTitle,
-    Progress,
-    ProgressGraph
+    Progress
   },
   data: () => ({
     menus: [{
@@ -64,7 +63,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud con Nutrikad"`
+          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Pre Semana Santa con Nutrikad"`
         }
         return mssage
       }

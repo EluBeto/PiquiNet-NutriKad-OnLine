@@ -18,7 +18,7 @@
             >
 
                 <v-card-text class="text-center display-1 black--text font-weight-bold">
-                Total de Registros
+                Total de Nutri-Pacientes
                 </v-card-text>
 
                 <v-card-actions>
@@ -30,7 +30,7 @@
                         :src="showImage(false)"
                     ></v-img>
                     </v-list-item-avatar>
-                    
+
                     <v-list-item-avatar color="grey darken-3">
                     <v-img
                         class="elevation-6"
@@ -46,7 +46,7 @@
                     <v-icon class="mr-1 black--text">
                         mdi-heart
                     </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">27</span>
+                    <span class="subheading mr-2 display-3 black--text">{{ totalR }}</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -63,7 +63,7 @@
             >
 
                 <v-card-text class="text-center display-1 black--text font-weight-bold">
-                Hombre Registrados
+                Hombres
                 </v-card-text>
 
                 <v-card-actions>
@@ -83,7 +83,7 @@
                     <v-icon class="mr-1 black--text">
                         mdi-heart
                     </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">4</span>
+                    <span class="subheading mr-2 display-3 black--text">{{ totalH }}</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -120,7 +120,7 @@
                     <v-icon class="mr-1 black--text">
                         mdi-heart
                     </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">23</span>
+                    <span class="subheading mr-2 display-3 black--text">{{ totalM }}</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -137,16 +137,12 @@
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
-// import MaterialStatsCard from '../components/forms/MaterialStatsCard'
 import PatientsRegisterTable from '../components/admin/PatientsRegisterTable'
-//import MaterialCard from '../components/forms/MaterialCard'
 export default {
   name: 'DashboardAdmin',
   components: {
       SectionTitle,
       PatientsRegisterTable
-      //MaterialCard
-      //   MaterialStatsCard,
   },
   data: () => ({
     menus: [{
@@ -154,7 +150,10 @@ export default {
       disabled: true,
       href: '/dashboardAdmin'
     }],
-    patientsRegister: []
+    patientsRegister: [],
+    totalR: 0,
+    totalH: 0,
+    totalM: 0
   }),
    computed: {
       userName() {
@@ -194,6 +193,18 @@ export default {
     this.overlay = true
     this.$store.dispatch('PersonalData/getRegisters').then(response => {
         this.patientsRegister = response
+      this.totalR = response.length
+      let conteoM = 0
+      let conteoH = 0
+      for (let i = 0; i < response.length; i++) {
+        if (response[i].dataIdentificationCard.gender) {
+          conteoM ++
+        } else {
+          conteoH ++
+        }
+      }
+      this.totalM = conteoM
+      this.totalH = conteoH
     })
     this.$store.dispatch('SetLayout', 'default-layout')
   }

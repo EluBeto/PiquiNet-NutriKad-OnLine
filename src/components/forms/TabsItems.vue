@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Ponte fit y gana salud con NutriKad
+                Pre Semana Santa con NutriKad
             </h3>
         </v-card-title>
     <v-tabs
@@ -47,12 +47,20 @@
               <OneWeek></OneWeek>
             </keep-alive>
           </v-card-text>
-          <v-card-text v-if="item.content === 4">
+          <v-card-text v-if="!loading && item.content === 4 && isShowPlanSecondWeek">
             <keep-alive>
               <SecondWeek></SecondWeek>
             </keep-alive>
           </v-card-text>
-          <v-card-text v-if="item.content === 5">
+          <v-skeleton-loader
+              ref="skeleton"
+              :boilerplate="boilerplate"
+              :type="type"
+              :tile="tile"
+              class="mt-5 mx-auto"
+              v-else
+          ></v-skeleton-loader>
+          <v-card-text v-if="false">
             <keep-alive>
               <ThirdWeek></ThirdWeek>
             </keep-alive>
@@ -89,8 +97,8 @@ export default {
             { tab: 'Importante', content: 1, isAllowed: true },
             { tab: 'Tips para cocinar', content: 2, isAllowed: true },
             { tab: 'Primera Semana', content: 3, isAllowed: true },
-            { tab: 'Segunda Semana', content: 4, isAllowed: false },
-            { tab: 'Tercera Semana', content: 5, isAllowed: false }
+            { tab: 'Segunda Semana', content: 4, isAllowed: false }
+            // { tab: 'Tercera Semana', content: 5, isAllowed: false }
         ],
         boilerplate: false,
         tile: false,
@@ -105,6 +113,12 @@ export default {
           subtitle: 'Hábitos por la mañana (de preferencia todos los días) ... '
         }
         return mssage
+      },
+      isShowPlanSecondWeek() {
+        const date = new Date()
+        let options = { year: 'numeric', month: 'long', day: 'numeric' }
+        let dateNow = date.toLocaleDateString("es-ES", options)
+        return dateNow === '20 de marzo de 2021'
       }
     }
   }
