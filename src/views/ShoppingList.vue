@@ -49,17 +49,13 @@ import pdf from 'vue-pdf'
       }
     },
     created() {
+      this.$store.dispatch('SetLayout', 'default-layout')
         this.$store.dispatch('ShoppingList/getShoppingList').then(response => {
           this.shoppingList = response
          })
         setTimeout(() => {
           this.loading = false
         }, 1500)
-      this.$store.dispatch('SetLayout', 'default-layout')
     }
 }
 </script>
-
-<style>
-
-</style>

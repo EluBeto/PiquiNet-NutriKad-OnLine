@@ -20,7 +20,7 @@ const routes = [
     }
   },
   {
-    path: '/eatingPlan', //eatingPlan
+    path: '/eatingPlan',
     name: 'Plan de Alimentación',
     component: () => import('../views/EatingPlan.vue'),
     meta: {
@@ -28,7 +28,7 @@ const routes = [
     }
   },
   {
-    path: '/#', //traning
+    path: '/traning',
     name: 'Ponte en forma',
     component: () => import('../views/Traning.vue'),
     meta: {
@@ -36,7 +36,7 @@ const routes = [
     }
   },
   {
-    path: '/#', //shoppingList
+    path: '/shoppingList', //shoppingList
     name: 'Lista de compras',
     component: () => import('../views/ShoppingList.vue'),
     meta: {

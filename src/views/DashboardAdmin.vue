@@ -198,9 +198,9 @@ export default {
       let conteoH = 0
       for (let i = 0; i < response.length; i++) {
         if (response[i].datosPersonales.genero) {
-          conteoM = i + 1
+          conteoM ++
         } else {
-          conteoH = i + 1
+          conteoH ++
         }
       }
       this.totalM = conteoM
