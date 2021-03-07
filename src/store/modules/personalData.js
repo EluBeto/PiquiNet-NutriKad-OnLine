@@ -6,35 +6,105 @@ export default {
     state: {
         isRegisteredUser: false,
         createDate: new Date(),
-        identificationCard: {
-            name: '',
-            lastName: '',
-            motherLastName: '',
-            dateOfBirth: '',
-            age: '',
-            gender: false,
-            phoneNumber: ''
+        datosPersonales: {
+            nombre: '',
+            apellidoPaterno: '',
+            apellidoMaterno: '',
+            fechaNac: '',
+            edad: '',
+            genero: true,
+            telefono: '',
+            estadoCivil: '',
+            ocupacion: '',
+            padecimientoActual: ''
         },
-        clinicHistory: {
-            actualWeight: '',
-            height: null,
-            measurements: {
-              waist: null,
-              chest: null,
-              hip: null
+        antecedentesHeredofamiliares: {
+            diabetes: false,
+            cancer: false,
+            hipertencionArtereal: false,
+            obesidad: false,
+            cardiopatias: false,
+            hepaticos: false,
+            dislipidemias: false,
+            otros: ''
+        },
+        antecedentesPersonalesPatologicos: {
+            quirurgicos: false,
+            obesidad: false,
+            estrenimiento: false,
+            dislipidemias: false,
+            anemia: false,
+            hemorroides: false,
+            cancer: false,
+            gastritis: false,
+            diverticulos: false,
+            hipertencionArtereal: false,
+            colitis: false,
+            otros: ''
+        },
+        antecedentesGinecoObstetricos: {
+            menarca: false,
+            fum: false,
+            climaterio: false,
+            noGestas: 0,
+            noPartos: 0,
+            abortos: false,
+            complicaciones: '',
+            semanasGestacion: 0,
+            anticonceptivos: false,
+            caracteristicasCiclo: ''
+        },
+        antecedentesPersonalesNoPatologicos: {
+            tabaquismo: false,
+            alcoholismo: false,
+            alergias: '',
+            intolerancias: '',
+            averacionesAlimentarias: '',
+            cambiosIngesta: '',
+            causas: '',
+            tratamientoDieteticoPrevio: '',
+            tiempo: '',
+            resultado: '',
+            tratamientoFarma: '',
+            actividadFicica: false,
+            sedentarismo: false,
+            moderado: false,
+            activo: false,
+            ejercicio: '',
+            frecuencia: '',
+            duracion: ''
+        },
+        comidas: {
+            desayuno: {
+                hora: '',
+                descripcion: ''
             },
-            isPregnant: '',
-            isBreastfeeding: '',
-            monthsPostpartum: 0,
-            allergiesIntolerance: {
-              isHeadach: false,
-              isBadDigestion: false,
-              isReflux: false,
-              isActivePerson: false,
-              responseActivePersonTime: '',
-              responseActivePersonTypeExercise: '',
-              isBeMedical: false
+            comida: {
+                hora: '',
+                descripcion: ''
+            },
+            cena: {
+                hora: '',
+                descripcion: ''
+            },
+            mediaManana: {
+                hora: '',
+                descripcion: ''
+            },
+            mediaTarde: {
+                hora: '',
+                descripcion: ''
+            },
+            adicional: {
+                hora: '',
+                descripcion: ''
             }
+        },
+        antropometria: {
+            cintura: 0,
+            cadera: 0,
+            estatura: 0,
+            peso: 0
         }
     },
     actions: {
@@ -47,9 +117,14 @@ export default {
                 let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
 
                 let parameters = JSON.stringify({
-                    dataIdentificationCard: state.identificationCard,
-                    clinicHistory: state.clinicHistory,
-                    isRegisteredUser: true,
+                    datosPersonales: state.datosPersonales,
+                    antecedentesHeredofamiliares: state.antecedentesHeredofamiliares,
+                    antecedentesPersonalesPatologicos: state.antecedentesPersonalesPatologicos,
+                    antecedentesGinecoObstetricos: state.antecedentesGinecoObstetricos,
+                    antecedentesPersonalesNoPatologicos: state.antecedentesPersonalesNoPatologicos,
+                    comidas: state.comidas,
+                    antropometria: state.antropometria,
+                    isRegisteredUser: state,
                     createDate: state.createDate
                 })
 
@@ -72,10 +147,10 @@ export default {
                     } else {
                         window.localStorage.setItem('registeredUser', JSON.stringify({
                             isRegistered: true,
-                            gender: state.identificationCard.gender,
-                            name: state.identificationCard.name,
-                            lastName: state.identificationCard.lastName,
-                            motherLastName: state.identificationCard.motherLastName
+                            gender: true,
+                            name: 'Merari',
+                            lastName: 'Aguilar',
+                            motherLastName: 'LLL'
                         }))
                         rootState.MessageAlerts = {
                             type: 'snackbar',
@@ -135,9 +210,9 @@ export default {
                 idToken
             } = JSON.parse(window.localStorage.getItem('userAuth'))
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register.json?auth=${idToken}`
-            
+
             const response = await HttpServices.getRequest(url)
-            const patientesRegister = [] 
+            const patientesRegister = []
             for (let id in response){
                 patientesRegister.push(response[id])
             }
@@ -217,11 +292,26 @@ export default {
     },
     mutatios: {},
     getters: {
-        getPersonalData(state) {
-            return state.identificationCard
+        getDatosPersonales(state) {
+            return state.datosPersonales
         },
-        getClinicHistoryData(state) {
-            return state.clinicHistory
+        getAntecedentesHeredofamiliares(state) {
+            return state.antecedentesHeredofamiliares
+        },
+        getAntecedentesPersonalesPatologicos(state) {
+            return state.antecedentesPersonalesPatologicos
+        },
+        getAntecedentesGinecoObstetricos(state) {
+            return state.antecedentesGinecoObstetricos
+        },
+        getAntecedentesPersonalesNoPatologicos(state) {
+            return state.antecedentesPersonalesNoPatologicos
+        },
+        getAntropometria(state) {
+            return state.antropometria
+        },
+        getComidas(state) {
+            return state.comidas
         },
         getIsRegisteredUser(state) {
             return state.isRegisteredUser

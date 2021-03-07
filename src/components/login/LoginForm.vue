@@ -27,7 +27,7 @@
         color="primary"
         required
         @keydown.enter="login"
-         
+
       ></v-text-field>
       <div class="text-center mt-3 my-3">
         <v-checkbox
@@ -36,12 +36,12 @@
         ></v-checkbox>
       </div>
       <div class="text-center mt-3 my-5">
-        <v-btn rounded 
+        <v-btn rounded
                color="primary"
                :disabled="!loginParameters.validForm"
                :loading="loginParameters.loading"
                @click.prevent="login"
-                
+
         >
             {{ $t('login.enter') }}
         </v-btn>
@@ -79,7 +79,7 @@ export default {
       }
       this.setRememberParameters(credentials)
       this.cleanAlert
-      
+
       if (this.$refs.loginForm.validate()) {
         this.loginParameters.errorMessage = null
 
@@ -97,7 +97,6 @@ export default {
 
             this.$store.state.AuthenticationProcesses.isErrorAuth = false
             window.localStorage.setItem('userAuth', JSON.stringify(response))
-
             this.getUserInfo(response)
           }
         })
@@ -111,22 +110,20 @@ export default {
         idToken: response.idToken
       }).then(userResponse => {
         if (userResponse.error) {
-          console.log('1', userResponse);
           this.showMessage(userResponse.error)
           this.$router.push('/')
-          
         } else {
+          this.resetForm
           if (userResponse.response === 'sin registro') {
-            this.$router.push('dashboard') 
+            this.$router.push('dashboard')
           } else {
             window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
             if (response.email === 'elubeto@gmail.com' || response.email === 'b.karina.delart.mcs@outlook.es') {
               this.$router.push('dashboardAdmin')
             } else {
-             this.$router.push('dashboard') 
-            } 
+             this.$router.push('dashboard')
+            }
           }
-          this.resetForm
         }
       })
     },

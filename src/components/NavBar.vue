@@ -89,8 +89,8 @@
       user: '',
       items: [
         {
-          icon: 'mdi-view-dashboard',
-          title: 'Inicio',
+          icon: 'mdi-cards-heart',
+          title: 'Historial Clínico',
           to: 'dashboard',
           visible: true
         },
@@ -98,18 +98,6 @@
           icon: 'mdi-clipboard-outline',
           title: 'Plan de Alimentación',
           to: 'eatingPlan',
-          visible: true
-        },
-        {
-          icon: 'mdi-human-handsup',
-          title: 'Ponte en forma',
-          to: 'traning',
-          visible: true
-        },
-        {
-          icon: 'mdi-cart-minus',
-          title: 'Lista de compras',
-          to: 'shoppingList',
           visible: true
         }
       ],
@@ -121,27 +109,15 @@
           visible: true
         },
         {
-          icon: 'mdi-view-dashboard',
-          title: 'Inicio',
+          icon: 'mdi-cards-heart',
+          title: 'Historia Clínica',
           to: 'dashboard',
           visible: true
         },
         {
           icon: 'mdi-clipboard-outline',
           title: 'Plan de Alimentación',
-          to: 'eatingPlan',
-          visible: true
-        },
-        {
-          icon: 'mdi-human-handsup',
-          title: 'Ponte en forma',
-          to: 'traning',
-          visible: true
-        },
-        {
-          icon: 'mdi-cart-minus',
-          title: 'Lista de compras',
-          to: 'shoppingList',
+          to: 'eatingPlan', //eatingPlan
           visible: true
         }
       ]

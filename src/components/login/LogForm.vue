@@ -45,7 +45,7 @@
     </v-text-field>
     <div class="text-center mt-3">
         <v-btn rounded
-          color="primary" 
+          color="primary"
           :disabled="!logParameters.validForm"
           :loading="logParameters.loading"
           @click="sendRegistration"
@@ -68,7 +68,11 @@ export default {
     logParameters: {},
     rules: {}
   }),
-  computed: {},
+  computed: {
+    alerts() {
+      return this.$store.getters['MessageAlerts/getAlerts']
+    }
+  },
   methods: {
     async sendRegistration() {
       this.$store.state.AuthenticationProcesses.loading = true
@@ -93,7 +97,7 @@ export default {
             this.resetForm
           }
         })
-      } 
+      }
       this.$store.state.AuthenticationProcesses.loading = false
     },
     validatePassword: function() {

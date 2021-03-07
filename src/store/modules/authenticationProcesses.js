@@ -65,20 +65,13 @@ export default {
             const response = await HttpServices.getRequest(url)
             if (response === null) return { response: 'sin registro' }
             if (response.error) return { response: response }
-            
-            const {
-                name,
-                lastName,
-                motherLastName,
-                gender
-            } = response.dataIdentificationCard
-            
+
             const newPayload = {
-                gender: gender,
-                name: name,
-                lastName: lastName,
-                motherLastName: motherLastName,
-                isRegistered: response.isRegisteredUser
+                gender: true,
+                name: 'Merari',
+                lastName: 'Aguilar',
+                motherLastName: 'LLL',
+                isRegistered: true
             }
             commit('SET_USER_INFORMATION', newPayload)
             return newPayload

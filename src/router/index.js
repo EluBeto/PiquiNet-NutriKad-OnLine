@@ -13,14 +13,14 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'Inicio',
+    name: 'Historia Clínica',
     component: () => import('../views/Dashboard.vue'),
     meta: {
       requiredAuth: true
     }
   },
   {
-    path: '/eatingPlan',
+    path: '/eatingPlan', //eatingPlan
     name: 'Plan de Alimentación',
     component: () => import('../views/EatingPlan.vue'),
     meta: {
@@ -28,7 +28,7 @@ const routes = [
     }
   },
   {
-    path: '/traning',
+    path: '/#', //traning
     name: 'Ponte en forma',
     component: () => import('../views/Traning.vue'),
     meta: {
@@ -36,7 +36,7 @@ const routes = [
     }
   },
   {
-    path: '/shoppingList',
+    path: '/#', //shoppingList
     name: 'Lista de compras',
     component: () => import('../views/ShoppingList.vue'),
     meta: {

@@ -6,8 +6,8 @@ export default {
         arrayOfSteps: [
             {
                 id: 1,
-                title: '¿Estas lista(o)?',
-                subTitle: 'Comencemos...',
+                title: 'Comencemos',
+                subTitle: '',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
                 secondaryBtnTitle: '',
@@ -16,7 +16,7 @@ export default {
             },
             {
                 id: 2,
-                title: 'Ficha de identificación:',
+                title: 'Datos Personales:',
                 subTitle: 'Todos los campos son obligatorios',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
@@ -26,8 +26,8 @@ export default {
             },
             {
                 id: 3,
-                title: 'Historia clínica básica:',
-                subTitle: 'Todos los campos son obligatorios',
+                title: 'Antecedentes Heredofamiliares:',
+                subTitle: 'Opcionales',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
                 requiresSecondaryButton: true,
@@ -35,7 +35,7 @@ export default {
             },
             {
                 id: 4,
-                title: 'Alergias o Intolerancias:',
+                title: 'Antecedentes Personales Patológicos:',
                 subTitle: 'Opcionales',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
@@ -44,10 +44,30 @@ export default {
             },
             {
                 id: 5,
-                title: '¿Estas lista(o)?',
-                subTitle: 'Comencemos...',
+                title: 'Antecedentes Gineco-Obstetricos',
+                subTitle: 'Opcionales',
                 btnColor: 'primary',
                 primaryBtnTitle: 'Siguiente',
+                secondaryBtnTitle: '',
+                requiresSecondaryButton: true,
+                isValid: false
+            },
+            {
+                id: 6,
+                title: 'Antecedentes Personales No Patológicos',
+                subTitle: 'Opcionales',
+                btnColor: 'primary',
+                primaryBtnTitle: 'Siguiente',
+                secondaryBtnTitle: '',
+                requiresSecondaryButton: true,
+                isValid: false
+            },
+            {
+                id: 7,
+                title: 'Antropometría / Comidas',
+                subTitle: 'Algunos campos son obligatorios',
+                btnColor: 'primary',
+                primaryBtnTitle: 'Enviar',
                 secondaryBtnTitle: '',
                 requiresSecondaryButton: true,
                 isValid: false

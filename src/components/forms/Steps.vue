@@ -11,41 +11,43 @@
             :step="step.id"
             class="display-5"
         >
-            {{ 
+            {{
                 step.title
             }}
             <small>
-                {{ 
+                {{
                     step.subTitle
                 }}
             </small>
         </v-stepper-step>
-    
+
         <v-stepper-content :step="step.id">
             <WelcomeMessage  v-if="step.id === 1"></WelcomeMessage>
-            <IdentificationFile  v-if="step.id === 2"></IdentificationFile>
-            <ClinicHistory  v-if="step.id === 3"></ClinicHistory>
-            <AllergiesIntolerance  v-if="step.id === 4"></AllergiesIntolerance>
-            <Indications  v-if="step.id === 5"></Indications>
+            <DatosPersonales  v-if="step.id === 2"></DatosPersonales>
+            <AntecedentesHeredofamiliares v-if="step.id === 3"></AntecedentesHeredofamiliares>
+            <AntecedentesPersonalesPatologicos v-if="step.id === 4"></AntecedentesPersonalesPatologicos>
+            <AntecedentesGinecoObstetricos v-if="step.id === 5"></AntecedentesGinecoObstetricos>
+            <AntecedentesPersonalesNoPatologicos v-if="step.id === 6"></AntecedentesPersonalesNoPatologicos>
+            <Antropometria v-if="step.id === 7"></Antropometria>
             <v-btn
                 class="my-2"
                 :color="step.btnColor"
                 :disabled="!step.isValid && step.id != 1"
                 @click.prevent="validateForm(step.id, step.isValid)"
             >
-                {{ 
+                {{
                     step.primaryBtnTitle
                 }}
             </v-btn>
             <v-btn
-                v-if="step.requiresSecondaryButton && step.id != 5" 
+                v-if="step.requiresSecondaryButton && step.id != 7"
                 text
                 @click="stepsProperties.numberOfSteps --"
             >
                 Regresar
             </v-btn>
             <v-btn
-                v-if="step.id === 5"
+                v-if="step.id === 7"
                 color="red darken-3primary"
                 text
                 @click="cancelRegister"
@@ -65,21 +67,25 @@
 import MessageAlerts from '../forms/MessageAlerts'
 import Dialogs from '../forms/Dialogs'
 import WelcomeMessage from '../personalData/WelcomeMessage'
-import IdentificationFile from '../personalData/IdentificationFile'
-import ClinicHistory from '../personalData/ClinicHistory'
-import AllergiesIntolerance from '../personalData/AllergiesIntolerance'
-import Indications from '../personalData/Indications'
+import DatosPersonales from "@/components/personalData/DatosPersonales"
+import AntecedentesHeredofamiliares from "@/components/personalData/AntecedentesHeredofamiliares"
+import AntecedentesPersonalesPatologicos from "@/components/personalData/AntecedentesPersonalesPatologicos"
+import AntecedentesGinecoObstetricos from "@/components/personalData/AntecedentesGinecoObstetricos"
+import AntecedentesPersonalesNoPatologicos from "@/components/personalData/AntecedentesPersonalesNoPatologicos"
+import Antropometria from "@/components/personalData/Antropometria"
 
 export default {
-    name: 'Steps',
+  name: 'Steps',
     components: {
-        MessageAlerts,
-        Dialogs,
-        WelcomeMessage,
-        IdentificationFile,
-        ClinicHistory,
-        AllergiesIntolerance,
-        Indications
+      MessageAlerts,
+      Dialogs,
+      WelcomeMessage,
+      DatosPersonales,
+      AntecedentesHeredofamiliares,
+      AntecedentesPersonalesPatologicos,
+      AntecedentesGinecoObstetricos,
+      AntecedentesPersonalesNoPatologicos,
+      Antropometria
     },
     data: () => ({}),
     provide() {
@@ -91,11 +97,11 @@ export default {
         stepsProperties() {
             return this.$store.getters['Steps/getSteps']
         },
-        personalParameters() {
-            return this.$store.getters['PersonalData/getPersonalData']
+        datosPersonales() {
+            return this.$store.getters['PersonalData/getDatosPersonales']
         },
-        clinicHistoryParameters() {
-            return this.$store.getters['PersonalData/getClinicHistoryData']
+        datosAntropometricos() {
+          return this.$store.getters['PersonalData/getAntropometria']
         },
         alerts() {
             return this.$store.getters['MessageAlerts/getAlerts']
@@ -103,25 +109,30 @@ export default {
         dialog() {
             return this.$store.getters['Dialogs/getDialog']
         },
-        validPersonalData() {
+        validaDatosPersonales() {
             const {
-                name,
-                lastName,
-                motherLastName,
-                dateOfBirth,
-                age,
-                phoneNumber
-            } = this.personalParameters
-            return !!name && !!lastName && !!motherLastName 
-                && !!dateOfBirth && !!age && !!phoneNumber
+              nombre,
+              apellidoPaterno,
+              apellidoMaterno,
+              fechaNac,
+              edad,
+              telefono,
+              estadoCivil,
+              ocupacion
+            } = this.datosPersonales
+            return !!nombre && !!apellidoPaterno && !!apellidoMaterno
+                && !!fechaNac && !!edad && !!telefono && !!estadoCivil
+                && !!ocupacion
         },
-        validClinicHistory() {
-            const {
-             actualWeight,
-             height,
-             measurements
-            } = this.clinicHistoryParameters
-            return !!actualWeight && height && !!measurements
+        validaAntropometria() {
+          const {
+            cintura,
+            cadera,
+            estatura,
+            peso
+          } = this.datosAntropometricos
+          return !!cintura && !!cadera && !!estatura
+              && !!peso
         }
     },
     methods: {
@@ -139,20 +150,17 @@ export default {
                 case 2:
                     validations.id = id
                     validations.isValid = isValid
-                    validations.isDataValid = this.validPersonalData
-                    validations.message = '¡Hey! Faltan datos de tu (Ficha de Identificación).'
+                    validations.isDataValid = this.validaDatosPersonales
+                    validations.message = '¡Hey! Faltan Datos Personales, por completar.'
                     this.validationOfDataAndPropertiesToShowSeccion(validations)
                     break;
-                case 3:
-                    validations.id = id
-                    validations.isValid = isValid
-                    validations.isDataValid = this.validClinicHistory
-                    validations.message = '¡Hey! Faltan datos de tu (Historia clínica).'
-                    this.validationOfDataAndPropertiesToShowSeccion(validations)
-                    break;
-                case 5:
-                        this.sendRegister()
-                    break;
+                case 7:
+                  validations.id = id
+                  validations.isValid = isValid
+                  validations.isDataValid = this.validaAntropometria
+                  validations.message = '¡Hey! Faltan Datos de Antropometría, por completar.'
+                  this.sendRegister()
+                  break;
                 default:
                     this.stepsProperties.arrayOfSteps[id].isValid = true
                     this.stepsProperties.numberOfSteps ++
@@ -174,9 +182,9 @@ export default {
                 isShowDialog: true,
                 card: {
                     title: 'Consentimiento',
-                    text: `Por este acto se permite informar que el/la persona hace constar en este documento que la información 
-                            proporcionada por la Nutrióloga tratante, le es suficiente para tomar su decisión sobre el consentimiento solicitado y 
-                            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar 
+                    text: `Por este acto se permite informar que el/la persona hace constar en este documento que la información
+                            proporcionada por la Nutrióloga tratante, le es suficiente para tomar su decisión sobre el consentimiento solicitado y
+                            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar
                             este plan nutricional, como también lo es de su salud.`,
                     cardActions: {
                         btnColor: 'primary',
@@ -193,7 +201,7 @@ export default {
                 isShowDialog: true,
                 card: {
                     title: 'Cancelar Registro',
-                    text: `¿Estas segu@ de que quieres cancera tu registro?, 
+                    text: `¿Estas segua de que quieres cancera tu registro?,
                     perderás todo lo que ingresaste en las secciones.`,
                     cardActions: {
                         btnColor: 'primary',

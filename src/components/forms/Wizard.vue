@@ -40,13 +40,6 @@ export default {
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
           return gender
       }
-    },
-    showImage() {
-      if (this.gender) {
-        return '/img/registro.jpg'
-      } else {
-        return '/img/registro-h.jpg'
-      }
     }
   }
 }

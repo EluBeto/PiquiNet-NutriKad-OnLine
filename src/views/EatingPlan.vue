@@ -6,8 +6,8 @@
       </v-col>
     </v-row>
     <v-divider></v-divider>
-    <v-row v-if="!loading">
-      <v-col class="text-center mt-5" v-if="isRegistered">
+    <v-row v-if="loading">
+      <v-col class="text-center mt-5" v-if="!!isRegistered">
         <keep-alive>
           <TabsItems></TabsItems>
         </keep-alive>
@@ -72,7 +72,7 @@ export default {
       },
       titleParameters() {
         let mssage = {
-          title: `${this.isGender ? '¡ Bienvenida ! ' : '¡ Bienvenido ! '}`,
+          title: '¡Bienvenida!',
           subtitle: ''
         }
         return mssage
