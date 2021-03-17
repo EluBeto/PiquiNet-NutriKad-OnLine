@@ -92,6 +92,7 @@ import MessageAlerts from '../components/forms/MessageAlerts'
     },
     data: () => ({
       firstWeight: null,
+      secondWeight: null,
       thirdWeight: null,
       weigth: null,
       dialog: false,
@@ -142,7 +143,7 @@ import MessageAlerts from '../components/forms/MessageAlerts'
           this.firstWeight = response.firstWeight
           this.secondWeight = response.secondWeight
           this.thirdWeight = response.thirdWeight
-          
+
           this.labels.push(response.firstWeight + ' KG')
           this.labels.push(response.secondWeight + ' KG')
           this.labels.push(response.thirdWeight + ' KG')

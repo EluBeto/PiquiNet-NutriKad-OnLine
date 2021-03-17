@@ -9,13 +9,13 @@
       </v-col>
     </v-row>
     <br> <br>
-<!--    <v-divider></v-divider>
+    <v-divider></v-divider>
     <br> <br>
     <v-row>
-      <v-col md="12">
-        <ProgressGraph></ProgressGraph>
+      <v-col cols="12" md="12">
+        <ProgressWeight></ProgressWeight>
       </v-col>
-    </v-row>-->
+    </v-row>
   </div>
 </template>
 
@@ -23,6 +23,7 @@
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
 import Progress from '../components/layouts/Progress'
+import ProgressWeight from "@/components/ProgressWeight"
 // import ProgressGraph from '../components/ProgressGraph'
 
 export default {
@@ -30,7 +31,8 @@ export default {
   components: {
     Wizard,
     SectionTitle,
-    Progress
+    Progress,
+    ProgressWeight
   },
   data: () => ({
     menus: [{

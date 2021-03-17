@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Al reto "Pre Semana Santa" con NutriKad
+                Pre Semana Santa con NutriKad
             </h3>
         </v-card-title>
     <v-tabs
@@ -120,10 +120,10 @@ export default {
       },
       isShowPlanSecondWeek() {
         const date = new Date()
-        let options = { year: 'numeric', month: 'long', day: 'numeric' }
-        let dateNow = date.toLocaleDateString("es-ES", options)
-        return dateNow === '20 de marzo de 2021'
+        let dateNow = date.getDate()
+        return dateNow >= 20
       }
+
     },
   created() {
     this.loading = false
