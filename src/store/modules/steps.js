@@ -47,7 +47,7 @@ export default {
                 title: 'Finalicemos',
                 subTitle: '...',
                 btnColor: 'primary',
-                primaryBtnTitle: 'Siguiente',
+                primaryBtnTitle: 'Enviar',
                 secondaryBtnTitle: '',
                 requiresSecondaryButton: true,
                 isValid: false

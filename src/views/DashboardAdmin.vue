@@ -7,7 +7,7 @@
       </v-row>
       <v-divider class="mt-6"></v-divider>
       <v-row class="mt-6">
-          <v-col cols="12"
+        <v-col cols="12"
             sm="6"
             lg="4">
             <v-card
@@ -18,7 +18,7 @@
             >
 
                 <v-card-text class="text-center display-1 black--text font-weight-bold">
-                Total de Nutri-Pacientes
+                Nutri Pacientes
                 </v-card-text>
 
                 <v-card-actions>
@@ -43,16 +43,47 @@
                     align="center"
                     justify="end"
                     >
-                    <v-icon class="mr-1 black--text">
-                        mdi-heart
-                    </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">{{ totalR }}</span>
+                    <span class="subheading mr-2 display-4 black--text">{{ totalR }}</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
             </v-card>
           </v-col>
-          <v-col cols="12"
+        <v-col cols="12"
+               sm="6"
+               lg="4">
+          <v-card
+              class="mx-auto"
+              color="pink lighten-4"
+              dark
+              max-width="400"
+          >
+
+            <v-card-text class="text-center display-1 black--text font-weight-bold">
+              Mujeres
+            </v-card-text>
+
+            <v-card-actions>
+              <v-list-item class="grow text-center">
+                <v-list-item-avatar color="grey darken-3">
+                  <v-img
+                      class="elevation-6"
+                      alt=""
+                      :src="showImage(true)"
+                  ></v-img>
+                </v-list-item-avatar>
+
+                <v-row
+                    align="center"
+                    justify="end"
+                >
+                  <span class="subheading mr-2 display-4 black--text">{{ totalM }}</span>
+                </v-row>
+              </v-list-item>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col cols="12"
             sm="6"
             lg="4">
             <v-card
@@ -80,47 +111,7 @@
                     align="center"
                     justify="end"
                     >
-                    <v-icon class="mr-1 black--text">
-                        mdi-heart
-                    </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">{{ totalH }}</span>
-                    </v-row>
-                </v-list-item>
-                </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12"
-            sm="6"
-            lg="4">
-            <v-card
-                class="mx-auto"
-                color="pink lighten-4"
-                dark
-                max-width="400"
-            >
-
-                <v-card-text class="text-center display-1 black--text font-weight-bold">
-                Mujeres Registradas
-                </v-card-text>
-
-                <v-card-actions>
-                <v-list-item class="grow text-center">
-                    <v-list-item-avatar color="grey darken-3">
-                    <v-img
-                        class="elevation-6"
-                        alt=""
-                        :src="showImage(true)"
-                    ></v-img>
-                    </v-list-item-avatar>
-
-                    <v-row
-                    align="center"
-                    justify="end"
-                    >
-                    <v-icon class="mr-1 black--text">
-                        mdi-heart
-                    </v-icon>
-                    <span class="subheading mr-2 display-3 black--text">{{ totalM }}</span>
+                    <span class="subheading mr-2 display-4 black--text">{{ totalH }}</span>
                     </v-row>
                 </v-list-item>
                 </v-card-actions>
@@ -192,12 +183,13 @@ export default {
   created() {
     this.overlay = true
     this.$store.dispatch('PersonalData/getRegisters').then(response => {
-        this.patientsRegister = response
-      this.totalR = response.length
       let conteoM = 0
       let conteoH = 0
-      for (let i = 0; i < response.length; i++) {
-        if (response[i].dataIdentificationCard.gender) {
+      let filterRegister = []
+      filterRegister = response.filter(user => user.dataIdentificationCard.name != 'Edilberto')
+      filterRegister = filterRegister.filter(user => user.dataIdentificationCard.name != 'Karina')
+      for (let i = 0; i < filterRegister.length; i++) {
+        if (filterRegister[i].dataIdentificationCard.gender) {
           conteoM ++
         } else {
           conteoH ++
@@ -205,6 +197,8 @@ export default {
       }
       this.totalM = conteoM
       this.totalH = conteoH
+      this.totalR = filterRegister.length
+      this.patientsRegister = filterRegister
     })
     this.$store.dispatch('SetLayout', 'default-layout')
   }

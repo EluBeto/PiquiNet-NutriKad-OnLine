@@ -1,10 +1,11 @@
 <template>
   <v-carousel
     cycle
-    height="200"
+    height="350"
     hide-delimiter-background
     show-arrows-on-hover
     :show-arrows="false"
+    style="max-width: 100%;"
   >
     <v-carousel-item
       v-for="(item,i) in items"
@@ -21,7 +22,7 @@
       return {
         items: [
           {
-            src: '/img/S1.jpg',
+            src: '/img/S1.jpeg',
           },
           {
             src: '/img/S2.jpg',

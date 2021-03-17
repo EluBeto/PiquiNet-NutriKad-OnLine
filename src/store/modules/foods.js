@@ -7,7 +7,7 @@ export default {
                     {
                         foodId: 1,
                         image: '/img/desayuno.jpg',
-                        title: '¡Claras con totopos!',
+                        title: '¡Omelette de vegetales mixtos!',
                         smallDescription: `
 
                         <small>
@@ -15,14 +15,8 @@ export default {
          </small>
                         <ul>
                             <li>
-½ taza de nopales cocidos
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
 </li>
-                            <li>
-Salmas- 1 paquetito
-</li>
-                            <li>
-4 claras de huevo
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -32,22 +26,19 @@ Salmas- 1 paquetito
   	         </small>
                         <ul>
                             <li>
-½ taza de nopales cocidos
+1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
 </li>
                             <li>
-Salmas- 1 paquetito
+1 huevo + 1 clara
 </li>
                             <li>
-Cebolla y chile al gusto
+1/5 de pieza de Aguacate
 </li>
                             <li>
-4 claras de huevo
+½ cucharadita de aceite de oliva
 </li>
                             <li>
-1 cucharadita de ajonjolí
-</li>
-                            <li>
-Pizca de sal y pimienta
+
 </li>
                         </ul>                    
                         `,
@@ -58,19 +49,19 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Bate las claras de huevo
+                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
                             </li>
                             <li>
-                                Vierte las claras sobre un sartén caliente, agrega los totopos (salmas),nopales y cocina a fuego medio. Salpimienta al gusto.
+                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
                             </li>
                             <li>
-                            Emplata.
+                                 Dobla a la mitad y sirve.
                                 <ul>
                                     <li>
-                                    2 Mandarinas
+                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
                                     </li>
                                     <li>
-                                    Almendras 5 piezas
+                                    
                                     </li>
                                 </ul>
                             </li>
@@ -80,7 +71,7 @@ Pizca de sal y pimienta
                     {
                         foodId: 2,
                         image: '/img/desayuno.jpg',
-                        title: '¡Hotcakes básicos!',
+                        title: '¡Tapas dulces!',
                         smallDescription: `
 
                         <small>
@@ -88,13 +79,13 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-¼ de Zanahoria rallada
+½ manzana picada
 </li>
                             <li>
-¼ de pieza de plátano
+5 galletas marías
 </li>
                             <li>
-3 cucharadas de avena 
+5 Cucharadas de queso cottage
                             </li>
                         </ul>  . . .
                         `,
@@ -105,25 +96,16 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-¼ de Zanahoria rallada
+½ manzana picada
 </li>
                             <li>
-¼ de pieza de plátano
+5 galletas marías
 </li>
                             <li>
-3 cucharadas de avena 
+5 Cucharadas de queso cottage
 </li>
                             <li>
-1 huevo 
-</li>
-                            <li>
-Pizca de polvo para hornear, canela en polvo y extracto de vainilla al gusto
-</li>
-                            <li>
-6 fresas rebanadas
-</li>
-                            <li>
-2 cucharadas de Yogurt natural
+½ barra de chocolate turin si n azúcar.
 </li>
                         </ul>                    
                         `,
@@ -134,23 +116,19 @@ Pizca de polvo para hornear, canela en polvo y extracto de vainilla al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Licua todos los ingredientes de los hotcakes hasta formar una mezcla homogénea.
+                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
                             </li>
                             <li>
-                                Vierte un poco de mezcla sobre un sartén caliente, cocina por ambos lados a fuego bajo y con tapa.
+                                Coloca la mezcla anterior sobre las galletas.
                             </li>
                             <li>
-                            Emplata.
+                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
                                 <ul>
                                     <li>
-                                    Acompaña tus hotcakes con las fresas y el yogurt.
+                                    Corona las galletas con el chocolate derretido.
                                     </li>
                                     <li>
-                                    Leche – ½ taza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
-                                    </li>
+                                    ½ manzana picada, ½ taza de yogurt natural.
                                 </ul>
                             </li>
                         </ol>                     
@@ -159,7 +137,7 @@ Pizca de polvo para hornear, canela en polvo y extracto de vainilla al gusto
                     {
                         foodId: 3,
                         image: '/img/desayuno.jpg',
-                        title: '¡Tortilla mexicana!',
+                        title: '¡Huevito ranchero!',
                         smallDescription: `
 
                         <small>
@@ -167,14 +145,11 @@ Pizca de polvo para hornear, canela en polvo y extracto de vainilla al gusto
          </small>
                         <ul>
                             <li>
-Cebolla, jitomate y chile al gusto
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
 </li>
                             <li>
-¼ de taza de papa cocicida en cubitos
+2 tortilla de maíz.
 </li>
-                            <li>
-2 huevos
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -184,16 +159,19 @@ Cebolla, jitomate y chile al gusto
   	         </small>
                         <ul>
                             <li>
-Cebolla, jitomate y chile al gusto
+1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
 </li>
                             <li>
-¼ de taza de papa cocicida en cubitos
+2 tortilla de maíz.
 </li>
                             <li>
-2 huevos
+1 huevos estrellado + 1 clara de huevo estrellda.
 </li>
                             <li>
-40 gr de queso panela en cubitos 
+Pimienta y sal al gusto.
+</li>
+                            <li>
+1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -204,25 +182,19 @@ Cebolla, jitomate y chile al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                En una sartén caliente cocina la cebolla, cuando cambien de color agrega el jitomate, y cocina.Salpimienta al gusto.
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
                             </li>
                             <li>
-                                Bate los huevos en un recipiente, agrega los cubitos de papa y queso.
+                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
                             </li>
                             <li>
-                               Vierte la mezcla sobre un sartén caliente y expande (forma la tortilla), cocina a fuego medio por ambos lados.
-                            </li>
-                            <li>
-                            Emplata.
+                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
                                 <ul>
                                     <li>
-                                    Acompaña tu tortilla mexicana con pico de gallo.
+                                    1 manzana picada y 1 cucharada de yogurt
                                     </li>
                                     <li>
-                                    Papaya 1 taza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
+                                    
                                     </li>
                                 </ul>
                             </li>
@@ -232,7 +204,7 @@ Cebolla, jitomate y chile al gusto
                     {
                         foodId: 4,
                         image: '/img/desayuno.jpg',
-                        title: '¡Taquitos con pollo!',
+                        title: '¡Crepa de mango!',
                         smallDescription: `
 
                         <small>
@@ -240,11 +212,14 @@ Cebolla, jitomate y chile al gusto
          </small>
                         <ul>
                             <li>
-Cebolla en bastones, ½ taza de lechuga picada
+½  taza de jicama rallada
 </li>
                             <li>
-Tortilla de maíz 2 piezas
+¼ de pieza de plátano 
 </li>
+                            <li>
+3 cucharadas de harina de avena
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -254,16 +229,22 @@ Tortilla de maíz 2 piezas
   	         </small>
                         <ul>
                             <li>
-Cebolla en bastones, ½ taza de lechuga picada
+½  taza de jicama rallada
 </li>
                             <li>
-Tortilla de maíz 2 pieza 
+¼ de pieza de plátano 
 </li>
                             <li>
-60 gr de pollo en hebras
+3 cucharadas de harina de avena
 </li>
                             <li>
-1 cucharadita de aceite de oliva, pizaca de sal y pimienta
+1 huevo
+</li>
+                            <li>
+Un chorrito de leche
+</li>
+                            <li>
+Estracto de vainilla y canela en polvo al gusto
 </li>
                         </ul>                    
                         `,
@@ -274,27 +255,18 @@ Tortilla de maíz 2 pieza
                         </br> </br>
                         <ol>
                             <li>
-                                En una sartén caliente cocina la cebolla, cuando cambien de color agrega el pollo, salpimienta. Reserva.
+                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
                             </li>
                             <li>
-                                Rellena las tortillas calientes con la mezcla anterior, enrolla y forma taquitos.
+                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
                             </li>
                             <li>
-                             Dora los taquitos en un sartén caliente, agrega el aceite de oliva y espera unos minutos y reserva.
-
-                            </li>
-                            <li>
-                          
-                            Emplata.
+                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
                                 <ul>
                                     <li>
-                                    Agrega la lechuga encima y queso panela rallado 1 cucharada.
+                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
                                     </li>
                                     <li>
-                                    Manzana amarilla 1 pieza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
                                     </li>
                                 </ul>
                             </li>
@@ -304,7 +276,7 @@ Tortilla de maíz 2 pieza
                     {
                         foodId: 5,
                         image: '/img/desayuno.jpg',
-                        title: '¡Pastelito chocolatoso!',
+                        title: '¡Panquecitos de fresa!',
                         smallDescription: `
 
                         <small>
@@ -312,13 +284,13 @@ Tortilla de maíz 2 pieza
          </small>
                         <ul>
                             <li>
-¼ de plátano
+½ taza de zanahoria rallada cruda
+</li>
+                            <li>
+¼ de pieza de plátano
 </li>
                             <li>
 3 cucharadas de harina de avena
-</li>
-                            <li>
-¼ de taza de lechuga picada
                             </li>
                         </ul>  . . .
                         `,
@@ -329,22 +301,19 @@ Tortilla de maíz 2 pieza
   	         </small>
                         <ul>
                             <li>
-¼ de plátano
+½ taza de zanahoria rallada cruda
 </li>
                             <li>
-3 cucharadas de harina de avena
+¼ de pieza de plátano
 </li>
                             <li>
-¼ de taza de lechuga picada
+4 cucharadas de harina de avena
 </li>
                             <li>
-1 huevo 
+1 huevo
 </li>
                             <li>
-Chocolate turin sin azúcar ½ barrita troceda
-</li>
-                            <li>
-Pizca de polvo para horner, estracto de vainilla y canela en polvo
+Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
 </li>
                         </ul>                    
                         `,
@@ -355,17 +324,19 @@ Pizca de polvo para horner, estracto de vainilla y canela en polvo
                         </br> </br>
                         <ol>
                             <li>
-                                Licua todos los ingredientes hasta formar una mezcla homogénea.
+                                Licua todos los ingredientes hasta tener una mezcla homogénea.
                             </li>
                             <li>
-                                Vierte la mezcla en una taza apta para microondas y cocina durante 2 minutos.
+                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
                             </li>
                             <li>
-                            Enfria y desmolda.
+                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
                                 <ul>
                                     <li>
-                                    Acompaña tu pastelito con 6 fresas rebandas, 5 almendras y 2 cucharadas de yogurt natural.
-          
+                                    Nol olvides acompañar con un jugo.
+                                    </li>
+                                    <li>
+
                                     </li>
                                 </ul>
                             </li>
@@ -747,269 +718,325 @@ Pizca de polvo para horner, estracto de vainilla y canela en polvo
                     {
                         foodId: 1,
                         image: '/img/comida.jpg',
-                        title: '¡Tostadas de pollo!',
+                        title: '¡Taquitos de pollo com aguacate!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
                             <li>
-                            ½ taza zanahoria rallada 
-                            </li>
-                            <li>
-                            ½ pimiento verde en tiras
-                            </li>
-                            
-                        </ul> . . .
+1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
                             <li>
-                            ½ taza zanahoria rallada 
-                            </li>
+1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+</li>
                             <li>
-                            ½ pimiento verde en tiras 
-                            </li>
+2 tortillas de maíz
+</li>
                             <li>
-                            2 tostadas sanissimo 
-                            </li>
+70 gr de pechuga de pollo deshebrado
+</li>
                             <li>
-                            90 gramos pechuga de pollo deshebrada cocida 
-                            </li>
-                            <li>60 gramos queso Oaxaca light rallado </li>
-                            <li>1/5  de pieza aguacate </li>
-                        </lul>
-                        </br>    
-                        <small><b>Salsa</b></small>
-                        <ul>
+1/5 de pieza de aguacate
+</li>
                             <li>
-                            2 jitomates cocidos 
-                            </li>
-                            <li>
-                            1 chile serrano cocido
-                            </li>
-                            <li>
-                            pedacito cebolla cocida al gusto
-                            </li>
-                            <li>1 diente de ajo  </li>
-                        </lul>                
+Pizca de sal y pimienta
+</li>
+                        </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            <b>Para la salsa</b>: licua todos los ingredientes.
+                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+                            </li>
+                            <li>
+                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                            </li>
+                            <li>
+                            Emplata.
                                 <ul>
                                     <li>
-                                    Cuela la salsa.
+                                    Acompaña tu platillo con 1 taza de verduras al gusto.
+                                    </li>
+                                    <li>
+                                    
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                            Vierte la salsa una olla, agrega el pollo, zanahoria y pimiento.
-                            </li>
-                            <li>
-                            Calienta hasta que suelte el hervor. Reserva.
-                            </li>
-                            <li>
-                            Emplata las tostadas.
-                            </li>
-                            <li>
-                            Agrega el aguacate machacado sobre ellas.
-                            </li>
-                            <li>
-                            Coloca la tinga sobre las tostadas.
-                            </li>
-                            <li>
-                            Decora con el queso.
-                            </li>
-                        </ol>                       
+                        </ol>                     
                         `
                     },
                     {
                         foodId: 2,
                         image: '/img/comida.jpg',
-                        title: '¡Taquitos Nutrikadfit!',
+                        title: '¡Mega taco de queso!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>1/3 betabel rallado</li>
-                            <li>½ pimiento amarillo en tiras</li>
-                        </ul> . . .
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+60 gr de queso oaxaca light 
+                            </li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                                    <li>1/3 betabel rallado</li>
-                                    <li>½ pimiento amarillo en tiras</li>
-                                    <li>puñito germen de alfalfa</li>
-                                    <li>pedacito chile serrano rebanado </li>
-                                    <li>2 tortillas de maíz </li>
-                                    <li>200 gramos filete de pescado </li>
-                                    <li>15 gramos aguacate rebanado </li>
-                                    <li>3 cucharadas jugo de limón</li>
-                                    <li>2 cucharadas jugo de naranja</li>
-                                    <li>pizca sal y pimienta</li>
-                                    <li>pizca pimienta de cayena </li>
-                                </ul>                   
+                            <li>
+1 taza de espinacas, cebolla al gusto
+</li>
+                            <li>
+1 tortilla de harina 
+</li>
+                            <li>
+60 gr de queso oaxaca light 
+</li>
+                            <li>
+60 gr de pollo en trosos pequeños
+</li>
+                            <li>
+2 cucharadas de guacamole, sal y pimienta al gusto
+</li>
+                        </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Vierte el jugo de limón, naranja, sal, pimienta y pimienta de cayena en un recipiente.
+                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
                             </li>
                             <li>
-                            Corta el pescado en trozos y colócalos dentro del recipiente anterior.
+                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
                             </li>
                             <li>
-                            Deja reposar por 10 minutos. Coloca el pescado dentro de papel aluminio, sella bien el papel y cocínalo por los dos lados.
+                            Emplata y decora con el guacamole
+                                    </li>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada
+                                </ul>
                             </li>
-                            <li>
-                            Calienta las tortillas y rellena con el pescado y las verduras.
-                            </li>
-                            <li>
-                            Agrega un poco mas de pimienta cayena.
-                            </li>
-                            <li>
-                            Decora con el aguacate.
-                            </li>
-                        </ol>                       
+                        </ol>                     
                         `
                     },
                     {
                         foodId: 3,
                         image: '/img/comida.jpg',
-                        title: '¡Plato de vegetales con queso!',
+                        title: '¡Arroz y carne!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>1 calabacita rebanada</li>
-                            <li>pedacito de cebolla</li>
-                        </ul> . . .
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+¼ de taza de arroz cocido
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                            <li>1 calabacita rebanada</li>
-                            <li>1 jitomate rebanado</li>
-                            <li>1 ajo picado fino </li>
-                            <li>½ taza de papa cocida rebanada </li>
-                            <li>2 tortillas de maíz</li>
-                            <li>150 gramos queso panela</li>
-                            <li>½ cucharadita aceite de oliva </li>
-                            <li>Pizca de orégano en seco, pizca de tomillo, pizca de sal y pimienta </li>
+                            <li>
+1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+</li>
+                            <li>
+¼ de taza de arroz cocido
+</li>
+                            <li>
+60 gr de carne de res cocida
+</li>
+                            <li>
+1 cucharadita de aceite de oliva
+</li>
+                            <li>
+Pizca de sal y pimienta al gusto
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Sobre una caserola en el fuego, coloca 1 rebanada de calabacita, jitomate y papa y así sucesivamente. 
+                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
                             </li>
                             <li>
-                            Agrega el queso sobre las verduras. 
+                                Sirve la cerne, brólo y a un lado el arroz.
                             </li>
                             <li>
-                            Mezcla el ajo, orégano y tomillo con el aceite y viértelo sobre el platillo.
+                            Vierte el aceite de oliva sobre tu platillo.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada.
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                            Deja se que por unos minutos, retira del fuego y disfruta.
-                            </li>
-                        </ol>                   
+                        </ol>                     
                         `
                     },
                     {
                         foodId: 4,
                         image: '/img/comida.jpg',
-                        title: '¡Pescado a la mexicana!',
+                        title: '¡Tostadas de alambre!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>1/2 pimiento morrón amarillo</li>
-                            <li>1/2 jitomate y pedacitos de cebolla </li>
-                        </ul> . . .
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+2 tostadas sanissimo
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                        <li>1/2 pimiento morrón amarillo</li>
-                                <li>1/2 jitomate y pedacitos de cebolla </li>
-                                    <li>2 paquetes de Salmas </li>
-                                    <li>240 gramos filete de pescado </li>
-                                    <li>15 gramos de aguacate </li>
-                                    <li>Pizca de hierbas finas y ajo en polvo </li>
-                                </ul>
+                            <li>
+1 taza de pimientos en bastones, cebolla al gusto.
+</li>
+                            <li>
+2 tostadas sanissimo
+</li>
+                            <li>
+60 gr de carne de res asada.
+</li>
+                            <li>
+1/5 de pieza de aguacate, sal y pimienta al gusto.
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Corta en cubos los pimientos morrones, jitomate y cebolla.  
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
                             </li>
                             <li>
-                            Guisa las verduras y agrega una pizca de ajo.
+                                Agrega la carne de res al sartén anterior y mezcla.
                             </li>
                             <li>
-                            Cocina el filete de pescado con hierbas finas y sirve.
+                            Monta el alambre sobre las tostadas,
+                                <ul>
+                                    <li>
+                                    Decora con el aguacate, agrega alguna entrada.
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                            Emplata el pescado con el guiso de verduras.
-                            </li>
-                            <li>
-                            Decora con el aguacate. 
-                            </li>
-                        </ol>     
-                        Acompaña con las Salmas.            
+                        </ol>                     
                         `
                     },
                     {
                         foodId: 5,
                         image: '/img/comida.jpg',
-                        title: '¡Taquitos de nopales con pollo y queso!',
+                        title: '¡Brocoli salad!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>½ taza nopales cocidos </li>
-                            <li>pedacito de cebolla</li>
-                        </ul> . . .
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+½ taza de pasta cocida
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                        <li>1 jitomate, </li>
-                            <li>2 tortillas de maíz </li>
-                            <li>120 gramos pechuga de pollo </li>
-                            <li>pedacito de cebolla</li>
-                            <li>90 gramos queso Oaxaca light rallado </li>
-                            <li>1/5 de pieza de aguacate </li>
-                            <li>Pizca sal y pimienta, 2 cucharaditas salsa Maggie baja en sodio, jugo de 1 limón (Libre)</li>
+                            <li>
+1 taza de brócoli cocido, ½ taza de espinaca picada
+</li>
+                            <li>
+½ taza de pasta cocida
+</li>
+                            <li>
+70 gr de pechuga de pollo cocida
+</li>
+                            <li>
+½ cucharadita de aceite de oliva
+</li>
+                            <li>
+Sal y pimienta al gusto
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Mezcla la salsa Maggie con el limón.
+                                Monta como base en un bowl el brócoli y la espinaca.
                             </li>
                             <li>
-                            Unta la mezcla en el pollo y asa por los dos lados. 
+                                Agrega encima la pechuga de pollo, la pasat y mezcla.
                             </li>
                             <li>
-                            Cuando esté cocido el pollo, agrega el queso para que se derrita y tapa el sartén.
+                            Vierte el aceite de oliva. Salpimienta al gusto.
+                                <ul>
+                                    <li>
+                                    Acompaña una entrada.
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                            Sirve y decora con los champiñones y aguacate. Salpimenta.
-                            </li>
-                            <li>
-                            Acompaña con los nopales y las tortillas.
-                            </li>
-                        </ol>                 
+                        </ol>                     
                         `
                     }
                 ],
@@ -4080,8 +4107,8 @@ Sal y pimienta al gusto
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 taza de pedacitos de brócoli y coliflor </li>
-                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
-                        </ul> . . . 
+                            <li>¼  taza de zanahoria picada en cubitos pequeños . . . </li>
+                        </ul>
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>

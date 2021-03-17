@@ -72,7 +72,7 @@ export default new Vuex.Store({
       const date = new Date()
       let options = { year: 'numeric', month: 'long', day: 'numeric' }
       let dateNow = date.toLocaleDateString("es-ES", options)
-      return dateNow === '12 de marzo de 2021'
+      return dateNow !== '12 de marzo de 2021'
     }
   },
   modules: {

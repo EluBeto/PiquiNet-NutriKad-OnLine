@@ -18,14 +18,14 @@
             v-on="on"
           >Ver receta</v-btn>
         </template>
-        
+
         <template v-slot:default="dialog">
           <v-card>
             <v-toolbar
               color="primary"
               dark
               class="text-center"
-            > 
+            >
             {{ food.title }}
             </v-toolbar>
             <v-card-text>
@@ -40,7 +40,7 @@
             <v-divider></v-divider>
                 <br>
             <h5 class="my-2 text-justify">
-              Nota: las colaciones y las entradas seran las mismas para los 21 días, 
+              Nota: las colaciones y las entradas seran las mismas para los 15 días,
               lo unico que cambiará cada semana sera desayunos o cenas y comidas.
             </h5>
             </v-card-text>

@@ -7,7 +7,7 @@
       color="lime darken-4"
       left
     >
-      <v-tab v-for="food in typesOfFood" 
+      <v-tab v-for="food in typesOfFood"
             :key="food.id"
             @click="getFoods(food)"
       >
@@ -15,16 +15,15 @@
       </v-tab>
 
       <v-tab-item
-        v-for="food in typesOfFood" 
+        v-for="food in typesOfFood"
         :key="food.id"
       >
         <v-container fluid>
           <v-row>
             <v-col cols="12">
-                <SectionTitle
-                    :titleParameters="titleParameters(food.id)"
-                ></SectionTitle>
-                
+              <SectionTitle
+                  :titleParameters="titleParameters(food.id)"
+              ></SectionTitle>
                 <MealPlans
                   :breakfastDiner="breakfastDiner"
                 ></MealPlans>

@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Pre Semana Santa con NutriKad
+                Al reto "Pre Semana Santa" con NutriKad
             </h3>
         </v-card-title>
     <v-tabs
@@ -14,6 +14,8 @@
       slider-color="yellow darken-3"
       color="orange darken-4"
       black
+      next-icon="mdi-arrow-right-bold-box-outline"
+      prev-icon="mdi-arrow-left-bold-box-outline"
     >
       <v-tab
         v-for="item in items"
@@ -47,19 +49,21 @@
               <OneWeek></OneWeek>
             </keep-alive>
           </v-card-text>
-          <v-card-text v-if="!loading && item.content === 4 && isShowPlanSecondWeek">
-            <keep-alive>
-              <SecondWeek></SecondWeek>
-            </keep-alive>
+          <v-card-text v-if="item.content === 4">
+            <div v-if="!loading && isShowPlanSecondWeek">
+              <keep-alive>
+                <SecondWeek></SecondWeek>
+              </keep-alive>
+            </div>
+            <v-skeleton-loader
+                ref="skeleton"
+                :boilerplate="boilerplate"
+                :type="type"
+                :tile="tile"
+                class="mt-5 mx-auto"
+                v-else
+            ></v-skeleton-loader>
           </v-card-text>
-          <v-skeleton-loader
-              ref="skeleton"
-              :boilerplate="boilerplate"
-              :type="type"
-              :tile="tile"
-              class="mt-5 mx-auto"
-              v-else
-          ></v-skeleton-loader>
           <v-card-text v-if="false">
             <keep-alive>
               <ThirdWeek></ThirdWeek>
@@ -78,7 +82,7 @@ import SectionTitle from '../forms/SectionTitle'
 import EatingChallenge from '../Challenge/EatingChallenge'
 import OneWeek from '../Challenge/weeks/OneWeek'
 import SecondWeek from '../Challenge/weeks/SecondWeek'
-import ThirdWeek from "@/components/Challenge/weeks/ThirdWeek";
+import ThirdWeek from "@/components/Challenge/weeks/ThirdWeek"
 export default {
     name: 'TabsItems',
     components: {
@@ -120,8 +124,11 @@ export default {
         let dateNow = date.toLocaleDateString("es-ES", options)
         return dateNow === '20 de marzo de 2021'
       }
-    }
+    },
+  created() {
+    this.loading = false
   }
+}
 </script>
 
 <style>
