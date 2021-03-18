@@ -41,7 +41,7 @@ export default {
             diverticulos: false,
             hipertencionArtereal: false,
             colitis: false,
-            otros: false
+            otros: ''
         },
         antecedentesGinecoObstetricos: {
             menarca: '',
