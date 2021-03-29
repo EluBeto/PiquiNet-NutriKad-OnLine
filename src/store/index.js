@@ -70,9 +70,8 @@ export default new Vuex.Store({
     },
     isShowPlan() {
       const date = new Date()
-      let options = { year: 'numeric', month: 'long', day: 'numeric' }
-      let dateNow = date.toLocaleDateString("es-ES", options)
-      return dateNow !== '12 de marzo de 2021'
+      let dateNow = date.getDate()
+      return dateNow >= 19
     }
   },
   modules: {
