@@ -50,6 +50,14 @@ const routes = [
     meta: {
       requiredAuth: true
     }
+  },
+  {
+    path: '/interactiveCalendar',
+    name: 'Calendario Interactivo',
+    component: () => import('../views/InteractiveCalendar.vue'),
+    meta: {
+      requiredAuth: true
+    }
   }
 ]
 
