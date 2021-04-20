@@ -24,7 +24,7 @@ export default {
     welcomeMessage: `
         <h2 class="my-3"> ¡Muchísimas felicidades!</h2>
             <h3 class="my-3">
-              <strong> Ya eres parte del Reto Pre Semana Santa con NutriKad </strong>
+              <strong> Ya eres parte del Reto Ponte Fit y Gana Salud con Nutrikad </strong>
             </h3>
             <p style="text-align: justify;">
               El propósito de este reto es adoptar hábitos alimenticios saludables, llevar una buena alimentación para así poder nutrir el cuerpo a nivel celular y

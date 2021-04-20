@@ -6,7 +6,7 @@
           </v-col>
       </v-row>
       <v-divider></v-divider>
-      <div v-if="isRegistered" class="mt-5">
+      <div class="mt-5">
         <v-row>
           <v-col md="4"
             v-for="video in infoVideo"
@@ -14,7 +14,7 @@
           >
                 <VideoCard :video="video"></VideoCard>
           </v-col>
-        </v-row> 
+        </v-row>
       </div>
   </v-container>
 </template>

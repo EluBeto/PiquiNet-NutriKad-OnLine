@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Pre Semana Santa con NutriKad
+                Ponte Fit y Gana Salud con Nutrikad
             </h3>
         </v-card-title>
     <v-tabs

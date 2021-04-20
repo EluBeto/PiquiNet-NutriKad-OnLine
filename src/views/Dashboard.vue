@@ -8,6 +8,7 @@
         <wizard class="mt-4"></wizard>
       </v-col>
     </v-row>
+    <!--
     <br> <br>
     <v-divider></v-divider>
     <br> <br>
@@ -16,6 +17,7 @@
         <ProgressWeight></ProgressWeight>
       </v-col>
     </v-row>
+    -->
   </div>
 </template>
 
@@ -23,7 +25,7 @@
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
 import Progress from '../components/layouts/Progress'
-import ProgressWeight from "@/components/ProgressWeight"
+// import ProgressWeight from "@/components/ProgressWeight"
 // import ProgressGraph from '../components/ProgressGraph'
 
 export default {
@@ -31,8 +33,8 @@ export default {
   components: {
     Wizard,
     SectionTitle,
-    Progress,
-    ProgressWeight
+    Progress
+    // ProgressWeight
   },
   data: () => ({
     menus: [{
@@ -65,7 +67,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Pre Semana Santa con Nutrikad"`
+          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud con Nutrikad"`
         }
         return mssage
       }

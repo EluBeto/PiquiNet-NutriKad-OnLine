@@ -19,12 +19,12 @@
                        <v-col cols="12" sm="12" md="12">
                         <ul>
                           <li style="text-align: left;">
-                            Recibirás el Plan Nutricional a más tardar el día 12 de marzo, siempre y cuando hayas
+                            Recibirás el Plan Nutricional a más tardar el día 1 de mayo, siempre y cuando hayas
                             contestado esta información en la fecha que se indica.
                           </li>
                           <li style="text-align: left;">
                             Es necesario agregarme a Facebook “Nutriologa Karina Arteaga” para poder agregarte al grupo de apoyo a más tardar el
-                            día 12 de marzo.
+                            día 1 de mayo.
                           </li>
                           <li style="text-align: left;">
                             Cada semana todos los participantes podrán compartir sus avances (de manera opcional), ya sean físicos, mentales, o emocionales.
@@ -43,7 +43,7 @@
                               grado médico, plan de alimentación personalizado.)
                               <ul>
                                 <li>
-                                  Paso 1: Es necesario que envíes una foto de frente y de perfil antes del 12 de marzo. Deberas enviarlas por whatsApp de forma personal.
+                                  Paso 1: Es necesario que envíes una foto de frente y de perfil antes del 1 de mayo. Deberas enviarlas por whatsApp de forma personal.
                                 </li>
                                 <li>
                                   Paso 2: Deberas participar de forma activa en el grupo de facebook (subir comidas, evidencia de ejercicio, frases de motivación)

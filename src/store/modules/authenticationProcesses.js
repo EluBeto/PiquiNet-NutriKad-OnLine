@@ -64,15 +64,14 @@ export default {
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
             const response = await HttpServices.getRequest(url)
             if (response === null) return { response: 'sin registro' }
-            if (response.error) return { response: response }
-            
+
             const {
                 name,
                 lastName,
                 motherLastName,
                 gender
             } = response.dataIdentificationCard
-            
+
             const newPayload = {
                 gender: gender,
                 name: name,

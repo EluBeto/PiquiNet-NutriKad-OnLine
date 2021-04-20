@@ -7,37 +7,51 @@ export default {
         isRegisteredUser: false,
         createDate: new Date(),
         identificationCard: {
-            name: '',
-            lastName: '',
-            motherLastName: '',
-            dateOfBirth: '',
-            age: '',
+            name: null,
+            lastName: null,
+            motherLastName: null,
+            dateOfBirth: null,
+            age: null,
             gender: false,
-            phoneNumber: ''
+            phoneNumber: null
         },
         clinicHistory: {
-            actualWeight: '',
+            actualWeight: null,
             height: null,
             measurements: {
               waist: null,
               chest: null,
               hip: null
             },
-            isPregnant: '',
-            isBreastfeeding: '',
+            isPregnant: null,
+            isBreastfeeding: null,
             monthsPostpartum: 0,
             allergiesIntolerance: {
               isHeadach: false,
               isBadDigestion: false,
               isReflux: false,
               isActivePerson: false,
-              responseActivePersonTime: '',
-              responseActivePersonTypeExercise: '',
+              responseActivePersonTime: null,
+              responseActivePersonTypeExercise: null,
               isBeMedical: false
             }
         }
     },
     actions: {
+        async sendRegisterInformation({ rootState }, payload) {
+            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}user-register-information.json`
+            let parameters = JSON.stringify({
+                name: payload.name,
+                phoneNumber: payload.phoneNumber,
+                email: payload.email,
+                select: payload.select
+            })
+            let register = ''
+            await HttpServices.postRequest(url, parameters).then(response => {
+                register = response
+            })
+            return register
+        },
         async sendRegister({ state, rootState }) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
@@ -135,9 +149,17 @@ export default {
                 idToken
             } = JSON.parse(window.localStorage.getItem('userAuth'))
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register.json?auth=${idToken}`
-            
+
             const response = await HttpServices.getRequest(url)
-            const patientesRegister = [] 
+            if (response.error) {
+                window.localStorage.removeItem('userAuth')
+                window.localStorage.removeItem('userInfo')
+                window.localStorage.removeItem('registeredUser')
+                router.push("/")
+            }
+
+            console.log('response', response)
+            const patientesRegister = []
             for (let id in response){
                 patientesRegister.push(response[id])
             }
@@ -153,6 +175,8 @@ export default {
                 const responseWeight = await HttpServices.getRequest(url)
                 return responseWeight
             } else {
+                window.localStorage.removeItem('userInfo')
+                window.localStorage.removeItem('registeredUser')
                 router.push('/')
             }
         },
@@ -174,6 +198,8 @@ export default {
                 })
                 return responseWeight
             } else {
+                window.localStorage.removeItem('userInfo')
+                window.localStorage.removeItem('registeredUser')
                 router.push('/')
             }
         },

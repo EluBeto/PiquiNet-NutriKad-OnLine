@@ -49,7 +49,7 @@ export default new Vuex.Store({
             localStorage.getItem(payload.name)
             break
           case 'removeItem':
-            localStorage.removeItem(payload.name, payload.localStorageObject)
+            localStorage.removeItem(payload.name)
             break
         }
       }
