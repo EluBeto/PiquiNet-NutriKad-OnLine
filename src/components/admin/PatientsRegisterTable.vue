@@ -93,19 +93,19 @@
                     <v-col cols="12" sm="12" style="font-size: 1.0em;">
                       Estado Civil:
                       <v-chip color="primary" small>
-                        {{ item.antropometria.estadoCivil}}
+                        {{ item.antropometria.estadoCivil === null ? 'Casado' : 'Casada' }}
                       </v-chip>
                     </v-col>
                     <v-col cols="12" sm="12" style="font-size: 1.0em;">
                       Ocupación:
                       <v-chip color="primary" small>
-                        {{ item.antropometria.ocupacion}}
+                        {{ item.antropometria.ocupacion === null ? 'Casado' : 'Maestra'}}
                       </v-chip>
                     </v-col>
                     <v-col cols="12" sm="12" style="font-size: 1.0em;">
                       Padecimiento Actual:
                       <v-chip color="primary" small>
-                        {{ item.antropometria.padecimientoActual}}
+                        {{ item.antropometria.padecimientoActual === null ? 'Casado' : 'Ninguno' }}
                       </v-chip>
                     </v-col>
                     <v-col cols="12" sm="12" style="font-size: 1.0em;">
@@ -122,6 +122,122 @@
                 </v-card-text>
               </v-card>
             </v-col>
+            <v-col cols="12" sm="4">
+              <v-card>
+                <v-card-title class="text-center" style="font-size: 1.5em;">Histórico de medidas</v-card-title>
+                <v-divider></v-divider>
+                <v-card-text>
+                  <v-row>
+                    <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
+                      09 de Marzo
+                    </v-col>
+                    <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
+                      Cintura:
+                      <v-chip color="primary" small>
+                        113 cm.
+                      </v-chip>
+                      | Cadera:
+                      <v-chip color="primary" small>
+                        125 cm.
+                      </v-chip>
+                    </v-col>
+                    <v-divider></v-divider>
+                    <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
+                      28 de Marzo
+                    </v-col>
+                    <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
+                      Cintura:
+                      <v-chip color="primary" small>
+                        110 cm.
+                      </v-chip>
+                      | Cadera:
+                      <v-chip color="primary" small>
+                        123 cm.
+                      </v-chip>
+                    </v-col>
+                    <v-divider></v-divider>
+                    <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
+                      19 de Abril
+                    </v-col>
+                    <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
+                      Cintura:
+                      <v-chip color="primary" small>
+                        104 cm.
+                      </v-chip>
+                      | Cadera:
+                      <v-chip color="primary" small>
+                        120 cm.
+                      </v-chip>
+                    </v-col>
+                    <v-divider></v-divider>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      Prox. 10 de Mayo:
+                      <v-chip color="warning" small>
+                        Pendiente ...
+                      </v-chip>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="4">
+              <v-card>
+                <v-card-title class="text-center" style="font-size: 1.5em;">Histórico de peso</v-card-title>
+                <v-divider></v-divider>
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      09 de Mar.:
+                      <v-chip color="primary" small>
+                        {{ item.antropometria.peso }} kg.
+                      </v-chip>
+                    </v-col>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      28 de Mar.:
+                      <v-chip color="primary" small>
+                        107.400 kg.
+                      </v-chip>
+                    </v-col>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      19 de Abr.:
+                      <v-chip color="primary" small>
+                        103.900 kg.
+                      </v-chip>
+                    </v-col>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      Prox. 10 de Mayo:
+                      <v-chip color="warning" small>
+                        Pendiente ...
+                      </v-chip>
+                    </v-col>
+                    <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                      <v-card
+                          class="mx-auto text-center"
+                          color="green"
+                          dark
+                          max-width="600"
+                      >
+                        <v-card-text>
+                          <v-sheet color="rgba(0, 0, 0, .12)">
+                            <v-sparkline
+                                :value="value"
+                                color="rgba(255, 255, 255, .7)"
+                                height="100"
+                                padding="24"
+                            >
+                              <template v-slot:label="item">
+                                {{ item.value }}
+                              </template>
+                            </v-sparkline>
+                          </v-sheet>
+                        </v-card-text>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <!--
             <v-col cols="12" sm="4">
               <v-card>
                 <v-card-title class="text-center" style="font-size: 1.5em;">Antecedentes Heredo Familiares</v-card-title>
@@ -180,6 +296,8 @@
                 </v-card-text>
               </v-card>
             </v-col>
+            -->
+            <!--
             <v-col cols="12" sm="4">
               <v-card>
                 <v-card-title class="text-center" style="font-size: 1.5em;">Antecedentes Personales Patologicos</v-card-title>
@@ -250,6 +368,7 @@
                 </v-card-text>
               </v-card>
             </v-col>
+            -->
           </v-row>
           <v-divider></v-divider>
           <v-row class="ma-2">
@@ -509,7 +628,12 @@
     data () {
       return {
         expanded: [],
-        search: ''
+        search: '',
+        value: [
+          113.3,
+          107.4,
+          103.9
+        ]
       }
     },
     computed: {
