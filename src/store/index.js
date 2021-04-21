@@ -71,7 +71,7 @@ export default new Vuex.Store({
     isShowPlan() {
       const date = new Date()
       let dateNow = date.getDate()
-      return dateNow >= 19
+      return dateNow >= 60
     }
   },
   modules: {

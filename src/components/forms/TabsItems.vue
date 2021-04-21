@@ -121,7 +121,7 @@ export default {
       isShowPlanSecondWeek() {
         const date = new Date()
         let dateNow = date.getDate()
-        return dateNow >= 20
+        return dateNow >= 60
       }
 
     },
