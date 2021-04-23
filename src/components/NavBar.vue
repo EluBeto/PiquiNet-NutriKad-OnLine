@@ -111,12 +111,6 @@
           title: 'Ponte en forma',
           to: 'traning',
           visible: true
-        },
-        {
-          icon: 'mdi-calendar-check',
-          title: 'Calendario Interactivo',
-          to: 'interactiveCalendar',
-          visible: true
         }
       ],
       itemsAdmin: [

@@ -8,14 +8,6 @@
         <wizard class="mt-4"></wizard>
       </v-col>
     </v-row>
-    <br> <br>
-    <v-divider></v-divider>
-    <br> <br>
-    <v-row>
-      <v-col cols="12" md="12">
-        <ProgressWeight></ProgressWeight>
-      </v-col>
-    </v-row>
   </div>
 </template>
 
@@ -23,15 +15,13 @@
 import SectionTitle from '../components/forms/SectionTitle'
 import Wizard from '../components/forms/Wizard'
 import Progress from '../components/layouts/Progress'
-import ProgressWeight from "@/components/ProgressWeight"
 
 export default {
   name: 'Dashboard',
   components: {
     Wizard,
     SectionTitle,
-    Progress,
-    ProgressWeight
+    Progress
   },
   data: () => ({
     menus: [{
