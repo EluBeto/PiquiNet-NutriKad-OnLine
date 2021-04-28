@@ -6,7 +6,7 @@
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
-    <v-form ref="formAntecedentesHeredofamiliaresCard"
+    <v-form ref="formAntecedentesPersonalesNoPatologicosCard"
             v-model="arraySteps.arrayOfSteps[5].isValid"
             lazy-validation>
       <v-container>
@@ -170,9 +170,9 @@
           <v-col cols="12" sm="6" md="3">
             <v-text-field
                 v-if="antecedentesPersonalesNoPatologicos.actividadFicica"
-                :rules="rules.textRules"
+                :rules="rules.numberRules"
                 v-model="antecedentesPersonalesNoPatologicos.frecuencia"
-                type="text"
+                type="number"
                 prepend-icon="mdi-account"
                 label="Frecuencia"
                 color="primary"

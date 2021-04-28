@@ -1,44 +1,26 @@
 <template>
-  <div>
-    <Steps  v-if="!isRegistered && !getIsRegisteredUser"></Steps>
-
-    <template v-if="isRegistered" class="text-center">
-        <Carrusel></Carrusel>
-    </template>
-  </div>
+  <Steps  v-if="isActive"></Steps>
 </template>
 <script>
 import Steps from './Steps'
-import Carrusel from '../layouts/Carrusel'
 export default {
   name: 'Wizard',
   components: {
-    Steps,
-    Carrusel
+    Steps
   },
   data: () => ({}),
   computed: {
     getIsRegisteredUser() {
       return this.$store.getters['PersonalData/getIsRegisteredUser']
     },
-    isRegistered() {
+    isActive() {
       if (window.localStorage.getItem('registeredUser') === null) {
         return false
       } else {
         const {
-          isRegistered
+          isActive
         } = JSON.parse(window.localStorage.getItem('registeredUser'))
-        return isRegistered
-      }
-    },
-    gender() {
-      if (window.localStorage.getItem('registeredUser') === null) {
-        return false
-      } else {
-          const {
-            gender
-          } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return gender
+        return isActive
       }
     }
   }

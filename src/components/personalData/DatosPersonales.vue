@@ -14,6 +14,16 @@
         <v-divider></v-divider>
         <v-row>
           <v-col cols="12" sm="6" md="3">
+            <v-select
+                :rules="rules.campoObligatorio"
+                v-model="datosPersonales.tipoConsulta"
+                :items="tipoConsultas"
+                label="Tipo de Consulta"
+                prepend-icon="mdi-account"
+                required
+            ></v-select>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
             <v-text-field
                 :rules="rules.textRules"
                 v-model="datosPersonales.nombre"
@@ -72,10 +82,10 @@
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
+                maxlength="10"
                 :rules="rules.phoneRules"
                 v-model="datosPersonales.telefono"
                 prepend-icon="mdi-phone"
-                type="number"
                 label="Número de celular"
                 color="primary"
                 required
@@ -93,22 +103,25 @@
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
+            <v-select
+                :rules="rules.campoObligatorio"
+                v-model="datosPersonales.estadoCivil"
+                :items="estadoCivil"
+                label="Estado Civil"
+                prepend-icon="mdi-account"
+                required
+            ></v-select>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
             <v-text-field
                 :rules="rules.textRules"
-                v-model="datosPersonales.estadoCivil"
+                v-model="datosPersonales.direccion"
                 type="text"
                 prepend-icon="mdi-account-supervisor"
-                label="Estado Civil"
+                label="Dirección"
                 color="primary"
                 required
             ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-switch
-                inset
-                v-model="datosPersonales.genero"
-                label="¿Es mujer?"
-            ></v-switch>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
@@ -121,6 +134,13 @@
                 required
             ></v-text-field>
           </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-switch
+                inset
+                v-model="datosPersonales.genero"
+                label="¿Es mujer?"
+            ></v-switch>
+          </v-col>
         </v-row>
       </v-container>
     </v-form>
@@ -131,7 +151,10 @@
 export default {
   name: 'DatosPersonales',
   inject: ['$validator'],
-  data: () => ({}),
+  data: () => ({
+    tipoConsultas: ['On Line', 'Precencial'],
+    estadoCivil: ['Soltera(o)', 'Casada(o)', 'Viuda(o)', 'Divorciada(o)', 'Union Libre']
+  }),
   computed: {
     arraySteps() {
       return this.$store.getters['Steps/getSteps']

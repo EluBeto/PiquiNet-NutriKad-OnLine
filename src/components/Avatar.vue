@@ -16,7 +16,7 @@
               size="48"
             >
               <span class="white--text headline">
-                {{ 
+                {{
                   initials
                 }}
               </span>
@@ -30,7 +30,7 @@
                 color="yellow darken-4"
               >
                 <span class="white--text headline">
-                   {{ 
+                   {{
                       initials
                     }}
                   </span>
@@ -44,7 +44,7 @@
                 depressed
                 rounded
                 text
-                :disabled="!isRegistered"
+                :disabled="!isActive"
               >
                 Edita tus datos
               </v-btn>
@@ -65,17 +65,14 @@ export default {
     },
     data: () => ({}),
     computed: {
-      isRegisteredUser() {
-        return this.$store.getters['AuthenticationProcesses/getIsRegisteredUser']
-      },
-      isRegistered() {
+      isActive() {
         if (window.localStorage.getItem('registeredUser') === null) {
           return false
         } else {
           const {
-            isRegistered
+            isActive
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return isRegistered
+          return isActive
         }
       },
       name() {
@@ -83,11 +80,10 @@ export default {
           return 'Completa tu info'
         } else {
           const {
-            lastName,
-            motherLastName,
+            surnames,
             name
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return `${lastName} ${motherLastName} ${name}`
+          return `${surnames} ${name}`
         }
       },
       email() {
@@ -105,11 +101,10 @@ export default {
           return 'User'
         } else {
           const {
-            lastName,
-            motherLastName,
+            surnames,
             name
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return `${name.charAt(0)}${lastName.charAt(0)}${motherLastName.charAt(0)}`
+          return `${name.charAt(0)}${surnames.charAt(0)}`
         }
       }
     }

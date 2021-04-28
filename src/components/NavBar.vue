@@ -158,9 +158,9 @@
           return false
         } else {
           const {
-            isRegistered
+            isActive
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return isRegistered
+          return isActive
         }
       },
       isUserAdmin() {
@@ -168,9 +168,9 @@
           return []
         } else {
           const {
-            email
-          } = JSON.parse(window.localStorage.getItem('userAuth'))
-          if (email === 'elubeto@gmail.com' || email === 'b.karina.delart.mcs@outlook.es') {
+            typeUser
+          } = JSON.parse(window.localStorage.getItem('registeredUser'))
+          if (typeUser === 'Admin') {
             return this.itemsAdmin
           } else {
             return this.items

@@ -169,9 +169,9 @@ export default {
       isGender() {
         if (window.localStorage.getItem('registeredUser') != null) {
           const {
-            gender
+            genero
           } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return gender
+          return genero
         } else {
           return null
         }
@@ -179,7 +179,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}a tu panel de administración.`
+          subtitle: `${this.isGender === 'M' ? 'Bienvenida ' : 'Bienvenido '}a tu panel de administración.`
         }
         return mssage
       }

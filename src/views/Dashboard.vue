@@ -1,27 +1,24 @@
 <template>
-  <div>
-    <Progress></Progress>
+  <v-container>
     <v-row>
       <v-col md="12" class="pb-0 mt-2">
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
         <v-divider></v-divider>
-        <wizard class="mt-4"></wizard>
+        <Steps  v-if="isActive"></Steps>
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
-import Wizard from '../components/forms/Wizard'
-import Progress from '../components/layouts/Progress'
+import Steps from '../components/forms/Steps'
 
 export default {
   name: 'Dashboard',
   components: {
-    Wizard,
     SectionTitle,
-    Progress
+    Steps
   },
   data: () => ({
     menus: [{
@@ -41,22 +38,22 @@ export default {
           return `! Hola ¡ ${name}`
         }
       },
-      isGender() {
-        if (window.localStorage.getItem('registeredUser') != null) {
-          const {
-            gender
-          } = JSON.parse(window.localStorage.getItem('registeredUser'))
-          return gender
-        } else {
-          return null
-        }
-      },
       titleParameters() {
         let mssage = {
           title: this.userName,
           subtitle: 'Bienvenida a tu consultorio Online'
         }
         return mssage
+      },
+      isActive() {
+        if (window.localStorage.getItem('registeredUser') === null) {
+          return false
+        } else {
+          const {
+            isActive
+          } = JSON.parse(window.localStorage.getItem('registeredUser'))
+          return isActive
+        }
       }
     },
   created() {

@@ -2,100 +2,105 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="270px"
+      height="280px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
-    <v-form ref="formAntecedentesHeredofamiliaresCard"
-            v-model="arraySteps.arrayOfSteps[2].isValid"
+    <v-form ref="formDiabeticoCard"
+            v-model="arraySteps.arrayOfSteps[8].isValid"
             lazy-validation>
       <v-container>
-        <h3 class="text-center my-3 text-uppercase">antecedentes heredofamiliares</h3>
+        <h3 class="text-center my-3 text-uppercase">Control Dietético</h3>
         <v-divider></v-divider>
         <v-row>
           <v-col cols="12" sm="6" md="3">
+            <v-select
+                :rules="rules.campoObligatorio"
+                v-model="diabetico.apegoPlan"
+                :items="escala"
+                type="text"
+                prepend-icon="mdi-food-croissant"
+                label="Apego al Pan"
+                color="primary"
+                required
+            ></v-select>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-select
+                :rules="rules.campoObligatorio"
+                v-model="diabetico.escalaSueno"
+                :items="escala"
+                type="text"
+                prepend-icon="mdi-sleep"
+                label="Escala de Sueño"
+                color="primary"
+                required
+            ></v-select>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
             <v-text-field
-                v-model="antecedentesHeredofamiliares.diabetes"
+                :rules="rules.campoObligatorio"
+                v-model="diabetico.horaDespertar"
+                type="time"
+                prepend-icon="mdi-weather-partly-cloudy"
+                label="Hora al Despertar"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.campoObligatorio"
+                v-model="diabetico.horaDormir"
+                type="time"
+                prepend-icon="mdi-weather-night-partly-cloudy"
+                label="Hora al Dormir"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
                 :rules="rules.textRules"
+                v-model="diabetico.emociones"
                 type="text"
-                label="¿Diabetes?"
+                prepend-icon="mdi-emoticon-outline"
+                label="Emociones"
                 color="primary"
-                prepend-icon="mdi-account-switch-outline"
                 required
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
-                v-model="antecedentesHeredofamiliares.cancer"
                 :rules="rules.textRules"
+                v-model="diabetico.conductasAlimentarias"
                 type="text"
-                label="¿Cancer?"
+                prepend-icon="mdi-food"
+                label="Conductas Alimentarias"
                 color="primary"
-                prepend-icon="mdi-account-switch-outline"
                 required
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
-                v-model="antecedentesHeredofamiliares.hipertencionArtereal"
-                type="text"
-                label="¿HTA?"
-                color="primary"
-                prepend-icon="mdi-account-switch-outline"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-text-field
-                v-model="antecedentesHeredofamiliares.obesidad"
                 :rules="rules.textRules"
+                v-model="diabetico.logros"
                 type="text"
-                label="¿Obesidad?"
+                prepend-icon="mdi-account-star"
+                label="Logros"
                 color="primary"
-                prepend-icon="mdi-account-switch-outline"
                 required
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
-                v-model="antecedentesHeredofamiliares.cardiopatias"
                 :rules="rules.textRules"
+                v-model="diabetico.areasOportuidad"
                 type="text"
-                label="¿Cardiopatías?"
+                prepend-icon="mdi-account-convert-outline"
+                label="Áreas de Oportunidad"
                 color="primary"
-                prepend-icon="mdi-account-switch-outline"
                 required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-text-field
-                v-model="antecedentesHeredofamiliares.hepaticos"
-                :rules="rules.textRules"
-                type="text"
-                label="¿Hepáticos?"
-                color="primary"
-                prepend-icon="mdi-account-switch-outline"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-text-field
-                v-model="antecedentesHeredofamiliares.dislipidemias"
-                :rules="rules.textRules"
-                type="text"
-                label="¿Dislipidemias?"
-                color="primary"
-                prepend-icon="mdi-account-switch-outline"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-text-field
-                v-model="antecedentesHeredofamiliares.otros"
-                type="text"
-                label="Otros"
-                color="primary"
-                prepend-icon="mdi-account-switch-outline"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -106,9 +111,11 @@
 
 <script>
 export default {
-  name: 'AntecedentesHeredofamiliares',
+  name: 'Dietetico',
   inject: ['$validator'],
-  data: () => ({}),
+  data: () => ({
+    escala: ['Bueno', 'Malo', 'Regular']
+  }),
   computed: {
     arraySteps() {
       return this.$store.getters['Steps/getSteps']
@@ -116,8 +123,8 @@ export default {
     rules() {
       return this.$store.getters['Rules/getRules']
     },
-    antecedentesHeredofamiliares() {
-      return this.$store.getters['PersonalData/getAntecedentesHeredofamiliares']
+    diabetico() {
+      return this.$store.getters['PersonalData/getDietetico']
     }
   }
 }

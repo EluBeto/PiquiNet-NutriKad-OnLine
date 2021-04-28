@@ -6,7 +6,7 @@
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
-    <v-form ref="formAntecedentesHeredofamiliaresCard"
+    <v-form ref="formAntecedentesGinecoObstetricosCard"
             v-model="arraySteps.arrayOfSteps[4].isValid"
             lazy-validation>
       <v-container>
@@ -32,52 +32,61 @@
                 v-model="antecedentesGinecoObstetricos.menarca"
                 label="¿Menarca?"
                 type="text"
-                prepend-icon="mdi-head-question-outline"
+                prepend-icon="mdi-face-woman-shimmer"
                 color="primary"
                 required
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
+            <v-text-field
                 :disabled="!datosPersonales.genero"
-                inset
+                :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.climaterio"
+                prepend-icon="mdi-face-woman-shimmer"
+                type="text"
                 label="¿Climaterio? (menopausia)"
-            ></v-switch>
+                color="primary"
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
+            <v-text-field
                 :disabled="!datosPersonales.genero"
-                inset
+                :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.anticonceptivos"
+                prepend-icon="mdi-face-woman-shimmer"
+                type="text"
                 label="¿Anticonceptivos hormonales?"
-            ></v-switch>
+                color="primary"
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
                 :disabled="!datosPersonales.genero"
                 :rules="rules.numberRules"
                 v-model="antecedentesGinecoObstetricos.noGestas"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-human-pregnant"
                 type="number"
                 label="No. de Gestas"
                 color="primary"
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-switch
+            <v-text-field
                 :disabled="!datosPersonales.genero"
-                inset
+                :rules="rules.numberRules"
                 v-model="antecedentesGinecoObstetricos.noPartos"
+                prepend-icon="mdi-human-pregnant"
+                type="number"
                 label="¿Partos?"
-            ></v-switch>
+                color="primary"
+            ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
                 :disabled="!datosPersonales.genero"
                 :rules="rules.numberRules"
                 v-model="antecedentesGinecoObstetricos.semanasGestacion"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-human-pregnant"
                 type="number"
                 label="Semanas de Gestación"
                 color="primary"
@@ -89,7 +98,7 @@
                 :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.caracteristicasCiclo"
                 type="text"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-face-woman-shimmer"
                 label="Características de Ciclo"
                 color="primary"
             ></v-text-field>
@@ -109,7 +118,7 @@
                 :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.complicaciones"
                 type="text"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-face-woman-shimmer"
                 label="Complicaciones"
                 color="primary"
             ></v-text-field>

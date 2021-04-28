@@ -56,28 +56,20 @@ export default {
             }
             return response
         },
-        async getUserInformation({ rootState, commit }, payload) {
+        async getUserInformation({ rootState }, payload) {
             const {
                 localId,
                 idToken
             } = payload
-            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
+            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}Users/${localId}.json?auth=${idToken}`
             const response = await HttpServices.getRequest(url)
             if (response === null) return { response: 'sin registro' }
             if (response.error) return { response: response }
 
-            const newPayload = {
-                gender: response.datosPersonales.genero,
-                name: response.datosPersonales.nombre,
-                lastName: response.datosPersonales.apellidoPaterno,
-                motherLastName: response.datosPersonales.apellidoMaterno,
-                isShowPlan: response.datosPersonales.isShowPlan,
-                isRegistered: response.isRegisteredUser
+            if (window.localStorage.getItem('registeredUser') === null) {
+                window.localStorage.setItem('registeredUser', JSON.stringify(response))
             }
-            console.log('REGIS', newPayload, response)
-            window.localStorage.setItem('registeredUser', JSON.stringify(newPayload))
-            commit('SET_USER_INFORMATION', newPayload)
-            return newPayload
+            return response
         },
         clearAuthenticationProcesses({ state }, payload) {
             state.isErrorAuth = payload

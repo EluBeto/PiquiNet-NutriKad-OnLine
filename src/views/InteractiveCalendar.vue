@@ -134,15 +134,14 @@
 
 <script>
 export default {
-  name: "InteractiveCalendar",
   data: () => ({
     focus: '',
     type: 'month',
     typeToLabel: {
-      month: 'Month',
-      week: 'Week',
-      day: 'Day',
-      '4day': '4 Days'
+      month: 'Mes',
+      week: 'Semana',
+      day: 'Día',
+      '4day': '5 Días',
     },
     selectedEvent: {},
     selectedElement: null,
@@ -189,55 +188,35 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    updateRange () {
+    updateRange ({ start, end }) {
       const events = []
-      // { start, end }
-      // const min = new Date(`${start.date}T00:00:00`)
-      // const max = new Date(`${end.date}T23:59:59`)
-      // const days = (max.getTime() - min.getTime()) / 86400000
-      // const eventCount = this.rnd(days, days + 20)
 
-      events.push({
-        name: 'Agua',
-        start: new Date(),
-        end: new Date(),
-        color: this.colors[0],
-        timed: !true
-      })
-      events.push({
-        name: 'Comida',
-        start: new Date(),
-        end: new Date(),
-        color: this.colors[4],
-        timed: !true
-      })
-      /*
+      const min = new Date(`${start.date}T00:00:00`)
+      const max = new Date(`${end.date}T23:59:59`)
+      const days = (max.getTime() - min.getTime()) / 86400000
+      const eventCount = this.rnd(days, days + 20)
+
       for (let i = 0; i < eventCount; i++) {
         const allDay = this.rnd(0, 3) === 0
         const firstTimestamp = this.rnd(min.getTime(), max.getTime())
         const first = new Date(firstTimestamp - (firstTimestamp % 900000))
         const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
         const second = new Date(first.getTime() + secondTimestamp)
-        console.log('first', first)
-        console.log('second', second)
+
         events.push({
           name: this.names[this.rnd(0, this.names.length - 1)],
           start: first,
           end: second,
           color: this.colors[this.rnd(0, this.colors.length - 1)],
-          timed: !allDay
+          timed: !allDay,
         })
       }
-       */
 
       this.events = events
     },
     rnd (a, b) {
       return Math.floor((b - a + 1) * Math.random()) + a
     }
-  },
-  created() {
-    this.$store.dispatch('SetLayout', 'default-layout')
   }
 }
 </script>

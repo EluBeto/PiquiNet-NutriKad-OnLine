@@ -78,7 +78,7 @@ export default {
         password: this.loginParameters.login.password
       }
       this.setRememberParameters(credentials)
-      this.cleanAlert
+      this.cleanAlert()
 
       if (this.$refs.loginForm.validate()) {
         this.loginParameters.errorMessage = null
@@ -113,15 +113,15 @@ export default {
           this.showMessage(userResponse.error)
           this.$router.push('/')
         } else {
-          this.resetForm
+          this.resetForm()
           if (userResponse.response === 'sin registro') {
             this.$router.push('dashboard')
           } else {
             window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
-            if (response.email === 'elubeto@gmail.com' || response.email === 'b.karina.delart.mcs@outlook.es') {
+            if (userResponse.typeUser === 'Admin') {
               this.$router.push('dashboardAdmin')
             } else {
-             this.$router.push('dashboard')
+              this.$router.push('dashboard')
             }
           }
         }

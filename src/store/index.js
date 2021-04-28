@@ -19,7 +19,8 @@ export default new Vuex.Store({
     step: 1,
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
     barImage: '/img/dashboard.jpg',
-    drawer: null
+    drawer: null,
+    processingRequest: false
   },
   actions: {
     SetLayout({ commit }, layout) {
@@ -62,6 +63,9 @@ export default new Vuex.Store({
     },
     SET_DRAWER (state, payload) {
       state.drawer = payload
+    },
+    SET_PROCESSING_REQUEST (state, payload) {
+      state.processingRequest = payload
     }
   },
   getters: {

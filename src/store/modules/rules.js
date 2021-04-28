@@ -13,7 +13,7 @@ export default {
         textRules: [
           v => !!v || 'Campo obligarorio',
           v =>
-            /^(?=.*[a-zA-Z]).{3,100}$/.test(v) ||
+            /^(?=.*[a-zA-Z]).{2,100}$/.test(v) ||
             'Al parecer tienes un nombre muy corto'
         ],
         dateRules: [
@@ -22,8 +22,8 @@ export default {
         numberRules: [
           v => !!v || 'Campo obligarorio',
           v =>
-            /^(?=.*[0-9]).{1,2}$/.test(v) ||
-            'Tu edad es incorrecta'
+            /^(?=.*[0-9]).{1,100}$/.test(v) ||
+            'El campo debe ser un número'
         ],
         phoneRules: [
           v => !!v || 'Campo obligarorio',
@@ -36,6 +36,9 @@ export default {
           v =>
             /^(0|[1-9]\d*)(.\d+)?$/.test(v) ||
             "El valor que ingresaste es incorrecto, solo se permiten números"
+        ],
+        campoObligatorio: [
+            v => !!v || 'Campo obligarorio'
         ]
     },
     getters: {

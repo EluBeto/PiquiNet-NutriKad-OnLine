@@ -2,11 +2,11 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="350px"
+      height="880px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
-    <v-form ref="formAntecedentesHeredofamiliaresCard"
+    <v-form ref="formAntropometriaCard"
             v-model="arraySteps.arrayOfSteps[6].isValid"
             lazy-validation>
       <v-container>
@@ -18,7 +18,7 @@
                 :rules="rules.weightRules"
                 v-model="antropometria.peso"
                 type="text"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-weight-kilogram"
                 label="Peso Actual (Kg)"
                 color="primary"
                 required
@@ -29,8 +29,41 @@
                 :rules="rules.weightRules"
                 v-model="antropometria.estatura"
                 type="text"
-                prepend-icon="mdi-account"
+                prepend-icon="mdi-human-male-height"
                 label="Estatura (cm)"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.imc"
+                type="text"
+                prepend-icon="mdi-arm-flex-outline"
+                label="IMC"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.porcentajeGrasa"
+                type="text"
+                prepend-icon="mdi-percent-outline"
+                label="Porcentaje de Grasa"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.porcentajeMusculo"
+                type="text"
+                prepend-icon="mdi-percent-outline"
+                label="Porcentaje de Musculo"
                 color="primary"
                 required
             ></v-text-field>
@@ -40,8 +73,8 @@
                 :rules="rules.weightRules"
                 v-model="antropometria.cintura"
                 type="text"
-                prepend-icon="mdi-account"
-                label="Cintura"
+                prepend-icon="mdi-ruler"
+                label="Cintura (cm)"
                 color="primary"
                 required
             ></v-text-field>
@@ -51,135 +84,173 @@
                 :rules="rules.weightRules"
                 v-model="antropometria.cadera"
                 type="text"
-                prepend-icon="mdi-account"
-                label="Cadera"
+                prepend-icon="mdi-ruler"
+                label="Cadera (cm)"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.icc"
+                type="text"
+                prepend-icon="mdi-ruler"
+                label="ICC"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.espalda"
+                type="text"
+                prepend-icon="mdi-ruler"
+                label="Espalda"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.pectoral"
+                type="text"
+                prepend-icon="mdi-ruler"
+                label="Pectoral"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.weightRules"
+                v-model="antropometria.cinturaAlta"
+                type="text"
+                prepend-icon="mdi-ruler"
+                label="Cintura Alta"
                 color="primary"
                 required
             ></v-text-field>
           </v-col>
         </v-row>
-        <h3 class="text-center my-3 text-uppercase">comidas</h3>
         <v-divider></v-divider>
+        <br>
         <v-row>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.desayuno.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
+          <v-col cols="12" sm="6" md="6">
+            <v-card class="mx-auto">
+              <v-card-title class="text-center">
+                <p class="display-1 text--primary">
+                  Izquierdo
+                </p>
+              </v-card-title>
+              <v-card-text>
+                <v-row class="ma-0">
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.izquierdo.pbiRelajado"
+                        type="text"
+                        prepend-icon="mdi-arm-flex-outline"
+                        label="PBI Relajado"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.izquierdo.pbiFlexionado"
+                        type="text"
+                        prepend-icon="mdi-arm-flex-outline"
+                        label="PBI Flexionado"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.izquierdo.ppa"
+                        type="text"
+                        prepend-icon="mdi-seat-legroom-extra"
+                        label="PPA"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.izquierdo.pp"
+                        type="text"
+                        prepend-icon="mdi-seat-legroom-extra"
+                        label="PP"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
           </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.desayuno.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Qué desayunas?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.comida.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.comida.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Qué comes?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.cena.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.cena.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Qué cenas?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.mediaManana.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.mediaManana.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Qué comes a media mañana?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.mediaTarde.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.mediaTarde.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Qué comes a media tarde?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" md="1">
-            <v-text-field
-                v-model="comidas.adicional.hora"
-                type="time"
-                label="Hora"
-                color="primary"
-                required
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="3">
-            <v-textarea
-                v-model="comidas.adicional.descripcion"
-                prepend-inner-icon="mdi-comment"
-                class="mx-2"
-                rows="1"
-                label="¿Comes algo adicional?"
-                :rules="rules.textRules"
-                required
-            ></v-textarea>
+          <v-col cols="12" sm="6" md="6">
+            <v-card class="mx-auto">
+              <v-card-title class="text-center">
+                <p class="display-1 text--primary">
+                  Derecho
+                </p>
+              </v-card-title>
+              <v-card-text>
+                <v-row class="ma-0">
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.derecho.pbiRelajado"
+                        type="text"
+                        prepend-icon="mdi-arm-flex-outline"
+                        label="PBI Relajado"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.derecho.pbiFlexionado"
+                        type="text"
+                        prepend-icon="mdi-arm-flex-outline"
+                        label="PBI Flexionado"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.derecho.ppa"
+                        type="text"
+                        prepend-icon="mdi-seat-legroom-extra"
+                        label="PPA"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <v-text-field
+                        :rules="rules.weightRules"
+                        v-model="antropometria.derecho.pp"
+                        type="text"
+                        prepend-icon="mdi-seat-legroom-extra"
+                        label="PP"
+                        color="primary"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
       </v-container>
@@ -201,9 +272,6 @@ export default {
     },
     antropometria() {
       return this.$store.getters['PersonalData/getAntropometria']
-    },
-    comidas() {
-      return this.$store.getters['PersonalData/getComidas']
     }
   }
 }

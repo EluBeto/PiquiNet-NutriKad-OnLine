@@ -61,7 +61,6 @@
     }),
     methods: {
         showColor(categori) {
-            console.log('Entro', categori);
             switch (categori) {
                 case 'Verduras':
                     return 'lime lighten-3'
