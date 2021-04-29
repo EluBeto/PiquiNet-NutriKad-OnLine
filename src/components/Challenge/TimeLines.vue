@@ -37,7 +37,7 @@
             id: 2,
             title: 'Al despertar toma 1-2 vasos de agua natural',
             description: `
-            
+
             `
           },
           {
@@ -49,11 +49,11 @@
                         Alcaliniza tu cuerpo, y refuerza tu sistema inmunológico
                     </li>
                     <li>
-                        Si tienes tiempo agrega 1 jugo verde 20 min. antes de tu desayuno 
+                        Si tienes tiempo agrega 1 jugo verde 20 min. antes de tu desayuno
                     </li>
                 </ol>
                 </br>
-                (ver recetario de jugos) 
+                (ver recetario de jugos)
             `
           },
           {
@@ -76,7 +76,7 @@
             description: `
                 <ul>
                     <li>
-                        Ejercicio cardiovascular 30 min. 3X semana 
+                        Ejercicio cardiovascular 30 min. 3X semana
                     </li>
                     <li>
                         Ejercicio de resistencia 30 min. 3X semana
@@ -94,24 +94,24 @@
             description: `
                 <ul>
                     <li>
-                        2 L durante el día + 1 L de agua por hora de actividad física 
+                        2 L durante el día + 1 L de agua por hora de actividad física
                     </li>
                 </ul>
             `
           },
           {
             id: 7,
-            title: 'Alimentos que se deben evitar durante el Reto Ponte Fit y gana Salud con Nutrikad ',
+            title: 'Alimentos que se deben evitar durante el Reto Ponte Fit y Gana Salud 2.0 Ayuno Intermitente ',
             description: `
                 <ul>
                     <li>
-                        <b>NO</b> café con azúcar (únicamente café negro + con toque leche de almendras o coco 
+                        <b>NO</b> café con azúcar (únicamente café negro + con toque leche de almendras o coco
                     </li>
                     <li>
-                        <b>NO</b> alcohol 
+                        <b>NO</b> alcohol
                     </li>
                     <li>
-                        <b>NO</b> tabaco 
+                        <b>NO</b> tabaco
                     </li>
                     <li>
                         <b>NO</b> alimentos procesados, industrializados, o altamente contaminados.

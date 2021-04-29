@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Ponte Fit y Gana Salud con Nutrikad
+                Ponte Fit y Gana Salud 2.0 Ayuno Intermitente
             </h3>
         </v-card-title>
     <v-tabs
@@ -45,12 +45,22 @@
               <EatingChallenge></EatingChallenge>
           </v-card-text>
           <v-card-text v-if="item.content === 3">
-            <keep-alive>
-              <OneWeek></OneWeek>
-            </keep-alive>
+            <div v-if="isShowPlanOneWeek">
+              <keep-alive>
+                <OneWeek></OneWeek>
+              </keep-alive>
+            </div>
+            <v-skeleton-loader
+                ref="skeleton"
+                :boilerplate="boilerplate"
+                :type="type"
+                :tile="tile"
+                class="mt-5 mx-auto"
+                v-else
+            ></v-skeleton-loader>
           </v-card-text>
           <v-card-text v-if="item.content === 4">
-            <div v-if="!loading && isShowPlanSecondWeek">
+            <div v-if="isShowPlanSecondWeek">
               <keep-alive>
                 <SecondWeek></SecondWeek>
               </keep-alive>
@@ -64,10 +74,20 @@
                 v-else
             ></v-skeleton-loader>
           </v-card-text>
-          <v-card-text v-if="false">
-            <keep-alive>
-              <ThirdWeek></ThirdWeek>
-            </keep-alive>
+          <v-card-text v-if="item.content === 5">
+            <div v-if="isShowPlanThirdWeek">
+              <keep-alive>
+                <ThirdWeek></ThirdWeek>
+              </keep-alive>
+            </div>
+            <v-skeleton-loader
+                ref="skeleton"
+                :boilerplate="boilerplate"
+                :type="type"
+                :tile="tile"
+                class="mt-5 mx-auto"
+                v-else
+            ></v-skeleton-loader>
           </v-card-text>
         </v-card>
       </v-tab-item>
@@ -101,8 +121,8 @@ export default {
             { tab: 'Importante', content: 1, isAllowed: true },
             { tab: 'Tips para cocinar', content: 2, isAllowed: true },
             { tab: 'Primera Semana', content: 3, isAllowed: true },
-            { tab: 'Segunda Semana', content: 4, isAllowed: false }
-            // { tab: 'Tercera Semana', content: 5, isAllowed: false }
+            { tab: 'Segunda Semana', content: 4, isAllowed: false },
+            { tab: 'Tercera Semana', content: 5, isAllowed: false }
         ],
         boilerplate: false,
         tile: false,
@@ -118,10 +138,24 @@ export default {
         }
         return mssage
       },
+      isShowPlanOneWeek() {
+        const date = new Date()
+        let dateNow = date.getDate()
+        let monthNow = date.toDateString()
+        let fechaOK = dateNow >= 28 && monthNow.includes('Apr')
+        return fechaOK
+      },
       isShowPlanSecondWeek() {
         const date = new Date()
         let dateNow = date.getDate()
-        return dateNow >= 60
+        let monthNow = date.toDateString()
+        return dateNow >= 8 && monthNow.includes('May')
+      },
+      isShowPlanThirdWeek() {
+        const date = new Date()
+        let dateNow = date.getDate()
+        let monthNow = date.toDateString()
+        return dateNow >= 15 && monthNow.includes('May')
       }
 
     },

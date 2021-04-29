@@ -6,8 +6,8 @@ export default {
                 breakfastOrDinner: [
                     {
                         foodId: 1,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Omelette de vegetales mixtos!',
+                        image: '/img/champiomelet.jpg',
+                        title: '¡Champomelette!',
                         smallDescription: `
 
                         <small>
@@ -15,8 +15,14 @@ export default {
          </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+                             ½ taza champiñones rebanado
 </li>
+                            <li>
+                              1 rebanada pan integral
+</li>
+                            <li>
+                                2 huevos
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -26,18 +32,23 @@ export default {
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+                           ½ taza champiñones rebanado
+
 </li>
                             <li>
-1 huevo + 1 clara
+1 rebanada pan integral 
 </li>
                             <li>
-1/5 de pieza de Aguacate
+2 huevos 
 </li>
                             <li>
-½ cucharadita de aceite de oliva
+                             Aguacate 1/5 de pieza
 </li>
                             <li>
+                            Pizca de sal
+</li>
+                            <li>
+                            Salsa al gusto
 
 </li>
                         </ul>                    
@@ -49,16 +60,18 @@ export default {
                         </br> </br>
                         <ol>
                             <li>
-                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
+                                Coloca los huevos dentro de un recipiente, mezcla con un tenedor, agrega los champiñones y mezcla.
                             </li>
                             <li>
-                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
+                                En un sartén previamente calentado agrega la mezcla, dale la vuelta para que se termine de cocinar y tapa.
                             </li>
                             <li>
-                                 Dobla a la mitad y sirve.
+                            Emplata y agrega la salsa.
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
+                                    No olvides acompañar con un jugo.
+                                   1 manzana
+                                  5 almendras
                                     </li>
                                     <li>
                                     
@@ -70,8 +83,8 @@ export default {
                     },
                     {
                         foodId: 2,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Tapas dulces!',
+                        image: '/img/chilaquiles.jpg',
+                        title: '¡Chilaquiles con salsa de cacahuate!',
                         smallDescription: `
 
                         <small>
@@ -79,14 +92,11 @@ export default {
          </small>
                         <ul>
                             <li>
-½ manzana picada
+1 taza de mix de espinacas picadas, germen de alfalfa
 </li>
                             <li>
-5 galletas marías
+1 paquete de salmas trocedas.
 </li>
-                            <li>
-5 Cucharadas de queso cottage
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -96,16 +106,27 @@ export default {
   	         </small>
                         <ul>
                             <li>
-½ manzana picada
+                            1 taza de mix de espinacas picadas, germen de alfalfa, cebolla morada fileteada.
+
 </li>
                             <li>
-5 galletas marías
+1 paquete de salmas trocedas 
+
 </li>
                             <li>
-5 Cucharadas de queso cottage
+                           1 huevo entero y 1 clara.
 </li>
                             <li>
-½ barra de chocolate turin si n azúcar.
+2 rebanadas de jamón de pavo.
+</li>
+                            <li>
+30 gr de queso oaxaca bajo en grasa.
+</li>
+                            <li>
+                                  Para la salsa: 2 jitomates cocidos, 1 diente de ajo cocido, pedacito cebolla cocido, pedacito chile serrano cocido (Libre) 7 cacahuates naturales. Pizca sal y pimienta
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -116,19 +137,19 @@ export default {
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
+                               Salsa licua todos los ingredientes. Vierte la salsa en una olla y calienta hasta que suelte el hervor. Reserva.
                             </li>
                             <li>
-                                Coloca la mezcla anterior sobre las galletas.
+      Revuelve los huevos con el jamón y cocina muy bien. Sirve. Agrega las salmas y baña con la salsa.
+
                             </li>
                             <li>
-                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
+                            Cubre el huevo con el germen y las pinacas, decora con el queso y la cebolla.
                                 <ul>
                                     <li>
-                                    Corona las galletas con el chocolate derretido.
-                                    </li>
-                                    <li>
-                                    ½ manzana picada, ½ taza de yogurt natural.
+                                    Acompaña tu platillo con un jugo.
+                                      Fresas picadas- 8 piezas
+                                    Yogurt griego- 1 pieza
                                 </ul>
                             </li>
                         </ol>                     
@@ -136,8 +157,8 @@ export default {
                     },
                     {
                         foodId: 3,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Huevito ranchero!',
+                        image: '/img/pastelitoZ.jpg',
+                        title: '¡Fruticakes!',
                         smallDescription: `
 
                         <small>
@@ -145,11 +166,15 @@ export default {
          </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+¼ de Zanahoria rallada
 </li>
                             <li>
-2 tortilla de maíz.
+¼ de pieza de plátano
 </li>
+<li>
+3 cucharadas de avena 
+                            </li>
+
                         </ul>  . . .
                         `,
 
@@ -159,16 +184,163 @@ export default {
   	         </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+¼ de Zanahoria rallada
 </li>
                             <li>
-2 tortilla de maíz.
+¼ de pieza de plátano
 </li>
                             <li>
-1 huevos estrellado + 1 clara de huevo estrellda.
+3 cucharadas de avena 
 </li>
                             <li>
-Pimienta y sal al gusto.
+1 huevo 
+</li>
+                            <li>
+Pizca de polvo para hornear, canela en polvo y extracto de vainilla al gusto
+</li>
+                            <li>
+1 taza de mix de frutas (para decorar, no las licues)
+</li>
+                            <li>
+1 Yogurt natural griego
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua todos los ingredientes de los hotcakes hasta formar una mezcla homogénea.
+                            </li>
+                            <li>
+                                Vierte un poco de mezcla sobre un sartén caliente, cocina por ambos lados a fuego bajo y con tapa.
+                            </li>
+                            <li>
+                            Emplata.
+                                <ul>
+                                    <li>
+                                    Acompaña tus hotcakes con las frutas y el yogurt.
+                                    </li>
+                                    <li>
+                                    Almendra fileteada- 1 cucharada
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/pastelitoV.jpg',
+                        title: '¡Pastelito verde!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+¼ de plátano
+</li>
+                            <li>
+3 cucharadas de harina de avena
+</li>
+                            <li>
+¼ de taza de espinacas
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+¼ de plátano
+</li>
+                            <li>
+3 cucharadas de harina de avena
+</li>
+                            <li>
+¼ de taza de espinacas
+</li>
+                            <li>
+1 huevo 
+</li>
+                            <li>
+1 kiwi (para decorar, no se licua)
+</li>
+                            <li>
+Pizca de polvo para horner, estracto de vainilla y canela en polvo
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Licua todos los ingredientes hasta formar una mezcla homogénea.
+                            </li>
+                            <li>
+                                Vierte la mezcla en una taza apta para microondas y cocina durante 3 minutos.
+                            </li>
+                            <li>
+                            Enfria y desmolda.
+                                <ul>
+                                    <li>
+                                    Acompaña tu pastelito con 1 kiwi en rebanadas, 5 almendras y 4 cucharadas de yogurt natural.
+          
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/elBasico.jpg',
+                        title: '¡El básico!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 pieza de pan thins
+</li>
+                            <li>
+3 rebanadas de jamón de pavo
+</li>
+                            <li>
+40 gr de queso panela
+                            </li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 pieza de pan thins
+</li>
+                            <li>
+3 rebanadas de jamón de pavo
+</li>
+                            <li>
+40 gr de queso panela
+</li>
+                            <li>
+2 hojas de lechuga, 5 rodajas  de pepino pelado, jitomate al gusto
 </li>
                             <li>
 1/5 de pieza de aguacate
@@ -182,158 +354,16 @@ Pimienta y sal al gusto.
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
+                                Arma tu sandwch y disfruta.
                             </li>
                             <li>
-                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
+                                Licuado antioxidante: Leche de almendras sin azúcar 1 taza, fresas 6 piezas, chía 1 cucharadita, canela y vainilla al gusto.
                             </li>
                             <li>
-                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
+                            Licua todos los ingredientes y disfruta.
                                 <ul>
                                     <li>
-                                    1 manzana picada y 1 cucharada de yogurt
-                                    </li>
-                                    <li>
-                                    
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>                     
-                        `
-                    },
-                    {
-                        foodId: 4,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Crepa de mango!',
-                        smallDescription: `
-
-                        <small>
-<b>Ingredientes</b>
-         </small>
-                        <ul>
-                            <li>
-½  taza de jicama rallada
-</li>
-                            <li>
-¼ de pieza de plátano 
-</li>
-                            <li>
-3 cucharadas de harina de avena
-                            </li>
-                        </ul>  . . .
-                        `,
-
-                        ingredients: `
-                        <small>
-<b>Ingredientes</b>
-  	         </small>
-                        <ul>
-                            <li>
-½  taza de jicama rallada
-</li>
-                            <li>
-¼ de pieza de plátano 
-</li>
-                            <li>
-3 cucharadas de harina de avena
-</li>
-                            <li>
-1 huevo
-</li>
-                            <li>
-Un chorrito de leche
-</li>
-                            <li>
-Estracto de vainilla y canela en polvo al gusto
-</li>
-                        </ul>                    
-                        `,
-                        instructions: `
-                        <small>
-<b>Instrucciones</b>
-          </small>
-                        </br> </br>
-                        <ol>
-                            <li>
-                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
-                            </li>
-                            <li>
-                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
-                            </li>
-                            <li>
-                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
-                                <ul>
-                                    <li>
-                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
-                                    </li>
-                                    <li>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>                     
-                        `
-                    },
-                    {
-                        foodId: 5,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Panquecitos de fresa!',
-                        smallDescription: `
-
-                        <small>
-<b>Ingredientes</b>
-         </small>
-                        <ul>
-                            <li>
-½ taza de zanahoria rallada cruda
-</li>
-                            <li>
-¼ de pieza de plátano
-</li>
-                            <li>
-3 cucharadas de harina de avena
-                            </li>
-                        </ul>  . . .
-                        `,
-
-                        ingredients: `
-                        <small>
-<b>Ingredientes</b>
-  	         </small>
-                        <ul>
-                            <li>
-½ taza de zanahoria rallada cruda
-</li>
-                            <li>
-¼ de pieza de plátano
-</li>
-                            <li>
-4 cucharadas de harina de avena
-</li>
-                            <li>
-1 huevo
-</li>
-                            <li>
-Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
-</li>
-                        </ul>                    
-                        `,
-                        instructions: `
-                        <small>
-<b>Instrucciones</b>
-          </small>
-                        </br> </br>
-                        <ol>
-                            <li>
-                                Licua todos los ingredientes hasta tener una mezcla homogénea.
-                            </li>
-                            <li>
-                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
-                            </li>
-                            <li>
-                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
-                                <ul>
-                                    <li>
-                                    Nol olvides acompañar con un jugo.
+                                    Acompaña tu platillo con un jugo detox.
                                     </li>
                                     <li>
 
@@ -342,7 +372,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                             </li>
                         </ol>                     
                         `
-                    }
+                    },
                 ],
                 detoxJuice: [
                     {
@@ -380,7 +410,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -412,7 +442,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -445,7 +475,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -476,7 +506,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -515,7 +545,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -554,7 +584,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -627,7 +657,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -666,7 +696,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -717,8 +747,8 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foods: [
                     {
                         foodId: 1,
-                        image: '/img/comida.jpg',
-                        title: '¡Taquitos de pollo com aguacate!',
+                        image: '/img/hamburguesaM.jpg',
+                        title: '¡Hamburguesa Nutrikad!',
                         smallDescription: `
 
                         <small>
@@ -726,8 +756,14 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
          </small>
                         <ul>
                             <li>
-1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+60 gr de carne molida de res.
 </li>
+                            <li>
+1 rebanada de piña.
+</li>
+                            <li>
+1 pieza Pan thins. 
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -737,19 +773,26 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
   	         </small>
                         <ul>
                             <li>
-1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+60 gr de carne molida de res.
 </li>
                             <li>
-2 tortillas de maíz
+1 rebanada de piña natural (puedes asarla y colocarle canela).
 </li>
                             <li>
-70 gr de pechuga de pollo deshebrado
+1 pieza Pan thins. 
 </li>
                             <li>
-1/5 de pieza de aguacate
+40 gr de queso oaxaca bajo en grasa.
 </li>
                             <li>
-Pizca de sal y pimienta
+2 hojas de lechuga, 5 rodajas de pepino, jotomate, cebolla y chiles al gusto.
+</li>
+                            <li>
+Jamón de pavo 2 rebanadas.
+</li>
+                            <li>
+Aguacate 1/5 de pieza
+
 </li>
                         </ul>                    
                         `,
@@ -760,19 +803,83 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+                                Forma una milanesa con la carne, cocina por ambos lados puedes condimenta al gusto.
                             </li>
                             <li>
-                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                                Coloca las dos mitades de pan thins en un comal espera a que se caleinte y agrega los ingredientes.
                             </li>
                             <li>
                             Emplata.
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con 1 taza de verduras al gusto.
+                                    Acompaña tu platillo con alguna entrada.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 5,
+                        image: '/img/comida5M.jpg',
+                        title: '¡Desebrada de res con vegetales!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+Cebolla en bastones, ½ taza de champiñones picados
+</li>
+                            <li>
+60 gr de carne de res
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+Cebolla en bastones, ½ taza de champiñones picados
+</li>
+                            <li>
+50 gr de carne de res cocida y deshebrada
+</li>
+                            <li>
+30 gr de queso oaxaca
+</li>
+                            <li>
+2 tostadas horneadas sanissimo 
+</li>
+                            <li>
+1/5 de pieza de aguacte
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los champiñones y cocina hasta que reduzcan su tamaño, salipimienta al gusto.
+                            </li>
+                            <li>
+                                Agrega al sartén anterior la carne y mezcla, Monta encima el queso oaxaca ligth, tapa y deja que gratine.
+                            </li>
+                            <li>
+                            Sirve sobre las tostadas la mezcka anterior, decora con aguacate.
+                                <ul>
+                                    <li>
+                                    Acompaña una entrada.
                                     </li>
                                     <li>
-                                    
+
                                     </li>
                                 </ul>
                             </li>
@@ -781,8 +888,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 2,
-                        image: '/img/comida.jpg',
-                        title: '¡Mega taco de queso!',
+                        image: '/img/comida3.jpg',
+                        title: '¡Enchiladas!',
                         smallDescription: `
 
                         <small>
@@ -790,13 +897,13 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+1 taza de lechuga picada.
 </li>
                             <li>
-1 tortilla de harina 
+60 gr de pollo cocido en hebras.
 </li>
                             <li>
-60 gr de queso oaxaca light 
+2 piezas de tortillas de maíz.
                             </li>
                         </ul>  . . .
                         `,
@@ -807,19 +914,25 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+1 taza de lechuga picada.
 </li>
                             <li>
-1 tortilla de harina 
+60 gr de pollo cocido en hebras.
 </li>
                             <li>
-60 gr de queso oaxaca light 
+3 piezas de tortillas de maíz.
 </li>
                             <li>
-60 gr de pollo en trosos pequeños
+1/5 de pieza de aguacate.
 </li>
                             <li>
-2 cucharadas de guacamole, sal y pimienta al gusto
+¼ de taza de queso panela rallado.
+</li>
+                            <li>
+Salsa verde tradicional al gusto.
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -830,14 +943,14 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
+                                Salsa verde: 3 piezas de tomates, cebolla y ajo al gusto, agua, pizca de sal, chile serrano al gusto. Muele los ingredientes y   cocina a fuego bajo.
                             </li>
                             <li>
-                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
+                                Emplata.
                             </li>
                             <li>
-                            Emplata y decora con el guacamole
-                                    </li>
+                            Elabora tus enchiladas, corona con la lechuga, aguacate, queso.
+                                <ul>
                                     <li>
                                     Acompaña tu platillo con alguna entrada
                                 </ul>
@@ -847,8 +960,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 3,
-                        image: '/img/comida.jpg',
-                        title: '¡Arroz y carne!',
+                        image: '/img/comida2.jpg',
+                        title: '¡Gringa fit!',
                         smallDescription: `
 
                         <small>
@@ -856,10 +969,10 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+2 tortillas de maíz.
 </li>
                             <li>
-¼ de taza de arroz cocido
+1 taza de pimientos con cebolla y cilantro.
 </li>
                         </ul>  . . .
                         `,
@@ -870,19 +983,19 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+2 tortillas de maíz.
 </li>
                             <li>
-¼ de taza de arroz cocido
+1 taza de pimientos con cebolla y cilantro.
 </li>
                             <li>
-60 gr de carne de res cocida
+40 gr de queso oaxaca bajo en grasa.
 </li>
                             <li>
-1 cucharadita de aceite de oliva
+50 gr de pechuga de pollo deshebrada cocida
 </li>
                             <li>
-Pizca de sal y pimienta al gusto
+1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -893,19 +1006,16 @@ Pizca de sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
+                                Cocina en un sartén caliente los pimientos, cebolla y cilantro, cuando cambie de color agrega el pollo y espera a que se sasone.
                             </li>
                             <li>
-                                Sirve la cerne, brólo y a un lado el arroz.
+                                Coloca el queso sobre la mezcla anterior y espera a que se funda; forma las gringas.
                             </li>
                             <li>
-                            Vierte el aceite de oliva sobre tu platillo.
+                            Emplata, decora con el aguacate.
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con alguna entrada.
-                                    </li>
-                                    <li>
-                                    
+                                    Acompaña tu platillo con una entrada.
                                     </li>
                                 </ul>
                             </li>
@@ -914,8 +1024,8 @@ Pizca de sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/comida.jpg',
-                        title: '¡Tostadas de alambre!',
+                        image: '/img/comida5.jpg',
+                        title: '¡Pozole verde fit!',
                         smallDescription: `
 
                         <small>
@@ -923,10 +1033,10 @@ Pizca de sal y pimienta al gusto
          </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+                                  1 chile jalapeño, 1⁄2 chile serrano, 5 jitomates 
 </li>
                             <li>
-2 tostadas sanissimo
+2 tazas de caldo de pollo.
 </li>
                         </ul>  . . .
                         `,
@@ -937,82 +1047,18 @@ Pizca de sal y pimienta al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+1 chile jalapeño, 1⁄2 chile serrano, 5 jitomates, pedacito cebolla, 2 ajos, manojito de cilantro. </li>
+                            <li>
+2 tazas de caldo de pollo.
 </li>
                             <li>
-2 tostadas sanissimo
+60 gr de pechuga de pollo en hebras cocida.
 </li>
                             <li>
-60 gr de carne de res asada.
+1/5 de pieza de aguacate. 
 </li>
                             <li>
-1/5 de pieza de aguacate, sal y pimienta al gusto.
-</li>
-                        </ul>                    
-                        `,
-                        instructions: `
-                        <small>
-<b>Instrucciones</b>
-          </small>
-                        </br> </br>
-                        <ol>
-                            <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
-                            </li>
-                            <li>
-                                Agrega la carne de res al sartén anterior y mezcla.
-                            </li>
-                            <li>
-                            Monta el alambre sobre las tostadas,
-                                <ul>
-                                    <li>
-                                    Decora con el aguacate, agrega alguna entrada.
-                                    </li>
-                                    <li>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>                     
-                        `
-                    },
-                    {
-                        foodId: 5,
-                        image: '/img/comida.jpg',
-                        title: '¡Brocoli salad!',
-                        smallDescription: `
-
-                        <small>
-<b>Ingredientes</b>
-         </small>
-                        <ul>
-                            <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
-</li>
-                            <li>
-½ taza de pasta cocida
-</li>
-                        </ul>  . . .
-                        `,
-
-                        ingredients: `
-                        <small>
-<b>Ingredientes</b>
-  	         </small>
-                        <ul>
-                            <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
-</li>
-                            <li>
-½ taza de pasta cocida
-</li>
-                            <li>
-70 gr de pechuga de pollo cocida
-</li>
-                            <li>
-½ cucharadita de aceite de oliva
-</li>
-                            <li>
-Sal y pimienta al gusto
+Pizaca de sal, oregano y comino.
 </li>
                         </ul>                    
                         `,
@@ -1023,16 +1069,22 @@ Sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Monta como base en un bowl el brócoli y la espinaca.
+                              Cuce la cebolla, jitomate, ajo y chiles con agua en una olla hasta que estén blanditos. 
                             </li>
                             <li>
-                                Agrega encima la pechuga de pollo, la pasat y mezcla.
+                                Licua las verduras cocidas con cilantro, condimentos y caldo de verduras. 
                             </li>
                             <li>
-                            Vierte el aceite de oliva. Salpimienta al gusto.
+                            Emplata.
                                 <ul>
                                     <li>
-                                    Acompaña una entrada.
+                                    Pasa a una cazuela y hierve. Agrega los granos de maíz y el pollo desmenuzado, cocina a fuego bajo por 10 minutos. 
+                                <ul>
+                                    <li>
+                                    Sirve y agrega lechuga rebanada, rábano, aguacate y limón. 
+                                <ul>
+                                    <li>
+                                       No olvides acompañar tu platillo con una entrada.
                                     </li>
                                 </ul>
                             </li>
@@ -1043,7 +1095,7 @@ Sal y pimienta al gusto
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1073,7 +1125,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1107,7 +1159,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1136,7 +1188,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1175,7 +1227,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3657,48 +3709,74 @@ Sal y pimienta al gusto
             oneWeek: {
                 breakfastOrDinner: [
                     {
-                        foodId: 1,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Huevito rappidito!',
+                        foodId: 2,
+                        image: '/img/chilaquiles.jpg',
+                        title: '¡Chilaquiles con salsa de cacahuate!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>Huevo entero: 3 piezas</li>
-                            <li>Espinacas 1 ½ taza</li>
-                            <li>Cebolla y chile al gusto</li>
+                            <li>
+1 taza de mix de espinacas picadas, germen de alfalfa
+</li>
+                            <li>
+2 paquete de salmas trocedas.
+</li>
                         </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                            <li>Huevo entero: 3 piezas</li>
-                            <li>Espinacas 1 ½ taza</li>
-                            <li>Cebolla y chile al gusto</li>
-                            <li>Tortilla de maíz 2 pieza </li>
+                            <li>
+                            1 taza de mix de espinacas picadas, germen de alfalfa, cebolla morada fileteada.
+
+</li>
+                            <li>
+2 paquete de salmas trocedas 
+
+</li>
+                            <li>
+                           1 huevo entero y 2 claras.
+</li>
+                            <li>
+3 rebanadas de jamón de pavo.
+</li>
+                            <li>
+50 gr de queso oaxaca bajo en grasa.
+</li>
+                            <li>
+                                  Para la salsa: 2 jitomates cocidos, 1 diente de ajo cocido, pedacito cebolla cocido, pedacito chile serrano cocido (Libre) 7 cacahuates naturales. Pizca sal y pimienta
+</li>
+                            <li>
+
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                                En una sartén caliente cocina la cebolla, cuando esté suave, agrega el huevo, y revuelve.
+                               Salsa licua todos los ingredientes. Vierte la salsa en una olla y calienta hasta que suelte el hervor. Reserva.
                             </li>
                             <li>
-                                Al final añade las espinacas.
+      Revuelve los huevos con el jamón y cocina muy bien. Sirve. Agrega las salmas y baña con la salsa.
+
                             </li>
                             <li>
-                            Emplata.
+                            Cubre el huevo con el germen y las pinacas, decora con el queso y la cebolla.
                                 <ul>
                                     <li>
-                                    Acompaña tu omelette con la tortilla.
-                                    </li>
-                                    <li>
-                                    Manzana amarilla 1 pieza
-                                    </li>
-                                    <li>
-                                    Almendras 5 piezas
-                                    </li>
+                                    Acompaña tu platillo con un jugo.
+                                      Fresas picadas- 8 piezas
+                                    Yogurt griego- 1 pieza
                                 </ul>
                             </li>
                         </ol>                     
@@ -3706,7 +3784,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/desayuno.jpg',
+                        image: '/img/tacoR.jpg',
                         title: '¡Taco rojo!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3759,7 +3837,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/desayuno.jpg',
+                        image: '/img/pastelitoZ.jpg',
                         title: '¡Pastel de zanahoria y manzana!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3820,7 +3898,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/desayuno.jpg',
+                        image: '/img/espagueti.jpg',
                         title: '¡Espagueti con vegetales!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3877,59 +3955,79 @@ Sal y pimienta al gusto
                         `
                     },
                     {
-                        foodId: 5,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Nutrikad-sándwich!',
+                        foodId: 1,
+                        image: '/img/champiomelet.jpg',
+                        title: '¡Champomelette!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
                             <li>
-                                2 rebanadas de pan bimbo cero
-                            </li>
+                             ½ taza champiñones rebanado
+</li>
                             <li>
-                            70 gr queso panela
-                            </li>
-                        </ul> . . .
+                              2 rebanada pan integral
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
                             <li>
-                                2 rebanadas de pan bimbo cero
-                            </li>
+                           ½ taza champiñones rebanado
+
+</li>
                             <li>
-                            70 gr queso panela
-                            </li>
+2 rebanada pan integral 
+</li>
                             <li>
-                            Huevo estrellado 2 pieza
-                            </li>
+2 huevos 
+</li>
                             <li>
-                            2 hojas de lechuga
-                            </li>
+                             Aguacate 1/5 de pieza
+</li>
                             <li>
-                            Zanahoria rallada (libre)
-                            </li>
+                            Pizca de sal
+</li>
                             <li>
-                             ¼ de pieza de aguacate
-                            </li>
+                            Salsa al gusto
+
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Coloca todos los ingredientes entre las 2 rebanadas de pan
+                                Coloca los huevos dentro de un recipiente, mezcla con un tenedor, agrega los champiñones y mezcla.
                             </li>
                             <li>
-                            Guayabas 2 piezas
+                                En un sartén previamente calentado agrega la mezcla, dale la vuelta para que se termine de cocinar y tapa.
                             </li>
                             <li>
-                            Yogurt 1 pieza
+                            Emplata y agrega la salsa.
+                                <ul>
+                                    <li>
+                                    No olvides acompañar con un jugo.
+                                   1 manzana
+                                  5 almendras
+                                    </li>
+                                    <li>
+                                    
+                                    </li>
+                                </ul>
                             </li>
                         </ol>                     
                         `
-                    }
+                    },
                 ],
                 detoxJuice: [
                     {
@@ -3967,7 +4065,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3998,7 +4096,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4031,7 +4129,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4062,7 +4160,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4101,13 +4199,14 @@ Sal y pimienta al gusto
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 taza de pedacitos de brócoli y coliflor </li>
                             <li>¼  taza de zanahoria picada en cubitos pequeños . . . </li>
+                            <li>¼  taza de chícharos </li>
                         </ul>
                         `,
                         ingredients: `
@@ -4140,7 +4239,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4213,7 +4312,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4252,7 +4351,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4303,141 +4402,147 @@ Sal y pimienta al gusto
                 foods: [
                     {
                         foodId: 1,
-                        image: '/img/comida.jpg',
-                        title: '¡Tostadas de pollo!',
+                        image: '/img/comida1.jpg',
+                        title: '¡Hamburguesa Nutrikad!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
                             <li>
-                            1 taza zanahoria rallada 
-                            </li>
+100 gr de carne molida de res.
+</li>
                             <li>
-                            ½ pimiento verde en tiras
+2 Panes para hamburguesa bimbo 
                             </li>
-                            
-                        </ul> . . .
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
                             <li>
-                            ½ taza zanahoria rallada 
-                            </li>
+100 gr de carne molida de res.
+</li>
                             <li>
-                            ½ pimiento verde en tiras 
-                            </li>
+1 rebanada de piña natural (puedes asarla y colocarle canela).
+</li>
                             <li>
-                            3 tostadas sanissimo 
-                            </li>
+2 Panes para hamburguesa bimbo 
+</li>
                             <li>
-                            160 gramos pechuga de pollo deshebrada cocida 
-                            </li>
-                            <li>60 gramos queso Oaxaca light rallado </li>
-                            <li>1/5  de pieza aguacate </li>
-                        </lul>
-                        </br>    
-                        <small><b>Salsa</b></small>
-                        <ul>
+80 gr de queso oaxaca bajo en grasa.
+</li>
                             <li>
-                            2 jitomates cocidos 
-                            </li>
+3 hojas de lechuga, 5 rodajas de pepino, jotomate, cebolla y chiles al gusto.
+</li>
                             <li>
-                            1 chile serrano cocido
-                            </li>
+Jamón de pavo 3 rebanadas.
+</li>
                             <li>
-                            pedacito cebolla cocida al gusto
-                            </li>
-                            <li>1 diente de ajo  </li>
-                        </lul>                
+Aguacate 1/5 de pieza
+
+</li>
+                        </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            <b>Para la salsa</b>: licua todos los ingredientes.
+                                Forma una milanesa con la carne, cocina por ambos lados puedes condimenta al gusto.
+                            </li>
+                            <li>
+                                Coloca las dos mitades de pan thins en un comal espera a que se caleinte y agrega los ingredientes.
+                            </li>
+                            <li>
+                            Emplata.
                                 <ul>
                                     <li>
-                                    Cuela la salsa.
+                                    Acompaña tu platillo con alguna entrada.
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                            Vierte la salsa una olla, agrega el pollo, zanahoria y pimiento.
-                            </li>
-                            <li>
-                            Calienta hasta que suelte el hervor. Reserva.
-                            </li>
-                            <li>
-                            Emplata las tostadas.
-                            </li>
-                            <li>
-                            Agrega el aguacate machacado sobre ellas.
-                            </li>
-                            <li>
-                            Coloca la tinga sobre las tostadas.
-                            </li>
-                            <li>
-                            Decora con el queso.
-                            </li>
-                        </ol>                       
-                        `
-                    },
-                    {
-                        foodId: 2,
-                        image: '/img/comida.jpg',
-                        title: '¡Taquitos Nutrikadfit!',
-                        smallDescription: `
-                        <small><b>Ingredientes</b></small>
-                        <ul>
-                            <li>1/3 betabel rallado</li>
-                            <li>½ pimiento amarillo en tiras</li>
-                        </ul> . . .
-                        `,
-                        ingredients: `
-                        <small><b>Ingredientes</b></small>
-                        <ul>
-                                    <li>1/3 betabel rallado</li>
-                                    <li>½ pimiento amarillo en tiras</li>
-                                    <li>puñito germen de alfalfa</li>
-                                    <li>pedacito chile serrano rebanado </li>
-                                    <li>3 tortillas de maíz </li>
-                                    <li>400 gramos filete de pescado </li>
-                                    <li>15 gramos aguacate rebanado </li>
-                                    <li>3 cucharadas jugo de limón</li>
-                                    <li>2 cucharadas jugo de naranja</li>
-                                    <li>pizca sal y pimienta</li>
-                                    <li>pizca pimienta de cayena </li>
-                                </ul>                   
-                        `,
-                        instructions: `
-                        <small><b>Instrucciones</b></small>
-                        </br> </br>
-                        <ol>
-                            <li>
-                            Vierte el jugo de limón, naranja, sal, pimienta y pimienta de cayena en un recipiente.
-                            </li>
-                            <li>
-                            Corta el pescado en trozos y colócalos dentro del recipiente anterior.
-                            </li>
-                            <li>
-                            Deja reposar por 10 minutos. Coloca el pescado dentro de papel aluminio, sella bien el papel y cocínalo por los dos lados.
-                            </li>
-                            <li>
-                            Calienta las tortillas y rellena con el pescado y las verduras.
-                            </li>
-                            <li>
-                            Agrega un poco mas de pimienta cayena.
-                            </li>
-                            <li>
-                            Decora con el aguacate.
-                            </li>
-                        </ol>                       
+                        </ol>                     
                         `
                     },
                     {
                         foodId: 3,
-                        image: '/img/comida.jpg',
+                        image: '/img/comida3.jpg',
+                        title: '¡Enchiladas!',
+                        smallDescription: `
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
+                        <ul>
+                            <li>
+1 taza de lechuga picada.
+</li>
+                            <li>
+60 gr de pollo cocido en hebras.
+</li>
+                        </ul>  . . .
+                        `,
+
+                        ingredients: `
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
+                        <ul>
+                            <li>
+1 taza de lechuga picada.
+</li>
+                            <li>
+90 gr de pollo cocido en hebras.
+</li>
+                            <li>
+3 piezas de tortillas de maíz.
+</li>
+                            <li>
+1/5 de pieza de aguacate.
+</li>
+                            <li>
+¼ de taza de queso panela rallado.
+</li>
+                            <li>
+Salsa verde tradicional al gusto.
+</li>
+                            <li>
+
+</li>
+                        </ul>                    
+                        `,
+                        instructions: `
+                        <small>
+<b>Instrucciones</b>
+          </small>
+                        </br> </br>
+                        <ol>
+                            <li>
+                                Salsa verde: 3 piezas de tomates, cebolla y ajo al gusto, agua, pizca de sal, chile serrano al gusto. Muele los ingredientes y   cocina a fuego bajo.
+                            </li>
+                            <li>
+                                Emplata.
+                            </li>
+                            <li>
+                            Elabora tus enchiladas, corona con la lechuga, aguacate, queso.
+                                <ul>
+                                    <li>
+                                    Acompaña tu platillo con alguna entrada
+                                </ul>
+                            </li>
+                        </ol>                     
+                        `
+                    },
+                    {
+                        foodId: 4,
+                        image: '/img/comida4.jpg',
                         title: '¡Plato de vegetales con queso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4480,100 +4585,130 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/comida.jpg',
-                        title: '¡Pescado a la mexicana!',
+                        image: '/img/taquitosNK.jpg',
+                        title: '¡Taquitos Nutrikadfit!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>1/2 pimiento morrón amarillo</li>
-                            <li>1/2 jitomate y pedacitos de cebolla </li>
+                            <li>1/3 betabel rallado</li>
+                            <li>½ pimiento amarillo en tiras</li>
                         </ul> . . .
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                        <li>1/2 pimiento morrón amarillo</li>
-                                <li>1/2 jitomate y pedacitos de cebolla </li>
-                                    <li>2 paquetes de Salmas </li>
-                                    <li>320 gramos filete de pescado </li>
-                                    <li>¼ gramos de aguacate </li>
-                                    <li>Pizca de hierbas finas y ajo en polvo </li>
-                                </ul>
-                        </ul>                    
+                                    <li>1/3 betabel rallado</li>
+                                    <li>½ pimiento amarillo en tiras</li>
+                                    <li>puñito germen de alfalfa</li>
+                                    <li>pedacito chile serrano rebanado </li>
+                                    <li>3 tortillas de maíz </li>
+                                    <li>800 gramos filete de pescado </li>
+                                    <li>15 gramos aguacate rebanado </li>
+                                    <li>3 cucharadas jugo de limón</li>
+                                    <li>2 cucharadas jugo de naranja</li>
+                                    <li>pizca sal y pimienta</li>
+                                    <li>pizca pimienta de cayena </li>
+                                </ul>                   
                         `,
                         instructions: `
                         <small><b>Instrucciones</b></small>
                         </br> </br>
                         <ol>
                             <li>
-                            Corta en cubos los pimientos morrones, jitomate y cebolla.  
+                            Vierte el jugo de limón, naranja, sal, pimienta y pimienta de cayena en un recipiente.
                             </li>
                             <li>
-                            Guisa las verduras y agrega una pizca de ajo.
+                            Corta el pescado en trozos y colócalos dentro del recipiente anterior.
                             </li>
                             <li>
-                            Cocina el filete de pescado con hierbas finas y sirve.
+                            Deja reposar por 10 minutos. Coloca el pescado dentro de papel aluminio, sella bien el papel y cocínalo por los dos lados.
                             </li>
                             <li>
-                            Emplata el pescado con el guiso de verduras.
+                            Calienta las tortillas y rellena con el pescado y las verduras.
                             </li>
                             <li>
-                            Decora con el aguacate. 
+                            Agrega un poco mas de pimienta cayena.
                             </li>
-                        </ol>     
-                        Acompaña con las Salmas.            
+                            <li>
+                            Decora con el aguacate.
+                            </li>
+                        </ol>                       
                         `
                     },
                     {
                         foodId: 5,
-                        image: '/img/comida.jpg',
-                        title: '¡Taquitos de nopales con pollo y queso!',
+                        image: '/img/comida5.jpg',
+                        title: '¡Pozole verde fit!',
                         smallDescription: `
-                        <small><b>Ingredientes</b></small>
+
+                        <small>
+<b>Ingredientes</b>
+         </small>
                         <ul>
-                            <li>1 taza nopales cocidos </li>
-                            <li>pedacito de cebolla</li>
-                        </ul> . . .
+                            <li>
+                                  1 chile jalapeño, 1⁄2 chile serrano
+</li>
+                            <li>
+2 tazas de caldo de pollo.
+</li>
+                        </ul>  . . .
                         `,
+
                         ingredients: `
-                        <small><b>Ingredientes</b></small>
+                        <small>
+<b>Ingredientes</b>
+  	         </small>
                         <ul>
-                        <li>1 jitomate, </li>
-                            <li>3 tortillas de maíz </li>
-                            <li>200 gramos pechuga de pollo </li>
-                            <li>pedacito de cebolla</li>
-                            <li>100 gramos queso Oaxaca light rallado </li>
-                            <li>¼ de pieza de aguacate </li>
-                            <li>Pizca sal y pimienta, 2 cucharaditas salsa Maggie baja en sodio, jugo de 1 limón (Libre)</li>
+                            <li>
+1 chile jalapeño, 1⁄2 chile serrano, 5 jitomates, pedacito cebolla, 2 ajos, manojito de cilantro. </li>
+                            <li>
+2 tazas de caldo de pollo.
+</li>
+                            <li>
+60 gr de pechuga de pollo en hebras cocida.
+</li>
+                            <li>
+1/5 de pieza de aguacate. 
+</li>
+                            <li>
+Pizaca de sal, oregano y comino.
+</li>
                         </ul>                    
                         `,
                         instructions: `
-                        <small><b>Instrucciones</b></small>
+                        <small>
+<b>Instrucciones</b>
+          </small>
                         </br> </br>
                         <ol>
                             <li>
-                            Mezcla la salsa Maggie con el limón.
+                              Cuce la cebolla, jitomate, ajo y chiles con agua en una olla hasta que estén blanditos. 
                             </li>
                             <li>
-                            Unta la mezcla en el pollo y asa por los dos lados. 
+                                Licua las verduras cocidas con cilantro, condimentos y caldo de verduras. 
                             </li>
                             <li>
-                            Cuando esté cocido el pollo, agrega el queso para que se derrita y tapa el sartén.
+                            Emplata.
+                                <ul>
+                                    <li>
+                                    Pasa a una cazuela y hierve. Agrega los granos de maíz y el pollo desmenuzado, cocina a fuego bajo por 10 minutos. 
+                                <ul>
+                                    <li>
+                                    Sirve y agrega lechuga rebanada, rábano, aguacate y limón. 
+                                <ul>
+                                    <li>
+                                       No olvides acompañar tu platillo con una entrada.
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                            Sirve y decora con los champiñones y aguacate. Salpimenta.
-                            </li>
-                            <li>
-                            Acompaña con los nopales y las tortillas.
-                            </li>
-                        </ol>                 
+                        </ol>                     
                         `
                     }
                 ],
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4603,7 +4738,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4637,7 +4772,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4666,7 +4801,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -4705,7 +4840,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>

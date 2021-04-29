@@ -71,7 +71,8 @@ export default new Vuex.Store({
     isShowPlan() {
       const date = new Date()
       let dateNow = date.getDate()
-      return dateNow >= 60
+      let monthNow = date.toDateString()
+      return dateNow >= 28 && monthNow.includes('Apr')
     }
   },
   modules: {

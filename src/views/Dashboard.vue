@@ -67,7 +67,7 @@ export default {
       titleParameters() {
         let mssage = {
           title: this.userName,
-          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud con Nutrikad"`
+          subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}al reto, "Ponte Fit y Gana Salud 2.0 Ayuno Intermitente"`
         }
         return mssage
       }

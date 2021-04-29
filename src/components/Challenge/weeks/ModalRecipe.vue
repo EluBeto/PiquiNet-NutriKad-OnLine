@@ -40,7 +40,7 @@
             <v-divider></v-divider>
                 <br>
             <h5 class="my-2 text-justify">
-              Nota: las colaciones y las entradas seran las mismas para los 15 días,
+              Nota: las colaciones y las entradas seran las mismas para lo que dure el reto,
               lo unico que cambiará cada semana sera desayunos o cenas y comidas.
             </h5>
             </v-card-text>
