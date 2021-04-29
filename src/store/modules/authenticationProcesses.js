@@ -64,7 +64,7 @@ export default {
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}Users/${localId}.json?auth=${idToken}`
             const response = await HttpServices.getRequest(url)
             if (response === null) return { response: 'sin registro' }
-            if (response.error) return { response: response }
+            if (response.error !== undefined) return { response: response }
 
             if (window.localStorage.getItem('registeredUser') === null) {
                 window.localStorage.setItem('registeredUser', JSON.stringify(response))

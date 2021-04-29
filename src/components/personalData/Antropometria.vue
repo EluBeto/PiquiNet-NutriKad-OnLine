@@ -21,6 +21,7 @@
                 prepend-icon="mdi-weight-kilogram"
                 label="Peso Actual (Kg)"
                 color="primary"
+                @keyup="calculaIMC"
                 required
             ></v-text-field>
           </v-col>
@@ -272,6 +273,16 @@ export default {
     },
     antropometria() {
       return this.$store.getters['PersonalData/getAntropometria']
+    }
+  },
+  methods: {
+    calculaIMC() {
+      let imc = 0
+      let estatura = this.$store.state.PersonalData.antropometria.estatura
+      let estaturaCuadrado = estatura * 2
+      let peso = this.$store.state.PersonalData.antropometria.peso
+      imc = peso / estaturaCuadrado
+      this.$store.state.PersonalData.antropometria.imc = imc.toFixed(2)
     }
   }
 }

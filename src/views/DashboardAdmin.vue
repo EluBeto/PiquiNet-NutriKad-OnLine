@@ -132,17 +132,22 @@
               <PatientsRegisterTable :patientsRegister="patientsRegister"></PatientsRegisterTable>
           </v-col>
       </v-row>
+    <MessageAlerts class="mt-3"
+                   v-if="alerts.snackbar.modelMessage"
+    ></MessageAlerts>
   </v-container>
 </template>
 
 <script>
 import SectionTitle from '../components/forms/SectionTitle'
 import PatientsRegisterTable from '../components/admin/PatientsRegisterTable'
+import MessageAlerts from '@/components/forms/MessageAlerts'
 export default {
   name: 'DashboardAdmin',
   components: {
       SectionTitle,
-      PatientsRegisterTable
+      PatientsRegisterTable,
+      MessageAlerts
   },
   data: () => ({
     menus: [{
@@ -156,6 +161,9 @@ export default {
     totalM: 0
   }),
    computed: {
+     alerts() {
+       return this.$store.getters['MessageAlerts/getAlerts']
+     },
       userName() {
         if (window.localStorage.getItem('registeredUser') === null) {
           return ''

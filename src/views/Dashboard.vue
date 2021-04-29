@@ -4,6 +4,12 @@
       <v-col md="12" class="pb-0 mt-2">
         <SectionTitle :titleParameters="titleParameters"></SectionTitle>
         <v-divider></v-divider>
+        <br>
+        <v-row>
+          <v-col class="text-lg-end" cols="12" sm="12" md="12">
+            <v-btn color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica</v-btn>
+          </v-col>
+        </v-row>
         <Steps  v-if="isActive"></Steps>
       </v-col>
     </v-row>

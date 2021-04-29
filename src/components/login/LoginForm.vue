@@ -88,7 +88,6 @@ export default {
           password: this.loginParameters.login.password
         })
         .then(response => {
-
           if (response.error) {
 
             this.showMessage(response.error)
@@ -117,6 +116,7 @@ export default {
           if (userResponse.response === 'sin registro') {
             this.$router.push('dashboard')
           } else {
+
             window.localStorage.setItem('registeredUser', JSON.stringify(userResponse))
             if (userResponse.typeUser === 'Admin') {
               this.$router.push('dashboardAdmin')

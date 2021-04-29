@@ -1,9 +1,56 @@
 <template>
   <v-container>
-    <v-card elevation="0">
-      <v-card-subtitle>
-       <h3> Paciente: {{ $store.state.PersonalData.nobreCompleto }} </h3>
+    <v-card elevation="1">
+      <v-card-subtitle class="text-center">
+        <b>Datos del Paciente</b>
       </v-card-subtitle>
+      <v-divider></v-divider>
+      <v-card-text>
+        <v-row>
+          <v-col cols="12" sm="12" md="12">
+            <h4> Nombre: {{ $store.state.PersonalData.nobreCompleto }} </h4>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" sm="6" md="6">
+            <v-card>
+              <v-card-subtitle class="text-center">Medidas de ultima consulta</v-card-subtitle>
+              <v-divider></v-divider>
+              <v-card-text>
+                <v-row>
+                  <v-col cols="12" sm="12" md="12">
+                    <h4>Fecha: {{ $store.state.PersonalData.medidasHistorico.fecha.substring(0, 10) }}</h4>
+                  </v-col>
+                  <v-col cols="12" sm="12" md="12">
+                    <h4> Peso Actual: {{ infoPeso }} </h4>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="6">
+            <v-row>
+              <v-col cols="12" sm="12" md="12" v-if="this.$store.state.PersonalData.antropometria.peso !== ''">
+                <h4  :style="`color: ${colorCalculoPeso}`">
+                  {{ textCalculoPeso }} {{ calculaPerdidaPeso }} Kg.
+                  <v-icon :color="colorCalculoPeso">
+                    {{ indicadorCalculoPeso }}
+                  </v-icon>
+                </h4>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
+    <br>
+    <v-row>
+      <v-col class="text-lg-end" cols="12" sm="12" md="12">
+        <v-btn color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica</v-btn>
+      </v-col>
+    </v-row>
+    <v-card elevation="0">
       <v-tabs
           v-model="tab"
           background-color="light-green lighten-4"
@@ -88,6 +135,72 @@ export default {
     }
   },
   computed: {
+    calculaIMC() {
+      let imc = 0
+      let estatura = this.ultimasMedidas.estatura
+      let estaturaCuadrado = estatura * 2
+      let peso = this.$store.state.PersonalData.antropometria.peso
+      imc = peso / estaturaCuadrado
+      return imc
+    },
+    ultimasMedidas() {
+      return this.$store.getters['PersonalData/getHistoricoConsulta']
+    },
+    calculaPerdidaPeso() {
+      let calculoPeso = 0
+      let pesoAnterior = parseFloat(this.ultimasMedidas.peso)
+      let pesoActual = parseFloat(this.$store.state.PersonalData.antropometria.peso)
+
+      if(this.$store.state.PersonalData.antropometria.peso !== '') {
+        if(pesoActual > pesoAnterior ) {
+          calculoPeso = pesoActual - pesoAnterior
+        } else {
+          calculoPeso = pesoAnterior - pesoActual
+        }
+      }
+      return calculoPeso.toFixed(2)
+    },
+    textCalculoPeso() {
+      let texto = ''
+      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
+      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+
+      if(pesoActual !== 0) {
+        texto = pesoActual < pesoAnterior ? 'El paciente perdio: ' : 'El paciente gano: '
+      } else {
+        texto = 'El paciente morira: '
+      }
+      return texto
+    },
+    indicadorCalculoPeso() {
+      let icon = ''
+      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
+      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+
+      if(pesoActual !== 0) {
+        icon = pesoActual < pesoAnterior ? 'mdi-menu-down-outline' : 'mdi-menu-up-outline'
+      } else {
+        icon = 'mdi-skull'
+      }
+      return icon
+    },
+    colorCalculoPeso() {
+      let color = ''
+      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
+      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+
+      if(pesoActual !== 0) {
+        color = pesoActual < pesoAnterior ? 'green' : 'red'
+      } else {
+        color = 'black'
+      }
+      return color
+    },
+    infoPeso() {
+      return this.ultimasMedidas.peso === ''
+          ? 'Pendiente ...'
+          : this.ultimasMedidas.peso + ' Kg.'
+    },
     datosAntropometricos() {
       return this.$store.getters['PersonalData/getAntropometria']
     },
@@ -174,6 +287,7 @@ export default {
   },
   methods: {
     guardaTempData() {
+      console.log('TAB', this.tab)
       if (this.validaAntropometria) {
         window.localStorage.setItem('tempAntropometria', JSON.stringify(this.datosAntropometricos))
       }
@@ -192,13 +306,24 @@ export default {
           && this.validaDietetico && this.validaHabitos) {
         this.$store.commit('SET_PROCESSING_REQUEST', true)
         this.$store.dispatch('PersonalData/sendHistoricoConsulta', this.$store.state.PersonalData.datosPersonales.idPaciente).then(resp => {
-          console.log('resp', resp)
           if (resp) {
             this.tab = 0
           }
         })
       } else {
         this.showAlert('¡Hey! Faltan Datos por Completar.')
+        if (this.validaAntropometria === false) {
+          this.tab = 0
+        }
+        if (!this.validaClinico === false) {
+          this.tab = 1
+        }
+        if (!this.validaDietetico === false) {
+          this.tab = 2
+        }
+        if (!this.validaHabitos === false) {
+          this.tab = 3
+        }
       }
     },
     validationOfDataAndPropertiesToShowSeccion(validations) {
@@ -298,9 +423,6 @@ export default {
         }
       }
     }
-  },
-  created() {
-    this.$store.commit('PersonalData/SET_TEMP_DATA')
   }
 }
 </script>

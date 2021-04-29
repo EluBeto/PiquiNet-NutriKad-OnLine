@@ -137,125 +137,8 @@
                 </v-card>
               </v-col>
               <v-col cols="12" sm="6" md="4">
-                <v-btn color="primary" @click="iniciarConsulta(item.datosPersonales)">Iniciar Consulta</v-btn>
+                <v-btn color="primary" @click="iniciarConsulta(item.datosPersonales, item.antropometria)">Iniciar Consulta</v-btn>
               </v-col>
-              <!--
-              <v-col cols="12" sm="4">
-                <v-card>
-                  <v-card-title class="text-center" style="font-size: 1.5em;">Histórico de medidas</v-card-title>
-                  <v-divider></v-divider>
-                  <v-card-text>
-                    <v-row>
-                      <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
-                        09 de Marzo
-                      </v-col>
-                      <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          113 cm.
-                        </v-chip>
-                        | Cadera:
-                        <v-chip color="primary" small>
-                          125 cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
-                      <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
-                        28 de Marzo
-                      </v-col>
-                      <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          110 cm.
-                        </v-chip>
-                        | Cadera:
-                        <v-chip color="primary" small>
-                          123 cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
-                      <v-col class="text-center"  cols="12" sm="12" style="font-size: 1.0em;">
-                        19 de Abril
-                      </v-col>
-                      <v-col class="text-center" cols="12" sm="12" style="font-size: 1.0em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          104 cm.
-                        </v-chip>
-                        | Cadera:
-                        <v-chip color="primary" small>
-                          120 cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Prox. 10 de Mayo:
-                        <v-chip color="warning" small>
-                          Pendiente ...
-                        </v-chip>
-                      </v-col>
-                    </v-row>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-              <v-col cols="12" sm="4">
-                <v-card>
-                  <v-card-title class="text-center" style="font-size: 1.5em;">Histórico de peso</v-card-title>
-                  <v-divider></v-divider>
-                  <v-card-text>
-                    <v-row>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        09 de Mar.:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.peso }} kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        28 de Mar.:
-                        <v-chip color="primary" small>
-                          107.400 kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        19 de Abr.:
-                        <v-chip color="primary" small>
-                          103.900 kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Prox. 10 de Mayo:
-                        <v-chip color="warning" small>
-                          Pendiente ...
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        <v-card
-                            class="mx-auto text-center"
-                            color="green"
-                            dark
-                            max-width="600"
-                        >
-                          <v-card-text>
-                            <v-sheet color="rgba(0, 0, 0, .12)">
-                              <v-sparkline
-                                  :value="value"
-                                  color="rgba(255, 255, 255, .7)"
-                                  height="100"
-                                  padding="24"
-                              >
-                                <template v-slot:label="item">
-                                  {{ item.value }}
-                                </template>
-                              </v-sparkline>
-                            </v-sheet>
-                          </v-card-text>
-                        </v-card>
-                      </v-col>
-                    </v-row>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-              -->
             </v-row>
           </td>
         </template>
@@ -359,10 +242,29 @@
       sendWhats(phone, name) {
         return "https://api.whatsapp.com/send?phone=52" + phone + "&text=¡Hola,%20" + name + "!"
       },
-      iniciarConsulta(paciente) {
+      iniciarConsulta(paciente, medidas) {
+        this.$store.commit('SET_PROCESSING_REQUEST', true)
         this.$store.state.PersonalData.nobreCompleto = `${paciente.nombre} ${paciente.apellidoPaterno} ${paciente.apellidoMaterno}`
         this.$store.state.PersonalData.datosPersonales.idPaciente = paciente.idPaciente
-        this.dialog = true
+
+        this.$store.dispatch('PersonalData/getHistoricoConsultas').then(response => {
+          if (response.length >= 1) {
+            this.$store.state.PersonalData.medidasHistorico.peso = response[response.length -1].antropometria.peso
+            this.$store.state.PersonalData.medidasHistorico.cintura = response[response.length -1].antropometria.cintura
+            this.$store.state.PersonalData.medidasHistorico.cadera = response[response.length -1].antropometria.cadera
+            this.$store.state.PersonalData.medidasHistorico.imc = response[response.length -1].antropometria.imc
+            this.$store.state.PersonalData.medidasHistorico.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
+            this.$store.state.PersonalData.medidasHistorico.grasaBiceral = response[response.length -1].antropometria.grasaBiceral
+            this.$store.state.PersonalData.medidasHistorico.fecha = response[response.length -1].createDate
+            this.$store.state.PersonalData.antropometria.estatura = medidas.estatura
+
+            this.$store.commit('SET_PROCESSING_REQUEST', false)
+
+            this.dialog = true
+
+            this.$store.commit('PersonalData/SET_TEMP_DATA')
+          }
+        })
       }
     }
   }
