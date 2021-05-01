@@ -31,7 +31,7 @@
         </template>
         <template v-slot:item.datosPersonales="{ item }">
           <div class="text-uppercase" style="font-size: 2.1em; margin-left: -30px;">
-            {{ item.datosPersonales.nombre }}
+            {{ item.datosPersonales.nombre }} {{ item.datosPersonales.apellidoPaterno }} {{ item.datosPersonales.apellidoMaterno }}
           </div>
         </template>
         <template v-slot:item.datosPersonales="{ item }">
@@ -248,21 +248,39 @@
         this.$store.state.PersonalData.datosPersonales.idPaciente = paciente.idPaciente
 
         this.$store.dispatch('PersonalData/getHistoricoConsultas').then(response => {
-          if (response.length >= 1) {
-            this.$store.state.PersonalData.medidasHistorico.peso = response[response.length -1].antropometria.peso
-            this.$store.state.PersonalData.medidasHistorico.cintura = response[response.length -1].antropometria.cintura
-            this.$store.state.PersonalData.medidasHistorico.cadera = response[response.length -1].antropometria.cadera
-            this.$store.state.PersonalData.medidasHistorico.imc = response[response.length -1].antropometria.imc
-            this.$store.state.PersonalData.medidasHistorico.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
-            this.$store.state.PersonalData.medidasHistorico.grasaBiceral = response[response.length -1].antropometria.grasaBiceral
-            this.$store.state.PersonalData.medidasHistorico.fecha = response[response.length -1].createDate
-            this.$store.state.PersonalData.antropometria.estatura = medidas.estatura
+          if (response[0] === 'Auth token is expired') {
+            window.localStorage.removeItem('userAuth')
+            window.localStorage.removeItem('userInfo')
+            window.localStorage.removeItem('registeredUser')
+            this.$store.dispatch('MessageAlerts/clearAlert', false)
+            this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
+            this.$router.push('/')
+          } else {
+            if (response.length >= 1) {
+              this.$store.state.PersonalData.medidasHistorico.peso = response[response.length -1].antropometria.peso
+              this.$store.state.PersonalData.medidasHistorico.cintura = response[response.length -1].antropometria.cintura
+              this.$store.state.PersonalData.medidasHistorico.cadera = response[response.length -1].antropometria.cadera
+              this.$store.state.PersonalData.medidasHistorico.imc = response[response.length -1].antropometria.imc
+              this.$store.state.PersonalData.medidasHistorico.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
+              this.$store.state.PersonalData.medidasHistorico.grasaBiceral = response[response.length -1].antropometria.grasaBiceral
+              this.$store.state.PersonalData.medidasHistorico.fecha = new Date(response[response.length -1].createDate)
+              this.$store.state.PersonalData.medidasHistorico.porcentajeGrasa = response[response.length -1].antropometria.porcentajeGrasa
+              this.$store.state.PersonalData.medidasHistorico.porcentajeMusculo = response[response.length -1].antropometria.porcentajeMusculo
+              this.$store.state.PersonalData.antropometria.estatura = medidas.estatura
 
-            this.$store.commit('SET_PROCESSING_REQUEST', false)
+              this.$store.state.PersonalData.clinicoHistorico.glucosa = response[response.length -1].clinico.glucosa
+              this.$store.state.PersonalData.clinicoHistorico.ta = response[response.length -1].clinico.ta
+              this.$store.state.PersonalData.clinicoHistorico.hidratacion = response[response.length -1].clinico.hidratacion
+              this.$store.state.PersonalData.clinicoHistorico.noEvacuaciones = response[response.length -1].clinico.noEvacuaciones
+              this.$store.state.PersonalData.clinicoHistorico.evacuaciones = response[response.length -1].clinico.evacuaciones
+              this.$store.state.PersonalData.clinicoHistorico.malestaresGeneral = response[response.length -1].clinico.malestaresGeneral
 
-            this.dialog = true
+              this.$store.commit('SET_PROCESSING_REQUEST', false)
 
-            this.$store.commit('PersonalData/SET_TEMP_DATA')
+              this.dialog = true
+
+              this.$store.commit('PersonalData/SET_TEMP_DATA')
+            }
           }
         })
       }

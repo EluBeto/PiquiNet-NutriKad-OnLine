@@ -6,13 +6,23 @@ export default {
     state: {
         nobreCompleto: '',
         medidasHistorico: {
-            fecha: '',
+            fecha: Date(),
             peso: '',
             cintura: '',
             cadera: '',
             imc: '',
             edadMetabolica: '',
-            grasaBiceral: ''
+            grasaBiceral: '',
+            porcentajeGrasa: '',
+            porcentajeMusculo: ''
+        },
+        clinicoHistorico: {
+            glucosa: '',
+            ta: '',
+            hidratacion: '',
+            noEvacuaciones: '',
+            evacuaciones: '',
+            malestaresGeneral: ''
         },
         isActive: false,
         createDate: new Date(),
@@ -59,6 +69,7 @@ export default {
             menarca: '',
             fum: '',
             climaterio: '',
+            isEmbarazada: false,
             noGestas: '',
             noPartos: '',
             abortos: false,
@@ -172,23 +183,18 @@ export default {
         }
     },
     actions: {
-        async sendHistoricoConsulta({ state, rootState }, payload) {
+        async sendHistoricoConsulta({ state, rootState, commit }, payload) {
             let resp = false
             const {
                 idToken
             } = JSON.parse(localStorage.getItem('userAuth'))
-            let fechaAltaConsulta = state.createDate
-            let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${payload}/${fechaAltaConsulta.toDateString()}.json?auth=${idToken}`
-            let parametersHistorico = JSON.stringify({
-                antropometria: state.antropometria,
-                clinico: state.clinico,
-                dietetico: state.dietetico,
-                habitos: state.habitos,
-                createDate: state.createDate
-            })
-            HttpServices.putRequest(urlHistorico, parametersHistorico).then(respuesta => {
-                if (respuesta.response !== undefined) {
-                    if (respuesta.response.message === 'Failed to fetch') {
+
+            let uID = state.datosPersonales.idPaciente
+            let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}.json?auth=${idToken}`
+            await HttpServices.getRequest(url).then(historicoConsultas => {
+                if (historicoConsultas.response !== undefined){
+                    if (historicoConsultas.response.message === 'Failed to fetch') {
+                        rootState.processingRequest = false
                         rootState.MessageAlerts = {
                             type: 'snackbar',
                             snackbar: {
@@ -202,43 +208,76 @@ export default {
                                 color: 'red darken-3'
                             }
                         }
-                        rootState.processingRequest = false
-                        rootState.Steps.loading = false
                     }
-                } else {
-                    if (respuesta.error) {
-                        rootState.MessageAlerts = {
-                            type: 'snackbar',
-                            snackbar: {
-                                isShow: true,
-                                modelMessage: true,
-                                multiLine: true,
-                                message: respuesta.error,
-                                snackbar: false,
-                                btnTitle: 'Cerrar',
-                                btnColor: 'white',
-                                color: 'red darken-3'
+                }  else {
+                    let contador = []
+                    for (let id in historicoConsultas){
+                        contador.push(historicoConsultas[id])
+                    }
+                    let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${payload}/${contador.length}.json?auth=${idToken}`
+                    let parametersHistorico = JSON.stringify({
+                        antropometria: state.antropometria,
+                        clinico: state.clinico,
+                        dietetico: state.dietetico,
+                        habitos: state.habitos,
+                        createDate: state.createDate
+                    })
+                    HttpServices.putRequest(urlHistorico, parametersHistorico).then(respuesta => {
+                        if (respuesta.response !== undefined) {
+                            if (respuesta.response.message === 'Failed to fetch') {
+                                rootState.MessageAlerts = {
+                                    type: 'snackbar',
+                                    snackbar: {
+                                        isShow: true,
+                                        modelMessage: true,
+                                        multiLine: true,
+                                        message: 'Error de red, verifique su conexion e intente nuevamente',
+                                        snackbar: false,
+                                        btnTitle: 'Cerrar',
+                                        btnColor: 'white',
+                                        color: 'red darken-3'
+                                    }
+                                }
+                                rootState.processingRequest = false
+                                rootState.Steps.loading = false
+                            }
+                        } else {
+                            if (respuesta.error) {
+                                rootState.MessageAlerts = {
+                                    type: 'snackbar',
+                                    snackbar: {
+                                        isShow: true,
+                                        modelMessage: true,
+                                        multiLine: true,
+                                        message: respuesta.error,
+                                        snackbar: false,
+                                        btnTitle: 'Cerrar',
+                                        btnColor: 'white',
+                                        color: 'red darken-3'
+                                    }
+                                }
+                                rootState.processingRequest = false
+                            } else {
+                                resp = true
+                                rootState.processingRequest = false
+                                rootState.MessageAlerts = {
+                                    type: 'snackbar',
+                                    snackbar: {
+                                        isShow: true,
+                                        modelMessage: true,
+                                        multiLine: true,
+                                        message: 'Tu registro fue éxitoso',
+                                        snackbar: false,
+                                        btnTitle: 'Cerrar',
+                                        btnColor: 'white',
+                                        color: 'green darken-3'
+                                    }
+                                }
+                                commit('SET_PERSONAL_DATA')
+                                rootState.processingRequest = false
                             }
                         }
-                        rootState.processingRequest = false
-                    } else {
-                        resp = true
-                        rootState.processingRequest = false
-                        rootState.MessageAlerts = {
-                            type: 'snackbar',
-                            snackbar: {
-                                isShow: true,
-                                modelMessage: true,
-                                multiLine: true,
-                                message: 'Tu registro fue éxitoso',
-                                snackbar: false,
-                                btnTitle: 'Cerrar',
-                                btnColor: 'white',
-                                color: 'green darken-3'
-                            }
-                        }
-                        rootState.processingRequest = false
-                    }
+                    })
                 }
             })
             return resp
@@ -276,7 +315,7 @@ export default {
             })
             return registros
         },
-        async sendRegister({ state, rootState }) {
+        async sendRegister({ state, rootState, commit }) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
                     idToken
@@ -339,8 +378,7 @@ export default {
                             const {
                                 idToken
                             } = JSON.parse(localStorage.getItem('userAuth'))
-                            let fechaAltaConsulta = state.createDate
-                            let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}/${fechaAltaConsulta.toDateString()}.json?auth=${idToken}`
+                            let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}/0.json?auth=${idToken}`
                             let parametersHistorico = JSON.stringify({
                                 antropometria: state.antropometria,
                                 clinico: state.clinico,
@@ -380,6 +418,7 @@ export default {
                                             color: 'green darken-3'
                                         }
                                     }
+                                    commit('SET_PERSONAL_DATA')
                                     rootState.Steps.loading = false
                                     rootState.Steps.numberOfSteps = 1
                                     state.isRegisteredUser = false
@@ -511,6 +550,7 @@ export default {
                 state.antecedentesGinecoObstetricos.menarca = tempAntecedentesGinecoObstetricos.menarca
                 state.antecedentesGinecoObstetricos.fum = tempAntecedentesGinecoObstetricos.fum
                 state.antecedentesGinecoObstetricos.climaterio = tempAntecedentesGinecoObstetricos.climaterio
+                state.antecedentesGinecoObstetricos.isEmbarazada = tempAntecedentesGinecoObstetricos.isEmbarazada
                 state.antecedentesGinecoObstetricos.noGestas = tempAntecedentesGinecoObstetricos.noGestas
                 state.antecedentesGinecoObstetricos.noPartos = tempAntecedentesGinecoObstetricos.noPartos
                 state.antecedentesGinecoObstetricos.abortos = tempAntecedentesGinecoObstetricos.abortos
@@ -581,6 +621,8 @@ export default {
                 state.antropometria.derecho.pbiFlexionado = tempAntropometria.derecho.pbiFlexionado
                 state.antropometria.derecho.ppa = tempAntropometria.derecho.ppa
                 state.antropometria.derecho.pp = tempAntropometria.derecho.pp
+                state.antropometria.edadMetabolica = tempAntropometria.edadMetabolica
+                state.antropometria.grasaBiceral = tempAntropometria.grasaBiceral
             }
 
             if (window.localStorage.getItem('tempClinico') !== null) {
@@ -667,6 +709,7 @@ export default {
             state.antecedentesGinecoObstetricos.menarca = ''
             state.antecedentesGinecoObstetricos.fum = ''
             state.antecedentesGinecoObstetricos.climaterio = ''
+            state.antecedentesGinecoObstetricos.isEmbarazada = ''
             state.antecedentesGinecoObstetricos.noGestas = ''
             state.antecedentesGinecoObstetricos.noPartos = ''
             state.antecedentesGinecoObstetricos.abortos = false
@@ -728,6 +771,8 @@ export default {
             state.antropometria.derecho.pbiFlexionado = ''
             state.antropometria.derecho.ppa = ''
             state.antropometria.derecho.pp = ''
+            state.antropometria.edadMetabolica = ''
+            state.antropometria.grasaBiceral = ''
 
             state.clinico.glucosa = ''
             state.clinico.ta = ''
@@ -791,6 +836,9 @@ export default {
         },
         getHistoricoConsulta(state) {
             return state.medidasHistorico
+        },
+        getHistoricoClinico(state) {
+            return state.clinicoHistorico
         }
     }
 }

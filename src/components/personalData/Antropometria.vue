@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="880px"
+      :height="`${isMedidasExtremidades ? '880px' : '450px'}`"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -33,6 +33,7 @@
                 prepend-icon="mdi-human-male-height"
                 label="Estatura (cm)"
                 color="primary"
+                @keyup="calculaIMC"
                 required
             ></v-text-field>
           </v-col>
@@ -77,6 +78,7 @@
                 prepend-icon="mdi-ruler"
                 label="Cintura (cm)"
                 color="primary"
+                @keyup="calculaICC"
                 required
             ></v-text-field>
           </v-col>
@@ -88,6 +90,7 @@
                 prepend-icon="mdi-ruler"
                 label="Cadera (cm)"
                 color="primary"
+                @keyup="calculaICC"
                 required
             ></v-text-field>
           </v-col>
@@ -135,10 +138,39 @@
                 required
             ></v-text-field>
           </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.campoObligatorio"
+                v-model="antropometria.edadMetabolica"
+                type="number"
+                prepend-icon="mdi-ruler"
+                label="Edad Metabolica"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-text-field
+                :rules="rules.campoObligatorio"
+                v-model="antropometria.grasaBiceral"
+                type="number"
+                prepend-icon="mdi-ruler"
+                label="Grasa Viceral"
+                color="primary"
+                required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
+            <v-switch
+                inset
+                v-model="isMedidasExtremidades"
+                label="Medir Extremidades"
+            ></v-switch>
+          </v-col>
         </v-row>
-        <v-divider></v-divider>
+        <v-divider v-if="isMedidasExtremidades"></v-divider>
         <br>
-        <v-row>
+        <v-row v-if="isMedidasExtremidades">
           <v-col cols="12" sm="6" md="6">
             <v-card class="mx-auto">
               <v-card-title class="text-center">
@@ -217,7 +249,7 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12" md="12">
-                    <v-text-field
+                    <v-text-fieldreturn
                         :rules="rules.weightRules"
                         v-model="antropometria.derecho.pbiFlexionado"
                         type="text"
@@ -225,7 +257,7 @@
                         label="PBI Flexionado"
                         color="primary"
                         required
-                    ></v-text-field>
+                    ></v-text-fieldreturn>
                   </v-col>
                   <v-col cols="12" sm="12" md="12">
                     <v-text-field
@@ -263,7 +295,9 @@
 export default {
   name: 'Antropometria',
   inject: ['$validator'],
-  data: () => ({}),
+  data: () => ({
+    isMedidasExtremidades: false
+  }),
   computed: {
     arraySteps() {
       return this.$store.getters['Steps/getSteps']
@@ -279,10 +313,21 @@ export default {
     calculaIMC() {
       let imc = 0
       let estatura = this.$store.state.PersonalData.antropometria.estatura
-      let estaturaCuadrado = estatura * 2
       let peso = this.$store.state.PersonalData.antropometria.peso
-      imc = peso / estaturaCuadrado
-      this.$store.state.PersonalData.antropometria.imc = imc.toFixed(2)
+      if (estatura > 0 && peso > 0) {
+        let estaturaCuadrado = estatura * estatura
+        imc = peso / estaturaCuadrado
+        this.$store.state.PersonalData.antropometria.imc = imc.toFixed(2)
+      }
+    },
+    calculaICC() {
+      let icc = 0
+      let cintura = this.$store.state.PersonalData.antropometria.cintura
+      let cadera = this.$store.state.PersonalData.antropometria.cadera
+      if (cintura > 0 && cadera > 0) {
+        icc = cintura / cadera
+        this.$store.state.PersonalData.antropometria.icc = icc.toFixed(2)
+      }
     }
   }
 }

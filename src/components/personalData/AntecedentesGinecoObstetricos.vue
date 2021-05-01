@@ -60,6 +60,14 @@
             ></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="3">
+            <v-switch
+                :disabled="!datosPersonales.genero"
+                inset
+                v-model="antecedentesGinecoObstetricos.isEmbarazada"
+                label="¿Has estado embarazada?"
+            ></v-switch>
+          </v-col>
+          <v-col cols="12" sm="6" md="3" v-if="antecedentesGinecoObstetricos.isEmbarazada">
             <v-text-field
                 :disabled="!datosPersonales.genero"
                 :rules="rules.numberRules"
@@ -70,24 +78,24 @@
                 color="primary"
             ></v-text-field>
           </v-col>
-          <v-col cols="12" sm="6" md="3">
+          <v-col cols="12" sm="6" md="3" v-if="antecedentesGinecoObstetricos.isEmbarazada">
             <v-text-field
                 :disabled="!datosPersonales.genero"
-                :rules="rules.numberRules"
+                :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.noPartos"
                 prepend-icon="mdi-human-pregnant"
-                type="number"
+                type="text"
                 label="¿Partos?"
                 color="primary"
             ></v-text-field>
           </v-col>
-          <v-col cols="12" sm="6" md="3">
+          <v-col cols="12" sm="6" md="3" v-if="antecedentesGinecoObstetricos.isEmbarazada">
             <v-text-field
                 :disabled="!datosPersonales.genero"
-                :rules="rules.numberRules"
+                :rules="rules.textRules"
                 v-model="antecedentesGinecoObstetricos.semanasGestacion"
                 prepend-icon="mdi-human-pregnant"
-                type="number"
+                type="text"
                 label="Semanas de Gestación"
                 color="primary"
             ></v-text-field>

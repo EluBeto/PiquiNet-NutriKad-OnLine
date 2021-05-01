@@ -196,15 +196,11 @@ export default {
           menarca,
           fum,
           climaterio,
-          noGestas,
-          noPartos,
-          semanasGestacion,
           anticonceptivos,
           caracteristicasCiclo
         } = this.antecedentesGinecoObstetricos
-        return !!menarca && !!fum && !!noGestas
-            && !!semanasGestacion && !!anticonceptivos
-            && !!caracteristicasCiclo && !!noPartos && !!climaterio
+        return !!menarca && !!fum && !!anticonceptivos
+            && !!caracteristicasCiclo && !!climaterio
       } else {
         return true
       }
@@ -248,16 +244,13 @@ export default {
         espalda,
         pectoral,
         cinturaAlta,
-        izquierdo,
-        derecho
+        edadMetabolica,
+        grasaBiceral
       } = this.datosAntropometricos
       return !!peso && !!estatura && !!imc
           && !!porcentajeGrasa && !!porcentajeMusculo && !!cintura
           && !!cadera && !!icc && !!espalda
-          && !!pectoral && !!cinturaAlta && !!izquierdo.pbiRelajado
-          && !!izquierdo.pbiFlexionado && !!izquierdo.ppa && !!izquierdo.pp
-          && !!derecho.pbiFlexionado && !!derecho.ppa && !!derecho.pp
-          && !!derecho.pbiRelajado
+          && !!pectoral && !!cinturaAlta && !!edadMetabolica && !!grasaBiceral
     },
     validaClinico() {
       const {

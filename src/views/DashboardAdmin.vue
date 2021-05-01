@@ -199,6 +199,7 @@ export default {
     },
   created() {
     this.overlay = true
+    this.$store.commit('SET_PROCESSING_REQUEST', true)
     this.$store.dispatch('PersonalData/getRegisters').then(response => {
         this.patientsRegister = response
       this.totalR = response.length
@@ -213,6 +214,7 @@ export default {
       }
       this.totalM = conteoM
       this.totalH = conteoH
+      this.$store.commit('SET_PROCESSING_REQUEST', false)
     })
     this.$store.dispatch('SetLayout', 'default-layout')
   }
