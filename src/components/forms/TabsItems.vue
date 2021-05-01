@@ -142,7 +142,7 @@ export default {
         const date = new Date()
         let dateNow = date.getDate()
         let monthNow = date.toDateString()
-        let fechaOK = dateNow >= 28 && monthNow.includes('Apr')
+        let fechaOK = dateNow >= 1 && monthNow.includes('May')
         return fechaOK
       },
       isShowPlanSecondWeek() {
