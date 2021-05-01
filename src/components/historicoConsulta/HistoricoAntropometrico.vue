@@ -296,7 +296,7 @@ export default {
 
       if (!isNaN(pesoActual)) {
         if (pesoActual < pesoAnterior) {
-          color = '#33691E'
+          color = '#C8E6C9'
         } else {
           if (pesoActual > pesoAnterior) {
             color = '#EF9A9A'

@@ -249,7 +249,7 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12" md="12">
-                    <v-text-fieldreturn
+                    <v-text-field
                         :rules="rules.weightRules"
                         v-model="antropometria.derecho.pbiFlexionado"
                         type="text"
@@ -257,7 +257,7 @@
                         label="PBI Flexionado"
                         color="primary"
                         required
-                    ></v-text-fieldreturn>
+                    ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="12" md="12">
                     <v-text-field

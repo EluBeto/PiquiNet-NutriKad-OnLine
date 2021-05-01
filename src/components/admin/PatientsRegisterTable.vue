@@ -252,8 +252,6 @@
             window.localStorage.removeItem('userAuth')
             window.localStorage.removeItem('userInfo')
             window.localStorage.removeItem('registeredUser')
-            this.$store.dispatch('MessageAlerts/clearAlert', false)
-            this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
             this.$router.push('/')
           } else {
             if (response.length >= 1) {

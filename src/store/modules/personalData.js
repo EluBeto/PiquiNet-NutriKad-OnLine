@@ -192,64 +192,66 @@ export default {
             let uID = state.datosPersonales.idPaciente
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}.json?auth=${idToken}`
             await HttpServices.getRequest(url).then(historicoConsultas => {
-                if (historicoConsultas.response !== undefined){
-                    if (historicoConsultas.response.message === 'Failed to fetch') {
-                        rootState.processingRequest = false
-                        rootState.MessageAlerts = {
-                            type: 'snackbar',
-                            snackbar: {
-                                isShow: true,
-                                modelMessage: true,
-                                multiLine: true,
-                                message: 'Error de red, verifique su conexion e intente nuevamente',
-                                snackbar: false,
-                                btnTitle: 'Cerrar',
-                                btnColor: 'white',
-                                color: 'red darken-3'
-                            }
+                if (historicoConsultas[0] === 'Auth token is expired') {
+                    rootState.MessageAlerts = {
+                        type: 'snackbar',
+                        snackbar: {
+                            isShow: true,
+                            modelMessage: true,
+                            multiLine: true,
+                            message: 'Su sesion expiro, se cerrara la aplicación',
+                            snackbar: false,
+                            btnTitle: 'Cerrar',
+                            btnColor: 'white',
+                            color: 'red darken-3'
                         }
                     }
-                }  else {
-                    let contador = []
-                    for (let id in historicoConsultas){
-                        contador.push(historicoConsultas[id])
-                    }
-                    let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${payload}/${contador.length}.json?auth=${idToken}`
-                    let parametersHistorico = JSON.stringify({
-                        antropometria: state.antropometria,
-                        clinico: state.clinico,
-                        dietetico: state.dietetico,
-                        habitos: state.habitos,
-                        createDate: state.createDate
-                    })
-                    HttpServices.putRequest(urlHistorico, parametersHistorico).then(respuesta => {
-                        if (respuesta.response !== undefined) {
-                            if (respuesta.response.message === 'Failed to fetch') {
-                                rootState.MessageAlerts = {
-                                    type: 'snackbar',
-                                    snackbar: {
-                                        isShow: true,
-                                        modelMessage: true,
-                                        multiLine: true,
-                                        message: 'Error de red, verifique su conexion e intente nuevamente',
-                                        snackbar: false,
-                                        btnTitle: 'Cerrar',
-                                        btnColor: 'white',
-                                        color: 'red darken-3'
-                                    }
+                    rootState.processingRequest = false
+
+                    window.localStorage.removeItem('userAuth')
+                    window.localStorage.removeItem('userInfo')
+                    window.localStorage.removeItem('registeredUser')
+                    router.push('/')
+                } else {
+                    if (historicoConsultas.response !== undefined){
+                        if (historicoConsultas.response.message === 'Failed to fetch') {
+                            rootState.processingRequest = false
+                            rootState.MessageAlerts = {
+                                type: 'snackbar',
+                                snackbar: {
+                                    isShow: true,
+                                    modelMessage: true,
+                                    multiLine: true,
+                                    message: 'Error de red, verifique su conexion e intente nuevamente',
+                                    snackbar: false,
+                                    btnTitle: 'Cerrar',
+                                    btnColor: 'white',
+                                    color: 'red darken-3'
                                 }
-                                rootState.processingRequest = false
-                                rootState.Steps.loading = false
                             }
-                        } else {
-                            if (respuesta.error) {
+                        }
+                    }  else {
+                        let contador = []
+                        for (let id in historicoConsultas){
+                            contador.push(historicoConsultas[id])
+                        }
+                        let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${payload}/${contador.length}.json?auth=${idToken}`
+                        let parametersHistorico = JSON.stringify({
+                            antropometria: state.antropometria,
+                            clinico: state.clinico,
+                            dietetico: state.dietetico,
+                            habitos: state.habitos,
+                            createDate: state.createDate
+                        })
+                        HttpServices.putRequest(urlHistorico, parametersHistorico).then(respuesta => {
+                            if (respuesta[0] === 'Auth token is expired') {
                                 rootState.MessageAlerts = {
                                     type: 'snackbar',
                                     snackbar: {
                                         isShow: true,
                                         modelMessage: true,
                                         multiLine: true,
-                                        message: respuesta.error,
+                                        message: 'Su sesion expiro, se cerrara la aplicación',
                                         snackbar: false,
                                         btnTitle: 'Cerrar',
                                         btnColor: 'white',
@@ -257,27 +259,69 @@ export default {
                                     }
                                 }
                                 rootState.processingRequest = false
+
+                                window.localStorage.removeItem('userAuth')
+                                window.localStorage.removeItem('userInfo')
+                                window.localStorage.removeItem('registeredUser')
+                                router.push('/')
                             } else {
-                                resp = true
-                                rootState.processingRequest = false
-                                rootState.MessageAlerts = {
-                                    type: 'snackbar',
-                                    snackbar: {
-                                        isShow: true,
-                                        modelMessage: true,
-                                        multiLine: true,
-                                        message: 'Tu registro fue éxitoso',
-                                        snackbar: false,
-                                        btnTitle: 'Cerrar',
-                                        btnColor: 'white',
-                                        color: 'green darken-3'
+                                if (respuesta.response !== undefined) {
+                                    if (respuesta.response.message === 'Failed to fetch') {
+                                        rootState.MessageAlerts = {
+                                            type: 'snackbar',
+                                            snackbar: {
+                                                isShow: true,
+                                                modelMessage: true,
+                                                multiLine: true,
+                                                message: 'Error de red, verifique su conexion e intente nuevamente',
+                                                snackbar: false,
+                                                btnTitle: 'Cerrar',
+                                                btnColor: 'white',
+                                                color: 'red darken-3'
+                                            }
+                                        }
+                                        rootState.processingRequest = false
+                                        rootState.Steps.loading = false
+                                    }
+                                } else {
+                                    if (respuesta.error) {
+                                        rootState.MessageAlerts = {
+                                            type: 'snackbar',
+                                            snackbar: {
+                                                isShow: true,
+                                                modelMessage: true,
+                                                multiLine: true,
+                                                message: respuesta.error,
+                                                snackbar: false,
+                                                btnTitle: 'Cerrar',
+                                                btnColor: 'white',
+                                                color: 'red darken-3'
+                                            }
+                                        }
+                                        rootState.processingRequest = false
+                                    } else {
+                                        resp = true
+                                        rootState.processingRequest = false
+                                        rootState.MessageAlerts = {
+                                            type: 'snackbar',
+                                            snackbar: {
+                                                isShow: true,
+                                                modelMessage: true,
+                                                multiLine: true,
+                                                message: 'Tu registro fue éxitoso',
+                                                snackbar: false,
+                                                btnTitle: 'Cerrar',
+                                                btnColor: 'white',
+                                                color: 'green darken-3'
+                                            }
+                                        }
+                                        commit('SET_PERSONAL_DATA')
+                                        rootState.processingRequest = false
                                     }
                                 }
-                                commit('SET_PERSONAL_DATA')
-                                rootState.processingRequest = false
                             }
-                        }
-                    })
+                        })
+                    }
                 }
             })
             return resp
@@ -374,6 +418,13 @@ export default {
                             }
                             rootState.processingRequest = false
                             rootState.Steps.loading = false
+
+                            if (response[0] === 'Auth token is expired') {
+                                window.localStorage.removeItem('userAuth')
+                                window.localStorage.removeItem('userInfo')
+                                window.localStorage.removeItem('registeredUser')
+                                router.push('/')
+                            }
                         } else {
                             const {
                                 idToken
@@ -387,41 +438,48 @@ export default {
                                 createDate: state.createDate
                             })
                             HttpServices.putRequest(urlHistorico, parametersHistorico).then(respuesta => {
-                                if (respuesta.error) {
-                                    rootState.MessageAlerts = {
-                                        type: 'snackbar',
-                                        snackbar: {
-                                            isShow: true,
-                                            modelMessage: true,
-                                            multiLine: true,
-                                            message: respuesta.error,
-                                            snackbar: false,
-                                            btnTitle: 'Cerrar',
-                                            btnColor: 'white',
-                                            color: 'red darken-3'
-                                        }
-                                    }
-                                    rootState.processingRequest = false
-                                    rootState.Steps.loading = false
+                                if (respuesta[0] === 'Auth token is expired') {
+                                    window.localStorage.removeItem('userAuth')
+                                    window.localStorage.removeItem('userInfo')
+                                    window.localStorage.removeItem('registeredUser')
+                                    router.push('/')
                                 } else {
-                                    rootState.processingRequest = false
-                                    rootState.MessageAlerts = {
-                                        type: 'snackbar',
-                                        snackbar: {
-                                            isShow: true,
-                                            modelMessage: true,
-                                            multiLine: true,
-                                            message: 'Tu registro fue éxitoso',
-                                            snackbar: false,
-                                            btnTitle: 'Cerrar',
-                                            btnColor: 'white',
-                                            color: 'green darken-3'
+                                    if (respuesta.error) {
+                                        rootState.MessageAlerts = {
+                                            type: 'snackbar',
+                                            snackbar: {
+                                                isShow: true,
+                                                modelMessage: true,
+                                                multiLine: true,
+                                                message: respuesta.error,
+                                                snackbar: false,
+                                                btnTitle: 'Cerrar',
+                                                btnColor: 'white',
+                                                color: 'red darken-3'
+                                            }
                                         }
+                                        rootState.processingRequest = false
+                                        rootState.Steps.loading = false
+                                    } else {
+                                        rootState.processingRequest = false
+                                        rootState.MessageAlerts = {
+                                            type: 'snackbar',
+                                            snackbar: {
+                                                isShow: true,
+                                                modelMessage: true,
+                                                multiLine: true,
+                                                message: 'Tu registro fue éxitoso',
+                                                snackbar: false,
+                                                btnTitle: 'Cerrar',
+                                                btnColor: 'white',
+                                                color: 'green darken-3'
+                                            }
+                                        }
+                                        commit('SET_PERSONAL_DATA')
+                                        rootState.Steps.loading = false
+                                        rootState.Steps.numberOfSteps = 1
+                                        state.isRegisteredUser = false
                                     }
-                                    commit('SET_PERSONAL_DATA')
-                                    rootState.Steps.loading = false
-                                    rootState.Steps.numberOfSteps = 1
-                                    state.isRegisteredUser = false
                                 }
                             })
                         }
@@ -660,15 +718,15 @@ export default {
         },
         SET_PERSONAL_DATA(state) {
             window.localStorage.removeItem('tempDatosPersonales')
-            window.localStorage.removeItem('tempAntecedentesHeredofamiliares')
-            window.localStorage.removeItem('tempAntecedentesPersonalesPatologicos')
+            // window.localStorage.removeItem('tempAntecedentesHeredofamiliares')
+            // window.localStorage.removeItem('tempAntecedentesPersonalesPatologicos')
             window.localStorage.removeItem('tempAntecedentesGinecoObstetricos')
-            window.localStorage.removeItem('tempAntecedentesPersonalesNoPatologicos')
-            window.localStorage.removeItem('tempComidas')
+            // window.localStorage.removeItem('tempAntecedentesPersonalesNoPatologicos')
+            // window.localStorage.removeItem('tempComidas')
             window.localStorage.removeItem('tempAntropometria')
             window.localStorage.removeItem('tempClinico')
-            window.localStorage.removeItem('tempDietetico')
-            window.localStorage.removeItem('tempHabitos')
+            // window.localStorage.removeItem('tempDietetico')
+            // window.localStorage.removeItem('tempHabitos')
 
             state.isRegisteredUser = false
             state.datosPersonales.nombre = ''

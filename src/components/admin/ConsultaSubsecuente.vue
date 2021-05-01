@@ -218,6 +218,8 @@ export default {
         this.$store.dispatch('PersonalData/sendHistoricoConsulta', this.$store.state.PersonalData.datosPersonales.idPaciente).then(resp => {
           if (resp) {
             this.tab = 0
+          } else {
+            this.tab = 0
           }
         })
       } else {
