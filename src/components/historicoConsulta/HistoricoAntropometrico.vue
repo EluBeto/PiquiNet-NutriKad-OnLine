@@ -126,20 +126,29 @@ export default {
     },
     textCalculoPeso() {
       let texto = ''
-      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
-      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+      let pesoAnterior = parseFloat(this.ultimasMedidas.peso)
+      let pesoActual = parseFloat(this.$store.state.PersonalData.antropometria.peso)
 
-      if(!isNaN(pesoActual)) {
-        texto = pesoActual < pesoAnterior ? 'Bajo: ' : 'Subio: '
+      if (!isNaN(pesoActual)) {
+        if (pesoActual < pesoAnterior) {
+          texto = 'Bajo: '
+        } else {
+          if (pesoActual > pesoAnterior) {
+            texto = 'Subio: '
+          } else {
+            texto = 'S/C en Peso: '
+          }
+        }
       } else {
-        texto = 'El paciente morira: '
+        texto = 'Peso: '
       }
+
       return texto
     },
     indicadorCalculoPeso() {
       let icon = ''
-      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
-      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+      let pesoAnterior = parseFloat(this.ultimasMedidas.peso)
+      let pesoActual = parseFloat(this.$store.state.PersonalData.antropometria.peso)
 
       if (!isNaN(pesoActual)) {
         if (pesoActual < pesoAnterior) {
@@ -159,8 +168,8 @@ export default {
     },
     colorCalculoPeso() {
       let color = ''
-      let pesoAnterior = parseInt(this.ultimasMedidas.peso)
-      let pesoActual = parseInt(this.$store.state.PersonalData.antropometria.peso)
+      let pesoAnterior = parseFloat(this.ultimasMedidas.peso)
+      let pesoActual = parseFloat(this.$store.state.PersonalData.antropometria.peso)
 
       if (!isNaN(pesoActual)) {
         if (pesoActual < pesoAnterior) {

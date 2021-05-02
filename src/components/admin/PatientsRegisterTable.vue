@@ -78,7 +78,7 @@
                   <v-card-title class="text-center" style="font-size: 1.5em;">Más información</v-card-title>
                   <v-divider></v-divider>
                   <v-card-text>
-                    <v-row align-content-sm="left">
+                    <v-row>
                       <v-col cols="12" sm="12" style="font-size: 1.0em;">
                         Peso:
                         <v-chip color="primary" small>
@@ -252,6 +252,8 @@
             window.localStorage.removeItem('userAuth')
             window.localStorage.removeItem('userInfo')
             window.localStorage.removeItem('registeredUser')
+            this.$store.dispatch('MessageAlerts/clearAlert', false)
+            this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
             this.$router.push('/')
           } else {
             if (response.length >= 1) {
