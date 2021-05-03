@@ -19,7 +19,7 @@
         style="font-size: 1.5em;"
         locale="es-mx"
         multi-sort
-        item-key="dataIdentificationCard.phoneNumber"
+        item-key="dataIdentificationCard.name"
         fixed-header
         :expanded.sync="expanded"
         show-expand

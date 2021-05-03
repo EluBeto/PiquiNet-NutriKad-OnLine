@@ -4414,7 +4414,7 @@ Sal y pimienta al gusto
 100 gr de carne molida de res.
 </li>
                             <li>
-2 Panes para hamburguesa bimbo 
+1 Pan para hamburguesa bimbo 
                             </li>
                         </ul>  . . .
                         `,
@@ -4431,7 +4431,7 @@ Sal y pimienta al gusto
 1 rebanada de piña natural (puedes asarla y colocarle canela).
 </li>
                             <li>
-2 Panes para hamburguesa bimbo 
+1 Pan para hamburguesa bimbo 
 </li>
                             <li>
 80 gr de queso oaxaca bajo en grasa.
