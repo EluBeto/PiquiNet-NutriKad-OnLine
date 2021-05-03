@@ -666,15 +666,15 @@ export default {
         },
         SET_PERSONAL_DATA(state) {
             window.localStorage.removeItem('tempDatosPersonales')
-            // window.localStorage.removeItem('tempAntecedentesHeredofamiliares')
-            // window.localStorage.removeItem('tempAntecedentesPersonalesPatologicos')
+            window.localStorage.removeItem('tempAntecedentesHeredofamiliares')
+            window.localStorage.removeItem('tempAntecedentesPersonalesPatologicos')
             window.localStorage.removeItem('tempAntecedentesGinecoObstetricos')
-            // window.localStorage.removeItem('tempAntecedentesPersonalesNoPatologicos')
-            // window.localStorage.removeItem('tempComidas')
+            window.localStorage.removeItem('tempAntecedentesPersonalesNoPatologicos')
+            window.localStorage.removeItem('tempComidas')
             window.localStorage.removeItem('tempAntropometria')
             window.localStorage.removeItem('tempClinico')
-            // window.localStorage.removeItem('tempDietetico')
-            // window.localStorage.removeItem('tempHabitos')
+            window.localStorage.removeItem('tempDietetico')
+            window.localStorage.removeItem('tempHabitos')
 
             state.isRegisteredUser = false
             state.datosPersonales.nombre = ''

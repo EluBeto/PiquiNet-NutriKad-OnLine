@@ -23,7 +23,11 @@
         >Cancelar</v-btn>
       </v-col>
       <v-col cols="12" sm="4" md="4">
-        <v-btn block color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica</v-btn>
+        <v-btn block color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica
+        <v-icon right>
+          mdi-delete
+        </v-icon>
+        </v-btn>
       </v-col>
     </v-row>
     <br>

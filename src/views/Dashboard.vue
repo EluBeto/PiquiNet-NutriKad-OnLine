@@ -7,7 +7,12 @@
         <br>
         <v-row>
           <v-col class="text-lg-end" cols="12" sm="12" md="12">
-            <v-btn color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica</v-btn>
+            <v-btn color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">
+              Limpiar Historia Clinica
+              <v-icon right>
+                mdi-delete
+              </v-icon>
+            </v-btn>
           </v-col>
         </v-row>
         <Steps  v-if="isActive"></Steps>

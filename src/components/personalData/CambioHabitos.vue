@@ -2,7 +2,7 @@
   <v-card
       min-width="80%"
       color="#fafafa lighten-1"
-      height="330px"
+      height="360px"
       class="scroll section section_dark ma-3 pa-3"
       elevation="4"
   >
@@ -81,7 +81,7 @@
           </v-col>
           <v-col cols="12" sm="6" md="6">
             <v-textarea
-                :rules="rules.textRules"
+                :rules="rules.campoObligatorio"
                 v-model="habitos.objetivos"
                 type="text"
                 class="mx-2"
@@ -94,11 +94,11 @@
           </v-col>
           <v-col cols="12" sm="12" md="12">
             <v-textarea
-                :rules="rules.textRules"
+                :rules="rules.campoObligatorio"
                 v-model="habitos.observaciones"
                 type="text"
                 class="mx-2"
-                rows="1"
+                rows="3"
                 prepend-icon="mdi-message-alert-outline"
                 label="Observaciónes"
                 color="primary"
