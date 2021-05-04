@@ -35,10 +35,16 @@ export default {
           v => !!v || 'Campo obligarorio',
           v =>
             /^(0|[1-9]\d*)(.\d+)?$/.test(v) ||
-            "El valor que ingresaste es incorrecto, solo se permiten números"
+            "El valor que ingresaste es incorrecto, ingrese estatura en metros"
         ],
         campoObligatorio: [
             v => !!v || 'Campo obligarorio'
+        ],
+        decimal:[
+            v => !!v || 'Campo obligarorio',
+            v =>
+                /^[0-9]+([.])+([0-9]){1,2}?()$/.test(v) ||
+                "La estatura es incorrecta, tiene que ser en metros (eje. 1.69)"
         ]
     },
     getters: {

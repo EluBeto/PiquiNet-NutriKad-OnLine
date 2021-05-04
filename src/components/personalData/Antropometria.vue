@@ -27,11 +27,11 @@
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
-                :rules="rules.weightRules"
+                :rules="rules.decimal"
                 v-model="antropometria.estatura"
                 type="text"
                 prepend-icon="mdi-human-male-height"
-                label="Estatura (cm)"
+                label="Estatura (mts)"
                 color="primary"
                 @keyup="calculaIMC"
                 required

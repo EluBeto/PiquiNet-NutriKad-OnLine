@@ -218,6 +218,9 @@ export default {
     enviaRegistroConsulta() {
       if (this.validaAntropometria && this.validaClinico
           && this.validaDietetico && this.validaHabitos) {
+
+        window.localStorage.setItem('tempHabitos', JSON.stringify(this.habitos))
+
         this.$store.commit('SET_PROCESSING_REQUEST', true)
         this.$store.dispatch('PersonalData/sendHistoricoConsulta', this.$store.state.PersonalData.datosPersonales.idPaciente).then(resp => {
           if (resp) {

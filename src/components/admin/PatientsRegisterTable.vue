@@ -72,7 +72,7 @@
         </template>
         <template v-slot:item.datosPersonales="{ item }">
           <v-chip
-              color="#64B5F6"
+              color="#C6FF00"
               small
               @click="iniciarConsulta(item.datosPersonales, item.antropometria)"
           >
@@ -97,7 +97,7 @@
         </template>
         <template v-slot:expanded-item="{ headers, item }" class="align-content-lg-end">
           <td :colspan="headers.length">
-            <v-row class="ma-2">
+            <v-row class="ma-0">
               <v-col cols="12" sm="6" md="3">
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #B2DFDB">
@@ -106,40 +106,79 @@
                   <v-divider></v-divider>
                   <v-card-text>
                     <v-row>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Estatura:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.estatura }} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Peso:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.peso }} kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.cintura }} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cadera:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.cadera}} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Contacto:
-                        <a :href="'tel:' + item.datosPersonales.telefono">
-                          <v-icon>mdi mdi-phone</v-icon>
-                        </a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
-                          <v-icon>mdi mdi-whatsapp</v-icon>
-                        </a>
+                      <v-col cols="12" md="12" sm="12">
+                        <table>
+                          <tr>
+                            <td>Peso</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.peso }} kg.
+                              </v-chip>
+                            </td>
+                            <td>Edad Met.</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.edadMetabolica }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Cintura</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.cintura }} cm
+                              </v-chip>
+                            </td>
+                            <td>Cadera</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.cadera }} cm
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>%Grasa</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.porcentajeGrasa }}
+                              </v-chip>
+                            </td>
+                            <td>%Musculo</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.porcentajeMusculo }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>IMC</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.imc }}
+                              </v-chip>
+                            </td>
+                            <td>Grasa Vic.</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.antropometria.grasaBiceral }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Glucosa</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.clinico === undefined ? '0' : item.clinico.glucosa }}
+                              </v-chip>
+                            </td>
+                            <td>T/A</td>
+                            <td>
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                                {{ item.clinico === undefined ? '0' : item.clinico.ta }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                        </table>
                       </v-col>
                     </v-row>
                   </v-card-text>
@@ -153,40 +192,79 @@
                   <v-divider></v-divider>
                   <v-card-text>
                     <v-row>
-                      <v-col cols="12" sm="12" style="font-size: 0.7em;">
-                        Estatura:
-                        <v-chip color="primary" small style="font-size: 0.9em;">
-                          {{ item.antropometria.estatura }} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Peso:
-                        <v-chip color="primary" small>
-                          {{ historicoAntepasada.peso }} kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          {{ historicoAntepasada.cintura }} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cadera:
-                        <v-chip color="primary" small>
-                          {{ historicoAntepasada.cadera}} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Contacto:
-                        <a :href="'tel:' + item.datosPersonales.telefono">
-                          <v-icon>mdi mdi-phone</v-icon>
-                        </a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
-                          <v-icon>mdi mdi-whatsapp</v-icon>
-                        </a>
+                      <v-col cols="12" sm="12" md="12">
+                        <table>
+                          <tr>
+                            <td>Peso</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.peso }} kg.
+                              </v-chip>
+                            </td>
+                            <td>Edad Met.</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.edadMetabolica }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Cintura</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.cintura }} cm
+                              </v-chip>
+                            </td>
+                            <td>Cadera</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.cadera }} cm
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>%Grasa</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.pGrasa }}
+                              </v-chip>
+                            </td>
+                            <td>%Musculo</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.pMusculo }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>IMC</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.imc }}
+                              </v-chip>
+                            </td>
+                            <td>Grasa Vic.</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.grasa }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Glucosa</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.glucosa === undefined ? '0' : historicoAntepasada.glucosa}}
+                              </v-chip>
+                            </td>
+                            <td>T/A</td>
+                            <td>
+                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                                {{ historicoAntepasada.ta }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                        </table>
                       </v-col>
                     </v-row>
                   </v-card-text>
@@ -200,31 +278,81 @@
                   <v-divider></v-divider>
                   <v-card-text>
                     <v-row>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Estatura:
-                        <v-chip color="primary" small>
-                          {{ item.antropometria.estatura }} cm.
-                        </v-chip>
+                      <v-col cols="12" sm="12" md="12">
+                        <table>
+                          <tr>
+                            <td>Peso</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.peso }} kg.
+                              </v-chip>
+                            </td>
+                            <td>Edad Met.</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.edadMetabolica }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Cintura</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.cintura }} cm
+                              </v-chip>
+                            </td>
+                            <td>Cadera</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.cadera }} cm
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>%Grasa</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.pGrasa }}
+                              </v-chip>
+                            </td>
+                            <td>%Musculo</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.pMusculo }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>IMC</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.imc }}
+                              </v-chip>
+                            </td>
+                            <td>Grasa Vic.</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.grasa }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Glucosa</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.glucosa === undefined ? '0' : historicoPasada.glucosa }}
+                              </v-chip>
+                            </td>
+                            <td>T/A</td>
+                            <td>
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                                {{ historicoPasada.ta }}
+                              </v-chip>
+                            </td>
+                          </tr>
+                        </table>
                       </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Peso:
-                        <v-chip color="primary" small>
-                          {{ historicoPasada.peso }} kg.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cintura:
-                        <v-chip color="primary" small>
-                          {{ historicoPasada.cintura }} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
-                        Cadera:
-                        <v-chip color="primary" small>
-                          {{ historicoPasada.cadera}} cm.
-                        </v-chip>
-                      </v-col>
-                      <v-divider></v-divider>
+                      <!--
                       <v-col cols="12" sm="12" style="font-size: 1.0em;">
                         Contacto:
                         <a :href="'tel:' + item.datosPersonales.telefono">
@@ -234,6 +362,37 @@
                         <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
                           <v-icon>mdi mdi-whatsapp</v-icon>
                         </a>
+                      </v-col>
+                      -->
+                    </v-row>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="6" md="3">
+                <v-card>
+                  <v-card-title class="text-center" :style="`font-size: 1.5em; background: ${calculaNivelPesoColor}`">
+                    {{ calculaNivelPeso }}
+                  </v-card-title>
+                  <v-card-text>
+                    <v-row class="text-center">
+                      <v-col cols="12" sm="6" md="6" style="font-size: 0.9em;">
+                        {{ textPesoPerdido }}
+                        <v-chip :color="calculaNivelPesoColor" small style="font-size: 0.9em;">
+                          {{ calculaPesoPerdido }} kg
+                        </v-chip>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6" style="font-size: 0.9em;">
+                        {{ textlaCmPerdidos }}
+                        <v-chip :color="calculaNivelPesoColor"  small style="font-size: 0.9em;">
+                          {{ calculaCmPerdidos }} cm
+                        </v-chip>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="4">
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6" class="text-center">
+                        <v-img :src="calculaNivelPesoImg" width="55" height="136"></v-img>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="2">
                       </v-col>
                     </v-row>
                   </v-card-text>
@@ -249,7 +408,7 @@
                     label="Más Información"
                 ></v-switch>
               </v-col>
-              <v-col cols="12" sm="6" md="3" v-if="isShowMoreInfo">
+              <v-col cols="12" sm="6" md="5" v-if="isShowMoreInfo">
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #FFE082">Importante</v-card-title>
                   <v-divider></v-divider>
@@ -270,7 +429,7 @@
                       <v-col cols="12" sm="12" style="font-size: 0.8em;">
                         Observaciones:
                         <v-chip color="#FFCC80" small>
-                          {{ $store.state.PersonalData.habitos === undefined ? 'NA' : $store.state.PersonalData.habitos.observaciones }}
+                          {{ historicoPasada.observaciones === null ? 'NA' : historicoPasada.observaciones }}
                         </v-chip>
                       </v-col>
                     </v-row>
@@ -339,12 +498,15 @@
         isShowInfo: false,
         isShowMoreInfo: false,
         isSubsecuente: 0,
+        imcNivel: '',
+        idPaciente: '',
         historicoAntepasada: {
           fecha: '',
           peso: '',
           pGrasa: '',
           pMusculo: '',
           cintura: '',
+          cadera: '',
           imc: '',
           edadMetabolica: '',
           grasa: '',
@@ -360,6 +522,7 @@
           pGrasa: '',
           pMusculo: '',
           cintura: '',
+          cadera: '',
           imc: '',
           edadMetabolica: '',
           grasa: '',
@@ -413,18 +576,149 @@
             value: 'datosPersonales.tipoConsulta',
           }
         ]
+      },
+      calculaPesoPerdido() {
+        let kilosPerdidos = 0
+        let pesoInicial = parseFloat(this.$store.state.PersonalData.antropometria.peso)
+        let pesoActual = parseFloat(this.historicoPasada.peso)
+
+        if (pesoActual < pesoInicial) {
+          kilosPerdidos = pesoInicial - pesoActual
+          return kilosPerdidos.toFixed(2)
+        }
+        if (pesoActual > pesoInicial) {
+          kilosPerdidos = pesoActual - pesoInicial
+          return kilosPerdidos.toFixed(2)
+        }
+        if (pesoInicial === pesoActual) {
+          kilosPerdidos = pesoActual - pesoInicial
+          return kilosPerdidos.toFixed(2)
+        }
+        return kilosPerdidos.toFixed(2)
+      },
+      calculaCmPerdidos() {
+        let cmPerdidos = 0
+        let cinturaInicial = parseInt(this.$store.state.PersonalData.antropometria.cintura)
+        let cinturaActual = parseInt(this.historicoPasada.cintura)
+
+        if (cinturaActual < cinturaInicial) {
+          cmPerdidos = cinturaInicial - cinturaActual
+          return cmPerdidos
+        }
+        if (cinturaActual > cinturaInicial) {
+          cmPerdidos = cinturaActual - cinturaInicial
+          return cmPerdidos
+        }
+        if (cinturaInicial === cinturaActual) {
+          cmPerdidos = cinturaActual - cinturaInicial
+          return cmPerdidos
+        }
+        return cmPerdidos
+      },
+      textPesoPerdido() {
+        let kilosPerdidos = ''
+        let pesoInicial = parseFloat(this.$store.state.PersonalData.antropometria.peso)
+        let pesoActual = parseFloat(this.historicoPasada.peso)
+
+        if (pesoActual < pesoInicial) {
+          kilosPerdidos = 'kg. Perdidos'
+          return kilosPerdidos
+        }
+        if (pesoActual > pesoInicial) {
+          kilosPerdidos = 'kg. Ganados'
+          return kilosPerdidos
+        }
+        if (pesoInicial === pesoActual) {
+          kilosPerdidos = 'Esta Igual'
+          return kilosPerdidos
+        }
+        return kilosPerdidos
+      },
+      textlaCmPerdidos() {
+        let cmPerdidos = ''
+        let cinturaInicial = parseInt(this.$store.state.PersonalData.antropometria.cintura)
+        let cinturaActual = parseInt(this.historicoPasada.cintura)
+        if (cinturaActual < cinturaInicial) {
+          return 'cm. Perdidos'
+        }
+        if (cinturaActual > cinturaInicial) {
+          return 'cm. Ganados'
+        }
+        if (cinturaInicial === cinturaActual) {
+          return 'Esta Igual'
+        }
+        return cmPerdidos
+      },
+      calculaNivelPeso() {
+        let nivel = ''
+        if (parseFloat(this.imcNivel) <= 18.5) {
+          return 'Persona Insuficiente'
+        }
+        if (parseFloat(this.imcNivel) >= 18.6 && parseFloat(this.imcNivel) <= 24.9) {
+          return 'Normal'
+        }
+        if (parseFloat(this.imcNivel) >= 25 && parseFloat(this.imcNivel) <= 29.9) {
+          return 'Sobrepeso'
+        }
+        if (parseFloat(this.imcNivel) >= 30 && parseFloat(this.imcNivel) <= 34.9) {
+          return 'Obesidad'
+        }
+        if (parseFloat(this.imcNivel) >= 35) {
+          return 'Obesidad Extrema'
+        }
+        return nivel
+      },
+      calculaNivelPesoColor() {
+        let nivel = ''
+        if (parseFloat(this.imcNivel) <= 18.5) {
+          return '#BBDEFB'
+        }
+        if (parseFloat(this.imcNivel) >= 18.6 && parseFloat(this.imcNivel) <= 24.9) {
+          return '#A5D6A7'
+        }
+        if (parseFloat(this.imcNivel) >= 25 && parseFloat(this.imcNivel) <= 29.9) {
+          return '#FFF176'
+        }
+        if (parseFloat(this.imcNivel) >= 30 && parseFloat(this.imcNivel) <= 34.9) {
+          return '#FFCC80'
+        }
+        if (parseFloat(this.imcNivel) >= 35) {
+          return '#FF7043'
+        }
+        return nivel
+      },
+      calculaNivelPesoImg() {
+        let nivel = ''
+        let genero = this.$store.state.PersonalData.datosPersonales.genero
+
+        if (parseFloat(this.imcNivel) <= 18.5) {
+          return genero ? 'img/IMC/M-PI.jpeg' : 'img/IMC/H-PI.jpeg'
+        }
+        if (parseFloat(this.imcNivel) >= 18.6 && parseFloat(this.imcNivel) <= 24.9) {
+          return genero ? 'img/IMC/M-PN.jpeg' : 'img/IMC/H-PN.jpeg'
+        }
+        if (parseFloat(this.imcNivel) >= 25 && parseFloat(this.imcNivel) <= 29.9) {
+          return genero ? 'img/IMC/M-PS.jpeg' : 'img/IMC/H-PS.jpeg'
+        }
+        if (parseFloat(this.imcNivel) >= 30 && parseFloat(this.imcNivel) <= 34.9) {
+          return genero ? 'img/IMC/M-PO.jpeg' : 'img/IMC/H-PO.jpeg'
+        }
+        if (parseFloat(this.imcNivel) >= 35) {
+          return genero ? 'img/IMC/M-POE.jpeg' : 'img/IMC/H-POE.jpeg'
+        }
+        return nivel
       }
     },
     methods: {
       showInfo({item}) {
-        if (!this.isShowInfo) {
+        if (!this.isShowInfo && this.idPaciente === '' || this.idPaciente != item.datosPersonales.idPaciente) {
+          this.idPaciente = item.datosPersonales.idPaciente
           this.isShowInfo = true
           this.$store.commit('SET_PROCESSING_REQUEST', true)
           this.$store.state.PersonalData.datosPersonales.idPaciente = item.datosPersonales.idPaciente
+          this.$store.state.PersonalData.datosPersonales.genero = item.datosPersonales.genero
 
-          this.isShowInfo = false
           this.$store.dispatch('PersonalData/getHistoricoConsultas').then(response => {
-            console.log('response.length ', response.length)
             if (response[0] === 'Auth token is expired') {
               window.localStorage.removeItem('userAuth')
               window.localStorage.removeItem('userInfo')
@@ -433,6 +727,8 @@
               this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
               this.$router.push('/')
             } else {
+              this.$store.state.PersonalData.antropometria.peso =  response[0].antropometria.peso
+              this.$store.state.PersonalData.antropometria.cintura =  response[0].antropometria.cintura
               if (response.length >= 2) {
                 this.isSubsecuente = true
                 this.historicoAntepasada.fecha = new Date(response[response.length -2].createDate)
@@ -440,30 +736,24 @@
                 this.historicoAntepasada.pGrasa = response[response.length -2].antropometria.porcentajeGrasa
                 this.historicoAntepasada.pMusculo = response[response.length -2].antropometria.porcentajeMusculo
                 this.historicoAntepasada.cintura = response[response.length -2].antropometria.cintura
+                this.historicoAntepasada.cadera = response[response.length -2].antropometria.cadera
                 this.historicoAntepasada.imc = response[response.length -2].antropometria.imc
                 this.historicoAntepasada.edadMetabolica = response[response.length -2].antropometria.edadMetabolica
-                this.historicoAntepasada.grasa = response[response.length -2].antropometria.grasa
-                this.historicoAntepasada.glucosa = response[response.length -2].antropometria.glucosa
-                this.historicoAntepasada.ta = response[response.length -2].antropometria.ta
-
-                this.historicoAntepasada.malestar = response[response.length -2].clinico.malestaresGeneral
-                this.historicoAntepasada.observaciones = response[response.length -2].habitos.observaciones
-                this.historicoAntepasada.objetivos = response[response.length -2].habitos.objetivos
+                this.historicoAntepasada.grasa = response[response.length -2].antropometria.grasaBiceral
+                this.historicoAntepasada.glucosa = response[response.length -2].clinico.glucosa
+                this.historicoAntepasada.ta = response[response.length -2].clinico.ta
 
                 this.historicoPasada.fecha = new Date(response[response.length -1].createDate)
                 this.historicoPasada.peso = response[response.length -1].antropometria.peso
                 this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
                 this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
                 this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
+                this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
                 this.historicoPasada.imc = response[response.length -1].antropometria.imc
                 this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
-                this.historicoPasada.grasa = response[response.length -1].antropometria.grasa
-                this.historicoPasada.glucosa = response[response.length -1].antropometria.glucosa
-                this.historicoPasada.ta = response[response.length -1].antropometria.ta
-
-                this.historicoPasada.malestar = response[response.length -1].clinico.malestaresGeneral
-                this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
-                this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
+                this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
+                this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
+                this.historicoPasada.ta = response[response.length -1].clinico.ta
 
               } else {
                 this.isSubsecuente = false
@@ -472,21 +762,26 @@
                 this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
                 this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
                 this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
+                this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
                 this.historicoPasada.imc = response[response.length -1].antropometria.imc
                 this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
-                this.historicoPasada.grasa = response[response.length -1].antropometria.grasa
-                this.historicoPasada.glucosa = response[response.length -1].antropometria.glucosa
-                this.historicoPasada.ta = response[response.length -1].antropometria.ta
-
-                this.historicoPasada.malestar = response[response.length -1].clinico.malestaresGeneral
-                this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
-                this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
+                this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
+                this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
+                this.historicoPasada.ta = response[response.length -1].clinico.ta
+                this.imcNivel =  response[response.length -1].clinico.imc
               }
+              this.historicoPasada.malestar = response[response.length -1].clinico.malestaresGeneral
+              this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
+              this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
+              this.imcNivel =   this.historicoPasada.imc
             }
 
             this.$store.commit('SET_PROCESSING_REQUEST', false)
             this.$store.commit('PersonalData/SET_TEMP_DATA')
           })
+        } else {
+          this.isShowInfo = false
+          this.isShowMoreInfo = false
         }
       },
       getColor(grade) {
@@ -528,11 +823,14 @@
               this.$store.state.PersonalData.clinicoHistorico.evacuaciones = response[response.length -1].clinico.evacuaciones
               this.$store.state.PersonalData.clinicoHistorico.malestaresGeneral = response[response.length -1].clinico.malestaresGeneral
 
+              this.$store.commit('PersonalData/SET_TEMP_DATA')
               this.$store.commit('SET_PROCESSING_REQUEST', false)
 
               this.dialog = true
-
-              this.$store.commit('PersonalData/SET_TEMP_DATA')
+              if (window.localStorage.getItem('tempAntropometria') === null) {
+                this.$store.state.PersonalData.antropometria.peso = ''
+                this.$store.state.PersonalData.antropometria.cintura = ''
+              }
             }
           }
         })
