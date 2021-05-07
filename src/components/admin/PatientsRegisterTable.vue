@@ -184,7 +184,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" sm="6" md="3" v-if="isSubsecuente">
+              <v-col cols="12" sm="6" md="3" v-if="isSubsecuente && noConsultas >= 3">
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #FFF8E1">
                     Consulta: {{historicoAntepasada.fecha.toLocaleDateString()}}
@@ -421,6 +421,12 @@
                         </v-chip>
                       </v-col>
                       <v-col cols="12" sm="12" style="font-size: 0.8em;">
+                        Intolerancias:
+                        <v-chip color="#B3E5FC" small>
+                          {{ item.antecedentesPersonalesNoPatologicos.intolerancias }}
+                        </v-chip>
+                      </v-col>
+                      <v-col cols="12" sm="12" style="font-size: 0.8em;">
                         Aver. Alim:
                         <v-chip color="#FFF9C4" small>
                           {{ item.antecedentesPersonalesNoPatologicos.averacionesAlimentarias }}
@@ -477,6 +483,45 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    <v-dialog
+        v-model="isExistData"
+        persistent
+        max-width="290"
+    >
+      <v-card>
+        <v-card-title class="headline" align="center" justify="center" style="background: #FFD54F">
+          ¡IMPORTANTE!
+        </v-card-title>
+        <br>
+        <br>
+        <v-card-text align="center">
+          <strong>No</strong> se guardaron los datos de la consulta anterior.
+          <br>
+          <br>
+          <strong>¿Deseas guardar ahora?</strong>
+          <br>
+          <br>
+          <p style="color: orangered">Nota: si sale sin guardar se perderan todos los datos.</p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+              color="red darken-1"
+              text
+              @click="cancelarEnvio"
+          >
+            Salir sin guardar
+          </v-btn>
+          <v-btn
+              color="green darken-1"
+              outlined
+              @click="enviarDatosConsulta"
+          >
+            Guardar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -492,6 +537,8 @@
     },
     data () {
       return {
+        noConsultas: 1,
+        isExistData: false,
         expanded: [],
         search: '',
         dialog: false,
@@ -531,7 +578,10 @@
           malestar: '',
           observaciones: '',
           objetivos: ''
-        }
+        },
+        genero: false,
+        pesoInicial: '',
+        cinturaInicial: ''
       }
     },
     computed: {
@@ -579,7 +629,7 @@
       },
       calculaPesoPerdido() {
         let kilosPerdidos = 0
-        let pesoInicial = parseFloat(this.$store.state.PersonalData.antropometria.peso)
+        let pesoInicial = parseFloat(this.pesoInicial)
         let pesoActual = parseFloat(this.historicoPasada.peso)
 
         if (pesoActual < pesoInicial) {
@@ -598,7 +648,7 @@
       },
       calculaCmPerdidos() {
         let cmPerdidos = 0
-        let cinturaInicial = parseInt(this.$store.state.PersonalData.antropometria.cintura)
+        let cinturaInicial = parseInt(this.cinturaInicial)
         let cinturaActual = parseInt(this.historicoPasada.cintura)
 
         if (cinturaActual < cinturaInicial) {
@@ -617,7 +667,7 @@
       },
       textPesoPerdido() {
         let kilosPerdidos = ''
-        let pesoInicial = parseFloat(this.$store.state.PersonalData.antropometria.peso)
+        let pesoInicial = parseFloat(this.pesoInicial)
         let pesoActual = parseFloat(this.historicoPasada.peso)
 
         if (pesoActual < pesoInicial) {
@@ -636,7 +686,7 @@
       },
       textlaCmPerdidos() {
         let cmPerdidos = ''
-        let cinturaInicial = parseInt(this.$store.state.PersonalData.antropometria.cintura)
+        let cinturaInicial = parseInt(this.cinturaInicial)
         let cinturaActual = parseInt(this.historicoPasada.cintura)
         if (cinturaActual < cinturaInicial) {
           return 'cm. Perdidos'
@@ -689,7 +739,7 @@
       },
       calculaNivelPesoImg() {
         let nivel = ''
-        let genero = this.$store.state.PersonalData.datosPersonales.genero
+        let genero = this.genero
 
         if (parseFloat(this.imcNivel) <= 18.5) {
           return genero ? 'img/IMC/M-PI.jpeg' : 'img/IMC/H-PI.jpeg'
@@ -711,78 +761,79 @@
     },
     methods: {
       showInfo({item}) {
-        if (!this.isShowInfo && this.idPaciente === '' || this.idPaciente != item.datosPersonales.idPaciente) {
-          this.idPaciente = item.datosPersonales.idPaciente
-          this.isShowInfo = true
-          this.$store.commit('SET_PROCESSING_REQUEST', true)
-          this.$store.state.PersonalData.datosPersonales.idPaciente = item.datosPersonales.idPaciente
-          this.$store.state.PersonalData.datosPersonales.genero = item.datosPersonales.genero
-
-          this.$store.dispatch('PersonalData/getHistoricoConsultas').then(response => {
-            if (response[0] === 'Auth token is expired') {
-              window.localStorage.removeItem('userAuth')
-              window.localStorage.removeItem('userInfo')
-              window.localStorage.removeItem('registeredUser')
-              this.$store.dispatch('MessageAlerts/clearAlert', false)
-              this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
-              this.$router.push('/')
-            } else {
-              this.$store.state.PersonalData.antropometria.peso =  response[0].antropometria.peso
-              this.$store.state.PersonalData.antropometria.cintura =  response[0].antropometria.cintura
-              if (response.length >= 2) {
-                this.isSubsecuente = true
-                this.historicoAntepasada.fecha = new Date(response[response.length -2].createDate)
-                this.historicoAntepasada.peso = response[response.length -2].antropometria.peso
-                this.historicoAntepasada.pGrasa = response[response.length -2].antropometria.porcentajeGrasa
-                this.historicoAntepasada.pMusculo = response[response.length -2].antropometria.porcentajeMusculo
-                this.historicoAntepasada.cintura = response[response.length -2].antropometria.cintura
-                this.historicoAntepasada.cadera = response[response.length -2].antropometria.cadera
-                this.historicoAntepasada.imc = response[response.length -2].antropometria.imc
-                this.historicoAntepasada.edadMetabolica = response[response.length -2].antropometria.edadMetabolica
-                this.historicoAntepasada.grasa = response[response.length -2].antropometria.grasaBiceral
-                this.historicoAntepasada.glucosa = response[response.length -2].clinico.glucosa
-                this.historicoAntepasada.ta = response[response.length -2].clinico.ta
-
-                this.historicoPasada.fecha = new Date(response[response.length -1].createDate)
-                this.historicoPasada.peso = response[response.length -1].antropometria.peso
-                this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
-                this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
-                this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
-                this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
-                this.historicoPasada.imc = response[response.length -1].antropometria.imc
-                this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
-                this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
-                this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
-                this.historicoPasada.ta = response[response.length -1].clinico.ta
-
-              } else {
-                this.isSubsecuente = false
-                this.historicoPasada.fecha = new Date(response[response.length -1].createDate)
-                this.historicoPasada.peso = response[response.length -1].antropometria.peso
-                this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
-                this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
-                this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
-                this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
-                this.historicoPasada.imc = response[response.length -1].antropometria.imc
-                this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
-                this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
-                this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
-                this.historicoPasada.ta = response[response.length -1].clinico.ta
-                this.imcNivel =  response[response.length -1].clinico.imc
-              }
-              this.historicoPasada.malestar = response[response.length -1].clinico.malestaresGeneral
-              this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
-              this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
-              this.imcNivel =   this.historicoPasada.imc
-            }
-
-            this.$store.commit('SET_PROCESSING_REQUEST', false)
-            this.$store.commit('PersonalData/SET_TEMP_DATA')
-          })
-        } else {
+        if (this.isShowInfo) {
           this.isShowInfo = false
           this.isShowMoreInfo = false
         }
+        this.idPaciente = item.datosPersonales.idPaciente
+        this.$store.commit('SET_PROCESSING_REQUEST', true)
+        this.$store.state.PersonalData.datosPersonales.idPaciente = item.datosPersonales.idPaciente
+        this.genero = item.datosPersonales.genero
+
+        this.$store.dispatch('PersonalData/getHistoricoConsultas').then(response => {
+          if (response[0] === 'Auth token is expired') {
+            window.localStorage.removeItem('userAuth')
+            window.localStorage.removeItem('userInfo')
+            window.localStorage.removeItem('registeredUser')
+            this.$store.dispatch('MessageAlerts/clearAlert', false)
+            this.$store.dispatch('AuthenticationProcesses/clearAuthenticationProcesses', false)
+            this.$router.push('/')
+          } else {
+            this.pesoInicial =  response[0].antropometria.peso
+            this.cinturaInicial =  response[0].antropometria.cintura
+            this.noConsultas = response.length
+            if (response.length >= 2) {
+              this.isSubsecuente = true
+              this.historicoAntepasada.fecha = new Date(response[response.length -2].createDate)
+              this.historicoAntepasada.peso = response[response.length -2].antropometria.peso
+              this.historicoAntepasada.pGrasa = response[response.length -2].antropometria.porcentajeGrasa
+              this.historicoAntepasada.pMusculo = response[response.length -2].antropometria.porcentajeMusculo
+              this.historicoAntepasada.cintura = response[response.length -2].antropometria.cintura
+              this.historicoAntepasada.cadera = response[response.length -2].antropometria.cadera
+              this.historicoAntepasada.imc = response[response.length -2].antropometria.imc
+              this.historicoAntepasada.edadMetabolica = response[response.length -2].antropometria.edadMetabolica
+              this.historicoAntepasada.grasa = response[response.length -2].antropometria.grasaBiceral
+              this.historicoAntepasada.glucosa = response[response.length -2].clinico.glucosa
+              this.historicoAntepasada.ta = response[response.length -2].clinico.ta
+
+              this.historicoPasada.fecha = new Date(response[response.length -1].createDate)
+              this.historicoPasada.peso = response[response.length -1].antropometria.peso
+              this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
+              this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
+              this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
+              this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
+              this.historicoPasada.imc = response[response.length -1].antropometria.imc
+              this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
+              this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
+              this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
+              this.historicoPasada.ta = response[response.length -1].clinico.ta
+
+            } else {
+              this.isSubsecuente = false
+              this.historicoPasada.fecha = new Date(response[response.length -1].createDate)
+              this.historicoPasada.peso = response[response.length -1].antropometria.peso
+              this.historicoPasada.pGrasa = response[response.length -1].antropometria.porcentajeGrasa
+              this.historicoPasada.pMusculo = response[response.length -1].antropometria.porcentajeMusculo
+              this.historicoPasada.cintura = response[response.length -1].antropometria.cintura
+              this.historicoPasada.cadera = response[response.length -1].antropometria.cadera
+              this.historicoPasada.imc = response[response.length -1].antropometria.imc
+              this.historicoPasada.edadMetabolica = response[response.length -1].antropometria.edadMetabolica
+              this.historicoPasada.grasa = response[response.length -1].antropometria.grasaBiceral
+              this.historicoPasada.glucosa = response[response.length -1].clinico.glucosa
+              this.historicoPasada.ta = response[response.length -1].clinico.ta
+              this.imcNivel =  response[response.length -1].clinico.imc
+            }
+            this.historicoPasada.malestar = response[response.length -1].clinico.malestaresGeneral
+            this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
+            this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
+            this.imcNivel = this.historicoPasada.imc
+          }
+          if (!this.isShowInfo) {
+            this.isShowInfo = true
+          }
+          this.$store.commit('SET_PROCESSING_REQUEST', false)
+          this.$store.commit('PersonalData/SET_TEMP_DATA')
+        })
       },
       getColor(grade) {
         return grade ? '#f8bacf' : '#27c6da'
@@ -791,6 +842,7 @@
         return "https://api.whatsapp.com/send?phone=52" + phone + "&text=¡Hola,%20" + name + "!"
       },
       iniciarConsulta(paciente, medidas) {
+        window.localStorage.setItem('idPaciente', paciente.idPaciente)
         this.$store.commit('SET_PROCESSING_REQUEST', true)
         this.$store.state.PersonalData.nobreCompleto = `${paciente.nombre} ${paciente.apellidoPaterno} ${paciente.apellidoMaterno}`
         this.$store.state.PersonalData.datosPersonales.idPaciente = paciente.idPaciente
@@ -827,14 +879,48 @@
               this.$store.commit('SET_PROCESSING_REQUEST', false)
 
               this.dialog = true
-              if (window.localStorage.getItem('tempAntropometria') === null) {
-                this.$store.state.PersonalData.antropometria.peso = ''
-                this.$store.state.PersonalData.antropometria.cintura = ''
-              }
             }
           }
         })
+      },
+      enviarDatosConsulta() {
+        this.$store.commit('SET_PROCESSING_REQUEST', true)
+        this.$store.state.PersonalData.datosPersonales = JSON.parse(window.localStorage.getItem('tempDatosPersonales'))
+        this.$store.state.PersonalData.antecedentesHeredofamiliares = JSON.parse(window.localStorage.getItem('tempAntecedentesHeredofamiliares'))
+        this.$store.state.PersonalData.antecedentesPersonalesPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesPatologicos'))
+        this.$store.state.PersonalData.antecedentesGinecoObstetricos = JSON.parse(window.localStorage.getItem('tempAntecedentesGinecoObstetricos'))
+        this.$store.state.PersonalData.antecedentesPersonalesNoPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesNoPatologicos'))
+        this.$store.state.PersonalData.comidas = JSON.parse(window.localStorage.getItem('tempComidas'))
+        this.$store.state.PersonalData.antropometria = JSON.parse(window.localStorage.getItem('tempAntropometria'))
+        this.$store.state.PersonalData.clinico = JSON.parse(window.localStorage.getItem('tempClinico'))
+        this.$store.state.PersonalData.dietetico = JSON.parse(window.localStorage.getItem('tempDietetico'))
+        this.$store.state.PersonalData.habitos = JSON.parse(window.localStorage.getItem('tempHabitos'))
+        this.$store.state.createDate = new Date()
+        if (window.localStorage.getItem('tempDatosPersonales') !== null) {
+          this.$store.dispatch('PersonalData/sendRegister')
+          this.isExistData = false
+        } else {
+          this.$store.state.PersonalData.datosPersonales.idPaciente = window.localStorage.getItem('idPaciente')
+          this.$store.dispatch('PersonalData/sendHistoricoConsulta', window.localStorage.getItem('idPaciente')).then(resp => {
+            resp ? this.isExistData = false : this.isExistData = false
+          })
+        }
+      },
+      cancelarEnvio() {
+        this.$store.commit('PersonalData/SET_PERSONAL_DATA')
+        this.isExistData = false
+      }
+    },
+      mounted() {
+        if (window.localStorage.getItem('idPaciente') !== null &&
+            window.localStorage.getItem('tempAntropometria') !== null) {
+          this.isExistData = true
+          return
+        }
+        if (window.localStorage.getItem('tempDatosPersonales') !== null) {
+          this.isExistData = true
+          return;
+        }
       }
     }
-  }
 </script>

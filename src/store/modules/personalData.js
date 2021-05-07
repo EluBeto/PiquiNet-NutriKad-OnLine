@@ -665,6 +665,7 @@ export default {
             }
         },
         SET_PERSONAL_DATA(state) {
+            window.localStorage.removeItem('idPaciente')
             window.localStorage.removeItem('tempDatosPersonales')
             window.localStorage.removeItem('tempAntecedentesHeredofamiliares')
             window.localStorage.removeItem('tempAntecedentesPersonalesPatologicos')
