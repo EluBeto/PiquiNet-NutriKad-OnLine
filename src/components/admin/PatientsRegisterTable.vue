@@ -885,23 +885,28 @@
       },
       enviarDatosConsulta() {
         this.$store.commit('SET_PROCESSING_REQUEST', true)
-        this.$store.state.PersonalData.datosPersonales = JSON.parse(window.localStorage.getItem('tempDatosPersonales'))
-        this.$store.state.PersonalData.antecedentesHeredofamiliares = JSON.parse(window.localStorage.getItem('tempAntecedentesHeredofamiliares'))
-        this.$store.state.PersonalData.antecedentesPersonalesPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesPatologicos'))
-        this.$store.state.PersonalData.antecedentesGinecoObstetricos = JSON.parse(window.localStorage.getItem('tempAntecedentesGinecoObstetricos'))
-        this.$store.state.PersonalData.antecedentesPersonalesNoPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesNoPatologicos'))
-        this.$store.state.PersonalData.comidas = JSON.parse(window.localStorage.getItem('tempComidas'))
-        this.$store.state.PersonalData.antropometria = JSON.parse(window.localStorage.getItem('tempAntropometria'))
-        this.$store.state.PersonalData.clinico = JSON.parse(window.localStorage.getItem('tempClinico'))
-        this.$store.state.PersonalData.dietetico = JSON.parse(window.localStorage.getItem('tempDietetico'))
-        this.$store.state.PersonalData.habitos = JSON.parse(window.localStorage.getItem('tempHabitos'))
-        this.$store.state.createDate = new Date()
         if (window.localStorage.getItem('tempDatosPersonales') !== null) {
+          this.$store.state.PersonalData.datosPersonales = JSON.parse(window.localStorage.getItem('tempDatosPersonales'))
+          this.$store.state.PersonalData.antecedentesHeredofamiliares = JSON.parse(window.localStorage.getItem('tempAntecedentesHeredofamiliares'))
+          this.$store.state.PersonalData.antecedentesPersonalesPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesPatologicos'))
+          this.$store.state.PersonalData.antecedentesGinecoObstetricos = JSON.parse(window.localStorage.getItem('tempAntecedentesGinecoObstetricos'))
+          this.$store.state.PersonalData.antecedentesPersonalesNoPatologicos = JSON.parse(window.localStorage.getItem('tempAntecedentesPersonalesNoPatologicos'))
+          this.$store.state.PersonalData.comidas = JSON.parse(window.localStorage.getItem('tempComidas'))
+          this.$store.state.PersonalData.antropometria = JSON.parse(window.localStorage.getItem('tempAntropometria'))
+          this.$store.state.PersonalData.clinico = JSON.parse(window.localStorage.getItem('tempClinico'))
+          this.$store.state.PersonalData.dietetico = JSON.parse(window.localStorage.getItem('tempDietetico'))
+          this.$store.state.PersonalData.habitos = JSON.parse(window.localStorage.getItem('tempHabitos'))
+          this.$store.state.createDate = new Date()
           this.$store.dispatch('PersonalData/sendRegister')
           this.isExistData = false
         } else {
           this.$store.state.PersonalData.datosPersonales.idPaciente = window.localStorage.getItem('idPaciente')
-          this.$store.dispatch('PersonalData/sendHistoricoConsulta', window.localStorage.getItem('idPaciente')).then(resp => {
+          this.$store.state.PersonalData.antropometria = JSON.parse(window.localStorage.getItem('tempAntropometria'))
+          this.$store.state.PersonalData.clinico = JSON.parse(window.localStorage.getItem('tempClinico'))
+          this.$store.state.PersonalData.dietetico = JSON.parse(window.localStorage.getItem('tempDietetico'))
+          this.$store.state.PersonalData.habitos = JSON.parse(window.localStorage.getItem('tempHabitos'))
+          this.$store.state.createDate = new Date()
+          this.$store.dispatch('PersonalData/sendHistoricoConsulta', this.$store.state.PersonalData.datosPersonales.idPaciente).then(resp => {
             resp ? this.isExistData = false : this.isExistData = false
           })
         }
