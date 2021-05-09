@@ -113,15 +113,16 @@
             ></v-select>
           </v-col>
           <v-col cols="12" sm="6" md="3">
-            <v-text-field
+            <v-autocomplete
                 :rules="rules.textRules"
                 v-model="datosPersonales.direccion"
+                :items="municipios"
                 type="text"
                 prepend-icon="mdi-account-supervisor"
                 label="Dirección"
                 color="primary"
                 required
-            ></v-text-field>
+            ></v-autocomplete>
           </v-col>
           <v-col cols="12" sm="6" md="3">
             <v-text-field
@@ -153,7 +154,22 @@ export default {
   inject: ['$validator'],
   data: () => ({
     tipoConsultas: ['On Line', 'Precencial'],
-    estadoCivil: ['Soltera(o)', 'Casada(o)', 'Viuda(o)', 'Divorciada(o)', 'Union Libre']
+    estadoCivil: ['Soltera(o)', 'Casada(o)', 'Viuda(o)', 'Divorciada(o)', 'Union Libre'],
+    municipios: ["Acambay de Ruíz Castañeda","Acolman","Aculco","Almoloya de Alquisiras","Almoloya de Juárez","Almoloya del Río",
+      "Amanalco","Amatepec","Amecameca","Apaxco","Atenco","Atizapán","Atizapán de Zaragoza","Atlapulco","Atlacomulco","Atlautla","Axapusco",
+      "Ayapango","Calimaya","Capulhuac","Coacalco de Berriozábal","Coatepec Harinas","Cocotitlán","Coyotepec","Cuautitlán","Chalco",
+      "Chapa de Mota","Chapultepec","Chiautla","Chicoloapan","Chiconcuac","Chimalhuacán","Donato Guerra","Ecatepec de Morelos",
+      "Ecatzingo","Huehuetoca","Hueypoxtla","Huixquilucan","Isidro Fabela","Ixtapaluca","Ixtapan de la Sal","Ixtapan del Oro",
+      "Ixtlahuaca","Xalatlaco","Jaltenco","Jilotepec","Jilotzingo","Jiquipilco","Jocotitlán","Joquicingo","Juchitepec","Lerma",
+      "Malinalco","Melchor Ocampo","Metepec","Mexicaltzingo","Morelos","Naucalpan de Juárez","Nezahualcóyotl","Nextlalpan",
+      "Nicolás Romero","Nopaltepec","Ocoyoacac","Ocuilan","El Oro","Otumba","Otzoloapan","Otzolotepec","Ozumba","Papalotla","La Paz",
+      "Polotitlán","Rayón","Santiago Tilapa","San Antonio la Isla","San Felipe del Progreso","San Martín de las Pirámides","San Mateo Atenco",
+      "San Simón de Guerrero","Santo Tomás","Soyaniquilpan de Juárez","Sultepec","Tecámac","Tejupilco","Temamatla","Temascalapa",
+      "Temascalcingo","Temascaltepec","Temoaya","Tenancingo","Tenango del Aire","Tenango del Valle","Teoloyucan","Teotihuacán",
+      "Tepetlaoxtoc","Tepetlixpa","Tepotzotlán","Tequixquiac","Texcaltitlán","Texcalyacac","Texcoco","Tezoyuca","Tianguistenco",
+      "Timilpan","Tlalmanalco","Tlalnepantla de Baz","Tlatlaya","Toluca","Tonatico","Tultepec","Tultitlán","Valle de Bravo",
+      "Villa de Allende","Villa del Carbón","Villa Guerrero","Villa Victoria","Xonacatlán","Zacazonapan","Zacualpan","Zinacantepec",
+      "Zumpahuacán","Zumpango","Cuautitlán Izcalli","Valle de Chalco Solidaridad","Luvianos","San José del Rincón","Tonanitla"]
   }),
   computed: {
     arraySteps() {

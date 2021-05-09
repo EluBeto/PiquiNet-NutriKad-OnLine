@@ -352,18 +352,6 @@
                           </tr>
                         </table>
                       </v-col>
-                      <!--
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Contacto:
-                        <a :href="'tel:' + item.datosPersonales.telefono">
-                          <v-icon>mdi mdi-phone</v-icon>
-                        </a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
-                          <v-icon>mdi mdi-whatsapp</v-icon>
-                        </a>
-                      </v-col>
-                      -->
                     </v-row>
                   </v-card-text>
                 </v-card>
@@ -408,7 +396,7 @@
                     label="Más Información"
                 ></v-switch>
               </v-col>
-              <v-col cols="12" sm="6" md="5" v-if="isShowMoreInfo">
+              <v-col cols="12" sm="6" md="6" v-if="isShowMoreInfo">
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #FFE082">Importante</v-card-title>
                   <v-divider></v-divider>
@@ -442,9 +430,28 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" sm="6" md="2" v-if="isShowMoreInfo">
+              <v-col cols="12" sm="6" md="6" v-if="isShowMoreInfo">
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #B2DFDB">Otras</v-card-title>
+                  <v-card-text>
+                    <v-row>
+                      <v-col cols="12" md="12" sm="12">
+                        <v-btn class="px-1" v-if="historicoPasada.perfilBioquimico.isPerfilB"
+                               @click="isPerfilBioquimico = true"
+                        >Perfil Bioquímico</v-btn>
+                      </v-col>
+                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
+                        Contacto:
+                        <a :href="'tel:' + item.datosPersonales.telefono">
+                          <v-icon>mdi mdi-phone</v-icon>
+                        </a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
+                          <v-icon>mdi mdi-whatsapp</v-icon>
+                        </a>
+                      </v-col>
+                    </v-row>
+                  </v-card-text>
                 </v-card>
               </v-col>
             </v-row>
@@ -522,6 +529,201 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <v-dialog
+        v-model="isPerfilBioquimico"
+        persistent
+        max-width="600px"
+        scrollable
+    >
+      <v-card>
+        <v-toolbar
+            class="font-weight-thin"
+            style="font-size: 1.2em;"
+            color="#26A69A"
+            dark
+        >
+          <strong>
+            PERFIL BIOQUÍMICO
+          </strong>
+        </v-toolbar>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col cols="4" sm="4" md="12">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.fecha"
+                    prepend-icon="mdi-calendar"
+                    type="date"
+                    label="Fecha de estudio"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.hemoglobina"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Hemoglobina"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.glucosa"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Glucosa"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.colesterol"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Colesterol"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.hdl"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="HDL"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.ldl"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="LDL"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.trigliceridos"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Triglicéridos"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.acidoUrico"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Ácido Úrico"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.creatinina"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Creatinina"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.fosforo"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Fósforo"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.calcio"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Calcio"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.magnesio"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Magnesio"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.sodio"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Sodio"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.potasio"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Potasio"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.cloro"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Cloro"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-text-field
+                    v-model="historicoPasada.perfilBioquimico.albumina"
+                    type="text"
+                    prepend-icon="mdi-flask-outline"
+                    label="Creatinina"
+                    color="primary"
+                    disabled
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+              color="blue darken-1"
+              text
+              @click="isPerfilBioquimico= false"
+          >
+            Salir
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -537,6 +739,7 @@
     },
     data () {
       return {
+        isPerfilBioquimico: false,
         noConsultas: 1,
         isExistData: false,
         expanded: [],
@@ -577,7 +780,26 @@
           ta: '',
           malestar: '',
           observaciones: '',
-          objetivos: ''
+          objetivos: '',
+          perfilBioquimico: {
+            isPerfilB: false,
+            fecha: '',
+            hemoglobina: '',
+            glucosa: '',
+            colesterol: '',
+            hdl: '',
+            ldl: '',
+            trigliceridos: '',
+            acidoUrico: '',
+            creatinina: '',
+            fosforo: '',
+            calcio: '',
+            magnesio: '',
+            sodio: '',
+            potasio: '',
+            cloro: '',
+            albumina: ''
+          }
         },
         genero: false,
         pesoInicial: '',
@@ -827,6 +1049,29 @@
             this.historicoPasada.observaciones = response[response.length -1].habitos.observaciones
             this.historicoPasada.objetivos = response[response.length -1].habitos.objetivos
             this.imcNivel = this.historicoPasada.imc
+            for (var x = 0; x < response.length; x++) {
+              if (response[x].clinico.perfilBioquimico !== undefined) {
+                this.historicoPasada.perfilBioquimico.isPerfilB = response[x].clinico.isPerfilB
+                this.historicoPasada.perfilBioquimico.fecha = response[x].clinico.perfilBioquimico.fecha
+                this.historicoPasada.perfilBioquimico.hemoglobina = response[x].clinico.perfilBioquimico.hemoglobina
+                this.historicoPasada.perfilBioquimico.glucosa = response[x].clinico.perfilBioquimico.glucosa
+                this.historicoPasada.perfilBioquimico.colesterol = response[x].clinico.perfilBioquimico.colesterol
+                this.historicoPasada.perfilBioquimico.hdl = response[x].clinico.perfilBioquimico.hdl
+                this.historicoPasada.perfilBioquimico.ldl = response[x].clinico.perfilBioquimico.ldl
+                this.historicoPasada.perfilBioquimico.trigliceridos = response[x].clinico.perfilBioquimico.trigliceridos
+                this.historicoPasada.perfilBioquimico.acidoUrico = response[x].clinico.perfilBioquimico.acidoUrico
+                this.historicoPasada.perfilBioquimico.creatinina = response[x].clinico.perfilBioquimico.creatinina
+                this.historicoPasada.perfilBioquimico.fosforo = response[x].clinico.perfilBioquimico.fosforo
+                this.historicoPasada.perfilBioquimico.calcio = response[x].clinico.perfilBioquimico.calcio
+                this.historicoPasada.perfilBioquimico.magnesio = response[x].clinico.perfilBioquimico.magnesio
+                this.historicoPasada.perfilBioquimico.sodio = response[x].clinico.perfilBioquimico.sodio
+                this.historicoPasada.perfilBioquimico.potasio = response[x].clinico.perfilBioquimico.potasio
+                this.historicoPasada.perfilBioquimico.cloro = response[x].clinico.perfilBioquimico.cloro
+                this.historicoPasada.perfilBioquimico.albumina = response[x].clinico.perfilBioquimico.albumina
+              } else {
+                this.historicoPasada.perfilBioquimico.isPerfilB = false
+              }
+            }
           }
           if (!this.isShowInfo) {
             this.isShowInfo = true

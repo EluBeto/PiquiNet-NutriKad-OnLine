@@ -22,7 +22,26 @@ export default {
             hidratacion: '',
             noEvacuaciones: '',
             evacuaciones: '',
-            malestaresGeneral: ''
+            malestaresGeneral: '',
+            perfilBioquimico: {
+                isPerfilB: false,
+                fecha: '',
+                hemoglobina: '',
+                glucosa: '',
+                colesterol: '',
+                hdl: '',
+                ldl: '',
+                trigliceridos: '',
+                acidoUrico: '',
+                creatinina: '',
+                fosforo: '',
+                calcio: '',
+                magnesio: '',
+                sodio: '',
+                potasio: '',
+                cloro: '',
+                albumina: ''
+            }
         },
         isActive: false,
         createDate: new Date(),
@@ -159,7 +178,25 @@ export default {
             hidratacion: '',
             noEvacuaciones: '',
             evacuaciones: '',
-            malestaresGeneral: ''
+            malestaresGeneral: '',
+            isPerfilB: false,
+            perfilBioquimico: {
+                fecha: '',
+                hemoglobina: '',
+                glucosa: '',
+                colesterol: '',
+                hdl: '',
+                ldl: '',
+                trigliceridos: '',
+                acidoUrico: '',
+                fosforo: '',
+                calcio: '',
+                magnesio: '',
+                sodio: '',
+                potasio: '',
+                cloro: '',
+                albumina: ''
+            }
         },
         dietetico: {
             apegoPlan: '',
@@ -639,6 +676,23 @@ export default {
                 state.clinico.noEvacuaciones = tempClinico.noEvacuaciones
                 state.clinico.evacuaciones = tempClinico.evacuaciones
                 state.clinico.malestaresGeneral = tempClinico.malestaresGeneral
+                state.clinico.isPerfilB = tempClinico.malestaresGeneral
+                state.clinico.perfilBioquimico.fecha = tempClinico.fecha
+                state.clinico.perfilBioquimico.hemoglobina = tempClinico.hemoglobina
+                state.clinico.perfilBioquimico.glucosa = tempClinico.glucosa
+                state.clinico.perfilBioquimico.colesterol = tempClinico.colesterol
+                state.clinico.perfilBioquimico.hdl = tempClinico.hdl
+                state.clinico.perfilBioquimico.ldl = tempClinico.ldl
+                state.clinico.perfilBioquimico.trigliceridos = tempClinico.trigliceridos
+                state.clinico.perfilBioquimico.acidoUrico = tempClinico.acidoUrico
+                state.clinico.perfilBioquimico.creatinina = tempClinico.creatinina
+                state.clinico.perfilBioquimico.fosforo = tempClinico.fosforo
+                state.clinico.perfilBioquimico.calcio = tempClinico.calcio
+                state.clinico.perfilBioquimico.magnesio = tempClinico.magnesio
+                state.clinico.perfilBioquimico.sodio = tempClinico.sodio
+                state.clinico.perfilBioquimico.potasio = tempClinico.potasio
+                state.clinico.perfilBioquimico.cloro = tempClinico.cloro
+                state.clinico.perfilBioquimico.albumina = tempClinico.albumina
             }
 
             if (window.localStorage.getItem('tempDietetico') !== null) {
@@ -787,6 +841,23 @@ export default {
             state.clinico.noEvacuaciones = ''
             state.clinico.evacuaciones = ''
             state.clinico.malestaresGeneral = ''
+            state.clinico.isPerfilB = ''
+            state.clinico.perfilBioquimico.fecha = ''
+            state.clinico.perfilBioquimico.hemoglobina = ''
+            state.clinico.perfilBioquimico.glucosa = ''
+            state.clinico.perfilBioquimico.colesterol = ''
+            state.clinico.perfilBioquimico.hdl = ''
+            state.clinico.perfilBioquimico.ldl = ''
+            state.clinico.perfilBioquimico.trigliceridos = ''
+            state.clinico.perfilBioquimico.acidoUrico = ''
+            state.clinico.perfilBioquimico.creatinina = ''
+            state.clinico.perfilBioquimico.fosforo = ''
+            state.clinico.perfilBioquimico.calcio = ''
+            state.clinico.perfilBioquimico.magnesio = ''
+            state.clinico.perfilBioquimico.sodio = ''
+            state.clinico.perfilBioquimico.potasio = ''
+            state.clinico.perfilBioquimico.cloro = ''
+            state.clinico.perfilBioquimico.albumina = ''
 
             state.dietetico.apegoPlan = ''
             state.dietetico.escalaSueno = ''
