@@ -83,6 +83,7 @@
           <v-chip
               :color="getColor(item.datosPersonales.genero)"
               small
+              style="width: 65px;"
           >
             {{ item.datosPersonales.genero === true ? 'Mujer' : 'Hombre'}}
           </v-chip>
@@ -109,71 +110,71 @@
                       <v-col cols="12" md="12" sm="12">
                         <table>
                           <tr>
-                            <td>Peso</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Peso</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.peso }} kg.
                               </v-chip>
                             </td>
-                            <td>Edad Met.</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Edad Met.</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.edadMetabolica }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Cintura</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cintura</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.cintura }} cm
                               </v-chip>
                             </td>
-                            <td>Cadera</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cadera</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.cadera }} cm
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>%Grasa</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Grasa</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.porcentajeGrasa }}
                               </v-chip>
                             </td>
-                            <td>%Musculo</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Musculo</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.porcentajeMusculo }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>IMC</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">IMC</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.imc }}
                               </v-chip>
                             </td>
-                            <td>Grasa Vic.</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Grasa Vic.</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.antropometria.grasaBiceral }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Glucosa</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Glucosa</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.clinico === undefined ? '0' : item.clinico.glucosa }}
                               </v-chip>
                             </td>
-                            <td>T/A</td>
-                            <td>
-                              <v-chip color="#80DEEA" small style="font-size: 0.9em;">
+                            <td style="text-align: right">T/A</td>
+                            <td style="text-align: left">
+                              <v-chip color="#80DEEA" small style="font-size: 0.9em; width: 55px; ">
                                 {{ item.clinico === undefined ? '0' : item.clinico.ta }}
                               </v-chip>
                             </td>
@@ -195,71 +196,77 @@
                       <v-col cols="12" sm="12" md="12">
                         <table>
                           <tr>
-                            <td>Peso</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Peso</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082"
+                                      small style="font-size: 0.9em; width: 55px"
+                              >
                                 {{ historicoAntepasada.peso }} kg.
                               </v-chip>
                             </td>
-                            <td>Edad Met.</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Edad Met.</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.edadMetabolica }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Cintura</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cintura</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.cintura }} cm
                               </v-chip>
                             </td>
-                            <td>Cadera</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cadera</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.cadera }} cm
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>%Grasa</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Grasa</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.pGrasa }}
                               </v-chip>
                             </td>
-                            <td>%Musculo</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Musculo</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.pMusculo }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>IMC</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">IMC</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.imc }}
                               </v-chip>
                             </td>
-                            <td>Grasa Vic.</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Grasa Vic.</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.grasa }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Glucosa</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Glucosa</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082" small style="font-size: 0.9em; width: 55px">
                                 {{ historicoAntepasada.glucosa === undefined ? '0' : historicoAntepasada.glucosa}}
                               </v-chip>
                             </td>
-                            <td>T/A</td>
-                            <td>
-                              <v-chip color="#FFE082" small style="font-size: 0.9em;">
+                            <td style="text-align: right">T/A</td>
+                            <td style="text-align: center">
+                              <v-chip color="#FFE082"
+                                      style="font-size: 0.9em;
+                                      width: 55px"
+                                      small
+                              >
                                 {{ historicoAntepasada.ta }}
                               </v-chip>
                             </td>
@@ -281,71 +288,71 @@
                       <v-col cols="12" sm="12" md="12">
                         <table>
                           <tr>
-                            <td>Peso</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Peso</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.peso }} kg.
                               </v-chip>
                             </td>
-                            <td>Edad Met.</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Edad Met.</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.edadMetabolica }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Cintura</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cintura</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.cintura }} cm
                               </v-chip>
                             </td>
-                            <td>Cadera</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Cadera</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.cadera }} cm
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>%Grasa</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Grasa</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.pGrasa }}
                               </v-chip>
                             </td>
-                            <td>%Musculo</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">%Musculo</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.pMusculo }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>IMC</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">IMC</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.imc }}
                               </v-chip>
                             </td>
-                            <td>Grasa Vic.</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Grasa Vic.</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.grasa }}
                               </v-chip>
                             </td>
                           </tr>
                           <tr>
-                            <td>Glucosa</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">Glucosa</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px; ">
                                 {{ historicoPasada.glucosa === undefined ? '0' : historicoPasada.glucosa }}
                               </v-chip>
                             </td>
-                            <td>T/A</td>
-                            <td>
-                              <v-chip color="#A5D6A7" small style="font-size: 0.9em;">
+                            <td style="text-align: right">T/A</td>
+                            <td style="text-align: left">
+                              <v-chip color="#A5D6A7" small style="font-size: 0.9em; width: 55px;">
                                 {{ historicoPasada.ta }}
                               </v-chip>
                             </td>
@@ -362,25 +369,32 @@
                     {{ calculaNivelPeso }}
                   </v-card-title>
                   <v-card-text>
-                    <v-row class="text-center">
-                      <v-col cols="12" sm="6" md="6" style="font-size: 0.9em;">
-                        {{ textPesoPerdido }}
-                        <v-chip :color="calculaNivelPesoColor" small style="font-size: 0.9em;">
-                          {{ calculaPesoPerdido }} kg
-                        </v-chip>
+                    <v-row>
+                      <v-col cols="12" md="12" sm="12">
+                        <table>
+                          <tr>
+                            <td style="text-align: left">
+                              {{ textPesoPerdido }}
+                            </td>
+                            <td style="text-align: right">
+                              <v-chip :color="calculaNivelPesoColor" small style="font-size: 0.9em; text-align: center; width: 55px;">
+                                {{ calculaPesoPerdido }} kg
+                              </v-chip>
+                            </td>
+                            <td style="text-align: left">
+                              {{ textlaCmPerdidos }}
+                            </td>
+                            <td style="text-align: right">
+                              <v-chip :color="calculaNivelPesoColor" small style="font-size: 0.9em; text-align: center; width: 55px;">
+                                {{ calculaCmPerdidos }} cm
+                              </v-chip>
+                            </td>
+                          </tr>
+                        </table>
                       </v-col>
-                      <v-col cols="12" sm="6" md="6" style="font-size: 0.9em;">
-                        {{ textlaCmPerdidos }}
-                        <v-chip :color="calculaNivelPesoColor"  small style="font-size: 0.9em;">
-                          {{ calculaCmPerdidos }} cm
-                        </v-chip>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="4">
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6" class="text-center">
-                        <v-img :src="calculaNivelPesoImg" width="55" height="136"></v-img>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="2">
+                      <v-col cols="12" md="12" sm="12" align="center" justify="center"
+                      >
+                        <v-img :src="calculaNivelPesoImg" width="48"></v-img>
                       </v-col>
                     </v-row>
                   </v-card-text>
@@ -434,24 +448,29 @@
                 <v-card>
                   <v-card-title class="text-center" style="font-size: 1.5em; background: #B2DFDB">Otras</v-card-title>
                   <v-card-text>
-                    <v-row>
+                    <v-row class="ma-2">
                       <v-col cols="12" md="12" sm="12">
                         <v-btn class="px-1" v-if="historicoPasada.perfilBioquimico.isPerfilB"
+                               color="#B39DDB"
                                @click="isPerfilBioquimico = true"
                         >Perfil Bioquímico</v-btn>
                       </v-col>
-                      <v-col cols="12" sm="12" style="font-size: 1.0em;">
-                        Contacto:
+                    </v-row>
+                  </v-card-text>
+                  <v-card-actions align="center" style="background: #F5F5F5">
+                    <v-row>
+                      <v-col cols="12" md="6">
                         <a :href="'tel:' + item.datosPersonales.telefono">
-                          <v-icon>mdi mdi-phone</v-icon>
+                          <v-icon color="#263238">mdi mdi-phone</v-icon>
                         </a>
-                        &nbsp;&nbsp;&nbsp;
+                      </v-col>
+                      <v-col cols="12" md="6">
                         <a :href="sendWhats(item.datosPersonales.telefono, item.datosPersonales.nombre)" target="_blank">
-                          <v-icon>mdi mdi-whatsapp</v-icon>
+                          <v-icon color="#388E3C">mdi mdi-whatsapp</v-icon>
                         </a>
                       </v-col>
                     </v-row>
-                  </v-card-text>
+                  </v-card-actions>
                 </v-card>
               </v-col>
             </v-row>
@@ -893,11 +912,11 @@
         let pesoActual = parseFloat(this.historicoPasada.peso)
 
         if (pesoActual < pesoInicial) {
-          kilosPerdidos = 'kg. Perdidos'
+          kilosPerdidos = 'Perdidos'
           return kilosPerdidos
         }
         if (pesoActual > pesoInicial) {
-          kilosPerdidos = 'kg. Ganados'
+          kilosPerdidos = 'Ganados'
           return kilosPerdidos
         }
         if (pesoInicial === pesoActual) {
@@ -911,10 +930,10 @@
         let cinturaInicial = parseInt(this.cinturaInicial)
         let cinturaActual = parseInt(this.historicoPasada.cintura)
         if (cinturaActual < cinturaInicial) {
-          return 'cm. Perdidos'
+          return 'Perdidos'
         }
         if (cinturaActual > cinturaInicial) {
-          return 'cm. Ganados'
+          return 'Ganados'
         }
         if (cinturaInicial === cinturaActual) {
           return 'Esta Igual'
@@ -955,7 +974,7 @@
           return '#FFCC80'
         }
         if (parseFloat(this.imcNivel) >= 35) {
-          return '#FF7043'
+          return '#FF6E40'
         }
         return nivel
       },
