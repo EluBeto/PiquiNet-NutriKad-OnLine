@@ -5,9 +5,9 @@
   >
     <v-sheet
         class="v-sheet--offset mx-auto"
-        color="light-green darken-1"
+        color="#263238"
         elevation="12"
-        max-width="calc(100% - 32px)"
+        max-width="calc(100% - 42px)"
     >
       <v-sparkline
           :labels="labels"
@@ -19,18 +19,18 @@
     </v-sheet>
 
     <v-card-text class="pt-0">
-      <div class="title font-weight-light mb-2">
+      <div class="text-h6">
         {{ textShow }}
       </div>
-      <div v-if="enableWeightEntry(2)">
+      <div v-if="enableWeightEntry(1)">
         <div class="subheading font-weight-light grey--text">
           <v-text-field
               ref="peso"
               v-model="weigth"
               solo
-              label="70.1"
+              label="Ingresa tu peso actual"
               clearable
-              :disabled="!enableWeightEntry(2)"
+              :disabled="!enableWeightEntry(1)"
               :rules="rules.weightRules"
               required
           ></v-text-field>
@@ -44,13 +44,13 @@
             >
               mdi-clock
             </v-icon>
-            <span class="caption grey--text font-weight-light">Solo tienes 24 horas para ingresar tu nuevo peso.</span>
+            <span class="text-h6">Solo tienes 24 horas para ingresar tu nuevo peso.</span>
           </v-col>
           <v-col cols="12" md="3">
             <v-btn
                 small
                 color="success"
-                :disabled="!enableWeightEntry(2)"
+                :disabled="!enableWeightEntry(1)"
                 :loading="loading"
                 @click="sendWeigth()"
             >Enviar</v-btn>
@@ -81,7 +81,7 @@ export default {
     textShow() {
       const date = new Date()
       let dateNow = date.getDate()
-      return dateNow <= 21 ? 'El proximo 21 de marzo podrás ingresar tu nuevo peso.' : 'El proximo 28 de marzo podrás ingresar tu nuevo peso.'
+      return dateNow === 10 ? 'Hoy 10 de mayo podrás ingresar tu nuevo peso.' : 'El proximo 17 de mayo podrás ingresar tu nuevo peso.'
     }
   },
   methods: {
@@ -122,7 +122,7 @@ export default {
     enableWeightEntry(week) {
       const date = new Date()
       let dateNow = date.getDate()
-      let dateShow = week === 1 ? 21 : 28
+      let dateShow = week === 1 ? 10 : 17
       return dateNow === dateShow
     }
   },

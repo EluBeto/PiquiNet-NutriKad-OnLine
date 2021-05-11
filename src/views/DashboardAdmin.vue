@@ -123,6 +123,69 @@
               <PatientsRegisterTable :patientsRegister="patientsRegister"></PatientsRegisterTable>
           </v-col>
       </v-row>
+    <v-dialog
+        v-model="dialog"
+        width="500"
+    >
+      <v-card>
+        <v-card-title class="headline lighten-2" style="background: #80CBC4">
+          TOP DE LOS MÁS APLICADOS
+        </v-card-title>
+
+        <v-card-text>
+
+          <v-card
+              max-width="450"
+              class="mx-auto"
+              elevation="0"
+          >
+            <v-list three-line>
+              <v-subheader class="headline lighten-2">Semana Uno</v-subheader>
+              <template v-for="item in arrayTop">
+                <v-divider
+                    :key="item.UUID"
+                    :inset="item.inset"
+                ></v-divider>
+
+                <v-list-item
+                    :key="item.UUID"
+                >
+                  <v-list-item-avatar>
+                    <v-avatar
+                        color="yellow darken-4"
+                    >
+                      <span class="white--text headline">
+                       {{ item.name.substring(0, 1) }}
+                      </span>
+                    </v-avatar>
+                  </v-list-item-avatar>
+
+                  <v-list-item-content>
+                    <v-list-item-title v-html="item.name" style="font-size: large"></v-list-item-title>
+                    <v-list-item-subtitle v-html="`Menos: ${item.peso} Kg.`" style="color: #00C853; font-size: x-large"></v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </template>
+            </v-list>
+          </v-card>
+
+
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+              color="primary"
+              text
+              @click="dialog = false"
+          >
+            Salir
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -144,7 +207,10 @@ export default {
     patientsRegister: [],
     totalR: 0,
     totalH: 0,
-    totalM: 0
+    totalM: 0,
+    arrayTop: [],
+    arrayUsers: [],
+    dialog: false
   }),
    computed: {
       userName() {
@@ -178,6 +244,28 @@ export default {
     methods: {
         showImage(gender) {
         return gender ? 'https://avataaars.io/' : 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light'
+      },
+      GetTopProgressWeith() {
+          this.$store.dispatch('PersonalData/getProgressWeithAll').then(responseWeith => {
+            for (let i = 0; i < responseWeith.length -1; i ++) {
+              if (responseWeith[i].UUID === this.arrayUsers[i].UUID) {
+                if (responseWeith[i].secondWeight !== 0) {
+                  if (responseWeith[i].secondWeight <  responseWeith[i].firstWeight) {
+                    let resta = 0
+                    resta = parseFloat(responseWeith[i].firstWeight - responseWeith[i].secondWeight).toFixed(2)
+                    this.arrayTop.push({
+                      name: this.arrayUsers[i].name,
+                      peso: resta
+                    })
+                  }
+                }
+              }
+            }
+            this.arrayTop.sort(function (a, b){
+              return b.peso - a.peso;
+            })
+            this.dialog = true
+          })
       }
     },
   created() {
@@ -186,6 +274,7 @@ export default {
       let conteoM = 0
       let conteoH = 0
       let filterRegister = []
+      let namesUsers = ''
       filterRegister = response.filter(user => user.dataIdentificationCard.name != 'Edilberto')
       filterRegister = filterRegister.filter(user => user.dataIdentificationCard.name != 'Karina')
       for (let i = 0; i < filterRegister.length; i++) {
@@ -194,11 +283,14 @@ export default {
         } else {
           conteoH ++
         }
+        namesUsers = `${filterRegister[i].dataIdentificationCard.name} ${filterRegister[i].dataIdentificationCard.lastName} ${filterRegister[i].dataIdentificationCard.motherLastName}`
+        this.arrayUsers.push({name: namesUsers, UUID: filterRegister[i].dataIdentificationCard.UUID})
       }
       this.totalM = conteoM
       this.totalH = conteoH
       this.totalR = filterRegister.length
       this.patientsRegister = filterRegister
+      this.GetTopProgressWeith()
     })
     this.$store.dispatch('SetLayout', 'default-layout')
   }

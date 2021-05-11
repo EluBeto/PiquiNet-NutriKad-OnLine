@@ -7,6 +7,7 @@ export default {
         isRegisteredUser: false,
         createDate: new Date(),
         identificationCard: {
+            UUID: null,
             name: null,
             lastName: null,
             motherLastName: null,
@@ -59,7 +60,7 @@ export default {
                     idToken
                 } = JSON.parse(localStorage.getItem('userAuth'))
                 let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register/${localId}.json?auth=${idToken}`
-
+                state.identificationCard.UUID = localId
                 let parameters = JSON.stringify({
                     dataIdentificationCard: state.identificationCard,
                     clinicHistory: state.clinicHistory,
@@ -165,6 +166,31 @@ export default {
             }
             return patientesRegister
         },
+        async getProgressWeithAll({ rootState }) {
+            if (localStorage.getItem('userAuth') != null) {
+                const {
+                    idToken
+                } = JSON.parse(localStorage.getItem('userAuth'))
+                let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight.json?auth=${idToken}`
+                const responseWeight = await HttpServices.getRequest(url)
+                if (responseWeight.error === 'Auth token is expired'){
+                    window.localStorage.removeItem('userAuth')
+                    window.localStorage.removeItem('userInfo')
+                    window.localStorage.removeItem('registeredUser')
+                    router.push("/")
+                }
+            let newArray = []
+            for (let id in responseWeight) {
+                newArray.push(responseWeight[id])
+            }
+                return newArray
+            } else {
+                window.localStorage.removeItem('userAuth')
+                window.localStorage.removeItem('userInfo')
+                window.localStorage.removeItem('registeredUser')
+                router.push("/")
+            }
+        },
         async getProgressWeith({ rootState }) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
@@ -173,11 +199,17 @@ export default {
                 } = JSON.parse(localStorage.getItem('userAuth'))
                 let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight/${localId}.json?auth=${idToken}`
                 const responseWeight = await HttpServices.getRequest(url)
+                if (responseWeight.error === 'Auth token is expired'){
+                    window.localStorage.removeItem('userAuth')
+                    window.localStorage.removeItem('userInfo')
+                    window.localStorage.removeItem('registeredUser')
+                    router.push("/")
+                }
                 return responseWeight
             } else {
                 window.localStorage.removeItem('userInfo')
                 window.localStorage.removeItem('registeredUser')
-                router.push('/')
+                router.push("/")
             }
         },
         async sendProgressWeigth({ rootState }, payload) {
@@ -188,9 +220,10 @@ export default {
                 } = JSON.parse(localStorage.getItem('userAuth'))
                 let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight/${localId}.json?auth=${idToken}`
                 let parameters = JSON.stringify({
-                    firstWeight: payload.firstWeight,
-                    secondWeight: payload.secondWeight,
-                    thirdWeight: payload.thirdWeight
+                    UUID: localId,
+                    firstWeight: parseFloat(payload.firstWeight),
+                    secondWeight: parseFloat(payload.secondWeight),
+                    thirdWeight: parseFloat(payload.thirdWeight)
                 })
                 let responseWeight = ''
                 await HttpServices.putRequest(url, parameters).then(response => {
