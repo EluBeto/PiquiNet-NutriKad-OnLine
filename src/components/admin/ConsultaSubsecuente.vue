@@ -14,19 +14,21 @@
         <v-btn block v-if="tab === 3"
                @click="enviaRegistroConsulta()"
                color="primary"
-        >Guardar</v-btn>
+        >Guardar
+        </v-btn>
       </v-col>
       <v-col cols="12" sm="4" md="4">
         <v-btn block v-if="tab === 3"
                @click="cancelRegister()"
                color="error"
-        >Cancelar</v-btn>
+        >Cancelar
+        </v-btn>
       </v-col>
       <v-col cols="12" sm="4" md="4">
         <v-btn block color="warning" @click="$store.dispatch('PersonalData/cancelRegister')">Limpiar Historia Clinica
-        <v-icon right>
-          mdi-delete
-        </v-icon>
+          <v-icon right>
+            mdi-delete
+          </v-icon>
         </v-btn>
       </v-col>
     </v-row>
@@ -88,14 +90,14 @@ export default {
     HistoricoAntropometrico,
     HistoricoClinico
   },
-  data () {
+  data() {
     return {
       tab: null,
       items: [
-        { tab: 'Antropometria', content: 1, isAllowed: true },
-        { tab: 'Clinico', content: 2, isAllowed: true },
-        { tab: 'Dietetico', content: 3, isAllowed: true },
-        { tab: 'Cambio de Habitos', content: 4, isAllowed: true }
+        {tab: 'Antropometria', content: 1, isAllowed: true},
+        {tab: 'Clinico', content: 2, isAllowed: true},
+        {tab: 'Dietetico', content: 3, isAllowed: true},
+        {tab: 'Cambio de Habitos', content: 4, isAllowed: true}
       ]
     }
   },
@@ -291,7 +293,7 @@ export default {
           this.$store.dispatch('PersonalData/sendRegister')
         } else {
           this.stepsProperties.arrayOfSteps[validations.id].isValid = true
-          this.stepsProperties.numberOfSteps ++
+          this.stepsProperties.numberOfSteps++
         }
       } else {
         this.showAlert(validations.message)

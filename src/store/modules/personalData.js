@@ -220,7 +220,7 @@ export default {
         }
     },
     actions: {
-        async sendHistoricoConsulta({ state, rootState, commit }, payload) {
+        async sendHistoricoConsulta({state, rootState, commit}, payload) {
             let resp = false
             const {
                 idToken
@@ -229,7 +229,7 @@ export default {
             let uID = state.datosPersonales.idPaciente
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}.json?auth=${idToken}`
             await HttpServices.getRequest(url).then(historicoConsultas => {
-                if (historicoConsultas.response !== undefined){
+                if (historicoConsultas.response !== undefined) {
                     if (historicoConsultas.response.message === 'Failed to fetch') {
                         rootState.processingRequest = false
                         rootState.MessageAlerts = {
@@ -246,9 +246,9 @@ export default {
                             }
                         }
                     }
-                }  else {
+                } else {
                     let contador = []
-                    for (let id in historicoConsultas){
+                    for (let id in historicoConsultas) {
                         contador.push(historicoConsultas[id])
                     }
                     let urlHistorico = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${payload}/${contador.length}.json?auth=${idToken}`
@@ -321,7 +321,7 @@ export default {
             })
             return resp
         },
-        async getHistoricoConsultas({ state, rootState }) {
+        async getHistoricoConsultas({state, rootState}) {
             const {
                 idToken
             } = JSON.parse(window.localStorage.getItem('userAuth'))
@@ -329,7 +329,7 @@ export default {
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}historico-consultas/${uID}.json?auth=${idToken}`
             const registros = []
             await HttpServices.getRequest(url).then(historicoConsultas => {
-                if (historicoConsultas.response !== undefined){
+                if (historicoConsultas.response !== undefined) {
                     if (historicoConsultas.response.message === 'Failed to fetch') {
                         rootState.processingRequest = false
                         rootState.MessageAlerts = {
@@ -346,15 +346,15 @@ export default {
                             }
                         }
                     }
-                }  else {
-                    for (let id in historicoConsultas){
+                } else {
+                    for (let id in historicoConsultas) {
                         registros.push(historicoConsultas[id])
                     }
                 }
             })
             return registros
         },
-        async sendRegister({ state, rootState, commit }) {
+        async sendRegister({state, rootState, commit}) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
                     idToken
@@ -472,14 +472,14 @@ export default {
                 })
             }
         },
-        async getRegisters({ rootState }) {
+        async getRegisters({rootState}) {
             const {
                 idToken
             } = JSON.parse(window.localStorage.getItem('userAuth'))
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}patient-register.json?auth=${idToken}`
             const patientesRegister = []
             await HttpServices.getRequest(url).then(response => {
-                if (response.response !== undefined){
+                if (response.response !== undefined) {
                     if (response.response.message === 'Failed to fetch') {
                         rootState.MessageAlerts = {
                             type: 'snackbar',
@@ -495,15 +495,15 @@ export default {
                             }
                         }
                     }
-                }  else {
-                    for (let id in response){
+                } else {
+                    for (let id in response) {
                         patientesRegister.push(response[id])
                     }
                 }
             })
             return patientesRegister
         },
-        async getProgressWeith({ rootState }) {
+        async getProgressWeith({rootState}) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
                     localId,
@@ -516,7 +516,7 @@ export default {
                 router.push('/')
             }
         },
-        async sendProgressWeigth({ rootState }, payload) {
+        async sendProgressWeigth({rootState}, payload) {
             if (localStorage.getItem('userAuth') != null) {
                 const {
                     localId,
@@ -537,7 +537,7 @@ export default {
                 router.push('/')
             }
         },
-        cancelRegister({ commit, rootState }) {
+        cancelRegister({commit, rootState}) {
             rootState.Steps.numberOfSteps = 1
             commit('SET_PERSONAL_DATA')
         }

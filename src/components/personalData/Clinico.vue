@@ -252,7 +252,7 @@
                     v-model="clinico.perfilBioquimico.albumina"
                     type="text"
                     prepend-icon="mdi-flask-outline"
-                    label="Creatinina"
+                    label="Albumina"
                     color="primary"
                 ></v-text-field>
               </v-col>
