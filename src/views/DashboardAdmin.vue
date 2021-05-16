@@ -126,6 +126,7 @@
     <v-dialog
         v-model="dialog"
         width="500"
+        scrollable
     >
       <v-card>
         <v-card-title class="headline lighten-2" style="background: #80CBC4">
@@ -140,7 +141,7 @@
               elevation="0"
           >
             <v-list three-line>
-              <v-subheader class="headline lighten-2">Semana Uno</v-subheader>
+              <v-subheader class="headline lighten-2">Semanas Uno y Dos</v-subheader>
               <template v-for="item in arrayTop">
                 <v-divider
                     :key="item.UUID"
@@ -253,6 +254,9 @@ export default {
                   if (responseWeith[i].secondWeight <  responseWeith[i].firstWeight) {
                     let resta = 0
                     resta = parseFloat(responseWeith[i].firstWeight - responseWeith[i].secondWeight).toFixed(2)
+                    if (responseWeith[i].thirdWeight !== 0) {
+                      resta = parseFloat(responseWeith[i].secondWeight - responseWeith[i].thirdWeight).toFixed(2)
+                    }
                     this.arrayTop.push({
                       name: this.arrayUsers[i].name,
                       peso: resta

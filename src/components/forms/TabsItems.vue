@@ -158,7 +158,6 @@ export default {
         let monthNow = date.toDateString()
         if (id.localId === '6vyLo8wGhNeRlsqnU9x1LSfEz3j1'
             || id.localId === 'fY4jFG29h6eLh1gYp1VKiCl4l8j2'
-            || id.localId === 'nIUlH2n0hPeuMmTljNkoZqm3JA62'
             || id.localId === '8dSo7ly4bUMEOSLRMMvGIssII9s1'
             || id.localId === 'phutcwaSKlOhVDGJGOxdEB4tpWa2') {
           return false
