@@ -22,7 +22,7 @@
       <div class="text-h6">
         {{ textShow }}
       </div>
-      <div v-if="enableWeightEntry(1)">
+      <div v-if="enableWeightEntry(2)">
         <div class="subheading font-weight-light grey--text">
           <v-text-field
               ref="peso"
@@ -30,7 +30,7 @@
               solo
               label="Ingresa tu peso actual"
               clearable
-              :disabled="!enableWeightEntry(1)"
+              :disabled="!enableWeightEntry(2)"
               :rules="rules.weightRules"
               required
           ></v-text-field>
@@ -50,7 +50,7 @@
             <v-btn
                 small
                 color="success"
-                :disabled="!enableWeightEntry(1)"
+                :disabled="!enableWeightEntry(2)"
                 :loading="loading"
                 @click="sendWeigth()"
             >Enviar</v-btn>

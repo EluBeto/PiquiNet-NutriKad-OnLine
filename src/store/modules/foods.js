@@ -1649,7 +1649,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1681,7 +1681,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1714,7 +1714,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1745,7 +1745,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1784,7 +1784,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1823,7 +1823,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1896,7 +1896,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -1935,7 +1935,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2332,7 +2332,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2362,7 +2362,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2396,7 +2396,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2425,7 +2425,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2464,7 +2464,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2498,8 +2498,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                 breakfastOrDinner: [
                     {
                         foodId: 1,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Omelette de vegetales mixtos!',
+                        image: '/img/D3-BB.jpeg',
+                        title: '¡Bowlcito básico!',
                         smallDescription: `
 
                         <small>
@@ -2507,7 +2507,12 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+                            1/2 taza zanahoria rallada
+
+
+</li>
+                            <li>
+                                     1/3  taza de hojuelas de avena
 </li>
                         </ul>  . . .
                         `,
@@ -2518,19 +2523,29 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
-</li>
-                            <li>
-1 huevo + 1 clara
-</li>
-                            <li>
-1/5 de pieza de Aguacate
-</li>
-                            <li>
-½ cucharadita de aceite de oliva
-</li>
-                            <li>
+                           1/2 taza zanahoria rallada
 
+</li>
+                            <li>
+1/3  taza de hojuelas de avena 
+</li>
+                            <li>
+½  taza de leche de almendras sin azúcar (silk sin azúcar)
+</li>
+                            <li>
+                            
+                         1 cucharadita extracto de vainilla, pizca de canela en polvo, pizca de café descafeinado soluble (al gusto).
+
+</li>
+                            <li>
+                               1/3 de pieza de plátano  
+
+</li>
+                            <li>
+                            1 cucharada de almendra fileteada
+</li>
+                            <li>
+                        1 cucharadita de chía
 </li>
                         </ul>                    
                         `,
@@ -2541,19 +2556,21 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                         </br> </br>
                         <ol>
                             <li>
-                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
+                       Mezcla en un bowl la leche de almendras, la chía, el extracto de vainilla y la canela hasta que se integren.
+
                             </li>
                             <li>
-                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
+                                Coloca después las hojuelas de avena y la zanahoria.
+
                             </li>
                             <li>
-                                 Dobla a la mitad y sirve.
+                            Decora con el plátano y la almendra fileteada. 
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
-                                    </li>
-                                    <li>
-                                    
+                                    No olvides acompañar con 
+                                   
+                                   1 taza de pepino picado
+                                  4 rollos de jamón de pavo
                                     </li>
                                 </ul>
                             </li>
@@ -2562,8 +2579,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 2,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Tapas dulces!',
+                        image: '/img/D3-CA.jpeg',
+                        title: '¡Carnita asada con verduras!',
                         smallDescription: `
 
                         <small>
@@ -2571,14 +2588,12 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-½ manzana picada
+                            1/4 taza ejotes cocidos
 </li>
                             <li>
-5 galletas marías
+                             1/4 taza zanahorias cocidas
+
 </li>
-                            <li>
-5 Cucharadas de queso cottage
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -2588,16 +2603,24 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-½ manzana picada
+                              1/4 taza ejotes cocidos
+
 </li>
                             <li>
-5 galletas marías
+     1/4 taza zanahorias cocidas
 </li>
                             <li>
-5 Cucharadas de queso cottage
+1 paquetito de salmas 
 </li>
                             <li>
-½ barra de chocolate turin si n azúcar.
+                           70 gr de bistec de res asado 
+</li>
+                            <li>
+                            1/5 de pieza de agacate
+                            
+</li>
+                            <li>
+                              30 gr de queso oaxaca light
 </li>
                         </ul>                    
                         `,
@@ -2608,19 +2631,14 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
+Sofríe las verduras en un sartén. Salpimienta al gusto, agrega al mismo sartén la carne de res, tostada troceada y coloca encima el queso Oaxaca light. 
                             </li>
                             <li>
-                                Coloca la mezcla anterior sobre las galletas.
-                            </li>
-                            <li>
-                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
+      
                                 <ul>
                                     <li>
-                                    Corona las galletas con el chocolate derretido.
-                                    </li>
-                                    <li>
-                                    ½ manzana picada, ½ taza de yogurt natural.
+              Tapa el sartén y cocina a fuego bajo hasta que gratine el queso. Sirve y decora con el aguacate.
+
                                 </ul>
                             </li>
                         </ol>                     
@@ -2628,8 +2646,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 3,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Huevito ranchero!',
+                        image: '/img/D3-TL.jpeg',
+                        title: '¡Tacos ligeros tipo wrap!',
                         smallDescription: `
 
                         <small>
@@ -2637,10 +2655,11 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+                            3 hojas de lechuga orejona 
 </li>
                             <li>
-2 tortilla de maíz.
+                         3/4 taza apio picado
+
 </li>
                         </ul>  . . .
                         `,
@@ -2651,19 +2670,27 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+                            3 hojas de lechuga orejona 
 </li>
                             <li>
-2 tortilla de maíz.
+                         3/4 taza apio picado
 </li>
                             <li>
-1 huevos estrellado + 1 clara de huevo estrellda.
+                                 1 paquete Salmas
 </li>
                             <li>
-Pimienta y sal al gusto.
+                1 cucharada yogurt griego sin azúcar 
+</li>
+                            <li>                            
+                               ¼ de pieza de aguacate
 </li>
                             <li>
-1/5 de pieza de aguacate
+
+
+                            50 gr de pechuga de pollo en hebras
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -2674,19 +2701,21 @@ Pimienta y sal al gusto.
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
+                         Con ayuda de un tenedor tritura el aguacate, mezcla con el yogurt griego, limón, sal y pimienta. 
                             </li>
                             <li>
-                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
+                            Agrega la pechuga de pollo y el apio a la mezcla anterior y revuelve.
                             </li>
                             <li>
-                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
+                            
+                                Sirve la mezcla sobre las hojas de lechuga y cierra para formar unos tipo wraps.
+
                                 <ul>
                                     <li>
-                                    1 manzana picada y 1 cucharada de yogurt
+                                    Acompaña con las salmas
                                     </li>
                                     <li>
-                                    
+                                    No olvides incluir con un jugo.
                                     </li>
                                 </ul>
                             </li>
@@ -2695,8 +2724,8 @@ Pimienta y sal al gusto.
                     },
                     {
                         foodId: 4,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Crepa de mango!',
+                        image: '/img/D3-TM.jpeg',
+                        title: '¡Tostadito de mango!',
                         smallDescription: `
 
                         <small>
@@ -2704,14 +2733,11 @@ Pimienta y sal al gusto.
          </small>
                         <ul>
                             <li>
-½  taza de jicama rallada
+                             1 mango picado
 </li>
                             <li>
-¼ de pieza de plátano 
+                         1 pieza de pan tostado
 </li>
-                            <li>
-3 cucharadas de harina de avena
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -2721,22 +2747,20 @@ Pimienta y sal al gusto.
   	         </small>
                         <ul>
                             <li>
-½  taza de jicama rallada
+1 mango picado 
 </li>
                             <li>
-¼ de pieza de plátano 
+                          1 pieza de pan tostado
 </li>
                             <li>
-3 cucharadas de harina de avena
+4 cucharadas de queso cottage 
 </li>
                             <li>
-1 huevo
+                          1 cucharada de almendra fileteada
 </li>
                             <li>
-Un chorrito de leche
-</li>
-                            <li>
-Estracto de vainilla y canela en polvo al gusto
+                       Acompaña con ½ taza de jicama picada
+
 </li>
                         </ul>                    
                         `,
@@ -2747,19 +2771,12 @@ Estracto de vainilla y canela en polvo al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
+                             Coloca sobre el pan tostado el queso cottage.
+
                             </li>
                             <li>
-                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
+                        Monta encima el mango picado y decora con la almendra fileteada.
                             </li>
-                            <li>
-                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
-                                <ul>
-                                    <li>
-                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
-                                    </li>
-                                    <li>
-                                    </li>
                                 </ul>
                             </li>
                         </ol>                     
@@ -2767,8 +2784,8 @@ Estracto de vainilla y canela en polvo al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Panquecitos de fresa!',
+                        image: '/img/D3-MV.jpeg',
+                        title: '¡Miniburgers de vegetales!',
                         smallDescription: `
 
                         <small>
@@ -2776,14 +2793,12 @@ Estracto de vainilla y canela en polvo al gusto
          </small>
                         <ul>
                             <li>
-½ taza de zanahoria rallada cruda
+                          1 taza de ejotes cocidos picado
+
 </li>
                             <li>
-¼ de pieza de plátano
+                                ½ taza de avena en hojuelas
 </li>
-                            <li>
-3 cucharadas de harina de avena
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -2793,19 +2808,19 @@ Estracto de vainilla y canela en polvo al gusto
   	         </small>
                         <ul>
                             <li>
-½ taza de zanahoria rallada cruda
+1 taza de ejotes cocidos picado 
 </li>
                             <li>
-¼ de pieza de plátano
+                          ½ taza de avena en hojuelas
 </li>
                             <li>
-4 cucharadas de harina de avena
+             60 gramos queso panela
 </li>
                             <li>
-1 huevo
+                                    1 clara de huevo
 </li>
                             <li>
-Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
+                               Pizca de sal, pimienta, orégano al gusto y ½ cucharadita de aceite de oliva
 </li>
                         </ul>                    
                         `,
@@ -2816,19 +2831,18 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                         </br> </br>
                         <ol>
                             <li>
-                                Licua todos los ingredientes hasta tener una mezcla homogénea.
+   En un recipiente coloca los ejotes, queso panela, clara de huevo y hojuelas de avena. Salpimienta al gusto y mezcla muy bien todos los ingredientes. 
+
                             </li>
                             <li>
-                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
+En un sartén caliente vierte el aceite de oliva y expande.
+
                             </li>
                             <li>
-                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
+Con ayuda de una cuchara, sirve un poco de la mezcla de ejotes y forma tus croquetas en el sartén anterior. Repite hasta terminar con la mezcla. 
                                 <ul>
                                     <li>
-                                    Nol olvides acompañar con un jugo.
-                                    </li>
-                                    <li>
-
+Cocina a fuego medio y con tapa por ambos lados y sirve.
                                     </li>
                                 </ul>
                             </li>
@@ -2872,7 +2886,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2904,7 +2918,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2937,7 +2951,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -2968,7 +2982,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3007,7 +3021,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3046,7 +3060,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3119,7 +3133,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3158,7 +3172,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3209,8 +3223,8 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foods: [
                     {
                         foodId: 1,
-                        image: '/img/comida.jpg',
-                        title: '¡Taquitos de pollo com aguacate!',
+                        image: '/img/C3-TC.jpeg',
+                        title: '¡Tostadas de camaron picosito!',
                         smallDescription: `
 
                         <small>
@@ -3218,7 +3232,10 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
          </small>
                         <ul>
                             <li>
-1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+                         1 taza de mix de vegetales (pimiento naranja, rojo, cebolla y champiñones)
+</li>
+                            <li>
+                            2 tostadas horneadas sanissimo
 </li>
                         </ul>  . . .
                         `,
@@ -3229,19 +3246,23 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
   	         </small>
                         <ul>
                             <li>
-1 nopal asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+                            1 taza de mix de vegetales (pimiento naranja, rojo, cebolla y champiñones)
 </li>
                             <li>
-2 tortillas de maíz
+2 tostadas horneadas sanissimo 
 </li>
                             <li>
-70 gr de pechuga de pollo deshebrado
+                         100 gramos de camarón cocido
 </li>
                             <li>
-1/5 de pieza de aguacate
+                            1/2 cucharadita aceite de oliva, pizca de sal y pimienta
 </li>
                             <li>
-Pizca de sal y pimienta
+                                 Salsa verde al gusto
+</li>
+                            <li>
+Aguacate 1/5 de pieza
+
 </li>
                         </ul>                    
                         `,
@@ -3252,19 +3273,14 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y champiñones, y cocina. Salpimienta al gusto. 
                             </li>
                             <li>
-                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                           Agrega los camarones al sartén anterior y mezcla.
                             </li>
                             <li>
-                            Emplata.
-                                <ul>
-                                    <li>
-                                    Acompaña tu platillo con 1 taza de verduras al gusto.
-                                    </li>
-                                    <li>
-                                    
+  Monta los camarones sobre las tostadas horneadas. Salpimienta al gusto. Decora con el aguacate y la salsa.
+
                                     </li>
                                 </ul>
                             </li>
@@ -3273,8 +3289,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 2,
-                        image: '/img/comida.jpg',
-                        title: '¡Mega taco de queso!',
+                        image: '/img/C3-TAP.jpeg',
+                        title: '¡Tacos de aguacate con pollo!',
                         smallDescription: `
 
                         <small>
@@ -3282,14 +3298,12 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+                                   2 piezas regulares de nopal asado
 </li>
                             <li>
-1 tortilla de harina 
+                           5 esparragos (o sustituye por la verdura de tu preferencia)
+
 </li>
-                            <li>
-60 gr de queso oaxaca light 
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -3299,19 +3313,26 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+                             2 piezas regulares de nopal asado
 </li>
                             <li>
-1 tortilla de harina 
+5 esparragos (o sustituye por la verdura de tu preferencia)
 </li>
                             <li>
-60 gr de queso oaxaca light 
+                             2 zanahorias en bastones cocidas
 </li>
                             <li>
-60 gr de pollo en trosos pequeños
+                              2 tortillas de míz
 </li>
                             <li>
-2 cucharadas de guacamole, sal y pimienta al gusto
+                            100 gr de pechuga de pollo en hebras
+
+</li>
+                            <li>
+                            1/5 de pieza de aguacate
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -3322,16 +3343,17 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
+                            Pon la cebolla en un sartén caliente y cocina a fuego bajo, cuando cambie de color agrega el pollo y salpimienta al gusto.
                             </li>
                             <li>
-                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
+                   Calienta las tortillas por ambos lados en un comal caliente. 
                             </li>
                             <li>
-                            Emplata y decora con el guacamole
-                                    </li>
+                                Rellena las tortillas con el pollo deshebrado y aguacate. 
+
+                                <ul>
                                     <li>
-                                    Acompaña tu platillo con alguna entrada
+                                    Acompaña tu platilo con las verdras cocidas.
                                 </ul>
                             </li>
                         </ol>                     
@@ -3339,8 +3361,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 3,
-                        image: '/img/comida.jpg',
-                        title: '¡Arroz y carne!',
+                        image: '/img/C3-SF.jpeg',
+                        title: '¡Sope fit!',
                         smallDescription: `
 
                         <small>
@@ -3348,11 +3370,15 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+                              1 taza de espinacas
 </li>
                             <li>
-¼ de taza de arroz cocido
+                              100 gr de masa para tortillas
 </li>
+<li>
+                     80 gr de carne molida de res cocida
+                            </li>
+
                         </ul>  . . .
                         `,
 
@@ -3362,19 +3388,19 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+                            1 taza de espinacas
 </li>
                             <li>
-¼ de taza de arroz cocido
+100 gr de masa para tortillas 
 </li>
                             <li>
-60 gr de carne de res cocida
+80 gr de carne molida de res cocida 
 </li>
                             <li>
-1 cucharadita de aceite de oliva
+                             40 gr de queso panela rallado
 </li>
                             <li>
-Pizca de sal y pimienta al gusto
+                         3 cucharadas de salsa de tomate, sal y pimienta al gusto y 1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -3385,19 +3411,18 @@ Pizca de sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
+                           Mezcla en un sartén la carne con la salsa de tomate, espinacas, sal y pimienta. Calienta un poco y reserva.
                             </li>
                             <li>
-                                Sirve la cerne, brólo y a un lado el arroz.
+                      Forma 1 sope con la masa y dejalo cocer por ambos lados.
                             </li>
                             <li>
-                            Vierte el aceite de oliva sobre tu platillo.
+                          Emplata tu sope y monta la mezcla de carne encima.
+
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con alguna entrada.
-                                    </li>
-                                    <li>
-                                    
+     Decora con el queso y aguacate.
+Difrutalo, puedes agregarle lechuga al gusto.
                                     </li>
                                 </ul>
                             </li>
@@ -3406,8 +3431,8 @@ Pizca de sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/comida.jpg',
-                        title: '¡Tostadas de alambre!',
+                        image: '/img/C3-SFR.jpeg',
+                        title: '¡Simple y fresco!',
                         smallDescription: `
 
                         <small>
@@ -3415,11 +3440,14 @@ Pizca de sal y pimienta al gusto
          </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+                                  ½ taza de pimiento morron de colores
 </li>
                             <li>
-2 tostadas sanissimo
+                              1/4 taza arroz cocido 
 </li>
+                            <li>
+                            140 gramos de pescado asado sal
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -3429,16 +3457,19 @@ Pizca de sal y pimienta al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+½ taza de pimiento morron de colores
+ </li>
+                            <li>
+                              1/4 taza arroz cocido
 </li>
                             <li>
-2 tostadas sanissimo
+                            140 gramos de pescado asado sal y pimienta al gusto
+ </li>
+                            <li>
+                             ½ taza de pepino picado, ½ taza de lechuga picada.
 </li>
                             <li>
-60 gr de carne de res asada.
-</li>
-                            <li>
-1/5 de pieza de aguacate, sal y pimienta al gusto.
+                          1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -3449,18 +3480,19 @@ Pizca de sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
+                              Mezcla el arroz con los pimientos y sirve como cama.
                             </li>
                             <li>
-                                Agrega la carne de res al sartén anterior y mezcla.
+    	Monta encima el pescado asado y salpimienta al gusto.
                             </li>
                             <li>
-                            Monta el alambre sobre las tostadas,
+                    Acompaña con la ensalda de pepino, lechuga y aguacate.
                                 <ul>
                                     <li>
-                                    Decora con el aguacate, agrega alguna entrada.
-                                    </li>
+ 
+                                <ul>
                                     <li>
+                                       No olvides acompañar tu platillo con una entrada.
                                     </li>
                                 </ul>
                             </li>
@@ -3469,8 +3501,8 @@ Pizca de sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/comida.jpg',
-                        title: '¡Brocoli salad!',
+                        image: '/img/C3-TCP.jpeg',
+                        title: '¡Taquitos de carne al pastor!',
                         smallDescription: `
 
                         <small>
@@ -3478,11 +3510,14 @@ Pizca de sal y pimienta al gusto
          </small>
                         <ul>
                             <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
+                              1 taza mix de verduras
 </li>
                             <li>
-½ taza de pasta cocida
+                              2 tortillas de maíz (Tortilleria)
 </li>
+                            <li>
+                 Pedacito cebolla picada cocida
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -3492,19 +3527,19 @@ Pizca de sal y pimienta al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
+1 taza mix de verduras 
 </li>
                             <li>
-½ taza de pasta cocida
+2 tortillas de maíz (Tortilleria)
 </li>
                             <li>
-70 gr de pechuga de pollo cocida
+Pedacito cebolla picada cocida, jugo de 1 limón, ½ taza de piña asada
 </li>
                             <li>
-½ cucharadita de aceite de oliva
-</li>
+                           100 gramos de carne al pastos (cocida en casa de preferencia)
+ </li>
                             <li>
-Sal y pimienta al gusto
+1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -3515,13 +3550,13 @@ Sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Monta como base en un bowl el brócoli y la espinaca.
+Rellena las tortillas caliente con la carne al pastor y cebolla cocida para formar tus tacos. 
                             </li>
                             <li>
-                                Agrega encima la pechuga de pollo, la pasat y mezcla.
+    Sirve y agrega el jugo de limón, aguacate, sal y pimienta. 
                             </li>
                             <li>
-                            Vierte el aceite de oliva. Salpimienta al gusto.
+ Decora con piña y aguacate. 
                                 <ul>
                                     <li>
                                     Acompaña una entrada.
@@ -3535,7 +3570,7 @@ Sal y pimienta al gusto
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3565,7 +3600,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3599,7 +3634,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3628,7 +3663,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -3667,7 +3702,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5255,24 +5290,23 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>1 zanahoria</li>
-                            <li>Jugo de 1 naranja </li>
-                            <li>1 nopal pequeño </li>
+                            <li>2 zanahoria</li>
+                            <li>Jugo de 2 naranja </li>
+                            <li>Jugo de 1 limón </li>
                         </ul> . . .
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>1 zanahoria</li>
-                            <li>Jugo de 1 naranja </li>
-                            <li>1 nopal pequeño </li>
+                            <li>2 zanahoria</li>
+                            <li>Jugo de 2 naranja </li>
                             <li>Jugo de 1 limón </li>
-                            <li>1 taza de agua </li>
+                            <li>1 ½  tazas de agua</li>
                         </ul>                    
                         `,
                         instructions: `
@@ -5287,7 +5321,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5320,7 +5354,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5351,7 +5385,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5390,14 +5424,15 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 taza de pedacitos de brócoli y coliflor </li>
-                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
-                        </ul> . . . 
+                            <li>¼  taza de zanahoria picada en cubitos pequeños . . . </li>
+                            <li>¼  taza de chícharos </li>
+                        </ul>
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
@@ -5429,7 +5464,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5502,7 +5537,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5541,7 +5576,7 @@ Mete al micro o al horno eléctrico por 30 segundos o hasta que gratine el queso
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5938,7 +5973,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -5951,7 +5986,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
-                            <li>1 naranja en gajos picada</li>
+                            <li>2 naranja en gajos picada</li>
                             <li>14 piezas de cacahuates</li>
                             <li>Una pizca de Tajín bajo en sodio (Tapa azúl)</li>
                         
@@ -5968,7 +6003,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6002,7 +6037,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6031,7 +6066,7 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6070,21 +6105,21 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>18 fresas</li>
+                            <li>10 fresas</li>
                             <li>1 barra de 18 gr </li>
                         </ul> . . .
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                        <li>18 fresas</li>
+                        <li>10 fresas</li>
                         <li>1 barra de 18 gr </li>
-                        <li>3 mitades de nuez troceada</li>
+                        <li>6 mitades de nuez troceada</li>
                             <li>1 taza de gelatina light</li>
                         
                         </ul>                    
@@ -6104,8 +6139,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                 breakfastOrDinner: [
                     {
                         foodId: 1,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Omelette de vegetales mixtos!',
+                        image: '/img/D3-BB.jpeg',
+                        title: '¡Bowlcito básico!',
                         smallDescription: `
 
                         <small>
@@ -6113,7 +6148,12 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
+                            1 taza zanahoria rallada
+
+
+</li>
+                            <li>
+                                     1  taza de hojuelas de avena
 </li>
                         </ul>  . . .
                         `,
@@ -6124,19 +6164,29 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos espinacas,  jitomate picado 1 pieza, calabaza rebanda ½ taza.
-</li>
-                            <li>
-2 huevo + 1 clara
-</li>
-                            <li>
-1/5 de pieza de Aguacate
-</li>
-                            <li>
-½ cucharadita de aceite de oliva
-</li>
-                            <li>
+                           1 taza zanahoria rallada
 
+</li>
+                            <li>
+1  taza de hojuelas de avena 
+</li>
+                            <li>
+1 taza de leche de almendras sin azúcar (silk sin azúcar)
+</li>
+                            <li>
+                            
+                         1 cucharadita extracto de vainilla, pizca de canela en polvo, pizca de café descafeinado soluble (al gusto).
+
+</li>
+                            <li>
+                               1/2 pieza de plátano  
+
+</li>
+                            <li>
+                            1 cucharada de almendra fileteada
+</li>
+                            <li>
+                        1 cucharadita de chía
 </li>
                         </ul>                    
                         `,
@@ -6147,19 +6197,21 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                         </br> </br>
                         <ol>
                             <li>
-                                Vierte los huevos batidos sobre un sartén caliente y forma una base delgadita, cocina por ambos lados.
+                       Mezcla en un bowl la leche de almendras, la chía, el extracto de vainilla y la canela hasta que se integren.
+
                             </li>
                             <li>
-                                Rellena con las calabazas, jitomate y espinacas y salpimienta al gusto.
+                                Coloca después las hojuelas de avena y la zanahoria.
+
                             </li>
                             <li>
-                                 Dobla a la mitad y sirve.
+                            Decora con el plátano y la almendra fileteada. 
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con 1 tortilla de maíz y un jugo.
-                                    </li>
-                                    <li>
-                                    
+                                    No olvides acompañar con 
+                                   
+                                   1 taza de pepino picado
+                                  4 rollos de jamón de pavo
                                     </li>
                                 </ul>
                             </li>
@@ -6168,8 +6220,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 2,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Tapas dulces!',
+                        image: '/img/D3-CA.jpeg',
+                        title: '¡Carnita asada con verduras!',
                         smallDescription: `
 
                         <small>
@@ -6177,14 +6229,12 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-1 manzana picada
+                            1 taza ejotes cocidos
 </li>
                             <li>
-5 galletas marías
+                             1 taza zanahorias cocidas
+
 </li>
-                            <li>
-8 Cucharadas de queso cottage
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -6194,16 +6244,24 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-1 manzana picada
+                              1 taza ejotes cocidos
+
 </li>
                             <li>
-5 galletas marías
+     1 taza zanahorias cocidas
 </li>
                             <li>
-8 Cucharadas de queso cottage
+2 paquetito de salmas 
 </li>
                             <li>
-½ barra de chocolate turin si n azúcar.
+                           90 gr de bistec de res asado 
+</li>
+                            <li>
+                            1/5 de pieza de agacate
+                            
+</li>
+                            <li>
+                              60 gr de queso oaxaca light
 </li>
                         </ul>                    
                         `,
@@ -6214,19 +6272,14 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla en un recipiente el queso cottage, manzana y edulcorante.
+Sofríe las verduras en un sartén. Salpimienta al gusto, agrega al mismo sartén la carne de res, tostada troceada y coloca encima el queso Oaxaca light. 
                             </li>
                             <li>
-                                Coloca la mezcla anterior sobre las galletas.
-                            </li>
-                            <li>
-                            Coloca el chocolate en un recipiente y fundelo hasta que este liquido, agrega 1 cucharad de leche para tener un consistencia       liquida.
+      
                                 <ul>
                                     <li>
-                                    Corona las galletas con el chocolate derretido.
-                                    </li>
-                                    <li>
-                                    ½ manzana picada, ½ taza de yogurt natural.
+              Tapa el sartén y cocina a fuego bajo hasta que gratine el queso. Sirve y decora con el aguacate.
+
                                 </ul>
                             </li>
                         </ol>                     
@@ -6234,8 +6287,8 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
                     },
                     {
                         foodId: 3,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Huevito ranchero!',
+                        image: '/img/D3-TL.jpeg',
+                        title: '¡Tacos ligeros tipo wrap!',
                         smallDescription: `
 
                         <small>
@@ -6243,10 +6296,11 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
          </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+                            5 hojas de lechuga orejona 
 </li>
                             <li>
-2 tortilla de maíz.
+                         1 taza de apio picado
+
 </li>
                         </ul>  . . .
                         `,
@@ -6257,19 +6311,27 @@ Rellena las tortillas caliente con el bistec y cebolla cocida para formar tus ta
   	         </small>
                         <ul>
                             <li>
-1 jitomate picado, chile serrano al gusto, 1 diente de ajo, cebolla picada.
+                            5 hojas de lechuga orejona 
 </li>
                             <li>
-2 tortilla de maíz.
+                         1 taza de apio picado
 </li>
                             <li>
-2 huevos estrellado + 1 clara de huevo estrellda.
+                                 2 paquete Salmas
 </li>
                             <li>
-Pimienta y sal al gusto.
+                2 cucharadas de yogurt griego sin azúcar 
+</li>
+                            <li>                            
+                               ¼ de pieza de aguacate
 </li>
                             <li>
-1/5 de pieza de aguacate
+
+
+                            70 gr de pechuga de pollo en hebras
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -6280,19 +6342,21 @@ Pimienta y sal al gusto.
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega el jitomate ajo y chiles.
+                         Con ayuda de un tenedor tritura el aguacate, mezcla con el yogurt griego, limón, sal y pimienta. 
                             </li>
                             <li>
-                                Cocina hasta a fuego medio hasta que se ablanden, salpimienta.
+                            Agrega la pechuga de pollo y el apio a la mezcla anterior y revuelve.
                             </li>
                             <li>
-                            Sirve los huevos estrellados sobre las tortillas calientes y vierte encima la salsa.
+                            
+                                Sirve la mezcla sobre las hojas de lechuga y cierra para formar unos tipo wraps.
+
                                 <ul>
                                     <li>
-                                    1 manzana picada y 1 cucharada de yogurt
+                                    Acompaña con las salmas
                                     </li>
                                     <li>
-                                    
+                                    No olvides incluir con un jugo.
                                     </li>
                                 </ul>
                             </li>
@@ -6301,8 +6365,8 @@ Pimienta y sal al gusto.
                     },
                     {
                         foodId: 4,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Crepa de mango!',
+                        image: '/img/D3-TM.jpeg',
+                        title: '¡Tostadito de mango!',
                         smallDescription: `
 
                         <small>
@@ -6310,14 +6374,11 @@ Pimienta y sal al gusto.
          </small>
                         <ul>
                             <li>
-1 taza de jicama rallada
+                             1 mango picado
 </li>
                             <li>
-½ de pieza de plátano 
+                         2 pieza de pan tostado
 </li>
-                            <li>
-6 cucharadas de harina de avena
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -6327,22 +6388,20 @@ Pimienta y sal al gusto.
   	         </small>
                         <ul>
                             <li>
-1 taza de jicama rallada
+1 mango picado 
 </li>
                             <li>
-½ de pieza de plátano 
+                          2 pieza de pan tostado
 </li>
                             <li>
-6 cucharadas de harina de avena
+6 cucharadas de queso cottage 
 </li>
                             <li>
-2 huevo
+                          2 cucharada de almendra fileteada
 </li>
                             <li>
-Un chorrito de leche
-</li>
-                            <li>
-Estracto de vainilla y canela en polvo al gusto
+                       Acompaña con 1 taza de jicama picada
+
 </li>
                         </ul>                    
                         `,
@@ -6353,19 +6412,12 @@ Estracto de vainilla y canela en polvo al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Licua los ingredientes de la crepa hasta tener una mezcla homogénea semi líquida.
+                             Coloca sobre el pan tostado el queso cottage.
+
                             </li>
                             <li>
-                                Vierte la mezcla sobre un sartén para formar una base delgadita de crepa, cocina a fuego bajo y con tapa por ambos lados.
+                        Monta encima el mango picado y decora con la almendra fileteada.
                             </li>
-                            <li>
-                            Dobla ppr la mitad dos veces hasta formar un triángulo y sirve.
-                                <ul>
-                                    <li>
-                                    Decora con: ½ pieza de mango manila picado, 3 cucharadas de yogurt y 5 nueces.
-                                    </li>
-                                    <li>
-                                    </li>
                                 </ul>
                             </li>
                         </ol>                     
@@ -6373,8 +6425,8 @@ Estracto de vainilla y canela en polvo al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/desayuno.jpg',
-                        title: '¡Panquecitos de fresa!',
+                        image: '/img/D3-MV.jpeg',
+                        title: '¡Miniburgers de vegetales!',
                         smallDescription: `
 
                         <small>
@@ -6382,14 +6434,12 @@ Estracto de vainilla y canela en polvo al gusto
          </small>
                         <ul>
                             <li>
-1 taza de zanahoria rallada cruda
+                          2 taza de ejotes cocidos picado
+
 </li>
                             <li>
-½ de pieza de plátano
+                                1 taza de avena en hojuelas
 </li>
-                            <li>
-6 cucharadas de harina de avena
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -6399,19 +6449,19 @@ Estracto de vainilla y canela en polvo al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de zanahoria rallada cruda
+2 taza de ejotes cocidos picado 
 </li>
                             <li>
-½ de pieza de plátano
+                          1 taza de avena en hojuelas
 </li>
                             <li>
-6 cucharadas de harina de avena
+             80 gramos queso panela
 </li>
                             <li>
-1 huevo
+                                    2 clara de huevo
 </li>
                             <li>
-Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
+                               Pizca de sal, pimienta, orégano al gusto y ½ cucharadita de aceite de oliva
 </li>
                         </ul>                    
                         `,
@@ -6422,19 +6472,18 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                         </br> </br>
                         <ol>
                             <li>
-                                Licua todos los ingredientes hasta tener una mezcla homogénea.
+   En un recipiente coloca los ejotes, queso panela, clara de huevo y hojuelas de avena. Salpimienta al gusto y mezcla muy bien todos los ingredientes. 
+
                             </li>
                             <li>
-                                Vierte la mezcla sobre dos tazas grandes aptas para microondas, metelas por separado al microondas por 4 minutos.
+En un sartén caliente vierte el aceite de oliva y expande.
+
                             </li>
                             <li>
-                            Desmolda y decora con: ½ taza de fresas rebanadas, 3 cucharadas de yogurt, 4 nueces y canela en polvo.
+Con ayuda de una cuchara, sirve un poco de la mezcla de ejotes y forma tus croquetas en el sartén anterior. Repite hasta terminar con la mezcla. 
                                 <ul>
                                     <li>
-                                    Nol olvides acompañar con un jugo.
-                                    </li>
-                                    <li>
-
+Cocina a fuego medio y con tapa por ambos lados y sirve.
                                     </li>
                                 </ul>
                             </li>
@@ -6478,24 +6527,23 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo2.jpg',
                         title: '¡Jugo vitaminpower!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>1 zanahoria</li>
-                            <li>Jugo de 1 naranja </li>
-                            <li>1 nopal pequeño </li>
+                            <li>2 zanahoria</li>
+                            <li>Jugo de 2 naranja </li>
+                            <li>Jugo de 1 limón </li>
                         </ul> . . .
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>1 zanahoria</li>
-                            <li>Jugo de 1 naranja </li>
-                            <li>1 nopal pequeño </li>
+                            <li>2 zanahoria</li>
+                            <li>Jugo de 2 naranja </li>
                             <li>Jugo de 1 limón </li>
-                            <li>1 taza de agua </li>
+                            <li>1 ½  tazas de agua</li>
                         </ul>                    
                         `,
                         instructions: `
@@ -6510,7 +6558,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 3,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo3.jpg',
                         title: '¡Jugo súper detóx !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6543,7 +6591,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo4.jpg',
                         title: '¡Jugo antioxidante!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6574,7 +6622,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/juice.jpg',
+                        image: '/img/jugo5.jpg',
                         title: '¡Mojito fit detóx!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6613,14 +6661,15 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foodTickets: [
                     {
                         foodId: 1,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada1.jpg',
                         title: '¡Arroz blanco falso!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 taza de pedacitos de brócoli y coliflor </li>
-                            <li>¼  taza de zanahoria picada en cubitos pequeños </li>
-                        </ul> . . . 
+                            <li>¼  taza de zanahoria picada en cubitos pequeños . . . </li>
+                            <li>¼  taza de chícharos </li>
+                        </ul>
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
@@ -6652,7 +6701,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 2,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada2.jpg',
                         title: '¡Crema de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6725,7 +6774,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 4,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada4.jpg',
                         title: '¡Mix de vegetales al fuego!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6764,7 +6813,7 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                     },
                     {
                         foodId: 5,
-                        image: '/img/tickets.jpg',
+                        image: '/img/entrada5.jpg',
                         title: '¡Sopa de verduras!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -6815,8 +6864,8 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
                 foods: [
                     {
                         foodId: 1,
-                        image: '/img/comida.jpg',
-                        title: '¡Taquitos de pollo com aguacate!',
+                        image: '/img/C3-TC.jpeg',
+                        title: '¡Tostadas de camaron picosito!',
                         smallDescription: `
 
                         <small>
@@ -6824,7 +6873,10 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
          </small>
                         <ul>
                             <li>
-2 nopales asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+                         2 taza de mix de vegetales (pimiento naranja, rojo, cebolla y champiñones)
+</li>
+                            <li>
+                            3 tostadas horneadas sanissimo
 </li>
                         </ul>  . . .
                         `,
@@ -6835,19 +6887,23 @@ Un chorrito de leche, polvo para hornear 1 pizca y extracto de vainilla.
   	         </small>
                         <ul>
                             <li>
-2 nopales asado en tiras, ½ taza de zanahiria cocida, cebolla, ½ taza de brocolí
+                            2 taza de mix de vegetales (pimiento naranja, rojo, cebolla y champiñones)
 </li>
                             <li>
-2 tortillas de maíz
+3 tostadas horneadas sanissimo 
 </li>
                             <li>
-120 gr de pechuga de pollo deshebrado
+                         120 gramos de camarón cocido
 </li>
                             <li>
-1/5 de pieza de aguacate
+                            1/2 cucharadita aceite de oliva, pizca de sal y pimienta
 </li>
                             <li>
-Pizca de sal y pimienta
+                                 Salsa verde al gusto
+</li>
+                            <li>
+Aguacate 1/5 de pieza
+
 </li>
                         </ul>                    
                         `,
@@ -6858,19 +6914,14 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Coloca la cebolla en un sartén caliente y cocina a fuego bajo,cuando cabie de color agrega el pollo y salpimienta al gusto. 
+Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y champiñones, y cocina. Salpimienta al gusto. 
                             </li>
                             <li>
-                                Calienta las tortillas por ambos lados en un comal y rellena con el pollo deshebrado y agucate.
+                           Agrega los camarones al sartén anterior y mezcla.
                             </li>
                             <li>
-                            Emplata.
-                                <ul>
-                                    <li>
-                                    Acompaña tu platillo con 1 taza de verduras al gusto.
-                                    </li>
-                                    <li>
-                                    
+  Monta los camarones sobre las tostadas horneadas. Salpimienta al gusto. Decora con el aguacate y la salsa.
+
                                     </li>
                                 </ul>
                             </li>
@@ -6879,8 +6930,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 2,
-                        image: '/img/comida.jpg',
-                        title: '¡Mega taco de queso!',
+                        image: '/img/C3-TAP.jpeg',
+                        title: '¡Tacos de aguacate con pollo!',
                         smallDescription: `
 
                         <small>
@@ -6888,14 +6939,12 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+                                   3 piezas regulares de nopal asado
 </li>
                             <li>
-1 tortilla de harina 
+                           7 esparragos (o sustituye por la verdura de tu preferencia)
+
 </li>
-                            <li>
-80 gr de queso oaxaca light 
-                            </li>
                         </ul>  . . .
                         `,
 
@@ -6905,19 +6954,26 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de espinacas, cebolla al gusto
+                             3 piezas regulares de nopal asado
 </li>
                             <li>
-1 tortilla de harina 
+7 esparragos (o sustituye por la verdura de tu preferencia)
 </li>
                             <li>
-80 gr de queso oaxaca light 
+                             3 zanahorias en bastones cocidas
 </li>
                             <li>
-120 gr de pollo en trosos pequeños
+                              3 tortillas de míz
 </li>
                             <li>
-2 cucharadas de guacamole, sal y pimienta al gusto
+                            120 gr de pechuga de pollo en hebras
+
+</li>
+                            <li>
+                            1/5 de pieza de aguacate
+</li>
+                            <li>
+
 </li>
                         </ul>                    
                         `,
@@ -6928,16 +6984,17 @@ Pizca de sal y pimienta
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén la cebolla, cuando cambie de color agrega la espinaca y cocina hasta que reduzca su tamaño, agrega el queso oaxaca light, mezcla y deja que gratine el queso. Retira del fuego y reserva.
+                            Pon la cebolla en un sartén caliente y cocina a fuego bajo, cuando cambie de color agrega el pollo y salpimienta al gusto.
                             </li>
                             <li>
-                                Calienta la tortilla y rellena con la mezcla de pollo y verduras.
+                   Calienta las tortillas por ambos lados en un comal caliente. 
                             </li>
                             <li>
-                            Emplata y decora con el guacamole
-                                    </li>
+                                Rellena las tortillas con el pollo deshebrado y aguacate. 
+
+                                <ul>
                                     <li>
-                                    Acompaña tu platillo con alguna entrada
+                                    Acompaña tu platilo con las verdras cocidas.
                                 </ul>
                             </li>
                         </ol>                     
@@ -6945,8 +7002,8 @@ Pizca de sal y pimienta
                     },
                     {
                         foodId: 3,
-                        image: '/img/comida.jpg',
-                        title: '¡Arroz y carne!',
+                        image: '/img/C3-SF.jpeg',
+                        title: '¡Sope fit!',
                         smallDescription: `
 
                         <small>
@@ -6954,11 +7011,15 @@ Pizca de sal y pimienta
          </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+                              2 taza de espinacas
 </li>
                             <li>
-½ de taza de arroz cocido
+                              110 gr de masa para tortillas
 </li>
+<li>
+                     90 gr de carne molida de res cocida
+                            </li>
+
                         </ul>  . . .
                         `,
 
@@ -6968,19 +7029,19 @@ Pizca de sal y pimienta
   	         </small>
                         <ul>
                             <li>
-1 taza de brocolí cocinado, cebolla al gusto y jitomate al gusto.
+                            2 taza de espinacas
 </li>
                             <li>
-½ de taza de arroz cocido
+110 gr de masa para tortillas 
 </li>
                             <li>
-120 gr de carne de res cocida
+90 gr de carne molida de res cocida 
 </li>
                             <li>
-1 cucharadita de aceite de oliva
+                             60 gr de queso panela rallado
 </li>
                             <li>
-Pizca de sal y pimienta al gusto
+                         5 cucharadas de salsa de tomate, sal y pimienta al gusto y 1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -6991,19 +7052,18 @@ Pizca de sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Mezcla la carne de res con la cebolla y el jitomate picado, salpimienta al gusto.
+                           Mezcla en un sartén la carne con la salsa de tomate, espinacas, sal y pimienta. Calienta un poco y reserva.
                             </li>
                             <li>
-                                Sirve la cerne, brólo y a un lado el arroz.
+                      Forma 1 sope con la masa y dejalo cocer por ambos lados.
                             </li>
                             <li>
-                            Vierte el aceite de oliva sobre tu platillo.
+                          Emplata tu sope y monta la mezcla de carne encima.
+
                                 <ul>
                                     <li>
-                                    Acompaña tu platillo con alguna entrada.
-                                    </li>
-                                    <li>
-                                    
+     Decora con el queso y aguacate.
+Difrutalo, puedes agregarle lechuga al gusto.
                                     </li>
                                 </ul>
                             </li>
@@ -7012,8 +7072,8 @@ Pizca de sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/comida.jpg',
-                        title: '¡Tostadas de alambre!',
+                        image: '/img/C3-SFR.jpeg',
+                        title: '¡Simple y fresco!',
                         smallDescription: `
 
                         <small>
@@ -7021,11 +7081,14 @@ Pizca de sal y pimienta al gusto
          </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+                                  1 taza de pimiento morron de colores
 </li>
                             <li>
-3 tostadas sanissimo
+                              1 taza arroz cocido 
 </li>
+                            <li>
+                            180 gramos de pescado asado sal
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -7035,16 +7098,19 @@ Pizca de sal y pimienta al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de pimientos en bastones, cebolla al gusto.
+1 taza de pimiento morron de colores
+ </li>
+                            <li>
+                              1 taza arroz cocido
 </li>
                             <li>
-3 tostadas sanissimo
+                            180 gramos de pescado asado sal y pimienta al gusto
+ </li>
+                            <li>
+                             1 taza de pepino picado, 1 taza de lechuga picada.
 </li>
                             <li>
-120 gr de carne de res asada.
-</li>
-                            <li>
-1/5 de pieza de aguacate, sal y pimienta al gusto.
+                          1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -7055,18 +7121,19 @@ Pizca de sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Cocina en un sartén caliente la cebolla, cuando cambie de color agrega los pimientos y cocina hasta que hablanden. Salpimienta al gusto.
+                              Mezcla el arroz con los pimientos y sirve como cama.
                             </li>
                             <li>
-                                Agrega la carne de res al sartén anterior y mezcla.
+    	Monta encima el pescado asado y salpimienta al gusto.
                             </li>
                             <li>
-                            Monta el alambre sobre las tostadas,
+                    Acompaña con la ensalda de pepino, lechuga y aguacate.
                                 <ul>
                                     <li>
-                                    Decora con el aguacate, agrega alguna entrada.
-                                    </li>
+ 
+                                <ul>
                                     <li>
+                                       No olvides acompañar tu platillo con una entrada.
                                     </li>
                                 </ul>
                             </li>
@@ -7075,8 +7142,8 @@ Pizca de sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/comida.jpg',
-                        title: '¡Brocoli salad!',
+                        image: '/img/C3-TCP.jpeg',
+                        title: '¡Taquitos de carne al pastor!',
                         smallDescription: `
 
                         <small>
@@ -7084,11 +7151,14 @@ Pizca de sal y pimienta al gusto
          </small>
                         <ul>
                             <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
+                              2 taza mix de verduras
 </li>
                             <li>
-1 taza de pasta cocida
+                              3 tortillas de maíz (Tortilleria)
 </li>
+                            <li>
+                 Pedacito cebolla picada cocida
+                            </li>
                         </ul>  . . .
                         `,
 
@@ -7098,19 +7168,19 @@ Pizca de sal y pimienta al gusto
   	         </small>
                         <ul>
                             <li>
-1 taza de brócoli cocido, ½ taza de espinaca picada
+2 taza mix de verduras 
 </li>
                             <li>
-1 taza de pasta cocida
+3 tortillas de maíz (Tortilleria)
 </li>
                             <li>
-140 gr de pechuga de pollo cocida
+Pedacito cebolla picada cocida, jugo de 1 limón, 1 taza de piña asada
 </li>
                             <li>
-½ cucharadita de aceite de oliva
-</li>
+                           140 gramos de carne al pastos (cocida en casa de preferencia)
+ </li>
                             <li>
-Sal y pimienta al gusto
+1/5 de pieza de aguacate
 </li>
                         </ul>                    
                         `,
@@ -7121,13 +7191,13 @@ Sal y pimienta al gusto
                         </br> </br>
                         <ol>
                             <li>
-                                Monta como base en un bowl el brócoli y la espinaca.
+Rellena las tortillas caliente con la carne al pastor y cebolla cocida para formar tus tacos. 
                             </li>
                             <li>
-                                Agrega encima la pechuga de pollo, la pasat y mezcla.
+    Sirve y agrega el jugo de limón, aguacate, sal y pimienta. 
                             </li>
                             <li>
-                            Vierte el aceite de oliva. Salpimienta al gusto.
+ Decora con piña y aguacate. 
                                 <ul>
                                     <li>
                                     Acompaña una entrada.
@@ -7141,7 +7211,7 @@ Sal y pimienta al gusto
                 snacks: [
                     {
                         foodId: 1,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion1.jpg',
                         title: '¡Picaditas enchiladas!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -7154,7 +7224,7 @@ Sal y pimienta al gusto
                         <small><b>Ingredientes</b></small>
                         <ul>
                             <li>1 pepino sin cáscara ni semillas picado (Libre) </li>
-                            <li>1 naranja en gajos picada</li>
+                            <li>2 naranja en gajos picada</li>
                             <li>14 piezas de cacahuates</li>
                             <li>Una pizca de Tajín bajo en sodio (Tapa azúl)</li>
                         
@@ -7171,7 +7241,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 2,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion2.jpg',
                         title: '¡Nutribufet!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -7205,7 +7275,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 3,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion3.jpg',
                         title: '¡Fácil y básica !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -7234,7 +7304,7 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 4,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion4.jpg',
                         title: '¡Piña a la canela!',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
@@ -7273,21 +7343,21 @@ Sal y pimienta al gusto
                     },
                     {
                         foodId: 5,
-                        image: '/img/colacion.jpg',
+                        image: '/img/colacion5.jpg',
                         title: '¡Fresas con chocolate !',
                         smallDescription: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                            <li>18 fresas</li>
+                            <li>10 fresas</li>
                             <li>1 barra de 18 gr </li>
                         </ul> . . .
                         `,
                         ingredients: `
                         <small><b>Ingredientes</b></small>
                         <ul>
-                        <li>18 fresas</li>
+                        <li>10 fresas</li>
                         <li>1 barra de 18 gr </li>
-                        <li>3 mitades de nuez troceada</li>
+                        <li>6 mitades de nuez troceada</li>
                             <li>1 taza de gelatina light</li>
                         
                         </ul>                    

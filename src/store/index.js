@@ -72,7 +72,7 @@ export default new Vuex.Store({
       const date = new Date()
       let dateNow = date.getDate()
       let monthNow = date.toDateString()
-      return dateNow >= 1 && dateNow <= 31 && monthNow.includes('May')
+      return dateNow >= 1 && dateNow <= 23 && monthNow.includes('May')
     }
   },
   modules: {
