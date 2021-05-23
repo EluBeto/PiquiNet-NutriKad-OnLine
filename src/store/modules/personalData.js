@@ -223,7 +223,8 @@ export default {
                     UUID: localId,
                     firstWeight: parseFloat(payload.firstWeight),
                     secondWeight: parseFloat(payload.secondWeight),
-                    thirdWeight: parseFloat(payload.thirdWeight)
+                    thirdWeight: parseFloat(payload.thirdWeight),
+                    fourthWeight: parseFloat(payload.fourthWeight)
                 })
                 let responseWeight = ''
                 await HttpServices.putRequest(url, parameters).then(response => {

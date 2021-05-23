@@ -141,7 +141,7 @@
               elevation="0"
           >
             <v-list three-line>
-              <v-subheader class="headline lighten-2">Semanas Uno y Dos</v-subheader>
+              <v-subheader class="headline lighten-2">Semanas Uno, Dos y Tres</v-subheader>
               <template v-for="item in arrayTop">
                 <v-divider
                     :key="item.UUID"
@@ -250,18 +250,12 @@ export default {
           this.$store.dispatch('PersonalData/getProgressWeithAll').then(responseWeith => {
             for (let i = 0; i < responseWeith.length -1; i ++) {
               if (responseWeith[i].UUID === this.arrayUsers[i].UUID) {
-                if (responseWeith[i].secondWeight !== 0) {
-                  if (responseWeith[i].secondWeight <  responseWeith[i].firstWeight) {
-                    let resta = 0
-                    resta = parseFloat(responseWeith[i].firstWeight - responseWeith[i].secondWeight).toFixed(2)
-                    if (responseWeith[i].thirdWeight !== 0) {
-                      resta = parseFloat(responseWeith[i].secondWeight - responseWeith[i].thirdWeight).toFixed(2)
-                    }
-                    this.arrayTop.push({
-                      name: this.arrayUsers[i].name,
-                      peso: resta
-                    })
-                  }
+                if (responseWeith[i].thirdWeight !== 0) {
+                  let peso = responseWeith[i].fourthWeight !== 0 ? responseWeith[i].fourthWeight : responseWeith[i].thirdWeight
+                  this.arrayTop.push({
+                    name: this.arrayUsers[i].name,
+                    peso: parseFloat(responseWeith[i].firstWeight - peso).toFixed(2)
+                  })
                 }
               }
             }

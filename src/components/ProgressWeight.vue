@@ -81,7 +81,7 @@ export default {
     textShow() {
       const date = new Date()
       let dateNow = date.getDate()
-      return dateNow === 10 ? 'Hoy 10 de mayo podrás ingresar tu nuevo peso.' : 'El proximo 17 de mayo podrás ingresar tu nuevo peso.'
+      return dateNow === 10 ? 'Hoy 10 de mayo podrás ingresar tu nuevo peso.' : 'El proximo 24 de mayo podrás ingresar tu nuevo peso.'
     }
   },
   methods: {
@@ -90,8 +90,9 @@ export default {
         this.loading = true
         this.$store.dispatch('PersonalData/sendProgressWeigth', {
           firstWeight: this.firstWeight,
-          secondWeight: this.enableWeightEntry(1) ? this.weigth : this.secondWeight,
-          thirdWeight: this.enableWeightEntry(2) ? this.weigth : this.thirdWeight
+          secondWeight: this.secondWeight,
+          thirdWeight: this.thirdWeight,
+          fourthWeight: this.weigth
         }).then(response => {
           if (!response.error) {
             this.labels = []
@@ -109,20 +110,23 @@ export default {
         this.firstWeight = response.firstWeight
         this.secondWeight = response.secondWeight
         this.thirdWeight = response.thirdWeight
+        this.fourthWeight = response.fourthWeight
 
         this.labels.push(response.firstWeight + ' KG')
         this.labels.push(response.secondWeight + ' KG')
         this.labels.push(response.thirdWeight + ' KG')
+        this.labels.push(response.fourthWeight + ' KG')
 
         this.value.push(parseInt(response.firstWeight))
         this.value.push(parseInt(response.secondWeight))
         this.value.push(parseInt(response.thirdWeight))
+        this.value.push(parseInt(response.fourthWeight))
       })
     },
     enableWeightEntry(week) {
       const date = new Date()
       let dateNow = date.getDate()
-      let dateShow = week === 1 ? 10 : 17
+      let dateShow = week === 1 ? 10 : 24
       return dateNow === dateShow
     }
   },
