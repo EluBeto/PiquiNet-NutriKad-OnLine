@@ -1192,8 +1192,16 @@ export default {
       this.isExistData = false
     },
     editaHistoria() {
-      this.$store.state.Steps.numberOfSteps = this.numberStep
-      router.push('dashboard')
+      if (window.localStorage.getItem('idPaciente') === null) {
+        this.$store.state.Steps.numberOfSteps = this.numberStep
+        router.push('dashboard')
+      } else {
+        this.patientsRegister.forEach((register) => {
+          if (register.datosPersonales.idPaciente === window.localStorage.getItem('idPaciente')) {
+            this.iniciarConsulta(register.datosPersonales, register.antropometria)
+          }
+        })
+      }
     }
   },
   mounted() {

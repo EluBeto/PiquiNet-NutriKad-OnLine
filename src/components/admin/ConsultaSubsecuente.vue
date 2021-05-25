@@ -14,6 +14,10 @@
         <v-btn block v-if="tab === 3"
                @click="enviaRegistroConsulta()"
                color="primary"
+               :disabled="!validaHabitos ||
+                          !validaAntropometria ||
+                          !validaClinico ||
+                          !validaDietetico"
         >Guardar
         </v-btn>
       </v-col>
@@ -107,16 +111,6 @@ export default {
     }
   },
   computed: {
-    calculaIMC() {
-      let imc = 0
-      let estatura = this.$store.state.PersonalData.antropometria.estatura
-      let peso = this.$store.state.PersonalData.antropometria.peso
-      if (estatura > 0 && peso > 0) {
-        let estaturaCuadrado = estatura * estatura
-        imc = peso / estaturaCuadrado
-      }
-      return imc.toFixed(2)
-    },
     ultimasMedidas() {
       return this.$store.getters['PersonalData/getHistoricoConsulta']
     },
