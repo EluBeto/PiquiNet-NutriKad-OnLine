@@ -127,6 +127,7 @@
         v-model="dialog"
         width="500"
         scrollable
+        v-if="isDate >= 13"
     >
       <v-card>
         <v-card-title class="headline lighten-2" style="background: #80CBC4">
@@ -141,7 +142,7 @@
               elevation="0"
           >
             <v-list three-line>
-              <v-subheader class="headline lighten-2">Semanas Uno, Dos y Tres</v-subheader>
+              <v-subheader class="headline lighten-2">{{ title }}</v-subheader>
               <template v-for="item in arrayTop">
                 <v-divider
                     :key="item.UUID"
@@ -211,7 +212,8 @@ export default {
     totalM: 0,
     arrayTop: [],
     arrayUsers: [],
-    dialog: false
+    dialog: false,
+    title: ''
   }),
    computed: {
       userName() {
@@ -240,7 +242,11 @@ export default {
           subtitle: `${this.isGender ? 'Bienvenida ' : 'Bienvenido '}a tu panel de administración.`
         }
         return mssage
-      }
+      },
+     isDate() {
+       const date = new Date()
+       return date.getDate()
+     }
     },
     methods: {
         showImage(gender) {
@@ -250,11 +256,25 @@ export default {
           this.$store.dispatch('PersonalData/getProgressWeithAll').then(responseWeith => {
             for (let i = 0; i < responseWeith.length -1; i ++) {
               if (responseWeith[i].UUID === this.arrayUsers[i].UUID) {
-                if (responseWeith[i].thirdWeight !== 0) {
-                  let peso = responseWeith[i].fourthWeight !== 0 ? responseWeith[i].fourthWeight : responseWeith[i].thirdWeight
+                if (responseWeith[i].secondWeight > 0 && responseWeith[i].thirdWeight === 0 && responseWeith[i].fourthWeight === 0) {
+                  this.title = 'Semana Uno'
                   this.arrayTop.push({
                     name: this.arrayUsers[i].name,
-                    peso: parseFloat(responseWeith[i].firstWeight - peso).toFixed(2)
+                    peso: parseFloat(responseWeith[i].firstWeight - responseWeith[i].secondWeight).toFixed(2)
+                  })
+                }
+                if (responseWeith[i].secondWeight > 0 && responseWeith[i].thirdWeight > 0 && responseWeith[i].fourthWeight === 0) {
+                  this.title = 'Semanas Uno y Dos'
+                  this.arrayTop.push({
+                    name: this.arrayUsers[i].name,
+                    peso: parseFloat(responseWeith[i].firstWeight - responseWeith[i].thirdWeight).toFixed(2)
+                  })
+                }
+                if (responseWeith[i].secondWeight > 0 && responseWeith[i].thirdWeight > 0 && responseWeith[i].fourthWeight > 0) {
+                  this.title = 'Semanas Uno, Dos y Tres'
+                  this.arrayTop.push({
+                    name: this.arrayUsers[i].name,
+                    peso: parseFloat(responseWeith[i].firstWeight - responseWeith[i].fourthWeight).toFixed(2)
                   })
                 }
               }

@@ -19,7 +19,8 @@ export default new Vuex.Store({
     step: 1,
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
     barImage: '/img/dashboard.jpg',
-    drawer: null
+    drawer: null,
+    processingRequest: false
   },
   actions: {
     SetLayout({ commit }, layout) {
@@ -72,7 +73,7 @@ export default new Vuex.Store({
       const date = new Date()
       let dateNow = date.getDate()
       let monthNow = date.toDateString()
-      return dateNow >= 1 && dateNow <= 23 && monthNow.includes('May')
+      return dateNow >= 5 && dateNow <= 30 && monthNow.includes('Jun')
     }
   },
   modules: {

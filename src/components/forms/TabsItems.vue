@@ -4,7 +4,7 @@
    >
         <v-card-title class="text-center justify-center py-5">
             <h3 class="font-weight-bold display-1 mt-0 my-0">
-                Ponte Fit y Gana Salud 2.0 Ayuno Intermitente
+                Verano Saludable con Nutrikad
             </h3>
         </v-card-title>
     <v-tabs
@@ -142,27 +142,20 @@ export default {
         const date = new Date()
         let dateNow = date.getDate()
         let monthNow = date.toDateString()
-        let fechaOK = dateNow >= 1 && monthNow.includes('May')
+        let fechaOK = dateNow >= 5 && monthNow.includes('Jun')
         return fechaOK
       },
       isShowPlanSecondWeek() {
         const date = new Date()
         let dateNow = date.getDate()
         let monthNow = date.toDateString()
-        return dateNow >= 8 && monthNow.includes('May')
+        return dateNow >= 12 && monthNow.includes('Jun')
       },
       isShowPlanThirdWeek() {
         const date = new Date()
-        const id = JSON.parse(window.localStorage.getItem('userAuth'))
         let dateNow = date.getDate()
         let monthNow = date.toDateString()
-        if (id.localId === '6vyLo8wGhNeRlsqnU9x1LSfEz3j1'
-            || id.localId === 'fY4jFG29h6eLh1gYp1VKiCl4l8j2'
-            || id.localId === '8dSo7ly4bUMEOSLRMMvGIssII9s1'
-            || id.localId === 'phutcwaSKlOhVDGJGOxdEB4tpWa2') {
-          return false
-        }
-        return dateNow >= 16 && monthNow.includes('May')
+        return dateNow >= 19 && monthNow.includes('Jun')
       }
 
     },

@@ -2,6 +2,7 @@
   <v-card
       class="mt-4 mx-auto"
       max-width="400"
+      v-if="isDate >= 7"
   >
     <v-sheet
         class="v-sheet--offset mx-auto"
@@ -22,7 +23,7 @@
       <div class="text-h6">
         {{ textShow }}
       </div>
-      <div v-if="enableWeightEntry(2)">
+      <div v-if="enableWeightEntry()">
         <div class="subheading font-weight-light grey--text">
           <v-text-field
               ref="peso"
@@ -30,7 +31,7 @@
               solo
               label="Ingresa tu peso actual"
               clearable
-              :disabled="!enableWeightEntry(2)"
+              :disabled="!enableWeightEntry()"
               :rules="rules.weightRules"
               required
           ></v-text-field>
@@ -50,7 +51,7 @@
             <v-btn
                 small
                 color="success"
-                :disabled="!enableWeightEntry(2)"
+                :disabled="!enableWeightEntry()"
                 :loading="loading"
                 @click="sendWeigth()"
             >Enviar</v-btn>
@@ -72,32 +73,47 @@ export default {
     dialog: false,
     labels: [],
     value: [],
-    loading: false
+    loading: false,
+    isValid: false
   }),
   computed: {
     rules() {
       return this.$store.getters['Rules/getRules']
     },
     textShow() {
+      let text = ''
+      if (this.isDate === 14 || this.isDate === 21 || this.isDate === 28) {
+       text = '¡Es hoy! ingresa tu nuevo peso.'
+      }
+      if (this.isDate >= 15 && this.isDate <= 20) {
+        text = 'El próximo 21 de junio podrás ingresar tu nuevo peso.'
+      }
+      if (this.isDate >= 21 && this.isDate <= 28) {
+        text = 'El próximo 28 de junio podrás ingresar tu nuevo peso.'
+      }
+      return text
+    },
+    isDate() {
       const date = new Date()
-      let dateNow = date.getDate()
-      return dateNow === 10 ? 'Hoy 10 de mayo podrás ingresar tu nuevo peso.' : 'El proximo 24 de mayo podrás ingresar tu nuevo peso.'
+      return date.getDate()
     }
   },
   methods: {
     sendWeigth() {
       if (this.weigth !== null && !isNaN(this.weigth)) {
         this.loading = true
+        this.$store.state.processingRequest = true
         this.$store.dispatch('PersonalData/sendProgressWeigth', {
-          firstWeight: this.firstWeight,
-          secondWeight: this.secondWeight,
-          thirdWeight: this.thirdWeight,
-          fourthWeight: this.weigth
+          firstWeight: this.isDate === 7 ? this.weigth : this.firstWeight,
+          secondWeight: this.isDate === 14 ? this.weigth : this.secondWeight,
+          thirdWeight: this.isDate === 21 ? this.weigth : this.thirdWeight,
+          fourthWeight: this.isDate === 28 ? this.weigth : this.fourthWeight
         }).then(response => {
           if (!response.error) {
             this.labels = []
             this.value = []
             this.getWeigth()
+            this.$store.state.processingRequest = false
           }
           this.loading = false
         })
@@ -123,11 +139,18 @@ export default {
         this.value.push(parseInt(response.fourthWeight))
       })
     },
-    enableWeightEntry(week) {
-      const date = new Date()
-      let dateNow = date.getDate()
-      let dateShow = week === 1 ? 10 : 24
-      return dateNow === dateShow
+    enableWeightEntry() {
+      let isShow = false
+      if (this.isDate === 14) {
+        isShow = true
+      }
+      if (this.isDate === 21) {
+        isShow = true
+      }
+      if (this.isDate === 28) {
+        isShow = true
+      }
+      return isShow
     }
   },
   mounted() {

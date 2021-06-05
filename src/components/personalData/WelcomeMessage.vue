@@ -24,7 +24,7 @@ export default {
     welcomeMessage: `
         <h2 class="my-3"> ¡Muchísimas felicidades!</h2>
             <h3 class="my-3">
-              <strong> Ya eres parte del Reto Ponte Fit y Gana Salud 2.0 Ayuno Intermitente </strong>
+              <strong> Ya eres parte del Reto Verano Saludable con Nutrikad </strong>
             </h3>
             <p style="text-align: justify;">
               El propósito de este reto es adoptar hábitos alimenticios saludables, llevar una buena alimentación para así poder nutrir el cuerpo a nivel celular y
@@ -34,7 +34,7 @@ export default {
               <strong>Procedimiento:</strong>
             </h3>
             <p style="text-align: justify;">
-              Será necesario contestar la siguiente información a más tardar el día 10 de febrero, y que semanalmente te midas (cintura, pecho, y cadera),
+              Será necesario contestar la siguiente información a más tardar el día 5 de junio, y que semanalmente te midas (cintura, pecho, y cadera),
               cómo también será necesario que cuentes con una báscula, para poder pesarte 1 vez por semana;
               esto con el propósito de que al final el reto puedas compartir tus avances con los demás participantes, y veas tus avances gradualmente.
             </p>

@@ -40,6 +40,7 @@ export default {
     },
     actions: {
         async sendRegisterInformation({ rootState }, payload) {
+            rootState.processingRequest = true
             let url = `${rootState.DataBaseConnectionPaths.pathToDataBase}user-register-information.json`
             let parameters = JSON.stringify({
                 name: payload.name,
@@ -50,10 +51,12 @@ export default {
             let register = ''
             await HttpServices.postRequest(url, parameters).then(response => {
                 register = response
+                rootState.processingRequest = false
             })
             return register
         },
         async sendRegister({ state, rootState }) {
+            rootState.processingRequest = true
             if (localStorage.getItem('userAuth') != null) {
                 const {
                     localId,
@@ -69,6 +72,7 @@ export default {
                 })
 
                 await HttpServices.putRequest(url, parameters).then(response => {
+                    rootState.processingRequest = false
                     if (response.error) {
                         rootState.MessageAlerts = {
                             type: 'snackbar',
@@ -85,62 +89,74 @@ export default {
                         }
                         rootState.Steps.loading = false
                     } else {
-                        window.localStorage.setItem('registeredUser', JSON.stringify({
-                            isRegistered: true,
-                            gender: state.identificationCard.gender,
-                            name: state.identificationCard.name,
-                            lastName: state.identificationCard.lastName,
-                            motherLastName: state.identificationCard.motherLastName
-                        }))
-                        rootState.MessageAlerts = {
-                            type: 'snackbar',
-                            snackbar: {
-                                isShow: true,
-                                modelMessage: true,
-                                multiLine: true,
-                                message: 'Tu registro fue éxitoso',
-                                snackbar: false,
-                                btnTitle: 'Cerrar',
-                                btnColor: 'white',
-                                color: 'green darken-3'
+                        let urlW = `${rootState.DataBaseConnectionPaths.pathToDataBase}progress-weight/${localId}.json?auth=${idToken}`
+                        let parameters = JSON.stringify({
+                            UUID: localId,
+                            firstWeight: state.clinicHistory.actualWeight,
+                            secondWeight: 0,
+                            thirdWeight: 0,
+                            fourthWeight: 0
+                        })
+                        HttpServices.putRequest(urlW, parameters).then(response => {
+                            console.log(response)
+                            window.localStorage.setItem('registeredUser', JSON.stringify({
+                                isRegistered: true,
+                                gender: state.identificationCard.gender,
+                                name: state.identificationCard.name,
+                                lastName: state.identificationCard.lastName,
+                                motherLastName: state.identificationCard.motherLastName
+                            }))
+                            rootState.MessageAlerts = {
+                                type: 'snackbar',
+                                snackbar: {
+                                    isShow: true,
+                                    modelMessage: true,
+                                    multiLine: true,
+                                    message: 'Tu registro fue éxitoso',
+                                    snackbar: false,
+                                    btnTitle: 'Cerrar',
+                                    btnColor: 'white',
+                                    color: 'green darken-3'
+                                }
                             }
-                        }
 
-                        setTimeout(location.reload(), 3000);
+                            setTimeout(location.reload(), 3000);
 
-                        rootState.Steps.loading = false
-                        rootState.Steps.numberOfSteps = 1
-                        state.isRegisteredUser = false
-                        state.identificationCard = {
-                            name: '',
-                            lastName: '',
-                            motherLastName: '',
-                            dateOfBirth: '',
-                            age: '',
-                            gender: false,
-                            phoneNumber: ''
-                        }
-                        state.clinicHistory = {
-                            actualWeight: '',
-                            height: null,
-                            measurements: {
-                              waist: null,
-                              chest: null,
-                              hip: null
-                            },
-                            isPregnant: '',
-                            isBreastfeeding: '',
-                            monthsPostpartum: 0,
-                            allergiesIntolerance: {
-                              isHeadach: false,
-                              isBadDigestion: false,
-                              isReflux: false,
-                              isActivePerson: false,
-                              responseActivePersonTime: '',
-                              responseActivePersonTypeExercise: '',
-                              isBeMedical: false
+                            rootState.Steps.loading = false
+                            rootState.Steps.numberOfSteps = 1
+                            state.isRegisteredUser = false
+                            state.identificationCard = {
+                                UUID: null,
+                                name: '',
+                                lastName: '',
+                                motherLastName: '',
+                                dateOfBirth: '',
+                                age: '',
+                                gender: false,
+                                phoneNumber: ''
                             }
-                        }
+                            state.clinicHistory = {
+                                actualWeight: '',
+                                height: null,
+                                measurements: {
+                                    waist: null,
+                                    chest: null,
+                                    hip: null
+                                },
+                                isPregnant: '',
+                                isBreastfeeding: '',
+                                monthsPostpartum: 0,
+                                allergiesIntolerance: {
+                                    isHeadach: false,
+                                    isBadDigestion: false,
+                                    isReflux: false,
+                                    isActivePerson: false,
+                                    responseActivePersonTime: '',
+                                    responseActivePersonTypeExercise: '',
+                                    isBeMedical: false
+                                }
+                            }
+                        })
                     }
                 })
             }
@@ -159,7 +175,6 @@ export default {
                 router.push("/")
             }
 
-            console.log('response', response)
             const patientesRegister = []
             for (let id in response){
                 patientesRegister.push(response[id])

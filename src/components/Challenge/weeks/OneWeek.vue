@@ -19,16 +19,14 @@
         :key="food.id"
       >
         <v-container fluid>
-          <v-row>
-            <v-col cols="12">
-              <SectionTitle
-                  :titleParameters="titleParameters(food.id)"
-              ></SectionTitle>
-                <MealPlans
-                  :breakfastDiner="breakfastDiner"
-                ></MealPlans>
-            </v-col>
-          </v-row>
+          <v-col cols="12">
+            <SectionTitle
+                :titleParameters="titleParameters(food.id)"
+            ></SectionTitle>
+            <MealPlans
+                :breakfastDiner="breakfastDiner"
+            ></MealPlans>
+          </v-col>
         </v-container>
       </v-tab-item>
     </v-tabs>
@@ -93,12 +91,12 @@ export default {
           case 1:
             return {
               title: '',
-              subtitle: 'Elige una opción que puedes preparar en el desayuno o cena'
+              subtitle: 'Elige una opción que puedes preparar en el desayuno o cena.'
             }
           case 2:
             return {
               title: '',
-              subtitle: 'Eilge un jugo para acompañar tu desayuno y cena'
+              subtitle: 'Elige un jugo para acompañar tu desayuno y cena.'
             }
           case 3:
             return {
@@ -109,12 +107,12 @@ export default {
           case 4:
             return {
               title: '',
-              subtitle: 'Elege siempre una entrada como complemento a tu comida'
+              subtitle: 'Elige siempre una entrada como complemento a tu comida.'
             }
           case 5:
             return {
               title: '',
-              subtitle: 'Elige una opcíon de comida, puedes comer el mismo platino hasta 2 días.'
+              subtitle: 'Elige una opción de comida, puedes comer el mismo platillo hasta 2 días.'
             }
             default:
               return {}

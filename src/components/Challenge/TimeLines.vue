@@ -101,7 +101,7 @@
           },
           {
             id: 7,
-            title: 'Alimentos que se deben evitar durante el Reto Ponte Fit y Gana Salud 2.0 Ayuno Intermitente ',
+            title: 'Alimentos que se deben evitar durante el Reto Verano Saludable con Nutrikad ',
             description: `
                 <ul>
                     <li>

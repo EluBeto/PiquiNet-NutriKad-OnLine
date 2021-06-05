@@ -9,6 +9,7 @@
       <v-dialog
         transition="dialog-top-transition"
         max-width="600"
+        scrollable
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -40,8 +41,8 @@
             <v-divider></v-divider>
                 <br>
             <h5 class="my-2 text-justify">
-              Nota: las colaciones y las entradas seran las mismas para lo que dure el reto,
-              lo unico que cambiará cada semana sera desayunos o cenas y comidas.
+              Nota: las colaciones y las entradas serán las mismas para lo que dure el reto,
+              lo único que cambiará cada semana será desayunos o cenas y comidas.
             </h5>
             </v-card-text>
             <v-card-actions class="justify-end">

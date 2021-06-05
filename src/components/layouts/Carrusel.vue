@@ -22,7 +22,7 @@
       return {
         items: [
           {
-            src: '/img/S1.jpeg',
+            src: '/img/Reto4.0.jpeg',
           },
           {
             src: '/img/S2.jpg',

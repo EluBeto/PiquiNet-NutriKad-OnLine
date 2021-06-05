@@ -24,11 +24,11 @@
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <p style="text-align: justify;">
-                      La báscula debe estar sobre piso sin pendiente. La medición se hace cuando marca más de 
+                      La báscula debe estar sobre piso sin pendiente. La medición se hace cuando marca más de
                       cinco segundos el mismo peso.
-  
-                      Tus pies no deben de salir de la superficie de la bascula, párate derecho, sin flexionar 
-                      las piernas, no te recargues en nada, voltea al frente, con tus brazos al costado, 
+
+                      Tus pies no deben de salir de la superficie de la bascula, párate derecho, sin flexionar
+                      las piernas, no te recargues en nada, voltea al frente, con tus brazos al costado,
                       no te muevas.
                     </p>
                   </v-expansion-panel-content>
@@ -60,8 +60,8 @@
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <p style="text-align: justify;">
-                      Colócate de espaldas a la pared con tus talones unidos, tus piernas rectas y los hombros relajados, 
-                      tu mentón no debe de estar levantado. Párate derecho, alguien debe de presionar tu cabello para hacer 
+                      Colócate de espaldas a la pared con tus talones unidos, tus piernas rectas y los hombros relajados,
+                      tu mentón no debe de estar levantado. Párate derecho, alguien debe de presionar tu cabello para hacer
                       la medición más precisa sobre la pared.
                     </p>
                   </v-expansion-panel-content>

@@ -11,16 +11,16 @@
             :step="step.id"
             class="display-5"
         >
-            {{ 
+            {{
                 step.title
             }}
             <small>
-                {{ 
+                {{
                     step.subTitle
                 }}
             </small>
         </v-stepper-step>
-    
+
         <v-stepper-content :step="step.id">
             <WelcomeMessage  v-if="step.id === 1"></WelcomeMessage>
             <IdentificationFile  v-if="step.id === 2"></IdentificationFile>
@@ -33,12 +33,12 @@
                 :disabled="!step.isValid && step.id != 1"
                 @click.prevent="validateForm(step.id, step.isValid)"
             >
-                {{ 
+                {{
                     step.primaryBtnTitle
                 }}
             </v-btn>
             <v-btn
-                v-if="step.requiresSecondaryButton && step.id != 5" 
+                v-if="step.requiresSecondaryButton && step.id != 5"
                 text
                 @click="stepsProperties.numberOfSteps --"
             >
@@ -112,7 +112,7 @@ export default {
                 age,
                 phoneNumber
             } = this.personalParameters
-            return !!name && !!lastName && !!motherLastName 
+            return !!name && !!lastName && !!motherLastName
                 && !!dateOfBirth && !!age && !!phoneNumber
         },
         validClinicHistory() {
@@ -151,7 +151,12 @@ export default {
                     this.validationOfDataAndPropertiesToShowSeccion(validations)
                     break;
                 case 5:
-                        this.sendRegister()
+                    if (validations.isValid && validations.isDataValid) {
+                      this.stepsProperties.arrayOfSteps[validations.id].isValid = true
+                      this.stepsProperties.numberOfSteps ++
+                    } else {
+                      this.sendRegister()
+                    }
                     break;
                 default:
                     this.stepsProperties.arrayOfSteps[id].isValid = true
@@ -174,9 +179,9 @@ export default {
                 isShowDialog: true,
                 card: {
                     title: 'Consentimiento',
-                    text: `Por este acto se permite informar que el/la persona hace constar en este documento que la información 
-                            proporcionada por la Nutrióloga tratante, le es suficiente para tomar su decisión sobre el consentimiento solicitado y 
-                            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar 
+                    text: `Por este acto se permite informar que el/la persona hace constar en este documento que la información
+                            proporcionada por la Nutrióloga tratante, le es suficiente para tomar su decisión sobre el consentimiento solicitado y
+                            la vez manifiesta libremente al acceder y aceptar este reto; mismo que es totalmente responsable al decidir continuar
                             este plan nutricional, como también lo es de su salud.`,
                     cardActions: {
                         btnColor: 'primary',
@@ -193,7 +198,7 @@ export default {
                 isShowDialog: true,
                 card: {
                     title: 'Cancelar Registro',
-                    text: `¿Estas segu@ de que quieres cancera tu registro?, 
+                    text: `¿Estas segu@ de que quieres cancera tu registro?,
                     perderás todo lo que ingresaste en las secciones.`,
                     cardActions: {
                         btnColor: 'primary',

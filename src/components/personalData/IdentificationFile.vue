@@ -14,6 +14,13 @@
               <v-divider></v-divider>
               <v-row>
                 <v-col cols="12" sm="6" md="3">
+                  <v-switch
+                      key="gender"
+                      v-model="personalParameters.gender"
+                      label="¿Eres mujer?"
+                  ></v-switch>
+                </v-col>
+                <v-col cols="12" sm="6" md="3">
                   <v-text-field
                     key="name"
                     :rules="rules.textRules"
@@ -62,39 +69,30 @@
                     @focusout="edad"
                   ></v-text-field>
                 </v-col>
-              </v-row>
-              <v-row>
                 <v-col cols="12" sm="6" md="3">
                   <v-text-field
-                    key="age"
-                    :rules="rules.numberRules"
-                    v-model="personalParameters.age"
-                    prepend-icon="mdi-account"
-                    type="number"
-                    label="Edad"
-                    color="primary"
-                    required
-                    disabled
+                      key="age"
+                      :rules="rules.numberRules"
+                      v-model="personalParameters.age"
+                      prepend-icon="mdi-account"
+                      type="number"
+                      label="Edad"
+                      color="primary"
+                      required
+                      disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
                   <v-text-field
-                    key="phoneNumber"
-                    :rules="rules.phoneRules"
-                    v-model="personalParameters.phoneNumber"
-                    prepend-icon="mdi-phone"
-                    type="number"
-                    label="Número de celular"
-                    color="primary"
-                    required
+                      key="phoneNumber"
+                      :rules="rules.phoneRules"
+                      v-model="personalParameters.phoneNumber"
+                      prepend-icon="mdi-phone"
+                      type="number"
+                      label="Número de celular"
+                      color="primary"
+                      required
                   ></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6" md="3">
-                  <v-switch
-                    key="gender"
-                    v-model="personalParameters.gender"
-                    label="¿Eres mujer?"
-                  ></v-switch>
                 </v-col>
               </v-row>
             </v-container>
