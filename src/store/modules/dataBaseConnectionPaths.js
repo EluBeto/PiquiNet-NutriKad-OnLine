@@ -5,7 +5,7 @@ export default {
         key: 'AIzaSyDvk63FE2lLwc22xU0FtSOJzfLGAzbE7P4',
         signUp: 'accounts:signUp?key=',
         signIn: 'accounts:signInWithPassword?key=',
-        pathToDataBase: 'https://nutrikad-db.firebaseio.com/',
+        pathToDataBase: 'https://nutrikad-consultorio-db.firebaseio.com/',
         pathToDBDev: 'https://nutrikad-online-db.firebaseio.com/'
     }
 }
